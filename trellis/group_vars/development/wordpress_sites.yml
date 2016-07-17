@@ -1,0 +1,19 @@
+# Documentation: https://roots.io/trellis/docs/local-development-setup/
+# `wordpress_sites` options: https://roots.io/trellis/docs/wordpress-sites
+# Define accompanying passwords/secrets in group_vars/development/vault.yml
+
+wordpress_sites:
+  larsgraubner.de:
+    site_hosts:
+      - larsgraubner.de
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    admin_user: lg_admin
+    admin_email: mail@larsgraubner.de
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+      provider: self-signed
+    cache:
+      enabled: false
+    site_title: "Lars Graubner's Blog"
