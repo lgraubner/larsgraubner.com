@@ -1,0 +1,15 @@
+{
+  "context": "assets",
+  "entry": {
+    "main": [
+      "./scripts/main.js",
+      "./styles/main.scss"
+    ]
+  },
+  "output": {
+    "path": "dist",
+    "publicPath": "/app/themes/larsgraubner.de/dist/"
+  },
+  "devUrl": "http://larsgraubner.de.dev",
+  "devPort": 3000
+}

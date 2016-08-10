@@ -1,0 +1,95 @@
+.header {
+  background: $color-primary;
+  position: relative;
+  line-height: 80px;
+  height: 80px;
+
+  @include respond-to($bp-medium) {
+    line-height: 100px;
+    height: 100px;
+  }
+
+  .inner {
+    @extend %clearfix;
+  }
+
+  .logo {
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    margin-left: -(100px / 2);
+    z-index: 100;
+
+    @include respond-to($bp-medium) {
+      top: 5px;
+      width: 169px;
+      height: 116px;
+      margin-left: -(169px / 2);
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url('/app/themes/deal-master/assets/images/logo-casinodeals@2x.png') center center no-repeat;
+      background-size: 100px;
+      @extend %text-hide;
+
+      @include respond-to($bp-medium) {
+        background-size: 100%;
+      }
+    }
+  }
+
+  .menu-toggle {
+    position: absolute;
+    left: 5%;
+    width: 16px;
+    height: 10px;
+    top: 50%;
+    margin-top: -5px;
+    padding: 0;
+    display: block;
+    border: 0;
+    background: url('/app/themes/deal-master/assets/images/navigation-icons.png') left bottom no-repeat;
+    outline: 0;
+    @extend %text-hide;
+    z-index: 100;
+    cursor: pointer;
+
+    @include respond-to($bp-medium) {
+      display: none;
+    }
+  }
+
+  .search-link {
+    float: right;
+
+    @include respond-to($bp-medium) {
+      margin-left: 40px;
+      margin-right: 20px;
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      @include font-size(20px);
+      color: $color-white;
+      font-family: $font-secondary;
+      cursor: pointer;
+      background: url('/app/themes/deal-master/images/lupe-icon.png') center center no-repeat;
+      @extend %text-hide;
+      width: 40px;
+      padding: 0;
+
+      @include respond-to($bp-medium) {
+        text-indent: 0;
+        padding: 0;
+        background: transparent;
+        width: auto;
+        background-position: center right;
+      }
+    }
+  }
+}

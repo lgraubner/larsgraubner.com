@@ -1,0 +1,25 @@
+.filter {
+  @include respond-to($bp-small) {
+    float: left;
+  }
+}
+
+.tiles {
+  @include respond-to($bp-small) {
+    width: 720px;
+    float: right;
+  }
+
+  @include respond-to($bp-large) {
+    width: 720px;
+  }
+
+  @include respond-to($bp-wide) {
+    width: 900px;
+  }
+
+  .tile-wide {
+    width: 100%;
+    max-width: none;
+  }
+}

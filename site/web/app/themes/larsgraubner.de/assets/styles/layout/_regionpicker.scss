@@ -1,0 +1,159 @@
+.region-picker {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  line-height: 80px;
+  padding: 0 12px 0 15px;
+  text-align: center;
+  background: url('/app/themes/deal-master/assets/images/region-picker-arrow.png') right center no-repeat;
+  z-index: 1000;
+  float: right;
+
+  @include respond-to($bp-small) {
+    line-height: 100px;
+    margin-right: 20px;
+    position: relative;
+  }
+
+  &__current img {
+    width: 40px;
+    height: 40px;
+
+    @include respond-to($bp-small) {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  &--visible .region-picker__dropdown {
+    display: block;
+  }
+
+  &__dropdown {
+    border: 1px solid #e6e6e6;
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    line-height: 1em;
+    display: none;
+    text-align: left;
+    z-index: 9999;
+
+    @include respond-to($bp-small) {
+      position: absolute;
+      right: -8px;
+      top: 85px;
+      width: 300px;
+      border: 1px solid #e6e6e6;
+    }
+
+    &:after {
+      bottom: 100%;
+      right: 37px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(241, 241, 241, 0);
+      border-bottom-color: #ededed;
+      border-width: 12px;
+      margin-left: -12px;
+
+      @include respond-to($bp-small) {
+        right: 30px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      border: 1px solid transparent;
+      width: 120px;
+      float: left;
+      margin-left: -5px;
+      margin-right: 60px;
+      margin-bottom: 5px;
+      line-height: 35px;
+      display: block;
+      @extend %clearfix;
+
+      &:last-child,
+      &:nth-child(5) {
+        margin-bottom: 0;
+      }
+
+      &.current {
+        border-color: #16abd6;
+      }
+
+      @include respond-to($bp-small) {
+        margin-right: 20px;
+
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+      }
+
+      img {
+        margin: -2px 10px 0 -1px;
+        float: left;
+        display: block;
+        width: 40px;
+        height: 40px;
+
+        @include respond-to($bp-small) {
+          margin: -5px 10px 0 -1px;
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+
+    a {
+      color: #000;
+      display: block;
+      width: 100%;
+      padding: 5px;
+    }
+  }
+
+  &__languages {
+    @extend %clearfix;
+    padding: 10px 20px;
+    font-size: 14px;
+
+    &:before {
+      @include respond-to($bp-small) {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 30px;
+        position: absolute;
+        top: -30px;
+        left: 0;
+      }
+    }
+  }
+
+  &__header {
+    background: #ededed;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 20px;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+
+    @include respond-to($bp-small) {
+      text-align: left;
+    }
+  }
+}

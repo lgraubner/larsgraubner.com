@@ -1,0 +1,82 @@
+.dealcode {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+  margin: 32px 0;
+
+  &__text {
+    padding-left: 120px;
+    padding-bottom: 5px;
+    @include font-size(18px);
+    line-height: 1.5em;
+    color: $color-text;
+
+    .textpart-1 {
+      font-weight: bold;
+    }
+  }
+
+  &__cta {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__codebox {
+    padding-left: 120px;
+    padding-top: 8px;
+    @extend %clearfix;
+    text-align: center;
+    line-height: 40px;
+    @include font-size(18px);
+    width: 100%;
+    display: inline-block;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      border-top: 1px solid $color-primary;
+      border-bottom: 1px solid $color-secondary;
+      background: $color-primary;
+      font-weight: 400;
+      color: $color-white;
+      border-radius: 3px 3px 0 0;
+
+      @include respond-to($bp-small) {
+        width: 288px;
+        border-radius: 3px 0 0 3px;
+        border-color: $color-primary;
+        float: left;
+      }
+    }
+  }
+
+  &__codevalue {
+    border: 1px solid #bbccd0;
+    border-top: 0;
+    float: left;
+    width: 100%;
+    height: 40px;
+    border-radius: 0 0 3px 3px;
+    color: $color-primary;
+    font-family: $font-secondary;
+    font-weight: 300;
+    background: url('/app/themes/deal-master/assets/images/codefeld-bg.png') left center repeat-x;
+    padding-top: 2px;
+
+    @include respond-to($bp-small) {
+      border-radius: 0 3px 3px 0;
+      width: 180px;
+      border: 1px solid #bbccd0;
+      border-left: 0;
+    }
+  }
+}

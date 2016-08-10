@@ -1,0 +1,86 @@
+.newsletter-banner {
+  width: 100%;
+  background: gray;
+  @extend %clearfix;
+  padding: 25px 0;
+
+  .inner {
+    background-repeat: no-repeat;
+    background-position: 60px center;
+    min-height: 200px;
+  }
+
+  &__inner {
+    width: 100%;
+
+    @include respond-to($bp-small) {
+      width: 60%;
+      float: right;
+    }
+  }
+
+  &__title {
+    padding-bottom: 0.66667em;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      padding: 0;
+      line-height: 1em;
+      @include font-size(30px);
+      text-transform: uppercase;
+      color: #fff;
+    }
+  }
+
+  &__text {
+    @include font-size(18px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5em;
+    padding-bottom: 1em;
+  }
+
+  form {
+    @extend %clearfix;
+  }
+
+  input[type="text"] {
+    display: inline-block;
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    @include font-size(18px);
+    float: left;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 0 10px 0 24px;
+    border: 0;
+  }
+
+  input[type="submit"] {
+    display: inline-block;
+    float: left;
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    @include font-size(18px);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: navy;
+    text-align: center;
+    border: 0;
+    color: #fff;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  &__info {
+    @include font-size(14px);
+    font-weight: 400;
+    clear: both;
+    margin-top: 7px;
+    color: #fff;
+  }
+}

@@ -1,0 +1,173 @@
+.slider {
+  width: 100%;
+  height: 700px;
+  display: block;
+  background: url('/app/themes/deal-master/assets/images/slider-bg.jpg') center center no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  display: block;
+
+  @include respond-to(500px) {
+    height: 500px;
+  }
+
+  @include respond-to($bp-small) {
+    height: 640px;
+  }
+
+  @include respond-to($bp-medium) {
+    height: 600px;
+  }
+
+  @include respond-to(1070px) {
+    height: 390px;
+  }
+
+  &__slide {
+    display: block;
+    width: 100%;
+    height: 700px;
+    outline: 0;
+    position: relative;
+    display: none;
+
+    @include respond-to(500px) {
+      height: 500px;
+    }
+
+    @include respond-to($bp-small) {
+      height: 640px;
+    }
+
+    @include respond-to($bp-medium) {
+      height: 600px;
+    }
+
+    @include respond-to(1070px) {
+      height: 390px;
+    }
+
+    .slick-initialized & {
+      display: block;
+    }
+
+    &--logo {
+      img {
+        margin-top: -(326px / 2);
+        margin-left: -(487px / 2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+    }
+  }
+
+  &__pager {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+
+    li {
+      display: inline-block;
+      margin: 0 5px;
+
+      &.slick-active button {
+        background: $color-white !important;
+      }
+    }
+
+    button {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      @extend %text-hide;
+      display: inline-block;
+      height: 11px;
+      width: 11px;
+      border: 2px solid $color-primary;
+      background: $color-primary;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  &__heading {
+    font-family: $font-secondary;
+    @include font-size(45px);
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 800px;
+    margin: 30px auto 20px;
+    padding: 0 20px;
+    text-align: center;
+    color: $color-white;
+    line-height: 1em;
+
+    @include respond-to($bp-small) {
+      @include font-size(57px);
+      margin: 60px auto 40px;
+    }
+  }
+
+  &.slick-slider .slick-list {
+    width: 100% !important;
+  }
+
+  .slick-track {
+    margin: 0 auto;
+  }
+}
+
+.icon {
+  text-align: center;
+  width: 155px;
+  display: inline-block;
+  margin: 0 0 20px;
+
+  @include respond-to($bp-small) {
+    width: 210px;
+  }
+
+  @include respond-to($bp-large) {
+    margin-bottom: 0;
+  }
+
+  @include respond-to($bp-wide) {
+    width: 240px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    position: relative;
+
+    img {
+      display: inline-block;
+      transform: translateY(-50%);
+      position: relative;
+      top: 50%;
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    @include font-size(18px);
+    color: $color-white;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
+
+    @include respond-to($bp-small) {
+      @include font-size(23px);
+    }
+
+    .value {
+      @include font-size(35px);
+      font-weight: 700;
+      line-height: 1.2em;
+    }
+  }
+}

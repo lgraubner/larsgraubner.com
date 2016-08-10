@@ -1,0 +1,76 @@
+{
+  "name": "blog-larsgraubner",
+  "version": "1.0.0",
+  "description": "Lars Graubner's personal blog.",
+  "author": {
+    "name": "Lars Graubner",
+    "email": "mail@larsgraubner.de",
+    "url": "https://larsgraubner.de"
+  },
+  "homepage": "https://larsgraubner.de",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:larsgraubner/larsgraubner.de.git"
+  },
+  "dependencies": {
+    "es6-promise": "^3.2.1",
+    "eslint-config-airbnb": "^10.0.0",
+    "moment": "^2.13.0",
+    "normalize.css": "^4.1.1",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "assets-webpack-plugin": "^3.4.0",
+    "autoprefixer": "^6.1.0",
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.7.4",
+    "babel-eslint": "^6.0.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-register": "^6.5.2",
+    "body-parser": "^1.14.1",
+    "browser-sync": "^2.11.2",
+    "clean-webpack-plugin": "^0.1.8",
+    "css-loader": "^0.23.1",
+    "cssnano": "^3.5.2",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb": "^10.0.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^6.0.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "image-webpack-loader": "^1.6.3",
+    "imagemin-pngcrush": "^4.1.0",
+    "imports-loader": "^0.6.5",
+    "minimist": "^1.2.0",
+    "monkey-hot-loader": "0.0.3",
+    "node-sass": "^3.4.2",
+    "optimize-css-assets-webpack-plugin": "^1.3.0",
+    "postcss": "^5.0.18",
+    "postcss-loader": "^0.8.0",
+    "qs": "^6.1.0",
+    "resolve-url-loader": "^1.4.3",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14",
+    "webpack-dev-middleware": "^1.6",
+    "webpack-hot-middleware": "^2.10.0"
+  },
+  "peerDependencies": {
+    "jquery": "^1.12.4"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint assets/scripts",
+    "build": "webpack -d --progress",
+    "build:prod": "webpack -p --progress",
+    "watch": "node watch.js --watch -d"
+  }
+}

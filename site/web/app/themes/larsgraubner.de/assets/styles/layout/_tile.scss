@@ -1,0 +1,421 @@
+.tile {
+  position: relative;
+  perspective: 1000;
+  height: 460px;
+  width: 100%;
+  margin: 0 auto 40px;
+
+  @include respond-to($bp-small) {
+    float: left;
+    margin: 0 10px 60px;
+    max-width: none;
+    width: 380px;
+  }
+
+  &--expired {
+    .tile__front:after,
+    .tile__back:after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: url('/app/themes/deal-master/assets/images/badge_dealmissed_en.png') right top no-repeat;
+    }
+
+    .tile__front > div,
+    .tile__back > div {
+      opacity: 0.5;
+    }
+  }
+
+  &__front,
+  &__back {
+    background: #fff;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    transition: box-shadow .2s ease-out;
+    border: 1px solid #dfdfdf;
+    color: $color-text;
+    perspective: 1000;
+    transition: transform .5s cubic-bezier(.5,0,.325,1.5),opacity .825s ease-in-out,height 0s linear,margin-bottom .2s linear,box-shadow .2s ease-out,-webkit-transform .5s cubic-bezier(.5,0,.325,1.5);
+    backface-visibility: hidden;
+
+    @include respond-to($bp-small) {
+      padding: 40px 40px 0;
+    }
+
+    &:hover {
+      box-shadow: 0 0 .625em 0 rgba(51,51,51,.3);
+    }
+  }
+
+  &__front {
+    z-index: 10;
+  }
+
+  &--flipped .tile__front {
+    transform: rotateY(180deg);
+  }
+
+  &__back {
+    z-index: 5;
+    transform: rotateY(180deg);
+  }
+
+  &--flipped .tile__back {
+    transform: rotateY(360deg);
+  }
+
+  &__meta {
+    line-height: 1em;
+    font-weight: 700;
+    @extend %clearfix;
+    @include font-size(12px);
+    width: 100%;
+
+    @include respond-to($bp-small) {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      padding: 0 40px;
+    }
+  }
+
+  &__date {
+    background: url('/app/themes/deal-master/assets/images/card-calendar.png') left center no-repeat;
+    background-size: 15px 16px;
+    padding: 3px 0 3px 25px;
+    margin: 5px 0 5px 12px;
+
+    @include respond-to($bp-small) {
+      float: left;
+      margin: 0;
+    }
+  }
+
+  &__used {
+    padding: 3px 0 3px 28px;
+    margin: 5px 0 5px 12px;
+    background: url('/app/themes/deal-master/assets/images/icon-check.svg') left center no-repeat;
+
+    @include respond-to($bp-small) {
+      float: right;
+      margin: 0;
+    }
+
+    .num {
+      color: $color-primary;
+    }
+  }
+
+  &__head {
+    @extend %clearfix;
+  }
+
+  &__logo {
+    float: left;
+    width: 33.333%;
+
+    @include respond-to($bp-small) {
+      width: 149px;
+      height: 149px;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__bonus {
+    float: right;
+    line-height: 30px;
+    background: #ededed;
+    position: relative;
+    width: 66.666%;
+
+    @include respond-to($bp-small) {
+      width: 149px;
+    }
+
+    &:after {
+      content: '';
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 13px 12px 13px 0;
+      border-color: transparent #ededed transparent transparent;
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      margin-top: -13px;
+    }
+
+    .tile__front &:before {
+      content: '';
+      padding-top: 50%;
+      display: block;
+
+      @include respond-to($bp-small) {
+        display: none;
+      }
+    }
+
+    a {
+      padding: 20px 0 0 16px;
+      display: block;
+      color: $color-text;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+
+      @include respond-to($bp-small) {
+        position: static;
+        height: 149px;
+        padding: 52px 0 0 16px;
+      }
+    }
+
+    .bonus {
+      @include font-size(18px);
+      display: block;
+    }
+
+    .value {
+      @include font-size(30px);
+      font-weight: 700;
+      display: block;
+    }
+  }
+
+  &__content {
+    padding: 40px 0 0;
+    @include font-size(18px);
+    color: #777;
+    line-height: 1.3333em;
+
+    @include respond-to(bp-small) {
+      padding: 60px 0 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-weight: normal;
+    color: $color-text;
+    @include font-size(18px);
+    padding: 0 17px;
+
+    a {
+      color: $color-text;
+    }
+
+    @include respond-to($bp-small) {
+      padding: 0;
+    }
+  }
+
+  &__teaser {
+    padding: 0 17px;
+
+    @include respond-to($bp-small) {
+      padding: 0;
+    }
+  }
+
+  &__cta {
+    @extend %clearfix;
+    width: 100%;
+    position: absolute;
+    bottom: 47px;
+    left: 0;
+    padding: 0 16px;
+
+    @include respond-to($bp-small) {
+      padding: 0 40px;
+    }
+
+    a {
+      display: block;
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 16px;
+      border-radius: 3px;
+      @include font-size(18px);
+      word-wrap: break-word;
+      background: $color-primary;
+      color: $color-white;
+      font-weight: 300;
+      width: 84%;
+
+      @include respond-to($bp-small) {
+        width: 255px;
+      }
+    }
+  }
+
+  &__flip-button {
+    @extend %text-hide;
+    float: right;
+    text-align: center;
+    background: url('/app/themes/deal-master/assets/images/card-info-icon.png') center center no-repeat $color-secondary;
+    background-size: 21px;
+    border-radius: 3px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    width: 15%;
+
+    @include respond-to($bp-small) {
+      width: 40px;
+    }
+
+    &--close {
+      background-image: url('/app/themes/deal-master/assets/images/card-close.png');
+      background-color: #ededed;
+    }
+  }
+
+  &__crosslink {
+    bottom: 24px;
+    left: 0;
+    padding: 0 20px;
+    @include font-size(11px);
+    line-height: 1em;
+    position: absolute;
+    width: 100%;
+
+    @include respond-to($bp-small) {
+      padding: 0 40px;
+    }
+
+    a {
+      color: #777;
+    }
+  }
+
+  &__summary {
+    @extend %clearfix;
+    position: relative;
+    margin-bottom: 30px;
+    padding: 0 16px;
+
+    @include respond-to($bp-small) {
+      padding: 0;
+    }
+
+    a {
+      width: 62px;
+      height: 62px;
+      display: none;
+      float: left;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @include respond-to($bp-small) {
+        display: block;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .tile__bonus {
+      background: transparent;
+      width: 50%;
+
+      @include respond-to($bp-small) {
+        width: 30%;
+      }
+
+      .label {
+        line-height: 24px;
+        @include font-size(16px);
+
+        &:after {
+          content: '';
+          display: block;
+          padding-top: 62.5%;
+        }
+
+        @include respond-to($bp-small) {
+          @include font-size(18px);
+        }
+      }
+
+      &:after {
+        content: '';
+        display: none;
+      }
+    }
+  }
+
+  &__info {
+    float: left;
+    width: 50%;
+    padding-top: 4px;
+    @include font-size(16px);
+    line-height: 1.3333em;
+
+    @include respond-to($bp-small) {
+      width: 70%;
+      padding-left: 72px;
+      @include font-size(18px);
+    }
+
+    .bonustype {
+      margin-top: 7px;
+      color: #777;
+      font-weight: 300;
+    }
+  }
+
+  &__list {
+    padding: 0 17px;
+
+    @include respond-to($bp-small) {
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding-left: 26px;
+      color: #777;
+      @include font-size(14px);
+      line-height: 2em;
+      background: url('/app/themes/deal-master/assets/images/card-list-haken.png') 3px center no-repeat;
+    }
+  }
+}
