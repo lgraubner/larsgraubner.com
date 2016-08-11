@@ -18,7 +18,7 @@ function setup() {
 
   // Make theme available for translation
   // Community translations can be found at https://github.com/roots/sage-translations
-  load_theme_textdomain('dm', get_template_directory() . '/lang');
+  load_theme_textdomain('larsgraubner', get_template_directory() . '/lang');
 
   // Enable plugins to manage the document title
   // http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
@@ -27,9 +27,8 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'left_navigation' => __('Left Navigation', 'dm'),
-    'right_navigation' => __('Right Navigation', 'dm'),
-    'footer_navigation' => __('Footer Navigation', 'dm'),
+    'header_navigation' => __('Header Navigation', 'larsgraubner'),
+    'footer_navigation' => __('Footer Navigation', 'larsgraubner'),
   ]);
 
   // Enable post thumbnails
@@ -57,7 +56,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  */
 function widgets_init() {
   register_sidebar([
-    'name'          => __('Footer', 'dm'),
+    'name'          => __('Footer', 'larsgraubner'),
     'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -95,13 +94,7 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
-  $vars = array(
-    'ajaxurl' => admin_url('admin-ajax.php'),
-  );
-
-  wp_register_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
-  wp_localize_script('sage/js', 'dm', $vars);
-  wp_enqueue_script('sage/js');
+  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 
   if (is_admin()) {
     wp_enqueue_script( 'jquery-ui-core' );

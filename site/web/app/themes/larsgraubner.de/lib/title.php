@@ -8,14 +8,14 @@ function title() {
     if (get_option('page_for_posts', true)) {
       return get_the_title(get_option('page_for_posts', true));
     } else {
-      return __('Latest Posts', 'dm');
+      return __('Latest Posts', 'larsgraubner');
     }
   } elseif (is_archive()) {
     return get_the_archive_title();
   } elseif (is_search()) {
-    return sprintf(__('Search Results for %s', 'dm'), get_search_query());
+    return sprintf(__('Search Results for %s', 'larsgraubner'), get_search_query());
   } elseif (is_404()) {
-    return __('Not Found', 'dm');
+    return __('Not Found', 'larsgraubner');
   } else {
     return get_the_title();
   }

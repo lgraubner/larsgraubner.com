@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import $ from 'jquery';
 import 'whatwg-fetch';
 import 'es6-promise';

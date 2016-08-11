@@ -17,6 +17,7 @@
     "eslint-config-airbnb": "^10.0.0",
     "moment": "^2.13.0",
     "normalize.css": "^4.1.1",
+    "prismjs": "1.5.1",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {

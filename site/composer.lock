@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d05c7ad724dfb7e6ea6fe7dedaabe967",
-    "content-hash": "0a1046f8875034bc3a6887d8b6436561",
+    "hash": "c1fb24bcafe3fcc6fb13e3b4b57d57fb",
+    "content-hash": "9ae556274884bad2610c44bcac438746",
     "packages": [
         {
             "name": "composer/installers",
@@ -362,6 +362,46 @@
             "homepage": "https://wordpress.org/plugins/all-in-one-seo-pack/"
         },
         {
+            "name": "wpackagist-plugin/backwpup",
+            "version": "3.3.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/backwpup/",
+                "reference": "tags/3.3.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/backwpup.3.3.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/backwpup/"
+        },
+        {
+            "name": "wpackagist-plugin/cachify",
+            "version": "2.2.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cachify/",
+                "reference": "tags/2.2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cachify.2.2.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cachify/"
+        },
+        {
             "name": "wpackagist-plugin/cmb2",
             "version": "2.2.2.1",
             "source": {
@@ -382,16 +422,16 @@
             "homepage": "https://wordpress.org/plugins/cmb2/"
         },
         {
-            "name": "wpackagist-plugin/w3-total-cache",
-            "version": "0.9.4.1",
+            "name": "wpackagist-plugin/imsanity",
+            "version": "2.3.6",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/w3-total-cache/",
-                "reference": "tags/0.9.4.1"
+                "url": "https://plugins.svn.wordpress.org/imsanity/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/imsanity.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -399,7 +439,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/w3-total-cache/"
+            "homepage": "https://wordpress.org/plugins/imsanity/"
         }
     ],
     "packages-dev": [

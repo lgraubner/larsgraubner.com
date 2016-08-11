@@ -39,9 +39,11 @@
     "johnpbloch/wordpress": "4.5.3",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/w3-total-cache": "0.9.4.1",
+    "wpackagist-plugin/cachify": "2.2.3",
     "wpackagist-plugin/cmb2": "2.2.2.1",
-    "wpackagist-plugin/all-in-one-seo-pack": "2.3.8"
+    "wpackagist-plugin/all-in-one-seo-pack": "2.3.8",
+    "wpackagist-plugin/backwpup": "3.3.3",
+    "wpackagist-plugin/imsanity": "2.3.6"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
