@@ -43,7 +43,8 @@
     "wpackagist-plugin/cmb2": "2.2.2.1",
     "wpackagist-plugin/all-in-one-seo-pack": "2.3.8",
     "wpackagist-plugin/backwpup": "3.3.3",
-    "wpackagist-plugin/imsanity": "2.3.6"
+    "wpackagist-plugin/imsanity": "2.3.6",
+    "wpackagist-plugin/google-analytics-dashboard-for-wp": "4.9.3.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"

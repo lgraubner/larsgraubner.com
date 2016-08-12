@@ -8,35 +8,9 @@
 // import vendor styles
 // @import '../vendor/file';
 @import '../../node_modules/normalize.css/normalize';
-@import 'vendor/slick';
 
-@import 'base/base';
+@import 'base/reset';
 @import 'base/print';
 
 // import layouts, pages and components
 // @import 'components/mycomponent';
-@import 'layout/header';
-@import 'layout/menu-wrapper';
-@import 'layout/menu';
-@import 'layout/breadcrumbs';
-@import 'layout/social';
-@import 'layout/footer';
-@import 'layout/deal';
-@import 'layout/tile';
-@import 'layout/tile-wide';
-@import 'layout/regionpicker';
-@import 'layout/more-deals';
-@import 'layout/filter';
-@import 'layout/page';
-@import 'layout/searchform';
-@import 'layout/slider';
-@import 'layout/deal-overlay';
-
-
-
-@import 'pages/casino';
-@import 'pages/all-deals';
-
-@import 'components/shortcode-dealcode';
-@import 'components/bestdeals';
-@import 'components/newsletter-banner';

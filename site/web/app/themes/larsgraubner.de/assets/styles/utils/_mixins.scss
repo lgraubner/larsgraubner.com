@@ -4,6 +4,7 @@
 /// @param {Map} $declarations - Declarations to prefix
 /// @param {List} $prefixes (()) - List of prefixes to print
 @mixin prefix($declarations, $prefixes: webkit moz ms o) {
+  @warn 'The `prefix` mixin is deprecated. Use `autoprefixer` tool for this.';
   @each $property, $value in $declarations {
     @each $prefix in $prefixes {
       #{'-' + $prefix + '-' + $property}: $value;
