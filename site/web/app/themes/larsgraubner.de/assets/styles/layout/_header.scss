@@ -1,0 +1,18 @@
+.header {
+  @extend %clearfix;
+  margin: 50px 0 100px;
+  line-height: 35px;
+}
+
+.logo {
+  font-family: $font-secondary;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  @include font-size(24px);
+  float: left;
+
+  a {
+    color: #000;
+    display: block;
+  }
+}

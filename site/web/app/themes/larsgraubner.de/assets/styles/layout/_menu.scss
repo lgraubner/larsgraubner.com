@@ -1,0 +1,27 @@
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: $font-secondary;
+  @extend %clearfix;
+  float: right;
+
+  &__item {
+    display: block;
+    float: left;
+    margin-left: 2em;
+    text-transform: uppercase;
+    @include font-size(14px);
+    letter-spacing: .15em;
+
+    &--active {
+
+    }
+  }
+
+  a {
+    color: #000;
+    display: block;
+    padding: 0 10px;
+  }
+}

@@ -69,7 +69,7 @@ function dm_cleanup_menu_id($var) {
 add_filter('nav_menu_item_id', 'dm_cleanup_menu_id', 100, 1);
 
 function dm_cleanup_admin_menu() {
-    remove_menu_page( 'edit-comments.php' );
-    remove_menu_page( 'edit.php' );
+    // remove_menu_page( 'edit-comments.php' );
+    // remove_menu_page( 'edit.php' );
 }
 add_action( 'admin_menu', 'dm_cleanup_admin_menu' );

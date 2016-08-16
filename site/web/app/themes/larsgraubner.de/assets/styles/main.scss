@@ -8,9 +8,16 @@
 // import vendor styles
 // @import '../vendor/file';
 @import '../../node_modules/normalize.css/normalize';
+@import '../../node_modules/prismjs/themes/prism-okaidia';
 
 @import 'base/reset';
 @import 'base/print';
 
 // import layouts, pages and components
 // @import 'components/mycomponent';
+@import 'layout/header';
+@import 'layout/post';
+@import 'layout/menu';
+@import 'layout/page';
+@import 'layout/content';
+@import 'layout/post-list';

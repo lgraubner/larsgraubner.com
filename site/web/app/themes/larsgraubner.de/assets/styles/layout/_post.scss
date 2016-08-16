@@ -1,0 +1,46 @@
+.post__date {
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  @include font-size(14px);
+  font-family: $font-primary;
+  text-transform: uppercase;
+}
+
+.post__title {
+  font-family: $font-secondary;
+  font-weight: normal;
+  @include font-size(50px);
+  text-align: center;
+  margin: 0 0 50px;
+  padding: 0 0.5em;
+}
+
+.post__thumb {
+  margin-bottom: 50px;
+
+  img {
+    max-width: 120%;
+    height: auto;
+    display: block;
+    margin-left: -10%;
+  }
+}
+
+.post__content {
+  @include font-size(16px);
+  line-height: 1.75em;
+  margin-bottom: 100px;
+
+  p:first-child:first-letter {
+    float: left;
+    padding: 3px 6px 0 0;
+    @include font-size(53px);
+    font-weight: bold;
+    line-height: 1em;
+  }
+
+  p {
+    margin: 1.5em 0;
+  }
+}

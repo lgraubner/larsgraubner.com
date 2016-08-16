@@ -1,5 +1,3 @@
-<?php dynamic_sidebar('sidebar-footer'); ?>
-
 <footer class="footer">
   <?php
   if (has_nav_menu('footer_navigation')):

@@ -1,0 +1,35 @@
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 100px;
+
+  h1 {
+    font-family: $font-secondary;
+    font-weight: normal;
+    @include font-size(50px);
+    text-align: center;
+    margin: 0 0 50px;
+    padding: 0 0.5em;
+  }
+}
+
+.page-content {
+  @include font-size(16px);
+  line-height: 1.75em;
+  margin-bottom: 100px;
+
+  p:first-child:first-letter {
+    float: left;
+    padding: 3px 6px 0 0;
+    @include font-size(53px);
+    font-weight: bold;
+    line-height: 1em;
+  }
+
+  p {
+    margin: 1.5em 0;
+  }
+}
