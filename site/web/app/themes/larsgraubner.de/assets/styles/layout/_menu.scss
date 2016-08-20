@@ -20,8 +20,23 @@
   }
 
   a {
-    color: #000;
+    color: $color-black;
     display: block;
     padding: 0 10px;
+  }
+}
+
+#menu-footer-nav {
+  float: none;
+  text-align: center;
+
+  .menu__item {
+    display: inline-block;
+    float: none;
+  }
+
+  a {
+    display: inline-block;
+    color: lighten($color-black, 40%);
   }
 }

@@ -6,6 +6,7 @@ $includes = [
     'lib/setup.php',
     'lib/title.php',
     'lib/wrapper.php',
+    'lib/page.php',
 ];
 
 foreach ($includes as $file) {

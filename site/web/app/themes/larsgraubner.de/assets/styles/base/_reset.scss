@@ -23,7 +23,7 @@ html {
 body {
   font-family: $font-primary;
   @include font-size($font-size);
-  color: $color-text;
+  color: $color-black;
 }
 
 // Avoid link underline
@@ -32,7 +32,7 @@ a {
 
   // Remove styling of telephone links
   &[href^='tel:'] {
-    color: $color-text;
+    color: $color-black;
     cursor: default;
   }
 }

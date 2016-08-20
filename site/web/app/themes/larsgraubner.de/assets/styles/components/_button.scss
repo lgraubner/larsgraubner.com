@@ -1,0 +1,20 @@
+.button {
+  background: $color-primary;
+  @include font-size(14px);
+  color: #fff;
+  padding: 1em 2.3em;
+  display: inline-block;
+  margin: 0 auto;
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: background-color 150ms ease-in-out;
+  border-radius: 2px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &:hover {
+    background: $color-black;
+  }
+}

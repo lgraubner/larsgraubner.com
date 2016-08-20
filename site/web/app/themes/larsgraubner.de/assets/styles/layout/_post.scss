@@ -1,83 +1,34 @@
-.post__date {
-  color: #666;
-  text-align: center;
-  margin-bottom: 30px;
-  @include font-size(14px);
-  font-family: $font-primary;
-  text-transform: uppercase;
-}
-
-.post__title {
-  font-family: $font-secondary;
-  font-weight: normal;
-  @include font-size(50px);
-  text-align: center;
-  margin: 0 0 50px;
-  padding: 0 0.5em;
-}
-
-.post__thumb {
-  margin-bottom: 50px;
-
-  img {
-    max-width: 120%;
-    height: auto;
-    display: block;
-    margin-left: -10%;
-  }
-}
-
-.post__content {
-  @include font-size(16px);
-  line-height: 1.75em;
-  margin-bottom: 100px;
-
-  p:first-child:first-letter {
-    float: left;
-    padding: 3px 6px 0 0;
-    @include font-size(53px);
-    font-weight: bold;
-    line-height: 1em;
+.post {
+  &__title {
+    font-family: $font-secondary;
+    font-weight: normal;
+    @include font-size(50px);
+    text-align: center;
+    margin: 0 0 50px !important;
+    padding: 0 0.5em;
   }
 
-  p {
-    margin: 1.5em 0;
+  &__link {
+    color: $color-black;
   }
 
-  .emoji {
-     height: 1em;
-     width: 1em;
-     margin: 0 .05em 0 .1em;
-     vertical-align: -0.1em;
+  &__thumb {
+    margin-bottom: 50px;
+    border-radius: 2px;
+
+    img {
+      max-width: 120% !important;
+      height: auto;
+      display: block;
+      margin-left: -10%;
+    }
   }
 
-  ol, ul {
-    margin: 1.5em 0;
-    padding: 0 0 0 25px;
-  }
+  &__content {
+    margin-bottom: 100px;
 
-  ul {
-    list-style-type: square;
-  }
-
-  h2 {
-    @include font-size(26px);
-    margin: 2.25em 0 1.25em;
-  }
-
-  h3 {
-    @include font-size(22px);
-    margin: 2.25em 0 1.25em;
-  }
-
-  h4 {
-    @include font-size(18px);
-    margin: 2.25em 0 1.25em;
-  }
-
-  pre {
-    border-radius: 0;
-    margin: 2.5em 0;
-    @include font-size(14.5px);
+    .button {
+      margin-top: 2em;
+    }
   }
 }

@@ -17,6 +17,11 @@ function title() {
   } elseif (is_404()) {
     return __('Not Found', 'larsgraubner');
   } else {
-    return get_the_title();
+    $heading = get_post_meta(get_the_ID(), '_page_heading', true);
+    if (!empty($heading)) {
+        return $heading;
+    } else {
+        return get_the_title();
+    }
   }
 }

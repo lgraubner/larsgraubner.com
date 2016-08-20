@@ -1,5 +1,76 @@
 .content {
+  @include font-size(16px);
+
   .inner {
-    width: 720px;
+    width: 640px;
+  }
+
+  p {
+    margin: 1.5em 0;
+    line-height: 1.75em;
+  }
+
+  p:first-child:first-letter {
+    float: left;
+    padding: 3px 6px 0 0;
+    @include font-size(53px);
+    font-weight: bold;
+    line-height: 1em;
+  }
+
+  .emoji {
+     height: 1em;
+     width: 1em;
+     margin: 0 .05em 0 .1em;
+     vertical-align: -0.1em;
+  }
+
+  ol,
+  ul {
+    margin: 1.5em 0;
+    padding: 0 0 0 25px;
+    line-height: 1.75em;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]) {
+    margin: 2.25em 0 1.25em;
+  }
+
+  h2:not([class]) {
+    @include font-size(26px);
+  }
+
+  h3:not([class]) {
+    @include font-size(22px);
+  }
+
+  h4:not([class]) {
+    @include font-size(18px);
+  }
+
+  pre {
+    border-radius: 0;
+    margin: 2.5em 0;
+    @include font-size(14.5px);
+    background: $color-black;
+    border-radius: 2px;
+  }
+
+  a[href]:not([class]) {
+    color: $color-primary;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
   }
 }
