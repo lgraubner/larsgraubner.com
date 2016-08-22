@@ -3,6 +3,10 @@
 
   .inner {
     width: 640px;
+
+    .home & {
+      width: 1024px;
+    }
   }
 
   p {
