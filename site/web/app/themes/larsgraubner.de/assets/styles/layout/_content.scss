@@ -1,23 +1,19 @@
 .content {
-  @include font-size(16px);
-
-  .inner {
-    width: 640px;
-
-    .home & {
-      width: 1024px;
-    }
-  }
+  @include font-size(17px);
 
   p {
     margin: 1.5em 0;
     line-height: 1.75em;
+
+    a {
+      font-weight: bold;
+    }
   }
 
-  p:first-child:first-letter {
+  body & p:not(.nodrop):first-child:first-letter {
     float: left;
     padding: 3px 6px 0 0;
-    @include font-size(53px);
+    @include font-size(55px);
     font-weight: bold;
     line-height: 1em;
   }
@@ -44,19 +40,21 @@
   h3:not([class]),
   h4:not([class]),
   h5:not([class]) {
-    margin: 2.25em 0 1.25em;
+    margin: 2em 0 1em;
+    font-weight: normal;
+    font-family: $font-secondary;
   }
 
   h2:not([class]) {
-    @include font-size(26px);
+    @include font-size(28px);
   }
 
   h3:not([class]) {
-    @include font-size(22px);
+    @include font-size(24px);
   }
 
   h4:not([class]) {
-    @include font-size(18px);
+    @include font-size(20px);
   }
 
   pre {
@@ -69,12 +67,21 @@
 
   a[href]:not([class]) {
     color: $color-primary;
+    border-bottom: 1px solid currentcolor;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      color: $color-black;
+      border-color: currentcolor;
+    }
   }
 
-  img {
+  img:not([class]) {
     max-width: 100%;
     height: auto;
     display: block;
     border-radius: 2px;
   }
+
+  /* TODO: Quote styles (Twitter, Testimonials, Post) */
 }

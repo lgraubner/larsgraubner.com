@@ -9,7 +9,12 @@
   }
 
   &__link {
-    color: $color-black;
+    color: $color-primary;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: $color-black;
+    }
   }
 
   &__thumb {
@@ -25,10 +30,26 @@
   }
 
   &__content {
-    margin-bottom: 100px;
-
     .button {
-      margin-top: 2em;
+      margin-top: 1.5em;
     }
+
+    &--excerpt {
+      text-align: center;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+
+  &__footer {
+    background: #f9f9f9;
+    padding: 40px 0;
+    margin-top: 100px;
+  }
+
+  .date {
+    text-align: center;
   }
 }

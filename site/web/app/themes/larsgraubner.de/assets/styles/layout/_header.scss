@@ -1,7 +1,11 @@
 .header {
   @extend %clearfix;
-  margin: 50px 0 100px;
+  margin: 50px 0 80px;
   line-height: 35px;
+
+  .inner {
+    width: 1024px;
+  }
 }
 
 .logo {
@@ -10,6 +14,7 @@
   text-transform: uppercase;
   @include font-size(24px);
   float: left;
+  margin: 0;
 
   a {
     color: $color-black;

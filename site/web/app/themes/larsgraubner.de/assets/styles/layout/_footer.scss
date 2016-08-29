@@ -1,3 +1,16 @@
 .footer {
-  margin: 40px 0 100px;
+  padding: 80px 0 100px;
+  text-align: center;
+
+  .rss {
+    font-family: $font-secondary;
+
+    a {
+      color: $color-black-lighter;
+      line-height: 40px;
+      padding-left: 30px;
+      background: url('/app/themes/larsgraubner.de/assets/images/rss.svg') left center no-repeat;
+      background-size: auto 100%;
+    }
+  }
 }

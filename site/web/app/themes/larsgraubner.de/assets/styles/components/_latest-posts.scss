@@ -1,0 +1,27 @@
+.latest-posts {
+  font-family: $font-secondary;
+  @include font-size(22px);
+
+  h2 {
+    margin-bottom: 2em !important;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 640px;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  .date {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    line-height: 1em;
+    text-align: center;
+  }
+}

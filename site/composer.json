@@ -46,6 +46,7 @@
     "wpackagist-plugin/imsanity": "2.3.6",
     "wpackagist-plugin/google-analytics-dashboard-for-wp": "4.9.3.1",
     "wpackagist-plugin/relevanssi": "3.5.4",
+    "wpackagist-plugin/wp-sweep": "1.07",
     "abraham/twitteroauth": "^0.6.4"
   },
   "require-dev": {

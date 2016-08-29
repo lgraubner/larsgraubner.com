@@ -7,7 +7,7 @@ export default {
     Prism.highlightAll();
 
     const postContent = document.getElementsByClassName('post__content');
-    if (postContent) {
+    if (postContent.length) {
       twemoji.parse(postContent[0]);
     }
   },

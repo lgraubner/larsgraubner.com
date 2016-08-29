@@ -1,7 +1,5 @@
 <footer class="footer">
-  <?php
-  if (has_nav_menu('footer_navigation')):
-    wp_nav_menu(['theme_location' => 'footer_navigation']);
-  endif;
-  ?>
+    <div class="rss">
+      <a href="<?php bloginfo('rss2_url'); ?>">Subscribe to the RSS feed.</a>
+    </div>
 </footer>

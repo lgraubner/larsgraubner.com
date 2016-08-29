@@ -1,0 +1,40 @@
+.home {
+  .content .inner {
+    width: 720px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .section {
+    margin-bottom: 80px;
+    text-align: center;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &--gray {
+      background: #f9f9f9;
+      padding: 60px 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 0;
+      @include font-size(30px);
+    }
+
+    &.twitter h2 {
+      background: url('/app/themes/larsgraubner.de/assets/images/twitter.svg') right center no-repeat;
+      background-size: auto 100%;
+      padding: 0 55px;
+      display: inline-block;
+    }
+
+    .button {
+      margin: 40px 0 0;
+    }
+  }
+}

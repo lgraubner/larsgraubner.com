@@ -15,7 +15,8 @@
   "dependencies": {
     "es6-promise": "^3.2.1",
     "eslint-config-airbnb": "^10.0.0",
-    "moment": "^2.13.0",
+    "lodash.foreach": "4.5.0",
+    "moment": "2.14.1",
     "normalize.css": "^4.1.1",
     "prismjs": "1.5.1",
     "twemoji": "2.1.0",

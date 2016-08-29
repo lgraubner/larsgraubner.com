@@ -1,0 +1,20 @@
+.bio {
+  @extend %clearfix;
+
+  .portrait {
+    margin: 0 35px 0 0;
+    width: 90px;
+    height: 90px;
+    float: left;
+  }
+
+  &__text {
+    p {
+      margin: 0;
+    }
+
+    a {
+      margin-left: 10px;
+    }
+  }
+}

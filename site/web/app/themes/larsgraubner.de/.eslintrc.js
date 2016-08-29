@@ -5,5 +5,7 @@ module.exports = {
     "document": false,
     "window": false,
     "location": false,
+    "fetch": false,
+    "lg": false,
   },
 }

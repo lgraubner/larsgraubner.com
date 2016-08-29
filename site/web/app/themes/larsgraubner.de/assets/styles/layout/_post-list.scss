@@ -2,4 +2,12 @@
   .post__title {
     @include font-size(40px);
   }
+
+  .post {
+    margin-bottom: 120px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

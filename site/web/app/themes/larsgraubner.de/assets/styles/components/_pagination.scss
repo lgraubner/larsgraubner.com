@@ -1,0 +1,37 @@
+.pagination {
+  margin-top: 80px;
+  font-family: $font-secondary;
+  @extend %clearfix;
+
+  .button {
+    transform: none;
+    left: auto;
+  }
+
+  &__previous {
+    float: left;
+
+    a {
+      background-image: url('/app/themes/larsgraubner.de/assets/images/back.svg');
+      background-position: left center;
+      padding-left: 25px;
+    }
+  }
+
+  &__next {
+    float: right;
+
+    a {
+      background-image: url('/app/themes/larsgraubner.de/assets/images/next.svg');
+      background-position: right center;
+      padding-right: 25px;
+    }
+  }
+
+  a {
+    color: $color-white !important;
+    border: 0 !important;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+  }
+}

@@ -22,6 +22,19 @@ add_filter('body_class', __NAMESPACE__ . '\\body_class');
  * Clean up the_excerpt()
  */
 function excerpt_more() {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'larsgraubner') . '</a>';
+  return '';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+function pagination_nav() {
+    global $wp_query;
+
+    if ( $wp_query->max_num_pages > 1 ) { ?>
+        <nav class="pagination" role="navigation">
+            <div class="inner">
+                <div class="pagination__previous button"><?php next_posts_link('Older posts'); ?></div>
+                <div class="pagination__next button"><?php previous_posts_link('Newer posts'); ?></div>
+            </div>
+        </nav>
+<?php }
+}

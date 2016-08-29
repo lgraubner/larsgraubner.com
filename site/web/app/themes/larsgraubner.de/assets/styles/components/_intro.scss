@@ -1,0 +1,11 @@
+.intro {
+
+  p:first-of-type {
+    @include font-size(19px);
+    font-family: $font-secondary;
+
+    a {
+      font-weight: normal;
+    }
+  }
+}
