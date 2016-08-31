@@ -1,19 +1,23 @@
 .button {
-  background: $color-black-lighter;
   @include font-size(18px);
-  color: $color-white;
   padding: .6em 0.9em;
   display: inline-block;
   margin: 0 auto;
   font-family: $font-secondary;
-  transition: background-color 150ms ease-in-out;
-  border-radius: 2px;
+  transition: background-color 100ms ease-in-out, border-color 100ms ease-in-out;
+  border-radius: 0;
+  border: 2px solid $color-primary;
+  background: #fff;
+  color: $color-primary;
+  border-radius: 3px;
 
   &:hover {
-    background: $color-black;
+    background: $color-primary;
+    color: $color-white;
   }
 
   &:active {
-    background-color: #444;
+    background-color: darken($color-primary, 10%);
+    border-color: darken($color-primary, 10%);
   }
 }

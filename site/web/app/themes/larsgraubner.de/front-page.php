@@ -15,7 +15,22 @@
   <div class="inner">
       <h2>Recently on Twitter</h2>
       <input type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce('lg_twitter_nonce'); ?>" />
-      <div id="tweet"></div>
+      <div id="tweet">
+          <div class="sk-fading-circle">
+          <div class="sk-circle1 sk-circle"></div>
+          <div class="sk-circle2 sk-circle"></div>
+          <div class="sk-circle3 sk-circle"></div>
+          <div class="sk-circle4 sk-circle"></div>
+          <div class="sk-circle5 sk-circle"></div>
+          <div class="sk-circle6 sk-circle"></div>
+          <div class="sk-circle7 sk-circle"></div>
+          <div class="sk-circle8 sk-circle"></div>
+          <div class="sk-circle9 sk-circle"></div>
+          <div class="sk-circle10 sk-circle"></div>
+          <div class="sk-circle11 sk-circle"></div>
+          <div class="sk-circle12 sk-circle"></div>
+        </div>
+      </div>
   </div>
 </section>
 
@@ -50,13 +65,3 @@ if ($latest->have_posts()) :
   </div>
 </section>
 <?php endif; ?>
-
-<section class="testimonials section section--gray">
-    <div class="inner">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
-          <p class="nodrop">Things people I worked with say about me.</p>
-        </div>
-        <a href="<?php echo get_page_link(get_page_by_path('contact')); ?>" class="button">Get in touch with me</a>
-    </div>
-</section>

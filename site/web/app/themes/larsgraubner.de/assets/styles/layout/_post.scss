@@ -9,7 +9,7 @@
   }
 
   &__link {
-    color: $color-primary;
+    color: $color-black;
     transition: color 150ms ease-in-out;
 
     &:hover {
@@ -19,7 +19,6 @@
 
   &__thumb {
     margin-bottom: 50px;
-    border-radius: 2px;
 
     img {
       max-width: 120% !important;

@@ -32,8 +32,8 @@ function pagination_nav() {
     if ( $wp_query->max_num_pages > 1 ) { ?>
         <nav class="pagination" role="navigation">
             <div class="inner">
-                <div class="pagination__previous button"><?php next_posts_link('Older posts'); ?></div>
-                <div class="pagination__next button"><?php previous_posts_link('Newer posts'); ?></div>
+                <div class="pagination__previous"><?php next_posts_link('Older posts'); ?></div>
+                <div class="pagination__next"><?php previous_posts_link('Newer posts'); ?></div>
             </div>
         </nav>
 <?php }

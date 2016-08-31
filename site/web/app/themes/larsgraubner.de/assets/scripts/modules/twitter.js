@@ -62,17 +62,20 @@ export default {
     }
   },
 
-  renderTweet(tweet) {
+  renderTweet(tweetData) {
     let str = 'Could not load tweets. 🤔';
-    if (tweet) {
-      str = twemoji.parse(tweet.text);
+    const { author, text, date } = tweetData;
+    if (tweetData) {
+      str = twemoji.parse(text);
     }
-    $('#tweet').html(`<div class="tweet">
+    const $tweet = $(`<div class="tweet">
       <div class="tweet__content">${str}</div>
       <div class="tweet__meta">
-        <span class="tweet__author">${tweet.author}</span> -
-        <span class="tweet__date">${tweet.date}</span>
+        <span class="tweet__author">${author}</span> -
+        <span class="tweet__date">${date}</span>
       </div>
     </div>`);
+    $('#tweet').html($tweet);
+    $tweet.fadeIn(400);
   },
 };

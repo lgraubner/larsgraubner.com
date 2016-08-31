@@ -62,13 +62,12 @@
     margin: 2.5em 0;
     @include font-size(14.5px);
     background: $color-black;
-    border-radius: 2px;
   }
 
   a[href]:not([class]) {
     color: $color-primary;
     border-bottom: 1px solid currentcolor;
-    transition: all 150ms ease-in-out;
+    transition: border 150ms ease-in-out, border 150ms ease-in-out;
 
     &:hover {
       color: $color-black;
@@ -80,7 +79,6 @@
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 2px;
   }
 
   /* TODO: Quote styles (Twitter, Testimonials, Post) */

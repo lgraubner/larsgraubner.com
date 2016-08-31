@@ -1,9 +1,10 @@
 .tweet {
-  @include font-size(26px);
+  @include font-size(24px);
   text-align: center;
   max-width: 640px;
   margin: 50px auto 20px;
   line-height: 1.5em;
+  display: none;
 
   &__meta {
     margin-top: 30px;
