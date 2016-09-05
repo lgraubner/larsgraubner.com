@@ -4,7 +4,13 @@
   line-height: 35px;
 
   .inner {
-    width: 1024px;
+    @include respond-to($bp-small) {
+      width: 640px;
+    }
+
+    @include respond-to($bp-medium) {
+      width: 1024px;
+    }
   }
 }
 

@@ -12,7 +12,7 @@
     float: left;
 
     a {
-      background-image: url('/app/themes/larsgraubner.de/assets/images/back.svg');
+      background-image: url('#{$image-path}/back.svg');
       background-position: left center;
       padding-left: 25px;
     }
@@ -22,7 +22,7 @@
     float: right;
 
     a {
-      background-image: url('/app/themes/larsgraubner.de/assets/images/next.svg');
+      background-image: url('#{$image-path}/next.svg');
       background-position: right center;
       padding-right: 25px;
     }

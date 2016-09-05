@@ -1,3 +1,7 @@
+nav {
+  position: relative;
+}
+
 .menu {
   list-style: none;
   padding: 0;
@@ -5,6 +9,11 @@
   font-family: $font-secondary;
   @extend %clearfix;
   float: right;
+  display: none;
+
+  @include respond-to($bp-medium) {
+    display: block;
+  }
 
   &__item {
     display: block;
@@ -39,5 +48,23 @@
   a {
     display: inline-block;
     color: lighten($color-black, 40%);
+  }
+}
+
+.menu-button {
+  display: block;
+  background: url('#{$image-path}/menu.svg') center center no-repeat;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  @extend %text-hide;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: -1px;
+
+  @include respond-to($bp-medium) {
+    display: none;
   }
 }

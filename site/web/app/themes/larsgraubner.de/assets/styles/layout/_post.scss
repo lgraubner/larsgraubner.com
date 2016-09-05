@@ -2,10 +2,9 @@
   &__title {
     font-family: $font-secondary;
     font-weight: normal;
-    @include font-size(50px);
+    @include font-size(46px);
     text-align: center;
     margin: 0 0 50px !important;
-    padding: 0 0.5em;
   }
 
   &__link {
@@ -21,10 +20,9 @@
     margin-bottom: 50px;
 
     img {
-      max-width: 120% !important;
+      max-width: 100%;
       height: auto;
       display: block;
-      margin-left: -10%;
     }
   }
 
@@ -40,11 +38,16 @@
         text-align: left;
       }
     }
+
+    img:not(.emoji) {
+      max-width: 100%;
+      display: block;
+      height: auto;
+      margin: 40px 0;
+    }
   }
 
   &__footer {
-    background: #f9f9f9;
-    padding: 40px 0;
     margin-top: 100px;
   }
 

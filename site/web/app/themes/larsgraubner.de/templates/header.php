@@ -12,6 +12,7 @@
       </h4>
     <?php endif; ?>
     <nav role="navigation">
+        <button class="menu-button">Menu</button>
       <?php
       if (has_nav_menu('header_navigation')) :
         wp_nav_menu(['theme_location' => 'header_navigation']);

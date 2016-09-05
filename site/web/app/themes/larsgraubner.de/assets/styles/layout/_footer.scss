@@ -1,5 +1,5 @@
 .footer {
-  padding: 80px 0 100px;
+  padding: 100px 0;
   text-align: center;
 
   .rss {
@@ -9,7 +9,7 @@
       color: $color-black-lighter;
       line-height: 40px;
       padding-left: 30px;
-      background: url('/app/themes/larsgraubner.de/assets/images/rss.svg') left center no-repeat;
+      background: url('#{$image-path}/rss.svg') left center no-repeat;
       background-size: auto 100%;
     }
   }

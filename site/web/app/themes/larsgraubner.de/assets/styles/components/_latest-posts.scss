@@ -2,10 +2,6 @@
   font-family: $font-secondary;
   @include font-size(22px);
 
-  h2 {
-    margin-bottom: 2em !important;
-  }
-
   ul {
     list-style: none;
     padding: 0;
