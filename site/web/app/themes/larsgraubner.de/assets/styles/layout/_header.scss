@@ -1,15 +1,19 @@
 .header {
   @extend %clearfix;
-  margin: 50px 0 80px;
+  margin: 20px 0 40px;
   line-height: 35px;
+
+  @include respond-to($bp-small) {
+    margin: 50px 0 80px;
+  }
 
   .inner {
     @include respond-to($bp-small) {
-      width: 640px;
+      width: 680px;
     }
 
-    @include respond-to($bp-medium) {
-      width: 1024px;
+    @include respond-to($bp-large) {
+      width: 960px;
     }
   }
 }
@@ -18,9 +22,13 @@
   font-family: $font-secondary;
   letter-spacing: 0.17em;
   text-transform: uppercase;
-  @include font-size(24px);
+  @include font-size(20px);
   float: left;
   margin: 0;
+
+  @include respond-to($bp-small) {
+    @include font-size(24px);
+  }
 
   a {
     color: $color-black;

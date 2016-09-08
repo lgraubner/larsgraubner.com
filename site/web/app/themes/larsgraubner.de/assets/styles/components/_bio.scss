@@ -1,16 +1,28 @@
 .bio {
-  @extend %clearfix;
-  border-top: 2px solid #ccc;
-  padding-top: 40px;
+  position: relative;
+  @include font-size(16px);
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+    @include font-size(22px);
+    margin: 0 0 35px;
+    font-family: $font-secondary;
+  }
 
   .portrait {
-    margin: 0 35px 0 0;
-    width: 90px;
-    height: 90px;
-    float: left;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    margin-bottom: 0;
   }
 
   &__text {
+    padding-left: 85px;
+
     p {
       margin: 0;
     }

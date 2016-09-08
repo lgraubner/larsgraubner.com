@@ -28,22 +28,13 @@
       @include font-size(30px);
     }
 
-    &.twitter h2 {
-      background: url('#{$image-path}/twitter.svg') right center no-repeat;
-      background-size: auto 100%;
-      padding: 0 55px;
-      display: inline-block;
-    }
-
     .button {
       margin: 30px 0 0;
     }
   }
 
   .twitter {
-    display: none;
     min-height: 350px;
-    background: lighten(#55acee, 35%);
 
     .loading-animation {
       margin-top: 80px;

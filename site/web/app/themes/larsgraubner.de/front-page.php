@@ -11,7 +11,7 @@
     </div>
 </section>
 
-<section class="twitter section section--gray">
+<?php /*<section class="twitter section section--gray">
   <div class="inner">
       <h2>Recently on Twitter</h2>
       <input type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce('lg_twitter_nonce'); ?>" />
@@ -19,7 +19,7 @@
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/loading.svg" width="40" alt="loading..." class="loading-animation">
       </div>
   </div>
-</section>
+</section>*/ ?>
 
 <?php
 $args = array(

@@ -11,7 +11,7 @@ nav {
   float: right;
   display: none;
 
-  @include respond-to($bp-medium) {
+  @include respond-to($bp-large) {
     display: block;
   }
 
@@ -62,9 +62,9 @@ nav {
   padding: 0;
   position: absolute;
   right: 0;
-  top: -1px;
+  top: -2px;
 
-  @include respond-to($bp-medium) {
+  @include respond-to($bp-large) {
     display: none;
   }
 }

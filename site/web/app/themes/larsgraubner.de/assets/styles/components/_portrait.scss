@@ -6,29 +6,9 @@
   margin: 0 auto 60px;
   border: 3px solid rgba(0, 0, 0, 0.05);
   box-sizing: content-box;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-
-  .home &:hover {
-    animation-name: push;
-    animation-duration: 0.3s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-  }
 
   img {
     width: 100%;
     height: auto;
-  }
-}
-
-@keyframes push {
-  50% {
-    transform: scale(0.8);
-  }
-
-  100% {
-    transform: scale(1);
   }
 }

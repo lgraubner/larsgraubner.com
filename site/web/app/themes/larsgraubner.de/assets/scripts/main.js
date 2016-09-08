@@ -1,8 +1,7 @@
 // eslint-disable-next-line
-import $ from 'jquery';
 import 'whatwg-fetch';
 import 'es6-promise';
-import Loader from './Loader';
+import load from './loader';
 import common from './modules/common';
 import twitter from './modules/twitter';
 
@@ -11,4 +10,12 @@ const modules = [
   twitter,
 ];
 
-$(document).ready(() => new Loader(modules).initModules());
+const ready = (fn) => {
+  if (document.readyState !== 'loading') {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+};
+
+ready(() => load(modules));
