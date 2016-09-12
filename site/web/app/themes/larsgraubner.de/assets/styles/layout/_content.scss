@@ -1,16 +1,25 @@
 .content {
   @include font-size(17px);
+  margin-top: 20px;
+
+  @include respond-to($bp-small) {
+    margin-top: 50px;
+  }
 
   p {
     margin: 1.5em 0;
     line-height: 1.75em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     a {
       font-weight: bold;
     }
   }
 
-  body & p:not(.nodrop):first-child:first-letter {
+  body:not(.search) & p:not(.nodrop):first-child:first-letter {
     float: left;
     padding: 3px 6px 0 0;
     @include font-size(55px);
@@ -40,9 +49,13 @@
   h3:not([class]),
   h4:not([class]),
   h5:not([class]) {
-    margin: 2em 0 1em;
+    margin: 1.5em 0 0.75em;
     font-weight: normal;
     font-family: $font-secondary;
+
+    @include respond-to($bp-small) {
+      margin: 2em 0 1em;
+    }
   }
 
   h2:not([class]) {
@@ -58,10 +71,14 @@
   }
 
   pre {
-    border-radius: 0;
-    margin: 2.5em 0;
+    border-radius: $border-radius;
+    margin: 1.5em 0;
     @include font-size(14.5px);
     background: $color-black;
+
+    @include respond-to($bp-small) {
+      margin: 2.5em 0;
+    }
   }
 
   a[href]:not([class]) {
@@ -75,11 +92,28 @@
     }
   }
 
-  img:not([class]) {
+  img:not(.emoji) {
     max-width: 100%;
-    height: auto;
     display: block;
+    height: auto;
   }
 
-  /* TODO: Quote styles (Twitter, Testimonials, Post) */
+  .image {
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+    height: 0;
+
+    @include respond-to($bp-small) {
+      margin: 40px 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 }

@@ -12,16 +12,30 @@
   }
 
   .portrait {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    left: 0;
-    bottom: 10px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 0;
+
+    @include respond-to($bp-small) {
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      width: 60px;
+      height: 60px;
+    }
+
+    img {
+      margin: 0;
+    }
   }
 
   &__text {
-    padding-left: 85px;
+    margin-top: 20px;
+
+    @include respond-to($bp-small) {
+      padding-left: 85px;
+      margin-top: 0;
+    }
 
     p {
       margin: 0;

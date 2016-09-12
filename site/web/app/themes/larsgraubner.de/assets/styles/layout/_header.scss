@@ -1,10 +1,12 @@
 .header {
   @extend %clearfix;
-  margin: 20px 0 40px;
+  padding: 10px 0;
   line-height: 35px;
 
   @include respond-to($bp-small) {
+    padding: 15px 0;
     margin: 50px 0 80px;
+    margin: 0;
   }
 
   .inner {

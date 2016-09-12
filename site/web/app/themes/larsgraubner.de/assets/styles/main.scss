@@ -9,6 +9,7 @@
 // @import '../vendor/file';
 @import '../../node_modules/normalize.css/normalize';
 @import '../../node_modules/prismjs/themes/prism-okaidia';
+@import 'vendor/headroom';
 
 @import 'base/reset';
 @import 'base/print';
@@ -22,7 +23,7 @@
 @import 'layout/content';
 @import 'layout/post-list';
 @import 'layout/footer';
-@import 'layout/common';
+@import 'layout/search';
 
 @import 'components/date';
 @import 'components/button';

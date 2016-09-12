@@ -11,7 +11,7 @@
     <?php else: ?>
       </h4>
     <?php endif; ?>
-    <nav role="navigation">
+    <nav role="navigation" class="menu-wrapper">
         <button class="menu-button">Menu</button>
       <?php
       if (has_nav_menu('header_navigation')) :

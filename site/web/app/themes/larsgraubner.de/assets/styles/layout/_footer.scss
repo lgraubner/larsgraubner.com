@@ -1,6 +1,10 @@
 .footer {
-  padding: 100px 0;
+  padding: 60px 0;
   text-align: center;
+
+  @include respond-to($bp-small) {
+    padding: 100px 0;
+  }
 
   .rss {
     font-family: $font-secondary;

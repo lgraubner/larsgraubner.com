@@ -1,15 +1,14 @@
+<?php while (have_posts()) : the_post(); ?>
 <section class="intro section">
     <div class="inner">
         <div class="portrait">
-          <?php // @TODO: hover effect ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/lars@2x.jpg" alt="Lars Graubner" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/lars@2x.jpg" class="portrait__image" alt="Lars Graubner" />
         </div>
-        <p>I'm building web sites and web applications aiming for clean and efficient code to make the web even more awesome. My daily business includes the use of Javscript, Node, React and Wordpress.</p>
-
-        <p>I'm building web sites and web applications aiming for clean and efficient code to make the web even more awesome. My daily business includes the use of Javscript, Node, React and Wordpress. <a href="<?php echo get_page_link(get_page_by_path('blog')); ?>">My personal blog</a> documents learnings and enlightments I have had as well as other useful stuff.</p>
+        <?php the_content(); ?>
         <a href="<?php echo get_page_link(get_page_by_path('about')); ?>" class="button">Learn more about me</a>
     </div>
 </section>
+<?php endwhile; ?>
 
 <?php /*<section class="twitter section section--gray">
   <div class="inner">

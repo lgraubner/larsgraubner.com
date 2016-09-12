@@ -1,14 +1,21 @@
 .portrait {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto 60px;
+  margin: 0 auto 30px;
   border: 3px solid rgba(0, 0, 0, 0.05);
   box-sizing: content-box;
+
+  @include respond-to($bp-small) {
+    margin-bottom: 50px;
+    width: 120px;
+    height: 120px;
+  }
 
   img {
     width: 100%;
     height: auto;
+    margin: 0 !important;
   }
 }

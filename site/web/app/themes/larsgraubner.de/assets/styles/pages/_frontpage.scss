@@ -6,12 +6,20 @@
   }
 
   .header {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+
+    @include respond-to($bp-small) {
+      margin-bottom: 60px;
+    }
   }
 
   .section {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     text-align: center;
+
+    @include respond-to($bp-small) {
+      margin-bottom: 100px;
+    }
 
     &:last-of-type {
       margin-bottom: 0;
@@ -29,15 +37,11 @@
     }
 
     .button {
-      margin: 30px 0 0;
-    }
-  }
+      margin: 15px 0 0;
 
-  .twitter {
-    min-height: 350px;
-
-    .loading-animation {
-      margin-top: 80px;
+      @include respond-to($bp-small) {
+        margin-top: 30px;
+      }
     }
   }
 }

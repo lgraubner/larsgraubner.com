@@ -2,9 +2,14 @@
   &__title {
     font-family: $font-secondary;
     font-weight: normal;
-    @include font-size(46px);
+    @include font-size(28px);
     text-align: center;
-    margin: 0 0 50px !important;
+    margin: 0 0 30px;
+
+    @include respond-to($bp-small) {
+      margin-bottom: 50px;
+      @include font-size(46px);
+    }
   }
 
   &__link {
@@ -17,7 +22,11 @@
   }
 
   &__thumb {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @include respond-to($bp-small) {
+      margin-bottom: 50px;
+    }
 
     img {
       max-width: 100%;
@@ -28,7 +37,11 @@
 
   &__content {
     .button {
-      margin-top: 1.5em;
+      margin-top: 0.5em;
+
+      @include respond-to($bp-small) {
+        margin-top: 1.5em;
+      }
     }
 
     &--excerpt {
@@ -38,17 +51,14 @@
         text-align: left;
       }
     }
-
-    img:not(.emoji) {
-      max-width: 100%;
-      display: block;
-      height: auto;
-      margin: 40px 0;
-    }
   }
 
   &__footer {
-    margin-top: 100px;
+    margin-top: 60px;
+
+    @include respond-to($bp-small) {
+      margin-top: 100px;
+    }
   }
 
   .date {

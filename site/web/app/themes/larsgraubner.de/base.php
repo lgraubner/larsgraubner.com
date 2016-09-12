@@ -12,10 +12,8 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
     <div class="wrap container" role="document">
-      <main class="main">
-        <div class="content">
-          <?php include Wrapper\template_path(); ?>
-        </div>
+      <main class="content">
+        <?php include Wrapper\template_path(); ?>
       </main>
     </div>
     <?php

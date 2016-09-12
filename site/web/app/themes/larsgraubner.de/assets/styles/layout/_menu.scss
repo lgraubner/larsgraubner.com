@@ -1,30 +1,45 @@
-nav {
+.menu-wrapper {
   position: relative;
 }
 
 .menu {
   list-style: none;
-  padding: 0;
   margin: 0;
   font-family: $font-secondary;
   @extend %clearfix;
-  float: right;
   display: none;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
+  padding: 15px 20px;
+  position: absolute;
+  top: 40px;
+  right: 0;
 
   @include respond-to($bp-large) {
+    display: block;
+    float: right;
+    padding: 0;
+    background: transparent;
+    position: relative;
+    box-shadow: none;
+    top: 0;
+  }
+
+  &--visible {
     display: block;
   }
 
   &__item {
     display: block;
-    float: left;
-    margin-left: 2em;
     text-transform: uppercase;
     @include font-size(14px);
     letter-spacing: .15em;
+    text-align: right;
 
-    &--active {
-
+    @include respond-to($bp-large) {
+      float: left;
+      margin-left: 2em;
+      text-align: left;
     }
   }
 
@@ -32,22 +47,6 @@ nav {
     color: $color-black;
     display: block;
     padding: 0 10px;
-  }
-}
-
-#menu-footer-nav {
-  float: none;
-  text-align: center;
-
-  .menu__item {
-    display: inline-block;
-    float: none;
-    margin: 0 1em;
-  }
-
-  a {
-    display: inline-block;
-    color: lighten($color-black, 40%);
   }
 }
 

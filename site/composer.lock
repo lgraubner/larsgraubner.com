@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eaf252e6448cbf3f0230cf0d870eb8a5",
-    "content-hash": "b1c78dd12369814b59a4be06130a9b4b",
+    "hash": "428ed0175bbd113fd0fdb4ff2637ccf2",
+    "content-hash": "8a8471b5cb7a26e2e02c594a744cee35",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -347,16 +347,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.3.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "9ca5644c536654e9509b9d257f53c58630eb2a6a"
+                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/9ca5644c536654e9509b9d257f53c58630eb2a6a",
-                "reference": "9ca5644c536654e9509b9d257f53c58630eb2a6a",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
                 "shasum": ""
             },
             "require": {
@@ -368,7 +368,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -393,7 +393,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-06-14 14:14:52"
+            "time": "2016-09-01 10:05:43"
         },
         {
             "name": "wpackagist-plugin/all-in-one-seo-pack",
@@ -476,6 +476,26 @@
             "homepage": "https://wordpress.org/plugins/cmb2/"
         },
         {
+            "name": "wpackagist-plugin/force-regenerate-thumbnails",
+            "version": "2.0.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/force-regenerate-thumbnails/",
+                "reference": "tags/2.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/force-regenerate-thumbnails.2.0.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/force-regenerate-thumbnails/"
+        },
+        {
             "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
             "version": "4.9.3.1",
             "source": {
@@ -534,21 +554,41 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/relevanssi/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-sweep",
+            "version": "1.0.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-sweep/",
+                "reference": "tags/1.0.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-sweep.1.0.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-sweep/"
         }
     ],
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.6.2",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "4edb770cb853def6e60c93abb088ad5ac2010c83"
+                "reference": "571e27b6348e5b3a637b2abc82ac0d01e6d7bbed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/4edb770cb853def6e60c93abb088ad5ac2010c83",
-                "reference": "4edb770cb853def6e60c93abb088ad5ac2010c83",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/571e27b6348e5b3a637b2abc82ac0d01e6d7bbed",
+                "reference": "571e27b6348e5b3a637b2abc82ac0d01e6d7bbed",
                 "shasum": ""
             },
             "require": {
@@ -613,7 +653,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-07-13 23:29:13"
+            "time": "2016-09-01 23:53:02"
         }
     ],
     "aliases": [],

@@ -1,0 +1,11 @@
+.search-no-results .page-content {
+  text-align: center;
+  @include font-size(20px);
+}
+
+.search {
+  .relevanssi-query-term {
+    background: $color-primary;
+    color: $color-white;
+  }
+}
