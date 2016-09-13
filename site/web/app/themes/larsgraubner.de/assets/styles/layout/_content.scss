@@ -101,19 +101,30 @@
   .image {
     margin: 20px 0;
     position: relative;
-    overflow: hidden;
-    height: 0;
 
     @include respond-to($bp-small) {
       margin: 40px 0;
     }
 
+    &__caption {
+      color: #777;
+      @include font-size(16px);
+      font-style: italic;
+      margin-top: 15px;
+    }
+
+    a {
+      display: block;
+      border: 0 !important;
+    }
+
     img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
       position: absolute;
       top: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
