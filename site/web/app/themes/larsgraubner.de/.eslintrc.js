@@ -7,5 +7,6 @@ module.exports = {
     "location": false,
     "fetch": false,
     "lg": false,
+    "Image": false
   },
 }

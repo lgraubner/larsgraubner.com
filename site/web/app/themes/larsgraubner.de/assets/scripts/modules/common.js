@@ -4,6 +4,8 @@ import twemoji from 'twemoji';
 import $ from 'jquery';
 import Headroom from 'headroom.js';
 
+import loadImage from '../helpers/load-image';
+
 export default {
   init() {
     // high light code snippets
@@ -41,16 +43,18 @@ export default {
   },
 
   initImageLazyload() {
-    $('.image').each(function () {
-      const $img = $(this).find('img');
-      const imgSrc = $img.attr('data-orig');
-      // eslint-disable-next-line
-      const replace = new Image();
-      replace.onload = () => {
-        $img.attr('src', imgSrc);
-        $(this).addClass('image--loaded');
-      };
-      replace.src = imgSrc;
-    });
+    const images = [...document.querySelectorAll('.image img')];
+    if (images.length) {
+      images.map((image) => {
+        const url = image.getAttribute('data-orig');
+        return loadImage(url).then((i) => {
+          image.setAttribute('src', i.src);
+          image.classList.add('loaded');
+        }).catch((err) => {
+          console.error(err);
+          image.classList.add('error');
+        });
+      });
+    }
   },
 };
