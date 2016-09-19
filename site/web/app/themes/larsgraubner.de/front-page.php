@@ -10,16 +10,6 @@
 </section>
 <?php endwhile; ?>
 
-<?php /*<section class="twitter section section--gray">
-  <div class="inner">
-      <h2>Recently on Twitter</h2>
-      <input type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce('lg_twitter_nonce'); ?>" />
-      <div id="tweet">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/loading.svg" width="40" alt="loading..." class="loading-animation">
-      </div>
-  </div>
-</section>*/ ?>
-
 <?php
 $args = array(
   'posts_per_page' => 5,

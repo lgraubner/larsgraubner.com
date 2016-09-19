@@ -3,11 +3,9 @@ import 'whatwg-fetch';
 import 'es6-promise';
 import load from './loader';
 import common from './modules/common';
-import twitter from './modules/twitter';
 
 const modules = [
   common,
-  twitter,
 ];
 
 const ready = (fn) => {

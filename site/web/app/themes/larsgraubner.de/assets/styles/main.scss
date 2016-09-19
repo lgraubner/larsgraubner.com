@@ -8,7 +8,6 @@
 // import vendor styles
 // @import '../vendor/file';
 @import '../../node_modules/normalize.css/normalize';
-@import '../../node_modules/prismjs/themes/prism-okaidia';
 @import 'vendor/headroom';
 
 @import 'base/reset';
@@ -31,7 +30,6 @@
 @import 'components/portrait';
 @import 'components/bio';
 @import 'components/pagination';
-@import 'components/tweet';
 @import 'components/intro';
 @import 'components/testimonial';
 @import 'components/searchform';

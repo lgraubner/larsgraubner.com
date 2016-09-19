@@ -1,4 +1,3 @@
-import Prism from 'prismjs';
 import twemoji from 'twemoji';
 // eslint-disable-next-line
 import $ from 'jquery';
@@ -8,9 +7,6 @@ import loadImage from '../helpers/load-image';
 
 export default {
   init() {
-    // high light code snippets
-    Prism.highlightAll();
-
     this.addEmojis();
     this.initMobileNav();
     this.initHeadroom();

@@ -7,7 +7,6 @@ $includes = [
     'lib/title.php',
     'lib/wrapper.php',
     'lib/page.php',
-    'lib/ajax/twitter.php',
     'lib/shortcodes.php',
 ];
 

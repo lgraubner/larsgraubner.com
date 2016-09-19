@@ -4,75 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "428ed0175bbd113fd0fdb4ff2637ccf2",
-    "content-hash": "8a8471b5cb7a26e2e02c594a744cee35",
+    "hash": "cdaaa78928b265cb2649868e1befd4c5",
+    "content-hash": "08908265df8ab04d37c2f71d14c7b26d",
     "packages": [
         {
-            "name": "abraham/twitteroauth",
-            "version": "0.6.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/abraham/twitteroauth.git",
-                "reference": "f7dec715c6e79e6085470b8b5d4dc2727afc5186"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/f7dec715c6e79e6085470b8b5d4dc2727afc5186",
-                "reference": "f7dec715c6e79e6085470b8b5d4dc2727afc5186",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpmd/phpmd": "2.3.*",
-                "phpunit/phpunit": "4.8.*",
-                "squizlabs/php_codesniffer": "2.3.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Abraham\\TwitterOAuth\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abraham Williams",
-                    "email": "abraham@abrah.am",
-                    "homepage": "https://abrah.am",
-                    "role": "Developer"
-                }
-            ],
-            "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
-            "homepage": "https://twitteroauth.com",
-            "keywords": [
-                "Twitter API",
-                "Twitter oAuth",
-                "api",
-                "oauth",
-                "rest",
-                "social",
-                "twitter"
-            ],
-            "time": "2016-04-20 23:23:26"
-        },
-        {
             "name": "composer/installers",
-            "version": "v1.0.25",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e"
+                "reference": "d78064c68299743e0161004f2de3a0204e33b804"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d78064c68299743e0161004f2de3a0204e33b804",
+                "reference": "d78064c68299743e0161004f2de3a0204e33b804",
                 "shasum": ""
             },
             "require": {
@@ -119,21 +65,26 @@
                 "MODX Evo",
                 "Mautic",
                 "OXID",
+                "Plentymarkets",
+                "RadPHP",
                 "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
                 "aimeos",
                 "annotatecms",
+                "attogram",
                 "bitrix",
                 "cakephp",
                 "chef",
+                "cockpit",
                 "codeigniter",
                 "concrete5",
                 "croogo",
                 "dokuwiki",
                 "drupal",
                 "elgg",
+                "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
@@ -150,29 +101,31 @@
                 "piwik",
                 "ppi",
                 "puppet",
+                "reindex",
                 "roundcube",
                 "shopware",
                 "silverstripe",
                 "symfony",
                 "typo3",
                 "wordpress",
+                "yawik",
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-13 19:46:30"
+            "time": "2016-08-13 20:53:52"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.6",
+            "version": "4.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "1fb4b67e331d82f9061eaf3fcbc94163db85c135"
+                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/1fb4b67e331d82f9061eaf3fcbc94163db85c135",
-                "reference": "1fb4b67e331d82f9061eaf3fcbc94163db85c135",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
+                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +149,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-08-16 18:32:04"
+            "time": "2016-09-07 15:01:47"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -397,16 +350,16 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-seo-pack",
-            "version": "2.3.9.1",
+            "version": "2.3.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-seo-pack/",
-                "reference": "tags/2.3.9.1"
+                "reference": "tags/2.3.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.3.9.1.zip",
-                "reference": "tags/2.3.9.1",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.3.9.2.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {

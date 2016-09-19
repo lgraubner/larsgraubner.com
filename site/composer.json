@@ -34,20 +34,19 @@
   ],
   "require": {
     "php": ">=5.6",
-    "composer/installers": "~1.0.12",
+    "composer/installers": "~1.2.0",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "4.6.0",
+    "johnpbloch/wordpress": "4.6.1",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/cachify": "2.2.4",
     "wpackagist-plugin/cmb2": "2.2.2.1",
-    "wpackagist-plugin/all-in-one-seo-pack": "2.3.9.1",
+    "wpackagist-plugin/all-in-one-seo-pack": "2.3.9.2",
     "wpackagist-plugin/backwpup": "3.3.4",
     "wpackagist-plugin/imsanity": "2.3.6",
     "wpackagist-plugin/google-analytics-dashboard-for-wp": "4.9.3.1",
     "wpackagist-plugin/relevanssi": "3.5.4",
     "wpackagist-plugin/wp-sweep": "1.0.8",
-    "abraham/twitteroauth": "^0.6.4",
     "wpackagist-plugin/force-regenerate-thumbnails": "2.0.6"
   },
   "require-dev": {
