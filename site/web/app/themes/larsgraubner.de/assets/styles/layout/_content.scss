@@ -7,15 +7,19 @@
   }
 
   p {
-    margin: 1.5em 0;
+    margin: 2em 0 0;
     line-height: 1.75em;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
 
     a {
       font-weight: bold;
+    }
+  }
+
+  h2,
+  h3,
+  h4 {
+    & + p {
+      margin-top: 1em;
     }
   }
 
@@ -49,13 +53,9 @@
   h3:not([class]),
   h4:not([class]),
   h5:not([class]) {
-    margin: 1.5em 0 0.75em;
+    margin: 1.5em 0 0;
     font-weight: 600;
     font-family: $font-secondary;
-
-    @include respond-to($bp-small) {
-      margin: 2em 0 1em;
-    }
   }
 
   h2:not([class]) {
@@ -111,6 +111,7 @@
   .image {
     margin: 20px 0;
     position: relative;
+    @extend %clearfix;
 
     @include respond-to($bp-small) {
       margin: 40px 0;

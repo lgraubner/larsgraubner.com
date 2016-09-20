@@ -8,7 +8,9 @@
         </h2>
         <?php if (has_post_thumbnail() && !is_search()): ?>
           <div class="post__thumb">
-            <?php the_post_thumbnail(); ?>
+              <a class="post__link" href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail(); ?>
+              </a>
           </div>
         <?php endif; ?>
         <div class="post__content post__content--excerpt">

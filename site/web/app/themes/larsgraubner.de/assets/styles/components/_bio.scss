@@ -3,6 +3,8 @@
   @include font-size(15px);
   max-width: 600px;
   margin: 0 auto;
+  font-family: $font-secondary;
+  line-height: 1.6em;
 
   .portrait {
     width: 80px;
@@ -12,7 +14,7 @@
     @include respond-to($bp-small) {
       position: absolute;
       left: 0;
-      bottom: 10px;
+      top: 5px;
       width: 60px;
       height: 60px;
     }

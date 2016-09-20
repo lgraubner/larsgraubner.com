@@ -37,10 +37,10 @@
     }
 
     .button {
-      margin: 15px 0 0;
+      margin: 1.5em 0 0;
 
       @include respond-to($bp-small) {
-        margin-top: 30px;
+        margin-top: 2.5em;
       }
     }
   }
