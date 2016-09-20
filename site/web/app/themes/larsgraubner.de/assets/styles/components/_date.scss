@@ -1,8 +1,9 @@
 .date {
   color: #777;
   margin-bottom: 15px;
-  @include font-size(16px);
+  @include font-size(15px);
   font-family: $font-secondary;
+  font-weight: 600;
 
   @include respond-to($bp-small) {
     margin-bottom: 25px;

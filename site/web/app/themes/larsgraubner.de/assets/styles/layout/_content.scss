@@ -50,7 +50,7 @@
   h4:not([class]),
   h5:not([class]) {
     margin: 1.5em 0 0.75em;
-    font-weight: normal;
+    font-weight: 600;
     font-family: $font-secondary;
 
     @include respond-to($bp-small) {
@@ -72,9 +72,19 @@
 
   pre {
     border-radius: $border-radius;
+    @include font-size(16px);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    white-space: pre-wrap;
+    font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+    overflow: auto;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.4em;
+  }
+
+  pre,
+  .gist {
     margin: 1.5em 0;
-    @include font-size(14.5px);
-    background: $color-black;
 
     @include respond-to($bp-small) {
       margin: 2.5em 0;
@@ -126,9 +136,5 @@
       left: 50%;
       transform: translateX(-50%);
     }
-  }
-
-  .twitter-tweet {
-    margin: 40px auto !important;
   }
 }

@@ -2,7 +2,7 @@
   margin: 40px auto 0;
   @extend %clearfix;
   overflow: hidden;
-  border: 1px solid $color-black-lighter;
+  border: 1px solid $color-black;
   font-family: $font-secondary;
   width: 100%;
   border-radius: $border-radius;
@@ -30,7 +30,7 @@
     display: block;
     float: right;
     border: 0;
-    background: $color-black-lighter;
+    background: $color-black;
     height: 100%;
     height: 50px;
     color: $color-white;

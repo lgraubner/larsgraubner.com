@@ -6,6 +6,7 @@
   list-style: none;
   margin: 0;
   font-family: $font-secondary;
+  font-weight: 600;
   @extend %clearfix;
   display: none;
   background: rgba(255, 255, 255, 0.97);

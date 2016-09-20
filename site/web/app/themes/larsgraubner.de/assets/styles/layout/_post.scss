@@ -1,7 +1,7 @@
 .post {
   &__title {
     font-family: $font-secondary;
-    font-weight: normal;
+    font-weight: 600;
     @include font-size(28px);
     text-align: center;
     margin: 0 0 30px;
@@ -54,10 +54,44 @@
   }
 
   &__footer {
-    margin-top: 60px;
+    margin-top: 40px;
 
     @include respond-to($bp-small) {
-      margin-top: 100px;
+      margin-top: 60px;
+    }
+
+    .tags {
+      margin-bottom: 40px;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        display: inline-block;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+
+      a {
+        display: inline-block;
+        color: rgba(0, 0, 0, 0.6) !important;
+        background: rgba(0, 0, 0, 0.05);
+        border: 0 !important;
+        font-family: $font-secondary;
+        @include font-size(13px);
+        border-radius: $border-radius;
+        padding: 5px 10px;
+        line-height: 22px;
+        transition: background 150ms ease-in-out !important;
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.6) !important;
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
     }
   }
 

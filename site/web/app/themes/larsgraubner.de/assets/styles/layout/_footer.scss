@@ -10,11 +10,12 @@
     font-family: $font-secondary;
 
     a {
-      color: $color-black-lighter;
+      color: $color-black;
       line-height: 40px;
       padding-left: 30px;
       background: url('#{$image-path}/rss.svg') left center no-repeat;
       background-size: auto 100%;
+      font-weight: 600;
     }
   }
 }

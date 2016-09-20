@@ -3,6 +3,7 @@
   p:first-of-type {
     @include font-size(19px);
     font-family: $font-secondary;
+    font-weight: 600;
 
     a {
       font-weight: normal;

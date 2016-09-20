@@ -1,5 +1,4 @@
 <div class="bio">
-    <div class="bio__title">The Author</div>
     <div class="portrait">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/lars@2x.jpg" class="portrait__image" alt="Lars Graubner" />
     </div>

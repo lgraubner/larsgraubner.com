@@ -19,6 +19,13 @@
     </div>
     <div class="post__footer">
         <div class="inner">
+          <?php
+          if(get_the_tag_list()) {
+              echo '<div class="tags">';
+              echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
+              echo '</div>';
+          }
+          ?>
           <?php get_template_part('templates/bio'); ?>
         </div>
     </div>

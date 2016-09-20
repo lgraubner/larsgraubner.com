@@ -12,12 +12,12 @@
   margin-bottom: 40px;
 
   @include respond-to($bp-small) {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
   }
 
   h1 {
     font-family: $font-secondary;
-    font-weight: normal;
+    font-weight: 600;
     @include font-size(30px);
     text-align: center;
     margin: 0;

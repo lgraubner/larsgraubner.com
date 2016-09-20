@@ -1,15 +1,8 @@
 .bio {
   position: relative;
-  @include font-size(16px);
+  @include font-size(15px);
   max-width: 600px;
   margin: 0 auto;
-
-  &__title {
-    text-align: center;
-    @include font-size(22px);
-    margin: 0 0 35px;
-    font-family: $font-secondary;
-  }
 
   .portrait {
     width: 80px;
