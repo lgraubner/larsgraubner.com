@@ -19,7 +19,7 @@ if ($latest->have_posts()) :
 ?>
 <section class="latest-posts section">
   <div class="inner">
-      <h2>Latest blog posts</h2>
+      <h2>Featured posts</h2>
       <?php
       $month = null;
       while ($latest->have_posts()) : $latest->the_post();

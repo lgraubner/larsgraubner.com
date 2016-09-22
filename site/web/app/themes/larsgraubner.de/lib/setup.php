@@ -37,6 +37,12 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
 
+  // default
+  add_image_size('normal', 680, 9999);
+  add_image_size('normal-retina', 1360, 9999);
+  add_image_size('small', 375, 9999);
+  add_image_size('small-retina', 750, 9999);
+
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
   add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
@@ -50,6 +56,12 @@ function setup() {
   // add_editor_style(Assets\asset_path('styles/main.css'));
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
+
+function adjust_image_sizes_attr( $sizes, $size ) {
+   $sizes = '(max-width: 1360px) 100vw, 1360px';
+   return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', __NAMESPACE__ . '\\adjust_image_sizes_attr', 10 , 2 );
 
 /**
  * Register sidebars
@@ -100,8 +112,13 @@ function assets() {
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
-function fonts_asset() {
+function font_assets() {
     echo '<script>' . file_get_contents(get_template_directory() . '/assets/scripts/fonts.js') . '</script>';
 }
 
-add_action('wp_head', __NAMESPACE__ . '\\fonts_asset');
+add_action('wp_head', __NAMESPACE__ . '\\font_assets');
+
+function js_detection() {
+    echo "<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>";
+}
+add_action('wp_head', __NAMESPACE__ . '\\js_detection');

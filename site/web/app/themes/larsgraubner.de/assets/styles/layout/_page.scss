@@ -1,13 +1,3 @@
-.inner {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include respond-to($bp-small) {
-    width: 680px;
-  }
-}
-
 .page-header {
   margin-bottom: 40px;
 

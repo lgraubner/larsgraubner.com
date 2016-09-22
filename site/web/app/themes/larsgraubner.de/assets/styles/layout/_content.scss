@@ -7,7 +7,7 @@
   }
 
   p {
-    margin: 2em 0 0;
+    margin: 1.5em 0 0;
     line-height: 1.75em;
 
     a {
@@ -18,7 +18,8 @@
   h2,
   h3,
   h4 {
-    & + p {
+    & + p,
+    & + figure + p {
       margin-top: 1em;
     }
   }
@@ -91,14 +92,30 @@
     }
   }
 
+  .gist {
+    a {
+      border: 0 !important;
+    }
+  }
+
   a[href]:not([class]) {
-    color: $color-primary;
+    color: $color-black;
     border-bottom: 1px solid currentcolor;
-    transition: border 150ms ease-in-out, border 150ms ease-in-out;
+    transition: color 100ms ease-in-out, border 100ms ease-in-out;
 
     &:hover {
-      color: $color-black;
+      color: $color-primary;
       border-color: currentcolor;
+    }
+  }
+
+  figure {
+    max-width: 100%;
+    margin-top: 2em;
+
+    a {
+      display: block;
+      border: 0 !important;
     }
   }
 
@@ -106,36 +123,14 @@
     max-width: 100%;
     display: block;
     height: auto;
+    margin: 0 auto;
   }
 
-  .image {
-    margin: 20px 0;
-    position: relative;
-    @extend %clearfix;
-
-    @include respond-to($bp-small) {
-      margin: 40px 0;
-    }
-
-    &__caption {
-      color: #777;
-      @include font-size(16px);
-      font-style: italic;
-      margin-top: 15px;
-    }
-
-    a {
-      display: block;
-      border: 0 !important;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  .wp-caption-text {
+    color: rgba(0, 0, 0, 0.7);
+    @include font-size(15px);
+    font-style: italic;
+    margin-top: 7px;
+    font-family: $font-secondary;
   }
 }

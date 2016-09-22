@@ -1,6 +1,7 @@
 <?php
 namespace Roots\Sage\Extras;
 use Roots\Sage\Setup;
+
 /**
  * Add <body> classes
  */
@@ -52,9 +53,9 @@ add_image_size('preload', 136, 9999);
 add_image_size('post-retina', 1360, 9999);
 
 function image_tag($html, $id, $caption, $title, $align, $url, $size, $alt) {
-    return sprintf('[image id="%s" url="%s"]', $id, $url);
+    return sprintf('[image id="%s" url="%s" size="%s"]', $id, $url, $size);
 }
-add_filter('image_send_to_editor', __NAMESPACE__ . '\\image_tag', 10, 8);
+//add_filter('image_send_to_editor', __NAMESPACE__ . '\\image_tag', 10, 8);
 
 function thumbnail_image_tag($html, $post_id, $post_thumbnail_id, $size, $attr) {
   return do_shortcode(sprintf('[image id="%s" thumb="false"]', $post_thumbnail_id));
@@ -70,4 +71,4 @@ function unautop_img($content) {
     );
     return $content;
 }
-add_filter('the_content', __NAMESPACE__ . '\\unautop_img', 99);
+//add_filter('the_content', __NAMESPACE__ . '\\unautop_img', 99);

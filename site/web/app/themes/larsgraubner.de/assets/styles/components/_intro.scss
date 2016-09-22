@@ -1,9 +1,14 @@
 .intro {
 
+  p {
+    margin-top: 1em;
+  }
+
   p:first-of-type {
     @include font-size(19px);
     font-family: $font-secondary;
     font-weight: 600;
+    margin-top: 0;
 
     a {
       font-weight: normal;

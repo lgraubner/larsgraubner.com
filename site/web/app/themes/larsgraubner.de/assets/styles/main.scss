@@ -8,6 +8,7 @@
 // import vendor styles
 // @import '../vendor/file';
 @import '../../node_modules/normalize.css/normalize';
+@import 'vendor/wordpress';
 @import 'vendor/headroom';
 
 @import 'base/reset';
@@ -15,6 +16,8 @@
 
 // import layouts, pages and components
 // @import 'components/mycomponent';
+@import 'layout/common';
+
 @import 'layout/header';
 @import 'layout/post';
 @import 'layout/menu';
@@ -23,6 +26,8 @@
 @import 'layout/post-list';
 @import 'layout/footer';
 @import 'layout/search';
+@import 'layout/single-post';
+
 
 @import 'components/date';
 @import 'components/button';

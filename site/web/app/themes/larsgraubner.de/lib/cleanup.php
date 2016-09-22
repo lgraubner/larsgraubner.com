@@ -1,13 +1,15 @@
 <?php
+namespace Roots\Sage\Cleanup;
+
 // remove wordpress scripts
 function remove_scripts() {
   if (!is_admin()) {
     wp_dequeue_script('wp-embed');
   }
 }
-add_action('wp_footer', 'remove_scripts');
+add_action('wp_footer', __NAMESPACE__ . '\\remove_scripts');
 
-function dm_cleanup () {
+function remove_actions() {
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'wlwmanifest_link');
     remove_action('wp_head', 'rsd_link');
@@ -21,10 +23,10 @@ function dm_cleanup () {
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
 }
-add_action('after_setup_theme', 'dm_cleanup');
+add_action('after_setup_theme', __NAMESPACE__ . '\\remove_actions');
 
 // Blacklist WordPress menu class names
-function dm_cleanup_menu( array $classes, $item, $args, $depth ) {
+function remove_menu_classes( array $classes, $item, $args, $depth ) {
     // $disallowed_class_names = array(
     //     "menu-item-object-{$item->object}",
     //     "menu-item-type-{$item->type}",
@@ -61,15 +63,9 @@ function dm_cleanup_menu( array $classes, $item, $args, $depth ) {
 
     return $classes;
 }
-add_filter( 'nav_menu_css_class', 'dm_cleanup_menu', 10, 4 );
+add_filter( 'nav_menu_css_class', __NAMESPACE__ . '\\remove_menu_classes', 10, 4 );
 
-function dm_cleanup_menu_id($var) {
+function remove_menu_id($var) {
   return '';
 }
-add_filter('nav_menu_item_id', 'dm_cleanup_menu_id', 100, 1);
-
-function dm_cleanup_admin_menu() {
-    // remove_menu_page( 'edit-comments.php' );
-    // remove_menu_page( 'edit.php' );
-}
-add_action( 'admin_menu', 'dm_cleanup_admin_menu' );
+add_filter('nav_menu_item_id', __NAMESPACE__ . '\\remove_menu_id', 100, 1);

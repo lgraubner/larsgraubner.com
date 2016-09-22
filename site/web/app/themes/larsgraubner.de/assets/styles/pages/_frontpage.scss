@@ -1,7 +1,7 @@
 .home {
   .content .inner {
     @include respond-to($bp-medium) {
-      width: 720px;
+      width: 680px;
     }
   }
 

@@ -1,6 +1,7 @@
 <?php
-add_action( 'cmb2_admin_init', 'cmb2_page_metaboxes' );
-function cmb2_page_metaboxes() {
+namespace Roots\Sage\Page;
+
+function cmb2_metaboxes() {
     $prefix = '_page_';
 
     $cmb = new_cmb2_box( array(
@@ -19,3 +20,4 @@ function cmb2_page_metaboxes() {
         'type'       => 'text',
     ) );
 }
+add_action( 'cmb2_admin_init', __NAMESPACE__ . '\\cmb2_metaboxes' );
