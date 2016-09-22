@@ -1,17 +1,13 @@
 .intro {
-
   p {
-    margin-top: 1em;
-  }
-
-  p:first-of-type {
-    @include font-size(19px);
     font-family: $font-secondary;
-    font-weight: 600;
-    margin-top: 0;
+    margin-top: 1em;
+    @include font-size(18px);
 
-    a {
-      font-weight: normal;
+    &:first-of-type {
+      @include font-size(19px);
+      font-weight: 600;
+      margin-top: 0;
     }
   }
 }
