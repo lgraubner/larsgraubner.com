@@ -25,14 +25,9 @@
       margin-bottom: 0;
     }
 
-    &--gray {
-      background: #f9f9f9;
-      padding: 60px 0;
-    }
-
     h2 {
       text-align: center;
-      margin: 0;
+      margin: 0 0 1.5em;
       @include font-size(30px);
     }
 

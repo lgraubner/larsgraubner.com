@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cdaaa78928b265cb2649868e1befd4c5",
-    "content-hash": "08908265df8ab04d37c2f71d14c7b26d",
+    "hash": "2696fbf806dffb19a02699f46cc2754a",
+    "content-hash": "84e9cb08cf79e39063eef0cd4a516077",
     "packages": [
         {
             "name": "composer/installers",
@@ -389,6 +389,26 @@
             "homepage": "https://wordpress.org/plugins/backwpup/"
         },
         {
+            "name": "wpackagist-plugin/broken-link-checker",
+            "version": "1.11.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/broken-link-checker/",
+                "reference": "tags/1.11.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/broken-link-checker.1.11.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/broken-link-checker/"
+        },
+        {
             "name": "wpackagist-plugin/cachify",
             "version": "2.2.4",
             "source": {
@@ -429,6 +449,26 @@
             "homepage": "https://wordpress.org/plugins/cmb2/"
         },
         {
+            "name": "wpackagist-plugin/ewww-image-optimizer",
+            "version": "2.9.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
+                "reference": "tags/2.9.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.2.9.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/"
+        },
+        {
             "name": "wpackagist-plugin/force-regenerate-thumbnails",
             "version": "2.0.6",
             "source": {
@@ -450,16 +490,16 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
-            "version": "4.9.3.1",
+            "version": "4.9.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-dashboard-for-wp/",
-                "reference": "tags/4.9.3.1"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.4.9.3.1.zip",
-                "reference": "tags/4.9.3.1",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -469,24 +509,44 @@
             "homepage": "https://wordpress.org/plugins/google-analytics-dashboard-for-wp/"
         },
         {
-            "name": "wpackagist-plugin/imsanity",
-            "version": "2.3.6",
+            "name": "wpackagist-plugin/google-sitemap-generator",
+            "version": "4.0.8",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/imsanity/",
-                "reference": "trunk"
+                "url": "https://plugins.svn.wordpress.org/google-sitemap-generator/",
+                "reference": "tags/4.0.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/imsanity.zip",
-                "reference": "trunk",
+                "url": "https://downloads.wordpress.org/plugin/google-sitemap-generator.4.0.8.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/imsanity/"
+            "homepage": "https://wordpress.org/plugins/google-sitemap-generator/"
+        },
+        {
+            "name": "wpackagist-plugin/query-monitor",
+            "version": "2.13.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/query-monitor/",
+                "reference": "tags/2.13.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.2.13.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/query-monitor/"
         },
         {
             "name": "wpackagist-plugin/relevanssi",

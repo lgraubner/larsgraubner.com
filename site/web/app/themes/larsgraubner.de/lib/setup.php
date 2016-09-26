@@ -36,11 +36,10 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
+  set_post_thumbnail_size(300, 225, true);
 
   // default
-  add_image_size('normal', 680, 9999);
-  add_image_size('normal-retina', 1360, 9999);
-  add_image_size('small', 375, 9999);
+  add_image_size('large-retina', 1360, 9999);
   add_image_size('small-retina', 750, 9999);
 
   // Enable post formats

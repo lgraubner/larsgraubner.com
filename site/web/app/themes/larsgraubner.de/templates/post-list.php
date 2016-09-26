@@ -2,14 +2,14 @@
   <div class="inner">
     <?php while (have_posts()): the_post(); ?>
       <div class="post-list__item post">
-        <div class="date"><?php the_date(); ?></div>
+        <div class="date"><?php echo get_the_date(); ?></div>
         <h2 class="post__title">
           <a class="post__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h2>
         <?php if (has_post_thumbnail() && !is_search()): ?>
           <div class="post__thumb">
               <a class="post__link" href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail(680, 9999); ?>
               </a>
           </div>
         <?php endif; ?>
