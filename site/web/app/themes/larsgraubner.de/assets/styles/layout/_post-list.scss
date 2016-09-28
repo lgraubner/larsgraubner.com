@@ -1,4 +1,8 @@
 .post-list {
+  .post__thumb {
+    margin-bottom: 30px;
+  }
+
   .post__title {
     @include font-size(28px);
 
@@ -8,7 +12,7 @@
   }
 
   .post {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 
     &:last-child {
       margin-bottom: 0;

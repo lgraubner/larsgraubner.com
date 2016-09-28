@@ -13,6 +13,15 @@
     a {
       font-weight: bold;
     }
+
+    code {
+      background: rgba(0, 0, 0, 0.05);
+      font-size: 0.8em;
+      font-family: $font-monospace;
+      color: rgba(0, 0, 0, 0.8);
+      border-radius: $border-radius;
+      padding: 0.3em;
+    }
   }
 
   h2,
@@ -77,7 +86,7 @@
     background: rgba(0, 0, 0, 0.05);
     padding: 20px;
     white-space: pre;
-    font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+    font-family: $font-monospace;
     overflow: auto;
     color: rgba(0, 0, 0, 0.8);
     line-height: 1.4em;

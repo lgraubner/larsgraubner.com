@@ -1,5 +1,4 @@
 import twemoji from 'twemoji';
-// eslint-disable-next-line
 import $ from 'jquery';
 import Headroom from 'headroom.js';
 
@@ -46,10 +45,7 @@ export default {
         return loadImage(url).then((i) => {
           image.setAttribute('src', i.src);
           image.classList.add('loaded');
-        }).catch((err) => {
-          console.error(err);
-          image.classList.add('error');
-        });
+        }).catch(() => image.classList.add('error'));
       });
     }
   },

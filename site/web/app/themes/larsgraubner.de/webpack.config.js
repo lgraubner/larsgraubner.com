@@ -163,18 +163,11 @@ const webpackConfig = {
       'bower_components',
     ],
   },
-  externals: {
-    jquery: 'jQuery',
-  },
   plugins: [
     new Clean([config.output.path]),
     new ExtractTextPlugin(stylesFilename, {
       allChunks: true,
       disable: (argv.watch === true),
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
     }),
   ],
   postcss: [

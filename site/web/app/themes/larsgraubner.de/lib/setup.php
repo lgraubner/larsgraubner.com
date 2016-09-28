@@ -36,9 +36,10 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  set_post_thumbnail_size(300, 225, true);
+  set_post_thumbnail_size(750, 470, true);
 
   // default
+  add_image_size('post-thumbnail-small', 300, 188, true);
   add_image_size('large-retina', 1360, 9999);
   add_image_size('small-retina', 750, 9999);
 
@@ -105,7 +106,10 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_register_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  // remove jQuery
+  wp_deregister_script('jquery');
+
+  wp_register_script('sage/js', Assets\asset_path('scripts/main.js'), [], null, true);
   wp_localize_script('sage/js', 'lg', array('ajaxurl' => admin_url('admin-ajax.php')));
   wp_enqueue_script('sage/js');
 }

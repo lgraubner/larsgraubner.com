@@ -1,4 +1,4 @@
-.latest-posts {
+.featured-posts {
   font-family: $font-secondary;
 
   .post-list {
@@ -18,10 +18,11 @@
     .date {
       margin-bottom: 0.3em;
       text-align: left;
+      @include font-size(15px);
     }
 
     &__title {
-      @include font-size(22px);
+      @include font-size(20px);
       margin-bottom: 0;
       text-align: left;
     }

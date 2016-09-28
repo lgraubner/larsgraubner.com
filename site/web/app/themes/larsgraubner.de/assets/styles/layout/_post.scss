@@ -4,10 +4,11 @@
     font-weight: 600;
     @include font-size(28px);
     text-align: center;
-    margin: 0 0 30px;
+    margin: 0 0 20px;
+    line-height: 1.15em;
 
     @include respond-to($bp-small) {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       @include font-size(46px);
     }
   }
@@ -23,9 +24,11 @@
 
   &__thumb {
     margin-bottom: 30px;
+    border-radius: $border-radius;
+    overflow: hidden;
 
     @include respond-to($bp-small) {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
     img {

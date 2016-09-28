@@ -18,7 +18,7 @@ $args = array(
 $latest = new WP_Query($args);
 if ($latest->have_posts()) :
 ?>
-<section class="latest-posts section">
+<section class="featured-posts section">
   <div class="inner">
       <h2>Featured posts</h2>
       <div class="post-list">

@@ -60,7 +60,7 @@ function image_tag($html, $id, $caption, $title, $align, $url, $size, $alt) {
 function thumbnail_image_tag($html, $post_id, $post_thumbnail_id, $size, $attr) {
   return do_shortcode(sprintf('[image id="%s" thumb="false"]', $post_thumbnail_id));
 }
-add_filter('post_thumbnail_html', __NAMESPACE__ . '\\thumbnail_image_tag', 20, 5);
+//add_filter('post_thumbnail_html', __NAMESPACE__ . '\\thumbnail_image_tag', 20, 5);
 
 // remove paragraphs form images
 function unautop_img($content) {
