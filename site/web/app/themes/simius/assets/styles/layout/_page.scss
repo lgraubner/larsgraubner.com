@@ -1,0 +1,20 @@
+.page-header {
+  margin-bottom: 60px;
+
+  @include respond-to($bp-small) {
+    margin-bottom: 80px;
+  }
+
+  h1 {
+    font-family: $font-secondary;
+    font-weight: 600;
+    @include font-size(30px);
+    text-align: center;
+    margin: 0;
+    padding: 0 0.5em;
+
+    @include respond-to($bp-small) {
+      @include font-size(50px);
+    }
+  }
+}

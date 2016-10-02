@@ -1,0 +1,12 @@
+.intro {
+  p {
+    margin-top: 1em;
+    @include font-size(17px);
+
+    &:first-of-type {
+      @include font-size(19px);
+      font-weight: 600;
+      margin-top: 0;
+    }
+  }
+}

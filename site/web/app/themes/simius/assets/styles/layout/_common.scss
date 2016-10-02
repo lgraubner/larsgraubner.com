@@ -1,0 +1,25 @@
+.inner {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond-to($bp-small) {
+    width: 610px;
+  }
+}
+
+::-moz-selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+::selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+a:not(.button):focus {
+  background-color: #FFF000;
+  color: $color-black !important;
+  outline: 0;
+}

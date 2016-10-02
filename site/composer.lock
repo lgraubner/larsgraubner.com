@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2696fbf806dffb19a02699f46cc2754a",
-    "content-hash": "84e9cb08cf79e39063eef0cd4a516077",
+    "hash": "0b44c8dc3583cb9af6731952482e34ae",
+    "content-hash": "3ed1bf10948a4059cf0812e94704dc4c",
     "packages": [
         {
             "name": "composer/installers",
@@ -450,15 +450,15 @@
         },
         {
             "name": "wpackagist-plugin/ewww-image-optimizer",
-            "version": "2.9.8",
+            "version": "2.9.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
-                "reference": "tags/2.9.8"
+                "reference": "tags/2.9.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.2.9.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.2.9.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -529,16 +529,16 @@
             "homepage": "https://wordpress.org/plugins/google-sitemap-generator/"
         },
         {
-            "name": "wpackagist-plugin/query-monitor",
-            "version": "2.13.1",
+            "name": "wpackagist-plugin/imsanity",
+            "version": "2.3.6",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/2.13.1"
+                "url": "https://plugins.svn.wordpress.org/imsanity/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.2.13.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/imsanity.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -546,7 +546,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/query-monitor/"
+            "homepage": "https://wordpress.org/plugins/imsanity/"
         },
         {
             "name": "wpackagist-plugin/relevanssi",

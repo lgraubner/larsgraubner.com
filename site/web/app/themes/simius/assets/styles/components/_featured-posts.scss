@@ -1,0 +1,41 @@
+.featured-posts {
+  font-family: $font-secondary;
+
+  .post-list {
+    @extend %clearfix;
+  }
+
+  .post {
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include respond-to($bp-small) {
+      float: left;
+      min-height: 280px;
+      width: 300px;
+      margin-bottom: 20px;
+    }
+
+    &:nth-child(even) {
+      @include respond-to($bp-small) {
+        margin-left: 60px;
+      }
+    }
+
+    .date {
+      margin-bottom: 0.3em;
+      text-align: left;
+      @include font-size(15px);
+    }
+
+    &__title {
+      @include font-size(20px);
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    &__thumb {
+      margin-bottom: 1em;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+.content {
+  @include font-size(17px);
+  margin-top: 20px;
+
+  @include respond-to($bp-small) {
+    margin-top: 50px;
+  }
+
+  p {
+    margin: 1.5em 0 0;
+    line-height: 1.75em;
+
+    a {
+      font-weight: bold;
+    }
+
+    code {
+      background: rgba(0, 0, 0, 0.05);
+      font-size: 0.8em;
+      font-family: $font-monospace;
+      color: rgba(0, 0, 0, 0.8);
+      border-radius: $border-radius;
+      padding: 0.3em;
+    }
+  }
+
+  h2,
+  h3,
+  h4 {
+    & + p,
+    & + figure + p {
+      margin-top: 1em;
+    }
+  }
+
+  body:not(.search):not(.legal-disclosure) & p:not(.nodrop):first-child:first-letter {
+    float: left;
+    padding: 3px 6px 0 0;
+    @include font-size(55px);
+    font-weight: bold;
+    line-height: 1em;
+  }
+
+  .emoji {
+     height: 1em;
+     width: 1em;
+     margin: 0 .05em 0 .1em;
+     vertical-align: -0.1em;
+  }
+
+  ol,
+  ul {
+    margin: 1.5em 0;
+    padding: 0 0 0 25px;
+    line-height: 1.75em;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]) {
+    margin: 1.5em 0 0;
+    font-weight: 600;
+    font-family: $font-secondary;
+  }
+
+  h2:not([class]) {
+    @include font-size(28px);
+  }
+
+  h3:not([class]) {
+    @include font-size(24px);
+  }
+
+  h4:not([class]) {
+    @include font-size(20px);
+  }
+
+  pre {
+    border-radius: $border-radius;
+    @include font-size(16px);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    white-space: pre;
+    font-family: $font-monospace;
+    overflow: auto;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.4em;
+  }
+
+  pre,
+  .gist {
+    margin: 1.5em 0;
+
+    @include respond-to($bp-small) {
+      margin: 2.5em 0;
+    }
+  }
+
+  .gist {
+    a {
+      border: 0 !important;
+    }
+  }
+
+  a[href]:not([class]) {
+    color: $color-black;
+    border-bottom: 1px solid currentcolor;
+    transition: color 100ms ease-in-out, border 100ms ease-in-out;
+
+    &:hover {
+      color: $color-primary;
+      border-color: currentcolor;
+    }
+  }
+
+  figure {
+    max-width: 100%;
+    margin-top: 2em;
+
+    a {
+      display: block;
+      border: 0 !important;
+    }
+  }
+
+  img:not(.emoji) {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .wp-caption-text {
+    color: rgba(0, 0, 0, 0.7);
+    @include font-size(15px);
+    font-style: italic;
+    margin-top: 10px;
+    font-family: $font-secondary;
+  }
+}
