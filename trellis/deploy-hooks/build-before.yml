@@ -11,7 +11,7 @@
     chdir: "{{ project.local_path }}/web/app/themes/simius"
 
 - name: Run npm build
-  command: npm build:prod
+  command: npm run build:prod
   connection: local
   args:
     chdir: "{{ project.local_path }}/web/app/themes/simius"
