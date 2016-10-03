@@ -1,5 +1,7 @@
 # {{ ansible_managed }}
 
+include h5bp/location/expires.conf;
+
 # Prevent PHP scripts from being executed inside the uploads folder.
 location ~* /app/uploads/.*\.php$ {
   deny all;
@@ -57,4 +59,3 @@ include h5bp/directive-only/x-ua-compatible.conf;
 include h5bp/directive-only/extra-security.conf;
 include h5bp/location/cross-domain-fonts.conf;
 include h5bp/location/protect-system-files.conf;
-include h5bp/location/expires.conf;
