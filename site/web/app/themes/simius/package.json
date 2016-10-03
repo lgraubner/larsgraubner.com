@@ -4,13 +4,13 @@
   "description": "Lars Graubner's personal blog.",
   "author": {
     "name": "Lars Graubner",
-    "email": "mail@larsgraubner.de",
-    "url": "https://larsgraubner.de"
+    "email": "mail@larsgraubner.com",
+    "url": "https://larsgraubner.com"
   },
-  "homepage": "https://larsgraubner.de",
+  "homepage": "https://larsgraubner.com",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:larsgraubner/larsgraubner.de.git"
+    "url": "git@bitbucket.org:larsgraubner/larsgraubner.com.git"
   },
   "dependencies": {
     "es6-promise": "^3.2.1",

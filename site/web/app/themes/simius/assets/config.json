@@ -8,8 +8,8 @@
   },
   "output": {
     "path": "dist",
-    "publicPath": "/app/themes/larsgraubner.de/dist/"
+    "publicPath": "/app/themes/larsgraubner.com/dist/"
   },
-  "devUrl": "http://larsgraubner.de.dev",
+  "devUrl": "http://larsgraubner.com.dev",
   "devPort": 3000
 }
