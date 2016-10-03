@@ -30,4 +30,3 @@
     - { role: wp-cli, tags: [wp-cli] }
     - { role: letsencrypt, tags: [letsencrypt], when: letsencrypt_enabled }
     - { role: wordpress-setup, tags: [wordpress, wordpress-setup, letsencrypt] }
-    - { role: bedrock-site-protect, tags: [wordpress, wordpress-setup] }

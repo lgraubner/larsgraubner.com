@@ -18,6 +18,3 @@ wordpress_sites:
       provider: letsencrypt
     cache:
       enabled: true
-    htpasswd:
-      name: lgraubner
-      password: eLA9y6xcGRRQXLkq

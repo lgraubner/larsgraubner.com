@@ -6,7 +6,6 @@ wordpress_sites:
   larsgraubner.com:
     site_hosts:
       - larsgraubner.com.dev
-      - larsgraubner.de.dev
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
     admin_user: lgraubner
     admin_email: mail@larsgraubner.de
