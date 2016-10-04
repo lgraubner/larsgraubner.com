@@ -5,8 +5,9 @@
 wordpress_sites:
   larsgraubner.com:
     site_hosts:
-      - larsgraubner.com
-    www_redirect: true
+      - canonical: larsgraubner.com
+        redirects:
+          - www.larsgraubner.com
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
     repo: git@bitbucket.org:larsgraubner/larsgraubner.com.git # replace with your Git repo URL
     repo_subtree_path: site # relative path to your Bedrock/WP directory in your repo

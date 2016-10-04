@@ -1,5 +1,20 @@
 ### HEAD
+* Enable per-site setup for permalink structure ([#661](https://github.com/roots/trellis/pull/661))
+* WP 4.6 Compat: set WP_HOME/SITEURL directly ([#647](https://github.com/roots/trellis/pull/647))
+* Create WordPress php-fpm conf after web_root exists ([#642](https://github.com/roots/trellis/pull/642))
+* Fix #637 - Fix condition for permalink structure task ([#643](https://github.com/roots/trellis/pull/643))
+* Fix #639 - WP 4.6 compatibility: update WP-CLI to 0.24.1 ([#640](https://github.com/roots/trellis/pull/640))
+
+### 0.9.8: August 14th, 2016
+* Ansible 2.1 compatibility fixes ([#631](https://github.com/roots/trellis/pull/631))
+* [BREAKING] Upgrade Ubuntu from 14.04 Trusty to 16.04 Xenial ([#626](https://github.com/roots/trellis/pull/626))
+* [BREAKING] Add `vault_users` for easier password management ([#614](https://github.com/roots/trellis/pull/614))
+* Fix #581 - Use WP-CLI to run WP cron ([#583](https://github.com/roots/trellis/pull/583))
+* [BREAKING] Require explicit redirects and drop `www_redirect` ([#622](https://github.com/roots/trellis/pull/622))
+* Fix #612 - Bump nginx_fastcgi_buffer_size to `8k` ([#620](https://github.com/roots/trellis/pull/620))
+* Setup permalink structure for multisite installs too ([#617](https://github.com/roots/trellis/pull/617))
 * Fix `wp_home` option in Multisite after install in development ([#616](https://github.com/roots/trellis/pull/616))
+* Add `current_path` var and default to enable custom current release path ([#607](https://github.com/roots/trellis/pull/607))
 * Add Vagrant post up message ([#602](https://github.com/roots/trellis/pull/602))
 * Fix #468 - Use curl to install wp-cli tab completions ([#593](https://github.com/roots/trellis/pull/593))
 * Require Ansible 2.0.2 and remove deploy_helper ([#579](https://github.com/roots/trellis/pull/579))
