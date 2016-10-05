@@ -2,7 +2,7 @@
 # List each machine only once per [group], even if it will host multiple sites.
 
 [production]
-46.101.105.143
+188.166.166.212
 
 [web]
-46.101.105.143
+188.166.166.212
