@@ -101,10 +101,6 @@ function display_sidebar() {
 function assets() {
   wp_enqueue_style('simius', Assets\asset_path('styles/main.css'), false, null);
 
-  if (is_single() && comments_open() && get_option('thread_comments')) {
-    wp_enqueue_script('comment-reply');
-  }
-
   // remove jQuery
   wp_deregister_script('jquery');
 
@@ -139,3 +135,8 @@ function redirect_attachment_page() {
     }
 }
 add_action( 'template_redirect', __NAMESPACE__ . '\\redirect_attachment_page' );
+
+function add_rss_head() {
+    echo '<link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed" href="'.get_bloginfo('rss2_url').'" />';
+}
+add_action('wp_head', __NAMESPACE__ . '\\add_rss_head');

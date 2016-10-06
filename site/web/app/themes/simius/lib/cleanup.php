@@ -24,6 +24,8 @@ function remove_actions() {
 
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+    remove_action('wp_head', 'feed_links_extra', 3 );
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\remove_actions');
 
@@ -77,19 +79,21 @@ add_filter('nav_menu_item_id', __NAMESPACE__ . '\\remove_menu_id', 100, 1);
 add_filter('xmlrpc_enabled', '__return_false');
 
 // remove wp emoji dns prefetch
-function remove_dns_prefetch( $hints, $relation_type ) {
+function dns_prefetch_list( $hints, $relation_type ) {
     if ( 'dns-prefetch' === $relation_type ) {
-        return array_diff( wp_dependencies_unique_hosts(), $hints );
+        return ['//www.google-analytics.com'];
     }
 
     return $hints;
 }
-
-add_filter( 'wp_resource_hints', __NAMESPACE__ . '\\remove_dns_prefetch', 10, 2 );
+add_filter( 'wp_resource_hints', __NAMESPACE__ . '\\dns_prefetch_list', 10, 2 );
 
 // disable rest API
 add_filter('json_enabled', '__return_false');
 add_filter('json_jsonp_enabled', '__return_false');
 
-// disable comments rss feed
-add_filter('feed_links_show_comments_feed', '__return_false');
+function remove_recent_comments_style() {
+    global $wp_widget_factory;
+    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+}
+add_action('widgets_init', __NAMESPACE__ . '\\remove_recent_comments_style');
