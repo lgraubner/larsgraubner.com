@@ -1,5 +1,6 @@
 <?php
 namespace Simius\Titles;
+
 /**
  * Page titles
  */

@@ -19,6 +19,7 @@ function body_class($classes) {
   return $classes;
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
+
 /**
  * Clean up the_excerpt()
  */
@@ -27,6 +28,9 @@ function excerpt_more() {
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
+/**
+ * Get pagination nav
+ */
 function pagination_nav() {
     global $wp_query;
 
@@ -40,6 +44,9 @@ function pagination_nav() {
 <?php }
 }
 
+/**
+ * Prettify search url
+ */
 function search_url_rewrite_rule() {
     if ( is_search() && !empty($_GET['s'])) {
         wp_redirect(home_url("/search/") . urlencode(get_query_var('s')));
@@ -47,3 +54,18 @@ function search_url_rewrite_rule() {
     }
 }
 add_action('template_redirect', __NAMESPACE__ . '\\search_url_rewrite_rule');
+
+/**
+ * Remove wp emoji dns prefetch and add own prefetch url's
+ */
+function dns_prefetch_list( $hints, $relation_type ) {
+    if ( 'dns-prefetch' === $relation_type ) {
+        return array(
+            '//www.google-analytics.com',
+            '//twemoji.maxcdn.com',
+        );
+    }
+
+    return $hints;
+}
+add_filter( 'wp_resource_hints', __NAMESPACE__ . '\\dns_prefetch_list', 10, 2 );

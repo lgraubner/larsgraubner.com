@@ -108,20 +108,25 @@ function assets() {
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
-// add font loading
+/**
+ * Add font loading
+ */
 function font_assets() {
     echo '<script>' . file_get_contents(get_template_directory() . '/assets/scripts/fonts.js') . '</script>';
 }
-
 add_action('wp_head', __NAMESPACE__ . '\\font_assets');
 
-// add js detection
+/**
+ * Add js detection
+ */
 function js_detection() {
     echo "<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>";
 }
 add_action('wp_head', __NAMESPACE__ . '\\js_detection');
 
-// redirect attachments to parent post
+/**
+ * Redirect attachments to parent post
+ */
 function redirect_attachment_page() {
     if ( is_attachment() ) {
         global $post;
@@ -136,6 +141,9 @@ function redirect_attachment_page() {
 }
 add_action( 'template_redirect', __NAMESPACE__ . '\\redirect_attachment_page' );
 
+/**
+ * Add link to rss2 feed
+ */
 function add_rss_head() {
     echo '<link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed" href="'.get_bloginfo('rss2_url').'" />';
 }

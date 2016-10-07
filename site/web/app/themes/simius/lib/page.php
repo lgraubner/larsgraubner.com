@@ -1,6 +1,9 @@
 <?php
 namespace Simius\Page;
 
+/**
+ * Add custom meta boxes for pages
+ */
 function cmb2_metaboxes() {
     $prefix = '_page_';
 
