@@ -49,7 +49,7 @@
     "wpackagist-plugin/force-regenerate-thumbnails": "2.0.6",
     "wpackagist-plugin/google-sitemap-generator": "4.0.8",
     "wpackagist-plugin/broken-link-checker": "1.11.2",
-    "wpackagist-plugin/ewww-image-optimizer": "2.9.9",
+    "wpackagist-plugin/ewww-image-optimizer": "3.0.2",
     "wpackagist-plugin/imsanity": "2.3.6"
   },
   "require-dev": {
