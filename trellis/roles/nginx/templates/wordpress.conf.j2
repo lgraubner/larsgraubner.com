@@ -12,6 +12,10 @@ location ~* /app/uploads/.*\.php$ {
   deny all;
 }
 
+location = /favicon.ico {
+    root /app/themes/simius/assets/images/favicons;
+}
+
 location = /xmlrpc.php {
   deny all;
   access_log off;
