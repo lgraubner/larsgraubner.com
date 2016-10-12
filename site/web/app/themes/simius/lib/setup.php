@@ -40,7 +40,7 @@ function setup() {
 
   // default
   add_image_size('post-default', 610, 9999);
-  add_image_size('thumbnail-small', 300, 169);
+  add_image_size('thumbnail-small', 300, 169, true);
 
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
