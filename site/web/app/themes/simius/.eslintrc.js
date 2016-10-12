@@ -4,6 +4,7 @@ module.exports = {
     jQuery: false,
     document: false,
     window: false,
+    Image: false,
   },
   rules: {
     'import/no-unresolved': 0,
