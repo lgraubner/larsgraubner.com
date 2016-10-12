@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c43e1d4fc88c461eb03781b243dd5e0b",
-    "content-hash": "0aa7dca7fa573b6d532b1dccf8f487bc",
+    "hash": "47d04ee009d1df45146c4a7e4e29d19d",
+    "content-hash": "19d1a6b3391dd88e601f0fc6236d90c7",
     "packages": [
         {
             "name": "composer/installers",
@@ -489,26 +489,6 @@
             "homepage": "https://wordpress.org/plugins/force-regenerate-thumbnails/"
         },
         {
-            "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
-            "version": "4.9.3.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/google-analytics-dashboard-for-wp/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/google-analytics-dashboard-for-wp/"
-        },
-        {
             "name": "wpackagist-plugin/google-sitemap-generator",
             "version": "4.0.8",
             "source": {
@@ -567,6 +547,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/relevanssi/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-retina-2x",
+            "version": "4.5.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-retina-2x/",
+                "reference": "tags/4.5.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-retina-2x.4.5.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-retina-2x/"
         },
         {
             "name": "wpackagist-plugin/wp-sweep",
