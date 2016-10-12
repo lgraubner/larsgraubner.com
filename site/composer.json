@@ -49,7 +49,8 @@
     "wpackagist-plugin/google-sitemap-generator": "4.0.8",
     "wpackagist-plugin/broken-link-checker": "1.11.2",
     "wpackagist-plugin/ewww-image-optimizer": "3.0.2",
-    "wpackagist-plugin/imsanity": "2.3.6"
+    "wpackagist-plugin/imsanity": "2.3.6",
+    "wpackagist-plugin/wp-retina-2x": "4.5.5"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"

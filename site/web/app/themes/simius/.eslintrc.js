@@ -1,12 +1,12 @@
 module.exports = {
-  "extends": "airbnb",
-  "globals": {
-    "jQuery": false,
-    "document": false,
-    "window": false,
-    "location": false,
-    "fetch": false,
-    "lg": false,
-    "Image": false
+  extends: 'airbnb',
+  globals: {
+    jQuery: false,
+    document: false,
+    window: false,
   },
+  rules: {
+    'import/no-unresolved': 0,
+    'import/no-extraneous-dependencies': 0,
+  }
 }

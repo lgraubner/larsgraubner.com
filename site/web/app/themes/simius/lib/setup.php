@@ -39,8 +39,8 @@ function setup() {
   set_post_thumbnail_size(610, 343, true);
 
   // default
-  add_image_size('large-retina', 1360, 9999);
-  add_image_size('small-retina', 750, 9999);
+  add_image_size('post-default', 610, 9999);
+  add_image_size('thumbnail-small', 300, 169);
 
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats

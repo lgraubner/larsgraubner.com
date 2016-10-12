@@ -157,6 +157,9 @@ const webpackConfig = {
     ],
   },
   resolve: {
+    root: [
+      path.resolve('./assets/scripts'),
+    ],
     extensions: ['', '.js', '.json'],
     modulesDirectories: [
       'node_modules',
@@ -200,6 +203,11 @@ if (argv.watch) {
 }
 
 if (argv.p) {
+  webpackConfig.plugins.push(new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('production'),
+    },
+  }));
   webpackConfig.plugins.push(new AssetsPlugin({
     path: path.join(__dirname, config.output.path),
     filename: 'assets.json',

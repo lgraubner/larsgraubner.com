@@ -1,8 +1,8 @@
-import twemoji from 'twemoji';
 import $ from 'jquery';
 import Headroom from 'headroom.js';
+import twemoji from 'twemoji';
 
-import loadImage from '../helpers/load-image';
+import loadImage from 'helpers/load-image';
 
 export default {
   init() {

@@ -20,8 +20,7 @@
     "lodash.foreach": "4.5.0",
     "moment": "2.15.0",
     "normalize.css": "^4.1.1",
-    "twemoji": "2.1.5",
-    "whatwg-fetch": "^1.0.0"
+    "twemoji": "2.1.5"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.4.0",
