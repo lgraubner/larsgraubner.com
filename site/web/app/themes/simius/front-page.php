@@ -30,7 +30,7 @@ if ($featured->have_posts()) :
             <?php if (has_post_thumbnail() && !is_search()): ?>
               <div class="post__thumb">
                 <a class="post__link" href="<?php the_permalink(); ?>">
-                  <?php the_post_thumbnail('post-thumbnail'); ?>
+                  <?php the_post_thumbnail('thumbnail-small'); ?>
                 </a>
               </div>
             <?php endif; ?>
