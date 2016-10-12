@@ -148,3 +148,10 @@ function add_rss_head() {
     echo '<link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed" href="'.get_bloginfo('rss2_url').'" />';
 }
 add_action('wp_head', __NAMESPACE__ . '\\add_rss_head');
+
+function add_async_attribute($tag, $handle) {
+    if ( 'simius/js' !== $handle )
+        return $tag;
+    return str_replace( ' src', ' async src', $tag );
+}
+add_filter('script_loader_tag', __NAMESPACE__ . '\\add_async_attribute', 10, 2);
