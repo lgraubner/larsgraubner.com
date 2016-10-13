@@ -40,11 +40,7 @@
 
   &__content {
     .button {
-      margin-top: 1em;
-
-      @include respond-to($bp-small) {
-        margin-top: 2em;
-      }
+      margin-top: 0;
     }
 
     &--excerpt {
