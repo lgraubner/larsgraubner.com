@@ -40,7 +40,10 @@
 
   &__content {
     .button {
-      margin-top: 0.5em;
+      margin: 0.5em 0 1em;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     &--excerpt {
