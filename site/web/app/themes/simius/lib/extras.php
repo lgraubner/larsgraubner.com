@@ -61,7 +61,6 @@ add_action('template_redirect', __NAMESPACE__ . '\\search_url_rewrite_rule');
 function dns_prefetch_list( $hints, $relation_type ) {
     if ( 'dns-prefetch' === $relation_type ) {
         return array(
-            '//www.google-analytics.com',
             '//twemoji.maxcdn.com',
         );
     }
