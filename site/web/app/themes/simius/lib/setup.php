@@ -127,7 +127,7 @@ add_action('wp_head', __NAMESPACE__ . '\\js_detection');
 
 function add_google_analytics() {
     if (!is_user_logged_in()) {
-        echo '!function(a,b,c,d,e,f,g){a.GoogleAnalyticsObject=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=1*new Date,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=d,g.parentNode.insertBefore(f,g)}(window,document,"script","' . esc_url(home_url('analytics.js', 'https')) . '","ga"),ga("create","UA-44046571-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");';
+        echo '<script>!function(a,b,c,d,e,f,g){a.GoogleAnalyticsObject=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=1*new Date,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=d,g.parentNode.insertBefore(f,g)}(window,document,"script","' . esc_url(home_url('analytics.js', 'https')) . '","ga"),ga("create","UA-44046571-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");</script>';
     }
 }
 add_action('wp_head', __NAMESPACE__ . '\\add_google_analytics', 10, 1);
