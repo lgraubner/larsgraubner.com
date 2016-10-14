@@ -127,16 +127,7 @@ add_action('wp_head', __NAMESPACE__ . '\\js_detection');
 
 function add_google_analytics() {
     if (!is_user_logged_in()) {
-        echo Helpers\minify("<script>
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-              })(window,document,'script','" . esc_url(home_url('analytics.js', 'https')) . "','ga');
-
-                ga('create', 'UA-44046571-2', 'auto');
-                ga('set', 'anonymizeIp', true);
-                ga('send', 'pageview');
-            </script>");
+        echo '!function(a,b,c,d,e,f,g){a.GoogleAnalyticsObject=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=1*new Date,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=d,g.parentNode.insertBefore(f,g)}(window,document,"script","' . esc_url(home_url('analytics.js', 'https')) . '","ga"),ga("create","UA-44046571-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");';
     }
 }
 add_action('wp_head', __NAMESPACE__ . '\\add_google_analytics', 10, 1);

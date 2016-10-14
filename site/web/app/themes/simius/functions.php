@@ -1,6 +1,5 @@
 <?php
 $includes = [
-    'lib/helpers.php',
     'lib/assets.php',
     'lib/extras.php',
     'lib/cleanup.php',
