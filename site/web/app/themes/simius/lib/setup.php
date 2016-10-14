@@ -138,7 +138,7 @@ function add_google_analytics() {
             </script>";
     }
 }
-add_action('wp_head', __NAMESPACE__ . '\\js_detection', 10, 1);
+add_action('wp_head', __NAMESPACE__ . '\\add_google_analytics', 10, 1);
 
 /**
  * Redirect attachments to parent post
