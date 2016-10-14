@@ -12,7 +12,11 @@
   }
 
   .post {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+
+    @include respond-to($bp-small) {
+      margin-bottom: 100px;
+    }
 
     &:last-child {
       margin-bottom: 0;

@@ -7,7 +7,7 @@
 
   .post {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
     @include respond-to($bp-small) {
       float: left;
@@ -23,19 +23,31 @@
     }
 
     .date {
-      margin-bottom: 0.3em;
-      text-align: left;
+      text-align: center;
       @include font-size(15px);
+
+      @include respond-to($bp-small) {
+        margin-bottom: 0.3em;
+        text-align: left;
+      }
     }
 
     &__title {
       @include font-size(20px);
       margin-bottom: 0;
-      text-align: left;
+      text-align: center;
+
+      @include respond-to($bp-small) {
+        text-align: left;
+      }
     }
 
     &__thumb {
-      margin-bottom: 1em;
+      margin-bottom: 0.5em;
+
+      @include respond-to($bp-small) {
+        margin-bottom: 1em;
+      }
     }
   }
 }
