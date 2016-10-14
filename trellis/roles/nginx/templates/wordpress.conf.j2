@@ -22,14 +22,6 @@ location = /xmlrpc.php {
   log_not_found off;
 }
 
-location = /analytics.js {
-  # Proxy to google-analytics.com
-  proxy_pass https://www.google-analytics.com;
-
-  # Custom expires time
-  expires 1M;
-}
-
 # cache
 location / {
   error_page 404 405 = @nocache;
