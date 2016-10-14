@@ -3,6 +3,7 @@
 namespace Simius\Setup;
 
 use Simius\Assets;
+use Simius\Helpers;
 
 /**
  * Theme setup
@@ -126,7 +127,7 @@ add_action('wp_head', __NAMESPACE__ . '\\js_detection');
 
 function add_google_analytics() {
     if (!is_user_logged_in()) {
-        echo str_replace(array("\r", "\n"), '', "<script>
+        echo Helpers\minify("<script>
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
