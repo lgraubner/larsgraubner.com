@@ -7,7 +7,7 @@
 
 // import vendor styles
 // @import '../vendor/file';
-@import '../../node_modules/normalize.css/normalize';
+@import '~normalize.css/normalize';
 @import 'vendor/wordpress';
 @import 'vendor/headroom';
 
@@ -28,7 +28,7 @@
 @import 'layout/search';
 @import 'layout/single-post';
 
-
+@import 'components/logo';
 @import 'components/date';
 @import 'components/button';
 @import 'components/featured-posts';
