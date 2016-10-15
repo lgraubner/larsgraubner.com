@@ -3,13 +3,13 @@
     <?php if (is_front_page()): ?>
       <h1 class="logo">
     <?php else: ?>
-      <h4 class="logo">
+      <div class="logo">
     <?php endif; ?>
         <a href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     <?php if (is_front_page()): ?>
       </h1>
     <?php else: ?>
-      </h4>
+        </div>
     <?php endif; ?>
     <nav role="navigation" class="menu-wrapper">
         <button class="menu-button">Menu</button>
