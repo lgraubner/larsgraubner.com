@@ -5,10 +5,10 @@
     @include font-size(30px);
     text-align: center;
     line-height: 1.15em;
+    margin: 0 0 25px;
 
     @include respond-to($bp-small) {
-      margin: 0 0 25px;
-      @include font-size(46px);
+      @include font-size(44px);
     }
   }
 

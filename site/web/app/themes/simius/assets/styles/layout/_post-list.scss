@@ -1,16 +1,6 @@
 .post-list {
   @extend %clearfix;
 
-  .post__thumb {
-    margin-bottom: 30px;
-  }
-
-  .post__title {
-    @include respond-to($bp-small) {
-      @include font-size(40px);
-    }
-  }
-
   .post {
     margin-bottom: 60px;
 
