@@ -163,7 +163,6 @@ const webpackConfig = {
     extensions: ['', '.js', '.json'],
     modulesDirectories: [
       'node_modules',
-      'bower_components',
     ],
   },
   plugins: [
@@ -197,33 +196,40 @@ if (argv.watch) {
   webpackConfig.output.pathinfo = true;
   webpackConfig.debug = true;
   webpackConfig.devtool = '#cheap-module-source-map';
-  webpackConfig.plugins.push(new webpack.optimize.OccurenceOrderPlugin());
-  webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
-  webpackConfig.plugins.push(new webpack.NoErrorsPlugin());
+
+  const watchPlugins = [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+  ];
+  webpackConfig.plugins.push(...watchPlugins);
 }
 
 if (argv.p) {
-  webpackConfig.plugins.push(new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: JSON.stringify('production'),
-    },
-  }));
-  webpackConfig.plugins.push(new AssetsPlugin({
-    path: path.join(__dirname, config.output.path),
-    filename: 'assets.json',
-    fullPath: false,
-    processOutput: assetsPluginProcessOutput,
-  }));
-  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      drop_debugger: true,
-    },
-  }));
-  webpackConfig.plugins.push(new OptimizeCssAssetsPlugin({
-    cssProcessor: cssnano,
-    cssProcessorOptions: { discardComments: { removeAll: true } },
-    canPrint: true,
-  }));
+  const prodPlugins = [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+    new AssetsPlugin({
+      path: path.join(__dirname, config.output.path),
+      filename: 'assets.json',
+      fullPath: false,
+      processOutput: assetsPluginProcessOutput,
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        drop_debugger: true,
+      },
+    }),
+    new OptimizeCssAssetsPlugin({
+      cssProcessor: cssnano,
+      cssProcessorOptions: { discardComments: { removeAll: true } },
+      canPrint: true,
+    }),
+  ];
+  webpackConfig.plugins.push(...prodPlugins);
 }
 
 module.exports = webpackConfig;
