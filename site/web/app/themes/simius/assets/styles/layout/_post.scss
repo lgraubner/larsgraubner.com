@@ -4,11 +4,10 @@
     font-weight: 600;
     @include font-size(30px);
     text-align: center;
-    margin: 0 0 25px;
     line-height: 1.15em;
 
     @include respond-to($bp-small) {
-      margin-bottom: 30px;
+      margin: 0 0 25px;
       @include font-size(46px);
     }
   }
@@ -40,7 +39,7 @@
 
   &__content {
     .button {
-      margin: 1em 0 0;
+      margin: 0.5em 0 0;
 
       @include respond-to($bp-small) {
         margin: 0.5em 0 1em;

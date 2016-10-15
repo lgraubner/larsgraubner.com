@@ -6,8 +6,6 @@
   }
 
   .post__title {
-    @include font-size(28px);
-
     @include respond-to($bp-small) {
       @include font-size(40px);
     }
