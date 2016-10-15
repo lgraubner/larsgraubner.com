@@ -2,10 +2,14 @@
 
 include h5bp/location/expires.conf;
 
+# rewrite sitemap urls
 rewrite ^/sitemap(-+([a-zA-Z0-9_-]+))?\.xml$ "/index.php?xml_sitemap=params=$2" last;
 rewrite ^/sitemap(-+([a-zA-Z0-9_-]+))?\.xml\.gz$ "/index.php?xml_sitemap=params=$2;zip=true" last;
 rewrite ^/sitemap(-+([a-zA-Z0-9_-]+))?\.html$ "/index.php?xml_sitemap=params=$2;html=true" last;
 rewrite ^/sitemap(-+([a-zA-Z0-9_-]+))?\.html.gz$ "/index.php?xml_sitemap=params=$2;html=true;zip=true" last;
+
+# redirect feeds to feedburner
+rewrite ^/feed/$ http://feeds.feedburner.com/larsgraubner/ permanent;
 
 # Prevent PHP scripts from being executed inside the uploads folder.
 location ~* /app/uploads/.*\.php$ {
