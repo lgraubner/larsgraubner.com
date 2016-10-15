@@ -1,9 +1,4 @@
 .home {
-  .content .inner {
-    @include respond-to($bp-medium) {
-      width: 680px;
-    }
-  }
 
   .section {
     margin-bottom: 60px;

@@ -1,4 +1,11 @@
 .intro {
+
+  .inner {
+    @include respond-to($bp-medium) {
+      width: 680px;
+    }
+  }
+
   p {
     margin-top: 1em;
     @include font-size(17px);

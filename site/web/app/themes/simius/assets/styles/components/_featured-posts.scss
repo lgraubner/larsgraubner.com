@@ -6,38 +6,37 @@
   }
 
   .post {
-    width: 100%;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
+    width: 280px;
+    max-width: 100%;
 
     @include respond-to($bp-small) {
       float: left;
-      width: 300px;
       margin-bottom: 20px;
     }
 
     &:nth-child(even) {
       @include respond-to($bp-small) {
-        margin-left: 60px;
+        margin-left: 50px;
       }
     }
 
     .date {
-      text-align: center;
+      text-align: left;
       @include font-size(15px);
 
       @include respond-to($bp-small) {
-        margin-bottom: 0.3em;
-        text-align: left;
+        margin-bottom: 0.1em;
       }
     }
 
     &__title {
-      @include font-size(20px);
+      @include font-size(22px);
       margin-bottom: 0;
-      text-align: center;
+      text-align: left;
 
       @include respond-to($bp-small) {
-        text-align: left;
+        @include font-size(21px);
       }
     }
 
