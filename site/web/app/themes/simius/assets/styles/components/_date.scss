@@ -5,6 +5,6 @@
   font-weight: 700;
 
   @include respond-to($bp-small) {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 }

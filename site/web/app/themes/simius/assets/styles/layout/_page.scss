@@ -1,10 +1,6 @@
 .page-header {
   margin-bottom: 60px;
 
-  @include respond-to($bp-small) {
-    margin-bottom: 70px;
-  }
-
   h1 {
     font-family: $font-secondary;
     font-weight: 600;
