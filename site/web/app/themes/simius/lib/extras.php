@@ -68,3 +68,11 @@ function dns_prefetch_list( $hints, $relation_type ) {
     return $hints;
 }
 add_filter( 'wp_resource_hints', __NAMESPACE__ . '\\dns_prefetch_list', 10, 2 );
+
+function feedburner_rss_feed($output, $feed) {
+    if (strpos($output, 'comments'))
+        return $output;
+
+    return esc_url('http://feeds.feedburner.com/larsgraubner/');
+}
+add_action('feed_link', __NAMESPACE__ . '\\feedburner_rss_feed', 10, 2);
