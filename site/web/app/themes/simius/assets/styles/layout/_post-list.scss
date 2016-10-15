@@ -1,4 +1,6 @@
 .post-list {
+  @extend %clearfix;
+
   .post__thumb {
     margin-bottom: 30px;
   }
@@ -12,10 +14,10 @@
   }
 
   .post {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 
     @include respond-to($bp-small) {
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
 
     &:last-child {
@@ -25,5 +27,9 @@
     p {
       text-align: justify;
     }
+  }
+
+  .button {
+    margin: 1.5em 0 0;
   }
 }

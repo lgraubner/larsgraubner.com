@@ -10,7 +10,7 @@
     text-align: center;
 
     @include respond-to($bp-small) {
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
 
     &:last-of-type {

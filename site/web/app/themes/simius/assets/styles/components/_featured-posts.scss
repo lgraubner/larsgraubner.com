@@ -11,7 +11,6 @@
 
     @include respond-to($bp-small) {
       float: left;
-      min-height: 280px;
       width: 300px;
       margin-bottom: 20px;
     }
