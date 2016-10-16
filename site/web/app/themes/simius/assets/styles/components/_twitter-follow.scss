@@ -1,0 +1,14 @@
+.twitter-follow {
+  background-color: rgba(0, 0, 0, 0.05);
+  background-image: url('#{$image-path}/twitter.svg');
+  background-position: 1.5em center;
+  background-repeat: no-repeat;
+  background-size: 35px;
+  padding: 1.5em 1.5em 1.5em 70px;
+  @include font-size(14px);
+  font-family: $font-secondary;
+  color: $color-black;
+  border-radius: $border-radius;
+  margin-top: 40px;
+  line-height: 1.5em;
+}

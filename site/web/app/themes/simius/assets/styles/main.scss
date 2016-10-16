@@ -27,16 +27,18 @@
 @import 'layout/footer';
 @import 'layout/search';
 @import 'layout/single-post';
+@import 'layout/related-posts';
 
 @import 'components/logo';
 @import 'components/date';
 @import 'components/button';
-@import 'components/featured-posts';
+@import 'components/post-tiles';
 @import 'components/portrait';
 @import 'components/bio';
 @import 'components/pagination';
 @import 'components/intro';
 @import 'components/testimonial';
 @import 'components/searchform';
+@import 'components/twitter-follow';
 
 @import 'pages/frontpage';

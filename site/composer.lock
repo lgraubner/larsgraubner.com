@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "47d04ee009d1df45146c4a7e4e29d19d",
-    "content-hash": "19d1a6b3391dd88e601f0fc6236d90c7",
+    "hash": "57ce4aee28691384c7bf1f181626bc33",
+    "content-hash": "118a5fbeb728747c304ae7c75be15761",
     "packages": [
         {
             "name": "composer/installers",
@@ -350,15 +350,15 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-seo-pack",
-            "version": "2.3.9.2",
+            "version": "2.3.10.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-seo-pack/",
-                "reference": "tags/2.3.9.2"
+                "reference": "tags/2.3.10.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.3.9.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.3.10.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -550,15 +550,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-retina-2x",
-            "version": "4.5.5",
+            "version": "4.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-retina-2x/",
-                "reference": "tags/4.5.5"
+                "reference": "tags/4.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-retina-2x.4.5.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-retina-2x.4.6.0.zip",
                 "reference": null,
                 "shasum": null
             },

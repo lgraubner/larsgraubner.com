@@ -1,18 +1,23 @@
-.featured-posts {
+.post-tiles {
   font-family: $font-secondary;
-
-  .post-list {
-    @extend %clearfix;
-  }
+  @extend %clearfix;
 
   .post {
     margin: 0 auto 30px;
     width: 280px;
     max-width: 100%;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     @include respond-to($bp-small) {
       float: left;
       margin-bottom: 20px;
+
+      &:nth-last-of-type(-n+2) {
+        margin-bottom: 0;
+      }
     }
 
     &:nth-child(even) {

@@ -26,7 +26,8 @@
               echo '</div>';
           }
           ?>
-          <?php get_template_part('templates/bio'); ?>
+          <?php get_template_part('templates/twitter-follow'); ?>
+          <?php get_template_part('templates/related-posts'); ?>
         </div>
     </div>
 

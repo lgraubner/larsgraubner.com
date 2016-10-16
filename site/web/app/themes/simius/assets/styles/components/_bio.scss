@@ -10,8 +10,10 @@
     width: 80px;
     height: 80px;
     margin-bottom: 0;
+    display: none;
 
     @include respond-to($bp-small) {
+      display: block;
       position: absolute;
       left: 0;
       top: 5px;
