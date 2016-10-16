@@ -2,7 +2,7 @@
   @extend %clearfix;
 
   .post {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 
     @include respond-to($bp-small) {
       margin-bottom: 80px;

@@ -1,6 +1,10 @@
 .related-posts {
   margin-top: 40px;
 
+  @include respond-to($bp-small) {
+    margin-top: 60px;
+  }
+
   &__title {
     margin: 0 0 1.5em;
     @include font-size(24px);

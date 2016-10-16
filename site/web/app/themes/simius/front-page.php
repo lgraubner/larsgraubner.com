@@ -12,7 +12,7 @@
 
 <?php
 $args = array(
-  'posts_per_page' => 4,
+  'posts_per_page' => 2,
   'cat' => get_category_by_slug('featured')->term_id,
 );
 $query = new WP_Query($args);

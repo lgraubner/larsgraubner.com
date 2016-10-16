@@ -19,7 +19,7 @@
 }
 
 a:not(.button):focus {
-  background-color: #FFF000;
+  background-color: $color-yellow;
   color: $color-black !important;
   outline: 0;
 }
