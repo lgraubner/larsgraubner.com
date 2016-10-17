@@ -220,7 +220,7 @@ if (argv.p) {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        drop_debugger: true,
+        warnings: false,
       },
     }),
     new OptimizeCssAssetsPlugin({

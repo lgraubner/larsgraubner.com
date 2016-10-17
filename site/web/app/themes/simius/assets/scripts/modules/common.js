@@ -33,6 +33,9 @@ export default {
         down: 20,
         up: 20,
       },
+      onUnpin() {
+        $('.menu').removeClass('menu--visible');
+      },
     });
     headroom.init();
   },
