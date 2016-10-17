@@ -1,6 +1,10 @@
 import $ from 'jquery';
 import Headroom from 'headroom.js';
 import twemoji from 'twemoji';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/plugins/line-highlight/prism-line-highlight';
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
 import loadImage from 'helpers/load-image';
 
@@ -10,6 +14,7 @@ export default {
     this.initMobileNav();
     this.initHeadroom();
     this.initImageLazyload();
+    this.enableSyntaxHighlighting();
   },
 
   addEmojis() {
@@ -51,5 +56,9 @@ export default {
         }).catch(() => image.classList.add('error'));
       });
     }
+  },
+
+  enableSyntaxHighlighting() {
+    Prism.highlightAll();
   },
 };

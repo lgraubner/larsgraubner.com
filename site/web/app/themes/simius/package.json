@@ -19,6 +19,7 @@
     "lodash.foreach": "4.5.0",
     "moment": "2.15.1",
     "normalize.css": "^5.0.0",
+    "prismjs": "^1.5.1",
     "twemoji": "2.2.0"
   },
   "devDependencies": {

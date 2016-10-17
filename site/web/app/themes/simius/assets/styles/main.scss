@@ -10,6 +10,9 @@
 @import '~normalize.css/normalize';
 @import 'vendor/wordpress';
 @import 'vendor/headroom';
+@import '~prismjs/themes/prism.css';
+@import '~prismjs/plugins/line-highlight/prism-line-highlight.css';
+@import '~prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 @import 'base/reset';
 @import 'base/print';
