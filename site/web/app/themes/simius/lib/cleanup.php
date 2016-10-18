@@ -63,7 +63,7 @@ add_filter('nav_menu_item_id', __NAMESPACE__ . '\\remove_menu_id', 100, 1);
 /**
  * Disable xmlrpc
  */
-add_filter('xmlrpc_enabled', '__return_false');
+// add_filter('xmlrpc_enabled', '__return_false');
 
 /**
  * Disable rest API
