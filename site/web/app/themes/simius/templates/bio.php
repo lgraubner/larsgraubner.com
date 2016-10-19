@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template part bio excerpt
+ */
+?>
 <div class="bio">
     <div class="portrait">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/lars-60x60.jpg" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/lars-60x60.jpg, <?php echo get_template_directory_uri(); ?>/assets/images/lars-60x60@2x.jpg 2x" class="portrait__image" width="60" height="60" alt="Lars Graubner" />

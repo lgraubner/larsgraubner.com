@@ -1,3 +1,8 @@
+/**
+ * Loads an image
+ * @param {string} url - Image url to load
+ * @return {Promise}
+ */
 function loadImage(url) {
   return new Promise((resolve, reject) => {
     const image = new Image();

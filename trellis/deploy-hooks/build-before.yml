@@ -1,12 +1,12 @@
 ---
-- name: Run npm install
-  command: npm install
+- name: Run yarn install
+  command: yarn install
   connection: local
   args:
     chdir: "{{ project.local_path }}/web/app/themes/simius"
 
-- name: Run npm build:prod
-  command: npm run build:prod
+- name: Run yarn build:prod
+  command: yarn run build:prod
   connection: local
   args:
     chdir: "{{ project.local_path }}/web/app/themes/simius"

@@ -8,7 +8,15 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
 import loadImage from 'helpers/load-image';
 
+/**
+ * Various actions
+ * @module common
+ */
 export default {
+  /**
+   * Init function
+   * @function
+   */
   init() {
     this.addEmojis();
     this.initMobileNav();
@@ -17,6 +25,10 @@ export default {
     this.enableSyntaxHighlighting();
   },
 
+  /**
+   * Enable emoji replacement with twemoji
+   * @function
+   */
   addEmojis() {
     const postContent = document.getElementsByClassName('content');
     if (postContent.length) {
@@ -24,6 +36,10 @@ export default {
     }
   },
 
+  /**
+   * Init mobile navigation
+   * @function
+   */
   initMobileNav() {
     const $menu = $('.menu');
     $('.menu-button').on('click', () => {
@@ -31,6 +47,10 @@ export default {
     });
   },
 
+  /**
+   * Init headroom
+   * @function
+   */
   initHeadroom() {
     const headroom = new Headroom(document.querySelector('.header'), {
       offset: 200,
@@ -45,6 +65,11 @@ export default {
     headroom.init();
   },
 
+  /**
+   * Init image lazy loading
+   * @function
+   * @deprecated
+   */
   initImageLazyload() {
     const images = [...document.querySelectorAll('.image img')];
     if (images.length) {
@@ -58,6 +83,10 @@ export default {
     }
   },
 
+  /**
+   * Enable syntax highlighting with prismjs
+   * @function
+   */
   enableSyntaxHighlighting() {
     Prism.highlightAll();
   },

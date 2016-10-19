@@ -1,4 +1,9 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<?php
+/**
+ * Template for search page
+ */
+
+get_template_part('templates/page', 'header'); ?>
 <?php if (have_posts()): ?>
     <?php get_template_part('templates/post-list'); ?>
     <?php Simius\Extras\pagination_nav(); ?>

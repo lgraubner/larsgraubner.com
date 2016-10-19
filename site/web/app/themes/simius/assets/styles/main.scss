@@ -6,7 +6,6 @@
 @import 'utils/helpers';
 
 // import vendor styles
-// @import '../vendor/file';
 @import '~normalize.css/normalize';
 @import 'vendor/wordpress';
 @import 'vendor/headroom';
@@ -14,22 +13,19 @@
 @import '~prismjs/plugins/line-highlight/prism-line-highlight.css';
 @import '~prismjs/plugins/line-numbers/prism-line-numbers.css';
 
+// import reset and print styles
 @import 'base/reset';
 @import 'base/print';
 
 // import layouts, pages and components
-// @import 'components/mycomponent';
 @import 'layout/common';
-
 @import 'layout/header';
 @import 'layout/post';
 @import 'layout/menu';
-@import 'layout/page';
+@import 'layout/page-header';
 @import 'layout/content';
 @import 'layout/post-list';
 @import 'layout/footer';
-@import 'layout/search';
-@import 'layout/single-post';
 @import 'layout/related-posts';
 @import 'layout/post-tiles';
 
@@ -44,4 +40,7 @@
 @import 'components/searchform';
 @import 'components/twitter-follow';
 
+// import page specific styles
 @import 'pages/frontpage';
+@import 'pages/search';
+@import 'pages/single-post';

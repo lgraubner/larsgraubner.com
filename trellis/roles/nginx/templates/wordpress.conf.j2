@@ -20,11 +20,11 @@ location = /favicon.ico {
     root /srv/www/larsgraubner.com/current/web/app/themes/simius/assets/images/favicons;
 }
 
-# location = /xmlrpc.php {
-#   deny all;
-#   access_log off;
-#   log_not_found off;
-# }
+location = /wp/xmlrpc.php {
+  deny all;
+  access_log off;
+  log_not_found off;
+}
 
 # cache
 location / {

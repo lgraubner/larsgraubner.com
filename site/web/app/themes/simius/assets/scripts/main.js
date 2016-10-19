@@ -1,3 +1,6 @@
+/**
+ * Entry file
+ */
 import 'es6-promise';
 
 import ready from 'helpers/ready';

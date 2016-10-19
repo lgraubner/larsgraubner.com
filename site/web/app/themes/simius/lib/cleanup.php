@@ -5,9 +5,9 @@ namespace Simius\Cleanup;
  * Remove wordpress scripts
  */
 function remove_scripts() {
-  if (!is_admin()) {
-    wp_dequeue_script('wp-embed');
-  }
+    if (!is_admin()) {
+        wp_dequeue_script('wp-embed');
+    }
 }
 add_action('wp_footer', __NAMESPACE__ . '\\remove_scripts');
 
@@ -39,7 +39,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\remove_actions');
  */
 function remove_menu_classes( array $classes, $item, $args, $depth ) {
     if (in_array('current-menu-item', $classes)) {
-      $classes[] = 'menu__item--active';
+        $classes[] = 'menu__item--active';
     }
 
     $classes = array_intersect($classes, array('menu__item', 'menu__item--active'));
@@ -56,14 +56,14 @@ add_filter( 'nav_menu_css_class', __NAMESPACE__ . '\\remove_menu_classes', 10, 4
  * Remove id from menus
  */
 function remove_menu_id($var) {
-  return '';
+    return '';
 }
 add_filter('nav_menu_item_id', __NAMESPACE__ . '\\remove_menu_id', 100, 1);
 
 /**
  * Disable xmlrpc
  */
-// add_filter('xmlrpc_enabled', '__return_false');
+add_filter('xmlrpc_enabled', '__return_false');
 
 /**
  * Disable rest API
