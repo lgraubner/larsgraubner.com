@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "57ce4aee28691384c7bf1f181626bc33",
-    "content-hash": "118a5fbeb728747c304ae7c75be15761",
+    "hash": "fa116f0ac3916bd75cc74fd051598b3c",
+    "content-hash": "ed014d803c4089f1935d0f3112a95c8f",
     "packages": [
         {
             "name": "composer/installers",
@@ -450,15 +450,15 @@
         },
         {
             "name": "wpackagist-plugin/ewww-image-optimizer",
-            "version": "3.0.2",
+            "version": "3.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
-                "reference": "tags/3.0.2"
+                "reference": "tags/3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.3.0.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.3.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -530,16 +530,16 @@
         },
         {
             "name": "wpackagist-plugin/relevanssi",
-            "version": "3.5.4",
+            "version": "3.5.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/relevanssi/",
-                "reference": "tags/3.5.4"
+                "reference": "tags/3.5.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/relevanssi.3.5.4.zip",
-                "reference": "tags/3.5.4",
+                "url": "https://downloads.wordpress.org/plugin/relevanssi.3.5.5.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
