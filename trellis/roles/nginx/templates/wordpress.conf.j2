@@ -1,5 +1,14 @@
 # {{ ansible_managed }}
 
+# don't send the nginx version number in error pages and Server header
+server_tokens off;
+
+# add security headers
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+add_header X-Frame-Options SAMEORIGIN always;
+add_header X-Content-Type-Options nosniff always;
+add_header X-XSS-Protection "1; mode=block" always;
+
 include h5bp/location/expires.conf;
 
 # rewrite sitemap urls
@@ -47,7 +56,6 @@ location / {
   }
 
   default_type text/html;
-  add_header X-Powered-By Cachify;
   set $memcached_key $host$uri;
   memcached_pass localhost:11211;
 }
