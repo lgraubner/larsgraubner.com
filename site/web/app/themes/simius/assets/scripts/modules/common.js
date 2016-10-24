@@ -21,7 +21,6 @@ export default {
     this.addEmojis();
     this.initMobileNav();
     this.initHeadroom();
-    this.initImageLazyload();
     this.enableSyntaxHighlighting();
   },
 
