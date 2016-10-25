@@ -92,12 +92,32 @@
     border-radius: $border-radius;
     @include font-size(15px);
     background: rgba(0, 0, 0, 0.05);
-    padding: 20px;
-    white-space: pre;
+    padding: 40px 15px 15px;
+    white-space: pre-wrap;
     font-family: $font-monospace;
     overflow: auto;
     color: rgba(0, 0, 0, 0.8);
     margin: 1.5em 0;
+    position: relative;
+
+    code {
+      white-space: pre-wrap;
+      text-shadow: none;
+    }
+
+    &:before {
+      content: 'Code';
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 3px 10px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.05);
+      color: rgba(0, 0, 0, 0.3);
+      @include font-size(13px);
+      text-shadow: none;
+      font-weight: bold;
+    }
 
     @include respond-to($bp-small) {
       margin: 2.5em 0;

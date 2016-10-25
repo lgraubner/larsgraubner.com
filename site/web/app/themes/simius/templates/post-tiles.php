@@ -14,13 +14,13 @@
     $index++;
     ?>
         <div class="post">
-            <?php if (has_post_thumbnail() && !is_search()): ?>
-                <div class="post__thumb">
-                    <a class="post__link" href="<?php the_permalink(); ?>">
+            <div class="post__thumb">
+                <a class="post__link" href="<?php the_permalink(); ?>">
+                    <?php if (has_post_thumbnail() && !is_search()): ?>
                         <?php the_post_thumbnail('thumbnail-small'); ?>
-                    </a>
-                </div>
-            <?php endif; ?>
+                    <?php endif; ?>
+                </a>
+            </div>
             <div class="date"><?php echo get_the_date(); ?></div>
             <h3 class="post__title">
                 <a href="<?php the_permalink() ?>" class="post__link"><?php the_title(); ?></a>

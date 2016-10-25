@@ -31,19 +31,6 @@
       float: left;
     }
 
-    &:before {
-      content: '';
-      padding-top: 56%;
-      display: block;
-      margin-bottom: 0.5em;
-      background: linear-gradient(to right bottom, $color-primary, $color-yellow);
-      border-radius: $border-radius;
-
-      @include respond-to($bp-small) {
-        margin-bottom: 1em;
-      }
-    }
-
     &:last-child {
       @media screen and (max-width: $bp-small) {
         margin-bottom: 0;
@@ -77,10 +64,27 @@
 
     &__thumb {
       margin-bottom: 0.5em;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+      border-radius: $border-radius;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: $border-radius;
+      }
+
+      a {
+        display: block;
+
+        &:before {
+          content: '';
+          padding-top: 56%;
+          display: block;
+          background: rgba(0, 0, 0, 0.05);
+        }
+      }
 
       @include respond-to($bp-small) {
         margin-bottom: 1em;
