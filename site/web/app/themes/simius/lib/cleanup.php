@@ -31,6 +31,11 @@ function remove_actions() {
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
     remove_action('wp_head', 'feed_links_extra', 3 );
+
+    // disable autop for shortcodes
+    remove_filter( 'the_content', 'wpautop' );
+    add_filter( 'the_content', 'wpautop' , 99);
+    add_filter( 'the_content', 'shortcode_unautop',100 );
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\remove_actions');
 

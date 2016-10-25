@@ -4,7 +4,6 @@ import twemoji from 'twemoji';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/plugins/line-highlight/prism-line-highlight';
-import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
 import loadImage from 'helpers/load-image';
 
@@ -88,5 +87,9 @@ export default {
    */
   enableSyntaxHighlighting() {
     Prism.highlightAll();
+    Prism.hooks.add('after-highlight', (env) => {
+      // eslint-disable-next-line
+      env.element.innerHTML = '<div class="line">' + env.highlightedCode.replace(/\r\n?|\n/g, '</div><div class="line">') + '</div>';
+    });
   },
 };

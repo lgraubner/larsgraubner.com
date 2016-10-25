@@ -102,6 +102,10 @@
     @include respond-to($bp-small) {
       margin: 2.5em 0;
     }
+
+    code div:empty:before {
+      content: '\00a0'; /* keeps empty divs visible */
+    }
   }
 
   a[href]:not([class]) {
