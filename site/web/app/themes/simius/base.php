@@ -15,8 +15,8 @@ use Simius\Wrapper;
             do_action('get_header');
             get_template_part('templates/header');
         ?>
-        <div class="wrap container" role="document">
-            <main class="content">
+        <div class="wrap container">
+            <main role="main" class="content" id="content">
                 <?php include Wrapper\template_path(); ?>
             </main>
         </div>
