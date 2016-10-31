@@ -15,12 +15,12 @@ export default {
       env.element.innerHTML = '<div class="line">' + env.highlightedCode.replace(/\r\n?|\n/g, '</div><div class="line">') + '</div>';
 
       let dataLine = env.element.getAttribute('data-line');
-      // eslint-disable-next-line
-      dataLine = dataLine.replace(/(\d+)-(\d+)/, (match, p1, p2) => {
-        return range(parseInt(p1, 10), parseInt(p2, 10) + 1).join(',');
-      });
       let lines = null;
       if (dataLine) {
+        // eslint-disable-next-line
+        dataLine = dataLine.replace(/(\d+)-(\d+)/, (match, p1, p2) => {
+          return range(parseInt(p1, 10), parseInt(p2, 10) + 1).join(',');
+        });
         lines = dataLine.split(',');
         lines.map((line) => {
           const child = env.element.querySelector(`.line:nth-child(${line})`);
