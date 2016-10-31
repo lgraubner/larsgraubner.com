@@ -91,7 +91,7 @@
   pre {
     border-radius: $border-radius;
     @include font-size(15px);
-    background: rgba(0, 0, 0, 0.05);
+    background: #faf8f5;
     padding: 40px 0 15px;
     white-space: pre-wrap;
     font-family: $font-monospace;
@@ -119,6 +119,14 @@
       font-weight: bold;
     }
 
+    .language-css .token.string,
+    .style .token.string,
+    .token.entity,
+    .token.operator,
+    .token.url {
+      background: transparent;
+    }
+
     @include respond-to($bp-small) {
       margin: 2.5em 0;
     }
@@ -133,7 +141,7 @@
 
       &--highlight {
         background: lighten($color-yellow, 45%);
-        border-color: rgba($color-yellow, 0.35);
+        border-color: #f7ebc6;
       }
     }
   }
