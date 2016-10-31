@@ -17,6 +17,7 @@
     "headroom.js": "0.9.3",
     "jquery": "3.1.1",
     "lodash.foreach": "4.5.0",
+    "lodash.range": "^3.2.0",
     "moment": "2.15.1",
     "normalize.css": "^5.0.0",
     "prismjs": "^1.5.1",

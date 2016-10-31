@@ -92,7 +92,7 @@
     border-radius: $border-radius;
     @include font-size(15px);
     background: rgba(0, 0, 0, 0.05);
-    padding: 40px 15px 15px;
+    padding: 40px 0 15px;
     white-space: pre-wrap;
     font-family: $font-monospace;
     overflow: auto;
@@ -123,8 +123,18 @@
       margin: 2.5em 0;
     }
 
-    code div:empty:before {
-      content: '\00a0'; /* keeps empty divs visible */
+    code .line {
+      padding: 0 15px 0 10px;
+      border-left: 5px solid transparent;
+
+      &:empty:before {
+        content: '\00a0'; /* keeps empty divs visible */
+      }
+
+      &--highlight {
+        background: lighten($color-yellow, 45%);
+        border-color: rgba($color-yellow, 0.35);
+      }
     }
   }
 

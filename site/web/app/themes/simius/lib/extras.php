@@ -75,14 +75,19 @@ add_filter( 'wp_resource_hints', __NAMESPACE__ . '\\dns_prefetch_list', 10, 2 );
 function code_shortcode($atts, $content) {
     extract(shortcode_atts(array(
         'language' => 'clike',
+        'line' => false,
     ), $atts));
 
     // remove leading and trailing new lines
     $code = preg_replace('/^(\r\n?|\n)|(\r\n?|\n)$/', '', $content);
     // escape
     $code = str_replace(['<', '>'], ['&lt;', '&gt;'], $code);
+    $line_html = '';
+    if (!empty($line)) {
+        $line_html = sprintf(' data-line="%s"', $line);
+    }
     // create html
-    $output = sprintf('<pre><code class="language-%s">%s</code></pre>', $language, $code);
+    $output = sprintf('<pre><code class="language-%s"%s>%s</code></pre>', $language, $line_html, $code);
     return $output;
 }
 add_shortcode('code', __NAMESPACE__ . '\\code_shortcode');
