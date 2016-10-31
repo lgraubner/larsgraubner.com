@@ -1,6 +1,6 @@
+/* eslint-disable */
 import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
-import 'prismjs/plugins/line-highlight/prism-line-highlight';
 import range from 'lodash.range';
 
 /**
