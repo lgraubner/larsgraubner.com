@@ -157,3 +157,10 @@ function add_async_attribute($tag, $handle) {
     return str_replace(' src', ' async src', $tag);
 }
 add_filter('script_loader_tag', __NAMESPACE__ . '\\add_async_attribute', 10, 2);
+
+function search_posttypes($query) {
+    if ($query->is_search && !is_admin()) {
+        $query->set('post_type', array('post'));
+    }
+}
+add_filter('pre_get_posts', __NAMESPACE__ . '\\search_posttypes');

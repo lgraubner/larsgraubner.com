@@ -16,7 +16,7 @@
         <div class="post">
             <div class="post__thumb">
                 <a class="post__link" href="<?php the_permalink(); ?>">
-                    <?php if (has_post_thumbnail() && !is_search()): ?>
+                    <?php if (has_post_thumbnail() && !$query->is_search): ?>
                         <?php the_post_thumbnail('thumbnail-small'); ?>
                     <?php endif; ?>
                 </a>

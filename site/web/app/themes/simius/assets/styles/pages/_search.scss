@@ -4,12 +4,28 @@
 
 .search-no-results .page-content {
   text-align: center;
-  @include font-size(20px);
+  @include font-size(18px);
+
+  .featured-posts {
+    margin-top: 40px;
+  }
 }
 
 .search {
   .relevanssi-query-term {
     background: $color-primary;
     color: $color-white;
+  }
+
+  .searchform {
+    margin-bottom: 60px;
+  }
+
+  .page-header {
+    margin-bottom: 20px;
+
+    @include respond-to($bp-small) {
+      margin-bottom: 30px;
+    }
   }
 }

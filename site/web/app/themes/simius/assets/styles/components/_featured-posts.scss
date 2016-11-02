@@ -1,0 +1,13 @@
+.featured-posts {
+  &__title {
+    text-align: center;
+    margin: 0 0 1em;
+    @include font-size(30px);
+    font-family: $font-secondary;
+    font-weight: 600;
+
+    @include respond-to($bp-small) {
+      margin-bottom: 1.5em;
+    }
+  }
+}

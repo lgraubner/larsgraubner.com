@@ -12,16 +12,6 @@
       margin-bottom: 0;
     }
 
-    h2 {
-      text-align: center;
-      margin: 0 0 1em;
-      @include font-size(30px);
-
-      @include respond-to($bp-small) {
-        margin-bottom: 1.5em;
-      }
-    }
-
     .button {
       margin: 2em 0 0;
 

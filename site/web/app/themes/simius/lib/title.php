@@ -18,7 +18,7 @@ function title() {
             return get_the_archive_title();
         }
     } elseif (is_search()) {
-        return sprintf(__('Search Results for "%s"', 'larsgraubner'), get_search_query());
+        return __('Search results', 'larsgraubner');
     } elseif (is_404()) {
         return __('Not Found 😱', 'larsgraubner');
     } else {

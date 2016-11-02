@@ -37,8 +37,10 @@
 @import 'components/testimonial';
 @import 'components/searchform';
 @import 'components/twitter-follow';
+@import 'components/featured-posts';
 
 // import page specific styles
 @import 'pages/frontpage';
 @import 'pages/search';
 @import 'pages/single-post';
+@import 'pages/error404';

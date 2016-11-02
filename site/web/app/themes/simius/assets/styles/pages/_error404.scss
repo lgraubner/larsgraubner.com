@@ -1,0 +1,22 @@
+.error404 {
+  .featured-posts {
+    margin-top: 40px;
+
+    @include respond-to($bp-small) {
+      margin-top: 60px;
+    }
+  }
+
+  .searchform {
+    margin-top: 40px;
+
+    @include respond-to($bp-small) {
+      margin-top: 60px;
+    }
+  }
+
+  .page-content {
+    @include font-size(18px);
+    text-align: center;
+  }
+}

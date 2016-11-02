@@ -21,7 +21,7 @@
                 <div class="post__content post__content--excerpt">
                     <?php the_excerpt(); ?>
                     <a href="<?php the_permalink(); ?>" class="button">
-                        Continue reading
+                        Read more
                     </a>
                 </div>
             </div>

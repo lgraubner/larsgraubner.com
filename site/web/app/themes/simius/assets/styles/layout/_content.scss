@@ -41,7 +41,7 @@
     }
   }
 
-  body:not(.search):not(.legal-disclosure) & p:not(.nodrop):first-child:first-letter {
+  body:not(.search):not(.legal-disclosure):not(.error404) & p:not(.nodrop):first-child:first-letter {
     float: left;
     padding: 3px 6px 0 0;
     @include font-size(55px);
