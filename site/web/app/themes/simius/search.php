@@ -3,8 +3,10 @@
  * Template for search page
  */
 
-get_template_part('templates/page', 'header');
-get_template_part('templates/searchform'); ?>
+get_template_part('templates/page', 'header'); ?>
+<div class="inner">
+    <?php get_template_part('templates/searchform'); ?>
+</div>
 <?php if (have_posts()): ?>
     <?php get_template_part('templates/post-list'); ?>
     <?php Simius\Extras\pagination_nav(); ?>
