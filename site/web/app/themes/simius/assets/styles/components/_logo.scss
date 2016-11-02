@@ -4,15 +4,23 @@
 
 .logo {
   font-family: $font-secondary;
-  letter-spacing: 0.17em;
   text-transform: uppercase;
-  @include font-size(20px);
+  @include font-size(26px);
   float: left;
   margin: 0;
   font-weight: bold;
 
   @include respond-to($bp-small) {
     @include font-size(24px);
+    letter-spacing: 0.17em;
+  }
+
+  span {
+    display: none;
+
+    @include respond-to($bp-small) {
+      display: inline;
+    }
   }
 
   a {

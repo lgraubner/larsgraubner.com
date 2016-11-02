@@ -12,23 +12,8 @@
   font-family: $font-secondary;
   font-weight: 600;
   @extend %clearfix;
-  display: none;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
-  padding: 15px 20px;
-  position: absolute;
-  top: 40px;
-  right: 0;
-
-  @include respond-to($bp-large) {
-    display: block;
-    float: right;
-    padding: 0;
-    background: transparent;
-    position: relative;
-    box-shadow: none;
-    top: 0;
-  }
+  float: right;
+  padding: 0;
 
   &--visible {
     display: block;
@@ -39,12 +24,66 @@
     text-transform: uppercase;
     @include font-size(14px);
     letter-spacing: .15em;
-    text-align: right;
+    float: left;
+    margin-left: 1em;
+    text-align: left;
+    white-space: nowrap;
 
-    @include respond-to($bp-large) {
-      float: left;
+    @include respond-to($bp-small) {
       margin-left: 2em;
+    }
+  }
+
+  & > &__item:first-child {
+    display: none;
+
+    @include respond-to($bp-small) {
+      display: block;
+    }
+  }
+
+  &__more {
+    display: block;
+    float: left;
+    margin-left: 1em;
+
+    button {
+      padding: 0;
+      background: none;
+      border: 0;
+      text-transform: uppercase;
+      @include font-size(14px);
+      letter-spacing: .15em;
       text-align: left;
+      font-family: $font-secondary;
+      font-weight: 600;
+      color: $color-black;
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      top: 45px;
+      right: -10px;
+      background: rgba(255, 255, 255, 0.97);
+      padding: 0;
+
+      @include respond-to($bp-small) {
+        top: 55px;
+      }
+    }
+
+    .menu__item {
+      float: none;
+      margin-left: 0;
+      text-align: right;
+      @include font-size(12px);
+    }
+
+    &--visible {
+      ul {
+        display: block !important;
+      }
     }
   }
 
@@ -52,23 +91,5 @@
     color: $color-black;
     display: block;
     padding: 0 10px;
-  }
-}
-
-.menu-button {
-  display: block;
-  background: url('#{$image-path}/menu.svg') center center no-repeat;
-  width: 35px;
-  height: 35px;
-  border: 0;
-  @extend %text-hide;
-  cursor: pointer;
-  padding: 0;
-  position: absolute;
-  right: 0;
-  top: -2px;
-
-  @include respond-to($bp-large) {
-    display: none;
   }
 }

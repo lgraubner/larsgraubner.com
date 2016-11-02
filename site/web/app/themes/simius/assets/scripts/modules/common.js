@@ -13,7 +13,6 @@ export default {
    */
   init() {
     this.addEmojis();
-    this.initMobileNav();
     this.initHeadroom();
   },
 
@@ -29,17 +28,6 @@ export default {
   },
 
   /**
-   * Init mobile navigation
-   * @function
-   */
-  initMobileNav() {
-    const $menu = $('.menu');
-    $('.menu-button').on('click', () => {
-      $menu.toggleClass('menu--visible');
-    });
-  },
-
-  /**
    * Init headroom
    * @function
    */
@@ -51,7 +39,7 @@ export default {
         up: 20,
       },
       onUnpin() {
-        $('.menu').removeClass('menu--visible');
+        $('.menu__more').removeClass('menu__more--visible');
       },
     });
     headroom.init();

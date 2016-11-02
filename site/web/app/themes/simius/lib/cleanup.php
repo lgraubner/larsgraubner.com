@@ -47,7 +47,14 @@ function remove_menu_classes( array $classes, $item, $args, $depth ) {
         $classes[] = 'menu__item--active';
     }
 
-    $classes = array_intersect($classes, array('menu__item', 'menu__item--active'));
+    $allowed_classes = array(
+        'menu__item',
+        'menu__item--active',
+        'priority-1',
+        'priority-2',
+    );
+
+    $classes = array_intersect($classes, $allowed_classes);
     $classes = array_merge($classes, [
       'menu__item',
       sprintf('menu__item--%s', $item->post_name),
