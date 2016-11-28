@@ -5,8 +5,8 @@
   args:
     chdir: "{{ project.local_path }}/web/app/themes/simius"
 
-- name: Run yarn build:prod
-  command: yarn run build:prod
+- name: Run yarn build
+  command: yarn run build
   connection: local
   args:
     chdir: "{{ project.local_path }}/web/app/themes/simius"
