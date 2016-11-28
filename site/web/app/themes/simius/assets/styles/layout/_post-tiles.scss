@@ -67,6 +67,11 @@
       border-radius: $border-radius;
       overflow: hidden;
 
+      &--fallback {
+        background: url('#{$image-path}/fallback.jpg') center center no-repeat;
+        background-size: cover;
+      }
+
       img {
         position: absolute;
         top: 0;
@@ -77,6 +82,11 @@
 
       a {
         display: block;
+        position: relative;
+
+        &:focus {
+          background: none;
+        }
 
         &:before {
           content: '';

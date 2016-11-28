@@ -14,7 +14,7 @@
     $index++;
     ?>
         <div class="post">
-            <div class="post__thumb">
+            <div class="post__thumb<?php echo (!has_post_thumbnail() ? ' post__thumb--fallback' : ''); ?>">
                 <a class="post__link" href="<?php the_permalink(); ?>">
                     <?php if (has_post_thumbnail() && !$query->is_search): ?>
                         <?php the_post_thumbnail('thumbnail-small'); ?>
