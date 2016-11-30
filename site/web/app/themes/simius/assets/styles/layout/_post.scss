@@ -42,6 +42,15 @@
   }
 
   &__content {
+    .anchorjs-link {
+      color: #aaa;
+
+      &:focus {
+        background: transparent;
+        color: #aaa;
+      }
+    }
+
     .button {
       margin: 0.5em 0 0;
 

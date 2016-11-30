@@ -4,7 +4,8 @@
     "main": [
       "./scripts/main.js",
       "./styles/main.scss"
-    ]
+    ],
+    "anchors": "./scripts/anchors.js"
   },
   "output": {
     "path": "dist",

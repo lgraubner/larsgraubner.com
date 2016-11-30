@@ -106,6 +106,7 @@ function assets() {
     // remove jQuery
     wp_deregister_script('jquery');
 
+    wp_enqueue_script('simius/anchors-js', Assets\asset_path('scripts/anchors.js'), [], null, true);
     wp_enqueue_script('simius/js', Assets\asset_path('scripts/main.js'), [], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

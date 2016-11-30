@@ -128,6 +128,7 @@ const webpackConfig = {
       cssProcessorOptions: { discardComments: { removeAll: true } },
       canPrint: true,
     }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
   ],
   postcss: [
     autoprefixer({
