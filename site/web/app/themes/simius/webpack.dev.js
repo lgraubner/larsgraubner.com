@@ -33,16 +33,16 @@ const webpackConfig = {
   module: {
     preLoaders: [
       {
-        test: /\.js?$/,
-        exclude: /(node_modules)/,
-        loader: 'eslint',
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
       },
     ],
     loaders: [
       {
-        test: /\.(js)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['es2015'],
           cacheDirectory: true,
@@ -63,32 +63,11 @@ const webpackConfig = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg|gif)(\?.*)?$/,
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
         loaders: [
-          'file?name=[path][name].[ext]',
-          `image-webpack?${JSON.stringify({
-            bypassOnDebug: true,
-            progressive: true,
-            optimizationLevel: 7,
-            interlaced: true,
-            pngquant: {
-              quality: '65-90',
-              speed: 4,
-            },
-            svgo: {
-              removeUnknownsAndDefaults: false,
-              cleanupIDs: false,
-            },
-          })}`,
+          'file-loader',
+          'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}',
         ],
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?.*)?$/,
-        loader: 'file?name=[path][name].[ext]',
-      },
-      {
-        test: /\.woff(2)?(\?.*)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]',
       },
     ],
   },
@@ -97,7 +76,7 @@ const webpackConfig = {
       path.resolve('./assets/scripts'),
       path.resolve('./assets/styles'),
     ],
-    extensions: ['', '.js', '.json'],
+    extensions: ['', '.js'],
     modulesDirectories: [
       'node_modules',
     ],
@@ -126,9 +105,6 @@ const webpackConfig = {
   eslint: {
     failOnWarning: false,
     failOnError: true,
-  },
-  stats: {
-    colors: true,
   },
   target: 'web',
   devTool: 'eval',
