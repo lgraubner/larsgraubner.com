@@ -31,3 +31,14 @@
     @content;
   }
 }
+
+/// Async font loading
+/// @access public
+/// @param {String} $family
+@mixin font-family($family) {
+  font-family: $font-fallback;
+
+  .wf-loaded & {
+    font-family: $family;
+  }
+}

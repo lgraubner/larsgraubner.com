@@ -25,5 +25,6 @@ use Simius\Wrapper;
             get_template_part('templates/footer');
             wp_footer();
         ?>
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
     </body>
 </html>

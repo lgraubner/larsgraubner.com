@@ -62,6 +62,7 @@ function dns_prefetch_list( $hints, $relation_type ) {
     if ( 'dns-prefetch' === $relation_type ) {
         return array(
             '//twemoji.maxcdn.com',
+            '//fonts.googleapis.com',
         );
     }
 

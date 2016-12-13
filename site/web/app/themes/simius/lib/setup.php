@@ -112,14 +112,6 @@ function assets() {
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
 /**
- * Add font loading
- */
-function font_assets() {
-    echo '<script>' . file_get_contents(get_template_directory() . '/assets/scripts/fonts.js') . '</script>';
-}
-add_action('wp_head', __NAMESPACE__ . '\\font_assets');
-
-/**
  * Add js detection
  */
 function js_detection() {

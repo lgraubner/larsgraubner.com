@@ -21,7 +21,7 @@ html {
 
 // default font-family, font-size and color
 body {
-  font-family: $font-primary;
+  @include font-family($font-primary);
   @include font-size($font-size);
   color: $color-black;
 }

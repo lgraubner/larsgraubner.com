@@ -33,7 +33,7 @@ const webpackConfig = {
   module: {
     preLoaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
       },
@@ -51,15 +51,15 @@ const webpackConfig = {
       {
         test: /\.css$/,
         loaders: [
-          'css?+sourceMap',
+          'css-loader?+sourceMap',
         ],
       },
       {
         test: /\.scss$/,
         loaders: [
-          'style',
-          'css',
-          'sass',
+          'style-loader',
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
