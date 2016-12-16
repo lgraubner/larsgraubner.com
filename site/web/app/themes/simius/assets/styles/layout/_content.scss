@@ -90,10 +90,11 @@
 
   pre {
     border-radius: $border-radius;
-    @include font-size(15px);
-    background: #f9f9f9;
-    padding: 40px 0 15px;
-    white-space: pre-wrap;
+    @include font-size(14px);
+    background: #fafafa;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: none;
+    padding: 20px 0;
     font-family: $font-monospace;
     overflow: auto;
     color: rgba(0, 0, 0, 0.8);
@@ -103,20 +104,7 @@
     code {
       white-space: pre-wrap;
       text-shadow: none;
-    }
-
-    &:before {
-      content: 'Code';
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 3px 10px;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.05);
-      color: rgba(0, 0, 0, 0.3);
-      @include font-size(13px);
-      text-shadow: none;
-      font-weight: bold;
+      padding: 0;
     }
 
     .language-css .token.string,
@@ -132,16 +120,16 @@
     }
 
     code .line {
-      padding: 0 15px 0 10px;
-      border-left: 5px solid transparent;
-
-      &:empty:before {
-        content: '\00a0'; /* keeps empty divs visible */
-      }
+      padding: 0 15px;
+      border-left: 2px solid transparent;
 
       &--highlight {
         background: lighten($color-yellow, 45%);
         border-color: #f7ebc6;
+      }
+
+      span {
+        line-height: 1.8em;
       }
     }
   }
