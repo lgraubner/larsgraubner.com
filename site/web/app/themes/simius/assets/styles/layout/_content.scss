@@ -131,6 +131,10 @@
       span {
         line-height: 1.8em;
       }
+
+      &:empty:before {
+        content: '\00a0'; /* keeps empty divs visible */
+      }
     }
   }
 
