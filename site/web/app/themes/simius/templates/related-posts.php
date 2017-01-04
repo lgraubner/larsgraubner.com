@@ -21,7 +21,7 @@ if ($tags) {
     if ($query->have_posts()):
     ?>
             <div class="related-posts">
-                    <h4 class="related-posts__title">Related posts</h4>
+                    <h4 class="related-posts__title">More posts</h4>
                     <?php include(locate_template('templates/post-tiles.php')); ?>
             </div>
     <?php
