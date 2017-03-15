@@ -71,11 +71,10 @@
   "private": true,
   "scripts": {
     "lint": "eslint assets/scripts",
-    "precommit": "lint-staged",
     "dev": "cross-env NODE_ENV=development webpack --config webpack.dev.js --progress --watch",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress"
   },
-  "pre-commit": "precommit",
+  "pre-commit": "lint-staged",
   "lint-staged": {
     "*.js": [
       "prettier --single-quote --trailing-comma es5 --write",
