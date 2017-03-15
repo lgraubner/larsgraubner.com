@@ -9,7 +9,6 @@ export default {
         .addClass('menu__more')
         .append($('<button/>').text('more'))
         .append('<ul/>');
-
       $nav.append($moreMenuHTML);
       $nav.find('.priority-2').appendTo($('.menu__more ul'));
 
