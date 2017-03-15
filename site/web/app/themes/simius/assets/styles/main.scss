@@ -1,9 +1,8 @@
 @charset 'utf-8';
 
-@import 'utils/variables';
-@import 'utils/functions';
-@import 'utils/mixins';
-@import 'utils/helpers';
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
 
 // import vendor styles
 @import '~normalize.css/normalize';
@@ -12,6 +11,7 @@
 @import '~prismjs/themes/prism-coy.css';
 
 // import reset and print styles
+@import 'base/helpers';
 @import 'base/reset';
 @import 'base/print';
 

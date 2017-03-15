@@ -1,5 +1,7 @@
-// taken from HTML5 boilerplate (https://html5boilerplate.com/)
-
+/**
+ * Basic print styles
+ * Taken from HTML5 boilerplate (https://html5boilerplate.com/)
+ */
 @media print {
   *,
   *:before,
@@ -12,6 +14,15 @@
     color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
   }
 
   abbr[title]:after {
@@ -56,17 +67,5 @@
   h2,
   h3 {
     page-break-after: avoid;
-  }
-
-  .post__content a[href]:after,
-  .page-content a[href]:after,
-  .home .content a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  .post__footer,
-  .header,
-  .footer {
-    display: none !important;
   }
 }

@@ -6,7 +6,6 @@
   font-family: $font-secondary;
 
   &__row {
-    @extend %clearfix;
 
     &:not(:first-child) {
       margin-top: 30px;
@@ -23,11 +22,11 @@
       margin-top: 0;
     }
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-top: 0;
     }
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       float: left;
     }
 
@@ -38,27 +37,27 @@
     }
 
     &:nth-child(even) {
-      @include respond-to($bp-small) {
+      @include min-width($bp-small) {
         margin-left: 50px;
       }
     }
 
     .date {
       text-align: left;
-      @include font-size(15px);
+      font-size: 15px;
 
-      @include respond-to($bp-small) {
+      @include min-width($bp-small) {
         margin-bottom: 0.1em;
       }
     }
 
     &__title {
-      @include font-size(22px);
+      font-size: 22px;
       margin-bottom: 0;
       text-align: left;
 
-      @include respond-to($bp-small) {
-        @include font-size(21px);
+      @include min-width($bp-small) {
+        font-size: 21px;
       }
     }
 
@@ -96,7 +95,7 @@
         }
       }
 
-      @include respond-to($bp-small) {
+      @include min-width($bp-small) {
         margin-bottom: 1em;
       }
     }

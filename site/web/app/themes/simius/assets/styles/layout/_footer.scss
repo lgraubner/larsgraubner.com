@@ -6,7 +6,7 @@
   padding: 30px 0;
   text-align: center;
 
-  @include respond-to($bp-small) {
+  @include min-width($bp-small) {
     padding: 100px 0;
   }
 

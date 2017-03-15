@@ -5,17 +5,17 @@
 .intro {
 
   .inner {
-    @include respond-to($bp-medium) {
+    @include min-width($bp-medium) {
       width: 680px;
     }
   }
 
   p {
     margin-top: 1em;
-    @include font-size(17px);
+    font-size: 17px;
 
     &:first-of-type {
-      @include font-size(19px);
+      font-size: 19px;
       font-weight: 600;
       margin-top: 0;
     }

@@ -3,12 +3,11 @@
  */
 
 .post-list {
-  @extend %clearfix;
 
   .post {
     margin-bottom: 60px;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-bottom: 100px;
     }
 

@@ -3,7 +3,7 @@
  * Template header
  */
 ?>
-<header role="banner" class="header">
+<header role="banner" class="header clearfix">
     <div class="inner">
         <?php if (is_front_page()): ?>
             <h1 class="logo">
@@ -19,7 +19,7 @@
                 </div>
         <?php endif; ?>
         <a id="skip-navigation" class="invisible" href="#content">Skip Navigation</a>
-        <nav role="navigation" class="menu-wrapper">
+        <nav role="navigation" class="menu-wrapper clearfix">
             <?php
             if (has_nav_menu('header_navigation')) :
                 wp_nav_menu(['theme_location' => 'header_navigation']);

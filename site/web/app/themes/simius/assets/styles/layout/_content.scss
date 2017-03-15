@@ -3,10 +3,10 @@
  */
 
 .content {
-  @include font-size(17px);
+  font-size: 17px;
   margin-top: 30px;
 
-  @include respond-to($bp-small) {
+  @include min-width($bp-small) {
     margin-top: 50px;
   }
 
@@ -44,7 +44,7 @@
   body:not(.search):not(.legal-disclosure):not(.error404) & p:not(.nodrop):first-child:first-letter {
     float: left;
     padding: 3px 6px 0 0;
-    @include font-size(55px);
+    font-size: 55px;
     font-weight: bold;
     line-height: 1em;
   }
@@ -77,20 +77,20 @@
   }
 
   h2:not([class]) {
-    @include font-size(28px);
+    font-size: 28px;
   }
 
   h3:not([class]) {
-    @include font-size(24px);
+    font-size: 24px;
   }
 
   h4:not([class]) {
-    @include font-size(20px);
+    font-size: 20px;
   }
 
   pre {
     border-radius: $border-radius;
-    @include font-size(14px);
+    font-size: 14px;
     background: #fafafa;
     border: 1px solid rgba(0, 0, 0, 0.03);
     box-shadow: none;
@@ -115,7 +115,7 @@
       background: transparent;
     }
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin: 2.5em 0;
     }
 
@@ -168,7 +168,7 @@
 
   .wp-caption-text {
     color: rgba(0, 0, 0, 0.7);
-    @include font-size(15px);
+    font-size: 15px;
     font-style: italic;
     margin-top: 10px;
     font-family: $font-secondary;

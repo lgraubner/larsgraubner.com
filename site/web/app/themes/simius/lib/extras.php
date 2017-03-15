@@ -35,7 +35,7 @@ function pagination_nav() {
     global $wp_query;
 
     if ( $wp_query->max_num_pages > 1 ) { ?>
-        <nav class="pagination" role="navigation">
+        <nav class="pagination clearfix" role="navigation">
             <div class="inner">
                 <div class="pagination__previous"><?php next_posts_link('Older posts'); ?></div>
                 <div class="pagination__next"><?php previous_posts_link('Newer posts'); ?></div>

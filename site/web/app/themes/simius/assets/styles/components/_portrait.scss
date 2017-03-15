@@ -11,7 +11,7 @@
   border: 3px solid rgba(0, 0, 0, 0.05);
   box-sizing: content-box;
 
-  @include respond-to($bp-small) {
+  @include min-width($bp-small) {
     margin-bottom: 50px;
     width: 110px;
     height: 110px;

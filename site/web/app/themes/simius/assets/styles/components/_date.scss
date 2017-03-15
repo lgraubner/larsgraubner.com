@@ -4,11 +4,11 @@
 
 .date {
   color: rgba(0, 0, 0, 0.44);
-  @include font-size(16px);
+  font-size: 16px;
   font-family: $font-secondary;
   font-weight: 700;
 
-  @include respond-to($bp-small) {
+  @include min-width($bp-small) {
     margin-bottom: 5px;
   }
 }

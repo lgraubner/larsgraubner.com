@@ -9,14 +9,14 @@
   background-repeat: no-repeat;
   background-size: 30px;
   padding: 1.5em 1.5em 1.5em 65px;
-  @include font-size(14px);
+  font-size: 14px;
   font-family: $font-secondary;
   color: $color-black;
   border-radius: $border-radius;
   margin-top: 30px;
   line-height: 1.5em;
 
-  @include respond-to($bp-small) {
+  @include min-width($bp-small) {
     margin-top: 40px;
   }
 }

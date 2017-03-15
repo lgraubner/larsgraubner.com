@@ -3,7 +3,7 @@
  * Template post tiles
  */
 ?>
-<div class="post-tiles">
+<div class="post-tiles clearfix">
     <div class="post-tiles__row">
     <?php
     if (empty($query)) {

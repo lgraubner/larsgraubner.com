@@ -2,11 +2,11 @@
   &__title {
     text-align: center;
     margin: 0 0 1em;
-    @include font-size(30px);
+    font-size: 30px;
     font-family: $font-secondary;
     font-weight: 600;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-bottom: 1.5em;
     }
   }

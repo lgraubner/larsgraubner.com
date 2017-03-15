@@ -2,7 +2,7 @@
   .featured-posts {
     margin-top: 40px;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-top: 60px;
     }
   }
@@ -10,13 +10,13 @@
   .searchform {
     margin-top: 40px;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-top: 60px;
     }
   }
 
   .page-content {
-    @include font-size(18px);
+    font-size: 18px;
     text-align: center;
   }
 }

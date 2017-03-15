@@ -6,13 +6,13 @@
   &__title {
     font-family: $font-secondary;
     font-weight: 600;
-    @include font-size(30px);
+    font-size: 30px;
     text-align: center;
     line-height: 1.15em;
     margin: 0 0 25px;
 
-    @include respond-to($bp-small) {
-      @include font-size(44px);
+    @include min-width($bp-small) {
+      font-size: 44px;
     }
   }
 
@@ -30,7 +30,7 @@
     border-radius: $border-radius;
     overflow: hidden;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-bottom: 40px;
     }
 
@@ -54,7 +54,7 @@
     .button {
       margin: 0.5em 0 0;
 
-      @include respond-to($bp-small) {
+      @include min-width($bp-small) {
         margin: 0.5em 0 1em;
       }
     }
@@ -71,7 +71,7 @@
   &__footer {
     margin-top: 40px;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-top: 60px;
     }
 
@@ -95,7 +95,7 @@
         background: rgba(0, 0, 0, 0.05);
         border: 0 !important;
         font-family: $font-secondary;
-        @include font-size(13px);
+        font-size: 13px;
         border-radius: $border-radius;
         padding: 5px 10px;
         line-height: 22px;

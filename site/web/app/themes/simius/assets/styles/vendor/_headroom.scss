@@ -5,7 +5,7 @@
 body {
   padding-top: 55px;
 
-  @include respond-to($bp-small) {
+  @include min-width($bp-small) {
     padding-top: 65px;
   }
 }

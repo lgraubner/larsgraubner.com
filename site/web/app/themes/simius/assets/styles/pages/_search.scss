@@ -4,7 +4,7 @@
 
 .search-no-results .page-content {
   text-align: center;
-  @include font-size(18px);
+  font-size: 18px;
 
   .featured-posts {
     margin-top: 40px;
@@ -24,7 +24,7 @@
   .page-header {
     margin-bottom: 20px;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-bottom: 30px;
     }
   }

@@ -11,7 +11,6 @@
   margin: 0;
   font-family: $font-secondary;
   font-weight: 600;
-  @extend %clearfix;
   float: right;
   padding: 0;
 
@@ -22,14 +21,14 @@
   &__item {
     display: block;
     text-transform: uppercase;
-    @include font-size(14px);
+    font-size: 14px;
     letter-spacing: .15em;
     float: left;
     margin-left: 1em;
     text-align: left;
     white-space: nowrap;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       margin-left: 2em;
     }
   }
@@ -37,7 +36,7 @@
   & > &__item:first-child {
     display: none;
 
-    @include respond-to($bp-small) {
+    @include min-width($bp-small) {
       display: block;
     }
   }
@@ -52,7 +51,7 @@
       background: none;
       border: 0;
       text-transform: uppercase;
-      @include font-size(14px);
+      font-size: 14px;
       letter-spacing: .15em;
       text-align: left;
       font-family: $font-secondary;
@@ -68,7 +67,7 @@
       background: rgba(255, 255, 255, 0.97);
       padding: 0;
 
-      @include respond-to($bp-small) {
+      @include min-width($bp-small) {
         top: 55px;
       }
     }
@@ -77,7 +76,7 @@
       float: none;
       margin-left: 0;
       text-align: right;
-      @include font-size(12px);
+      font-size: 12px;
     }
 
     &--visible {

@@ -3,7 +3,7 @@
  * Template post list
  */
 ?>
-<div class="post-list">
+<div class="post-list clearfix">
     <div class="inner">
         <?php while (have_posts()): the_post(); ?>
             <div class="post-list__item post">
