@@ -4,7 +4,6 @@ export default {
   init() {
     if ($('.menu__item').length > 3 && $(window).width() <= 768) {
       const $nav = $('#menu-header-nav');
-      // const $orgNav = $nav.clone();
 
       const $moreMenuHTML = $('<div/>')
         .addClass('menu__more')
