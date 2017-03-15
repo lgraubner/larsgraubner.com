@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa116f0ac3916bd75cc74fd051598b3c",
-    "content-hash": "ed014d803c4089f1935d0f3112a95c8f",
+    "content-hash": "e082b2b77c7303473651a5a120965bc1",
     "packages": [
         {
             "name": "composer/installers",
@@ -112,20 +111,20 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.6.1",
+            "version": "4.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3"
+                "reference": "eef7c0520b1e7187cd2cd7540dc997c4c3b0340a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/eef7c0520b1e7187cd2cd7540dc997c4c3b0340a",
+                "reference": "eef7c0520b1e7187cd2cd7540dc997c4c3b0340a",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +148,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-09-07 15:01:47"
+            "time": "2017-03-06T16:01:58+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -197,7 +196,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-06-11 15:15:30"
+            "time": "2015-06-11T15:15:30+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -239,7 +238,7 @@
             "keywords": [
                 "env"
             ],
-            "time": "2016-05-08 17:14:32"
+            "time": "2016-05-08T17:14:32+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -296,7 +295,7 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01 16:27:06"
+            "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -346,19 +345,19 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
         },
         {
             "name": "wpackagist-plugin/all-in-one-seo-pack",
-            "version": "2.3.10.2",
+            "version": "2.3.12.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-seo-pack/",
-                "reference": "tags/2.3.10.2"
+                "reference": "tags/2.3.12.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.3.10.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.3.12.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -370,16 +369,16 @@
         },
         {
             "name": "wpackagist-plugin/backwpup",
-            "version": "3.3.4",
+            "version": "3.3.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/backwpup/",
-                "reference": "tags/3.3.4"
+                "reference": "tags/3.3.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/backwpup.3.3.4.zip",
-                "reference": "tags/3.3.4",
+                "url": "https://downloads.wordpress.org/plugin/backwpup.3.3.7.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -419,7 +418,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/cachify.2.2.4.zip",
-                "reference": "tags/2.2.4",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -430,7 +429,7 @@
         },
         {
             "name": "wpackagist-plugin/cmb2",
-            "version": "2.2.2.1",
+            "version": "2.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cmb2/",
@@ -439,7 +438,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/cmb2.zip",
-                "reference": "trunk",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -450,15 +449,15 @@
         },
         {
             "name": "wpackagist-plugin/ewww-image-optimizer",
-            "version": "3.1.1",
+            "version": "3.2.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
-                "reference": "tags/3.1.1"
+                "reference": "tags/3.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.3.1.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.3.2.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -510,15 +509,15 @@
         },
         {
             "name": "wpackagist-plugin/imsanity",
-            "version": "2.3.6",
+            "version": "2.3.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/imsanity/",
-                "reference": "trunk"
+                "reference": "tags/2.3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/imsanity.zip",
+                "url": "https://downloads.wordpress.org/plugin/imsanity.2.3.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -530,15 +529,15 @@
         },
         {
             "name": "wpackagist-plugin/relevanssi",
-            "version": "3.5.5",
+            "version": "3.5.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/relevanssi/",
-                "reference": "tags/3.5.5"
+                "reference": "tags/3.5.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/relevanssi.3.5.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/relevanssi.3.5.7.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -550,15 +549,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-retina-2x",
-            "version": "4.6.0",
+            "version": "4.8.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-retina-2x/",
-                "reference": "tags/4.6.0"
+                "reference": "tags/4.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-retina-2x.4.6.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-retina-2x.4.8.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -570,15 +569,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-sweep",
-            "version": "1.0.8",
+            "version": "1.0.10",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-sweep/",
-                "reference": "tags/1.0.8"
+                "reference": "tags/1.0.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-sweep.1.0.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-sweep.1.0.10.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -592,16 +591,16 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.7.0",
+            "version": "2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "571e27b6348e5b3a637b2abc82ac0d01e6d7bbed"
+                "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/571e27b6348e5b3a637b2abc82ac0d01e6d7bbed",
-                "reference": "571e27b6348e5b3a637b2abc82ac0d01e6d7bbed",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
+                "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
                 "shasum": ""
             },
             "require": {
@@ -666,7 +665,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-09-01 23:53:02"
+            "time": "2017-03-01T22:17:45+00:00"
         }
     ],
     "aliases": [],
