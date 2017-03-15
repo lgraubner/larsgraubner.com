@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import Headroom from 'headroom.js';
 import twemoji from 'twemoji';
-import FontFaceObserver from 'fontfaceobserver';
 
 /**
  * Various actions
@@ -15,7 +14,6 @@ export default {
   init() {
     this.addEmojis();
     this.initHeadroom();
-    this.loadFont();
   },
 
   /**
@@ -45,16 +43,5 @@ export default {
       },
     });
     headroom.init();
-  },
-
-  /**
-   * Listen for fontloading
-   */
-  loadFont() {
-    const font = new FontFaceObserver('Libre Baskerville', {});
-
-    font.load().then(() => {
-      $('html').addClass('wf-loaded');
-    });
   },
 };

@@ -11,4 +11,4 @@ import AnchorJS from 'anchor-js';
   anchors.add('.post__content h3');
   anchors.add('.post__content h4');
   anchors.add('.post__content h5');
-}());
+})();

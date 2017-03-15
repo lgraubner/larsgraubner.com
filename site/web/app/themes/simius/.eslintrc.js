@@ -1,5 +1,8 @@
 module.exports = {
-  extends: 'airbnb',
+  extends: [
+    'airbnb',
+    'prettier',
+  ],
   globals: {
     jQuery: false,
     document: false,

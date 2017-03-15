@@ -9,10 +9,6 @@ import common from 'modules/common';
 import syntaxHighlighting from 'modules/syntax-highlighting';
 import navigation from 'modules/navigation';
 
-const modules = [
-  common,
-  syntaxHighlighting,
-  navigation,
-];
+const modules = [common, syntaxHighlighting, navigation];
 
 ready(() => load(modules));

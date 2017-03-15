@@ -10,9 +10,11 @@ import range from 'lodash.range';
 export default {
   init() {
     Prism.highlightAll();
-    Prism.hooks.add('after-highlight', (env) => {
+    Prism.hooks.add('after-highlight', env => {
       // eslint-disable-next-line
-      env.element.innerHTML = '<div class="line">' + env.highlightedCode.replace(/\r\n?|\n/g, '</div><div class="line">') + '</div>';
+      env.element.innerHTML = '<div class="line">' +
+        env.highlightedCode.replace(/\r\n?|\n/g, '</div><div class="line">') +
+        '</div>';
 
       let dataLine = env.element.getAttribute('data-line');
       let lines = null;
@@ -22,7 +24,7 @@ export default {
           return range(parseInt(p1, 10), parseInt(p2, 10) + 1).join(',');
         });
         lines = dataLine.split(',');
-        lines.map((line) => {
+        lines.map(line => {
           const child = env.element.querySelector(`.line:nth-child(${line})`);
           const className = 'line--highlight';
           if (child.classList) {

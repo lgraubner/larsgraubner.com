@@ -1,0 +1,22 @@
+/// Very basic media query mixin for min-width
+/// @param {Number} $breakpoint
+@mixin min-width($breakpoint) {
+  @media screen and (min-width: #{if(type-of($breakpoint) == 'string', unquote($breakpoint), inspect($breakpoint))}) {
+    @content;
+  }
+}
+
+/// Very basic media query mixin for max-width
+/// @param {Number} $breakpoint
+@mixin max-width($breakpoint) {
+  @media screen and (max-width: #{if(type-of($breakpoint) == 'string', unquote($breakpoint), inspect($breakpoint))}) {
+    @content;
+  }
+}
+
+/// Media query for high res devices
+@mixin high-res() {
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}

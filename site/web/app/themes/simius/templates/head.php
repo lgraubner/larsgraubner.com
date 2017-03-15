@@ -18,4 +18,6 @@
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon.ico">
     <meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
 </head>
