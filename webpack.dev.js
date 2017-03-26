@@ -9,8 +9,8 @@ const outputPath = path.join(__dirname, config.output.path);
 const webpackConfig = {
   entry: [
     'webpack-hot-middleware/client',
-    path.join(__dirname, './static/js/main.js'),
-    path.join(__dirname, './static/css/main.scss'),
+    path.join(__dirname, './src/scripts/main.js'),
+    path.join(__dirname, './src/styles/main.scss'),
   ],
   output: {
     publicPath: config.output.publicPath,
