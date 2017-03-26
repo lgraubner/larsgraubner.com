@@ -1,0 +1,6 @@
+/// Return url image path
+/// @param {String} $path - image path
+/// @param {String} $base - base URL
+@function image($path, $base: $image-path) {
+  @return url($base + $path);
+}

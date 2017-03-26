@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#"  class="no-js">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>Lars Graubner – Front-end Developer</title>
+
+      <meta name="description"  content="This is the website and blog of Lars Graubner, a german front-end developer working with JavaScript, React, Node and Wordpress." />
+
+      <link rel="canonical" href="{{ .Permalink }}">
+      <meta property="og:title" content="Lars Graubner – Front-end Developer" />
+      <meta property="og:type" content="blog" />
+      <meta property="og:url" content="{{ .Site.BaseURL }}" />
+      <meta property="og:site_name" content="Lars Graubner" />
+      <meta property="og:description" content="This is the website and blog of Lars Graubner, a german front-end developer working with JavaScript, React, Node and Wordpress." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@larsgraubner" />
+      <meta name="twitter:domain" content="larsgraubner.com" />
+      <meta name="twitter:title" content="Lars Graubner – Front-end Developer" />
+      <meta name="twitter:description" content="This is the website and blog of Lars Graubner, a german front-end developer working with JavaScript, React, Node and Wordpress." />
+      <script type="application/ld+json">
+      { "@context" : "http://schema.org",
+        "@type" : "Person",
+        "name" : "Lars Graubner",
+        "url" : "https://larsgraubner.com",
+        "sameAs" : ["https://twitter.com/larsgraubner"]
+      }
+      </script>
+
+      <link rel="dns-prefetch" href="//twemoji.maxcdn.com" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/{{ index .Site.Data.assets "app.css" }}" type="text/css" />
+      <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+      <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}apple-touch-icon.png">
+      <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon-16x16.png" sizes="16x16">
+      <link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">
+      <link rel="mask-icon" href="{{ .Site.BaseURL }}safari-pinned-tab.svg" color="#5bbad5">
+      <link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.ico">
+      <meta name="msapplication-config" content="{{ .Site.BaseURL }}browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
+    </head>

@@ -1,0 +1,15 @@
+{
+  "context": "src",
+  "entry": {
+    "app": [
+      "./scripts/main.js",
+      "./styles/main.scss"
+    ]
+  },
+  "output": {
+    "path": "static",
+    "publicPath": "/"
+  },
+  "devUrl": "http://larsgraubner.com.dev",
+  "devPort": 3000
+}

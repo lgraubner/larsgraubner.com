@@ -1,0 +1,9 @@
+{{ define "content" }}
+<ul>
+{{ range first 10 (where .Data.Pages ".Type" "post") }}
+  <li>
+    {{ .Title }}
+  </li>
+{{ end }}
+</ul>
+{{ end }}
