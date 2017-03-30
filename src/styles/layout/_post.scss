@@ -1,0 +1,32 @@
+$post-padding: 65px;
+
+.post {
+  &__header {
+    padding: 0 $post-padding;
+    margin-bottom: 40px;
+  }
+
+  &__content {
+    font-size: 17px;
+    line-height: 1.8em;
+
+    p {
+      margin: 1.8em 0;
+      padding: 0 $post-padding;
+    }
+
+    h2 {
+      padding: 0 $post-padding;
+      margin: 2em 0 1em;
+      font-size: 24px;
+      font-weight: normal;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 32px;
+    margin: 0;
+    text-align: center;
+  }
+}

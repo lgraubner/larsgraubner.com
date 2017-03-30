@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const CleanPlugin = require('clean-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -107,7 +106,6 @@ const webpackConfig = {
     modules: ['node_modules'],
   },
   plugins: [
-    new CleanPlugin([outputPath]),
     new ExtractTextPlugin({
       filename: 'styles/[name]_[hash].css',
       allChunks: true,

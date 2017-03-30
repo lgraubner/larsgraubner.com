@@ -1,0 +1,10 @@
+.header {
+  background: $color-dark-blue;
+  line-height: 55px;
+  margin-bottom: 25px;
+  box-shadow: $box-shadow;
+
+  .inner {
+    width: 1024px;
+  }
+}

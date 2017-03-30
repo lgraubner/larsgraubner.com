@@ -1,10 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-const CleanPlugin = require('clean-webpack-plugin');
 
 const config = require('./src/config');
-
-const outputPath = path.join(__dirname, config.output.path);
 
 const webpackConfig = {
   entry: [
@@ -69,7 +66,6 @@ const webpackConfig = {
     modules: ['node_modules'],
   },
   plugins: [
-    new CleanPlugin([outputPath]),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),

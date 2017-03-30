@@ -15,3 +15,16 @@
 
 // import layouts, pages and components
 // @import 'components/mycomponent';
+@import 'layout/common';
+@import 'layout/content';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/footer';
+@import 'layout/post';
+@import 'layout/post-list';
+@import 'layout/post-preview';
+
+@import 'components/logo';
+@import 'components/author';
+@import 'components/button';
+@import 'components/pagination';

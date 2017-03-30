@@ -1,0 +1,7 @@
+<div class="pagination">
+  {{ range .Paginator.Pagers }}
+  <a href="{{ .URL }}" class="pagination__item">
+    {{ .PageNumber }}
+  </a>
+  {{ end }}
+</div>

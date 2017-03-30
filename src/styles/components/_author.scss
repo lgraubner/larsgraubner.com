@@ -1,0 +1,29 @@
+.author {
+  margin-bottom: 25px;
+  background: #fff;
+  padding: 25px 65px;
+  box-shadow: $box-shadow;
+
+  &__portrait {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+
+  p {
+    float: left;
+    width: 510px;
+    display: block;
+    margin: 0;
+    line-height: 1.7em;
+    font-size: 16px;
+  }
+
+  a {
+    color: $color-green;
+  }
+}

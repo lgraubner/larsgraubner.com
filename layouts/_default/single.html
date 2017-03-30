@@ -1,7 +1,12 @@
 {{ define "content" }}
-<article class="post">
-  <h1 class="post__title">
-    {{ .Title }}
-  </h1>
-</article>
+<div class="page">
+  <div class="inner">
+    <h1 class="page__title">
+      {{ .Title }}
+    </h1>
+    <div class="page__content">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
 {{ end }}

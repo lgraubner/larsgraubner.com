@@ -1,11 +1,14 @@
     <footer class="footer" role="contentinfo">
-
-    </footer>
-    <footer class="footer">
-      <div class="rss">
-        <a href="{{ .RSSLink }}">Subscribe to the RSS feed.</a>
+      <div class="social">
+        <a href="https://twitter.com/larsgraubner" class="social--twitter" target="_blank">Twitter</a>
+        <a href="https://github.com/lgraubner" class="social--github" target="_blank">Github</a>
+        <a href="/index.xml" class="social--rss" target="_blank">RSS</a>
       </div>
     </footer>
-    <script src="{{ .Site.BaseURL }}/scripts/{{ index .Site.Data.assets "app.js" }}"></script>
+    {{ if (isset .Site.Data "assets") }}
+      <script src="/scripts/{{ index .Site.Data.assets "app.js" }}"></script>
+    {{ else }}
+      <script src="/scripts/main.js"></script>
+    {{ end }}
   </body>
 </html>

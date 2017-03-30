@@ -12,7 +12,10 @@ $bp-wide: 1280px;
 // Colors
 
 $color-primary: orange !default;
-$color-text: #222 !default;
+$color-text: #34495e !default;
+$color-gray: #999;
+$color-green: #00B16A;
+$color-dark-blue: #3a4250;
 
 // Fonts
 
@@ -21,3 +24,4 @@ $font-primary: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica,
 
 // Miscellaneous
 $image-path: '/assets/images';
+$box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);

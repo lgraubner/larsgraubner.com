@@ -1,0 +1,15 @@
+.nav {
+  float: right;
+
+  li {
+    display: inline-block;
+    margin-left: 60px;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+  }
+}

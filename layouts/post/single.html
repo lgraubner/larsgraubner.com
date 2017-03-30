@@ -1,0 +1,14 @@
+{{ define "content" }}
+<article class="post">
+  <div class="inner">
+    <header class="post__header">
+      <h1 class="post__title">
+        {{ .Title }}
+      </h1>
+    </header>
+    <div class="post__content">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

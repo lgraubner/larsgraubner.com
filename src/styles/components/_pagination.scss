@@ -1,0 +1,10 @@
+.pagination {
+  background: $color-dark-blue;
+  padding: 20px $post-padding;
+  text-align: center;
+
+  &__item {
+    color: #fff;
+    margin: 0 5px;
+  }
+}

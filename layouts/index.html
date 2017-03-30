@@ -1,9 +1,31 @@
 {{ define "content" }}
-<ul>
-{{ range first 10 (where .Data.Pages ".Type" "post") }}
-  <li>
-    {{ .Title }}
-  </li>
-{{ end }}
-</ul>
+<div class="home">
+  <div class="inner">
+    {{ partial "author.html" . }}
+    <div class="post-list">
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+    {{ range $paginator.Pages }}
+      <div class="post-preview">
+        <div class="post-preview__date">
+          {{ dateFormat "January 01, 2006" .Date }}
+        </div>
+        <h2 class="post-preview__title">
+          <a href="{{ .Permalink }}">
+            {{ .Title }}
+          </a>
+        </h2>
+        <div class="post-preview__summary">
+          <p>
+            {{ .Summary }}
+          </p>
+        </div>
+        {{ if .Truncated }}
+        <a href="{{ .RelPermalink }}" class="post-preview__read-more button">Read More</a>
+        {{ end }}
+      </div>
+    {{ end }}
+    </div>
+    {{ partial "pagination.html" . }}
+  </div>
+</div>
 {{ end }}
