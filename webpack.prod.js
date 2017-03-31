@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies:0 */
 const webpack = require('webpack');
 const path = require('path');
 const AssetsPlugin = require('assets-webpack-plugin');
@@ -49,7 +50,7 @@ const webpackConfig = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015'],
+          presets: [['es2015', { modules: false }]],
           cacheDirectory: true,
         },
       },
