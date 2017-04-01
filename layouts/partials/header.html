@@ -1,11 +1,7 @@
 {{ partial "head.html" . }}
 <header role="banner" class="header">
+  {{ partial "author.html" . }}
   <div class="inner clearfix">
-    <h1 class="logo">
-      <a href="{{ .Site.BaseURL }}">
-        L<span>ars</span><span> </span>G<span>raubner</span>
-      </a>
-    </h1>
     {{ partial "nav.html" . }}
   </div>
 </header>

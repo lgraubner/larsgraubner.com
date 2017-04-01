@@ -1,6 +1,6 @@
 ---
 title: Recap code.talks 2016
-author: Lars Graubner
+description: "This year in September it was all about popcorn, nachos and code again. This is a recap of the code.talks 2016 conference and the best talks I attended."
 type: post
 date: 2016-10-13T08:00:09+00:00
 url: /recap-code-talks-2016/

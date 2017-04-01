@@ -1,14 +1,17 @@
 {{ define "content" }}
-<article class="post">
-  <div class="inner">
+<div class="inner">
+  <article class="post">
     <header class="post__header">
-      <h1 class="post__title">
+      <div class="post__date">
+        {{ dateFormat "January 01, 2006" .Date }}
+      </div>
+      <h1 class="post__title title">
         {{ .Title }}
       </h1>
     </header>
-    <div class="post__content">
+    <div class="post__content content">
       {{ .Content }}
     </div>
-  </div>
-</article>
+  </article>
+</div>
 {{ end }}

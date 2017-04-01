@@ -1,29 +1,30 @@
 .author {
-  margin-bottom: 25px;
-  background: #fff;
-  padding: 25px 65px;
-  box-shadow: $box-shadow;
+  padding: 40px 0;
+  background: #841e99;
+  background: -moz-linear-gradient(left, #841e99 0%, #625dad 100%);
+  background: -webkit-linear-gradient(left, #841e99 0%,#625dad 100%);
+  background: linear-gradient(to right, #841e99 0%,#625dad 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#841e99', endColorstr='#625dad',GradientType=1 );
 
   &__portrait {
     display: block;
     float: left;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 20px;
+    margin-top: -5px;
   }
 
   p {
-    float: left;
-    width: 510px;
-    display: block;
-    margin: 0;
-    line-height: 1.7em;
+    color: #fff;
     font-size: 16px;
+    line-height: 1.7em;
   }
 
   a {
-    color: $color-green;
+    color: #fff;
+    border-bottom: 1px solid currentColor;
   }
 }

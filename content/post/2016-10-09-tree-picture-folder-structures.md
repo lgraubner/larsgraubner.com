@@ -1,7 +1,7 @@
 ---
 title: Using tree to picture folder structures
-author: Lars Graubner
 type: post
+description: "This article explains how to easily picture your projects folder structure using the command line programm tree for unix systems."
 date: 2016-10-09T08:00:06+00:00
 url: /tree-picture-folder-structures/
 categories:
@@ -47,7 +47,7 @@ Which outputs the following folder structure:
 
 18 directories</code></pre>
 
-For a lot more options you can checkout the [ubuntuusers Wiki][1] or type `man tree` after installation to find out more. 
+For a lot more options you can checkout the [ubuntuusers Wiki][1] or type `man tree` after installation to find out more.
 
 ## Conclusion
 

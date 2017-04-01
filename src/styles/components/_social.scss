@@ -1,0 +1,25 @@
+.social {
+  &__icon {
+    text-indent: -9999px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+
+    &--twitter {
+      background-image: image('icons/twitter-gray.svg');
+    }
+
+    &--rss {
+      background-image: image('icons/rss.svg');
+      background-size: 90%;
+    }
+
+    &--github {
+      background-image: image('icons/github.svg');
+    }
+  }
+}

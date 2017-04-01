@@ -1,7 +1,17 @@
-<div class="pagination">
+<div class="pagination clearfix">
+  {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="pagination__nav pagination__nav--prev">Previous Page</a>
+  {{ end }}
   {{ range .Paginator.Pagers }}
-  <a href="{{ .URL }}" class="pagination__item">
+  {{ if eq $.Paginator.PageNumber .PageNumber }}
+    <a href="{{ .URL }}" class="pagination__item pagination__item--current">
+  {{ else }}
+    <a href="{{ .URL }}" class="pagination__item">
+  {{ end }}
     {{ .PageNumber }}
   </a>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="pagination__nav pagination__nav--next">Next Page</a>
   {{ end }}
 </div>

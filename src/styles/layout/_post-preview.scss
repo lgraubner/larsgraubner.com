@@ -5,17 +5,17 @@
 
   &__date {
     color: $color-gray;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 16px;
     font-style: italic;
   }
 
   &__title {
-    font-size: 37px;
+    font-size: 36px;
     margin-top: 0;
     margin-bottom: 30px;
     line-height: 1.15em;
-    font-weight: bold;
+    font-weight: 700;
 
     a {
       color: $color-text;
@@ -24,7 +24,7 @@
 
   &__summary {
     line-height: 1.7em;
-    font-size: 16px;
+    font-size: 17px;
 
     p {
       margin: 0;

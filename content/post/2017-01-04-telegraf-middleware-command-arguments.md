@@ -1,6 +1,6 @@
 ---
 title: Creating a Telegraf middleware for command arguments parsing
-author: Lars Graubner
+description: "Telegraf does not offer any command arguments parsing. This post explains how to implement a simple middleware for this task."
 type: post
 date: 2017-01-04T01:37:30+00:00
 url: /telegraf-middleware-command-arguments/
@@ -34,7 +34,7 @@ So if you want to pass some arguments to your command (e.g. `/lights on`) there 
 ## Creating the middleware
 
 A middleware is a function hooked into the message flow. If the bot receives a message the message runs through all middlewares to alter or just hand it to the next middleware.
-  
+
 Our middleware will parse the sent message text and store the results in the recommended namespace `ctx.state`. We will extract the command itself, the arguments and expose it along the raw command.
 
 <pre><code class="language-clike">const commandArgs = () =&gt; (ctx, next) =&gt; {
@@ -92,7 +92,7 @@ An example command object looks like this:
 ## Wrapping up
 
 Initially I thought there has to be a builtin way to get the command arguments with Telegraf. I was wrong. 🙈 But as it&#8217;s a very well written library and supports middlewares it&#8217;s no problem to parse them by yourself. This is a good example of the power of middlewares which are also used with the popular [Express framework][5].
-  
+
 My personal assistant is already able to answer my commands. Soon it will use a Raspberry Pi to wirelessly control the lights. 😊
 
  [1]: http://telegraf.js.org

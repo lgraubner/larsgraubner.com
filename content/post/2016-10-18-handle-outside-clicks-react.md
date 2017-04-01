@@ -1,6 +1,6 @@
 ---
 title: Handle clicks outside of React components
-author: Lars Graubner
+description: "Sometimes it's useful to detect clicks outside of a React component. Learn how to achieve this by attaching an native event handler to the document."
 type: post
 date: 2016-10-18T14:15:24+00:00
 url: /handle-outside-clicks-react/

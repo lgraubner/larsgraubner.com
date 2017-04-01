@@ -1,7 +1,6 @@
 {{ define "content" }}
 <div class="home">
   <div class="inner">
-    {{ partial "author.html" . }}
     <div class="post-list">
     {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
     {{ range $paginator.Pages }}
@@ -9,8 +8,8 @@
         <div class="post-preview__date">
           {{ dateFormat "January 01, 2006" .Date }}
         </div>
-        <h2 class="post-preview__title">
-          <a href="{{ .Permalink }}">
+        <h2 class="post-preview__title title">
+          <a href="{{ .RelPermalink }}">
             {{ .Title }}
           </a>
         </h2>

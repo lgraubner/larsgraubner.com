@@ -1,5 +1,39 @@
-#content {
-  .inner {
+$post-padding: 65px;
 
+.content {
+  font-size: 17px;
+  line-height: 1.7em;
+
+  h2 {
+    padding: 0 $post-padding;
+    margin: 2em 0 1em;
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  a {
+    color: $color-primary;
+    font-weight: 600;
+
+    &:hover,
+    &:focus {
+      color: $color-text;
+      border-bottom: 1px solid currentColor;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0 $post-padding;
+
+    &:not(:last-child) {
+      margin-bottom: 1.8em;
+    }
+  }
+
+  pre {
+    background: $color-dark-blue;
+    color: #fff;
+    padding: 30px $post-padding;
   }
 }

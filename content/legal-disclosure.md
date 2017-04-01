@@ -1,16 +1,15 @@
 ---
 title: Legal Disclosure
-author: Lars Graubner
+description: "Legal information for larsgraubner.com."
 type: page
 date: 2016-09-13T19:50:48+00:00
-
 ---
 Information in accordance with section 5 TMG
 
 Lars Graubner
-  
+
 Süderstr. 8
-  
+
 23554 Lübeck
 
 ## Contact

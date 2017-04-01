@@ -1,10 +1,12 @@
 {{ define "content" }}
-<div class="page">
-  <div class="inner">
-    <h1 class="page__title">
-      {{ .Title }}
-    </h1>
-    <div class="page__content">
+<div class="inner">
+  <div class="page">
+    <page class="page__header">
+      <h1 class="page__title title">
+        {{ .Title }}
+      </h1>
+    </page>
+    <div class="page__content content">
       {{ .Content }}
     </div>
   </div>

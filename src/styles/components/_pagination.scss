@@ -2,9 +2,38 @@
   background: $color-dark-blue;
   padding: 20px $post-padding;
   text-align: center;
+  box-shadow: $box-shadow;
+  line-height: 20px;
 
   &__item {
-    color: #fff;
+    color: $color-white-dim;
     margin: 0 5px;
+    font-size: 15px;
+    display: inline-block;
+
+    &--current {
+      border-bottom: 1px solid currentColor;
+    }
+  }
+
+  &__nav {
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    background-position: center center;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    opacity: 0.95;
+
+    &--next {
+      float: right;
+      background-image: image('icons/next.svg');
+    }
+
+    &--prev {
+      float: left;
+      background-image: image('icons/back.svg');
+    }
   }
 }

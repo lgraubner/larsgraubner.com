@@ -1,6 +1,9 @@
 .post-list {
   .post-preview {
-    border-bottom: 1px solid #eee;
     background: #fff;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
   }
 }
