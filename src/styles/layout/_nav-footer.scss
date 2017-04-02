@@ -1,0 +1,23 @@
+.nav-footer {
+  margin-bottom: 30px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &__item {
+    display: inline-block;
+    font-size: 15px;
+
+    &:not(:last-child):after {
+      content: '–';
+      margin: 0 10px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

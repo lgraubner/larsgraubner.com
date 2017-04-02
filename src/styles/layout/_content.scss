@@ -7,18 +7,28 @@ $post-padding: 65px;
   h2 {
     padding: 0 $post-padding;
     margin: 2em 0 1em;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: normal;
+    line-height: 1.3em;
+  }
+
+  h3 {
+    padding: 0 $post-padding;
+    margin: 2em 0 1em;
+    font-size: 20px;
+    font-weight: 600;
   }
 
   a {
     color: $color-primary;
     font-weight: 600;
+    transition: color, border-color 100ms ease-in-out;
+    border-bottom: 1px solid transparent;
 
     &:hover,
     &:focus {
       color: $color-text;
-      border-bottom: 1px solid currentColor;
+      border-color: currentColor;
     }
   }
 

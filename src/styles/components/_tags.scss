@@ -1,0 +1,26 @@
+.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: 0 65px;
+  font-size: 12px;
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  a {
+    display: inline-block;
+    line-height: 1em;
+    padding: 8px 10px;
+    color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.05);
+    transition: background .15s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
