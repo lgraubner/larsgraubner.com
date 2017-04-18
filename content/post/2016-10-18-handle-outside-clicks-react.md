@@ -5,8 +5,6 @@ type: post
 date: 2016-10-18T14:15:24+00:00
 url: /handle-outside-clicks-react/
 categories:
-  - Web development
-tags:
   - JavaScript
   - React
 

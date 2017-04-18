@@ -8,19 +8,11 @@
       <h1 class="post__title title">
         {{ .Title }}
       </h1>
+      {{ partial "categories" . }}
     </header>
     <div class="post__content content">
       {{ .Content }}
     </div>
-    <footer class="post__footer">
-      <ul class="tags">
-        {{ range .Params.tags }}
-        <li>
-          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </footer>
   </article>
 </div>
 {{ end }}

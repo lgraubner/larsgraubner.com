@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 const forEach = require('lodash.foreach');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = require('./src/config');
 
@@ -107,6 +108,7 @@ const webpackConfig = {
     modules: ['node_modules'],
   },
   plugins: [
+    new CleanWebpackPlugin([config.output.path]),
     new ExtractTextPlugin({
       filename: 'styles/[name]_[hash].css',
       allChunks: true,

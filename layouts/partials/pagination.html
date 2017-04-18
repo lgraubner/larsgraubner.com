@@ -1,3 +1,4 @@
+{{ if gt .Paginator.TotalPages 1 }}
 <div class="pagination clearfix">
   {{ if .Paginator.HasPrev }}
     <a href="{{ .Paginator.Prev.URL }}" class="pagination__nav pagination__nav--prev">Previous Page</a>
@@ -17,3 +18,4 @@
     <a href="{{ .Paginator.Next.URL }}" class="pagination__nav pagination__nav--next">Next Page</a>
   {{ end }}
 </div>
+{{ end }}

@@ -7,7 +7,7 @@
     ]
   },
   "output": {
-    "path": "static",
+    "path": "public",
     "publicPath": "/"
   },
   "devUrl": "http://larsgraubner.com.dev",

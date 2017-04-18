@@ -3,12 +3,23 @@ body {
 }
 
 .inner {
-  width: 740px;
+  width: 90%;
   margin: 0 auto;
+
+  @include min-width($bp-small) {
+    width: 740px;
+  }
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
 }

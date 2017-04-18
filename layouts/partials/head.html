@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#"  class="no-js">
+<html lang="en-US" itemscope itemtype="http://schema.org/" prefix="og: http://ogp.me/ns#"  class="no-js">
     <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,6 +8,7 @@
       <title>{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}</title>
 
       <meta name="description"  content="{{ .Params.Description }}" />
+      <meta name="robots" content="{{ if eq .Kind "taxonomy" }}no{{ end }}index,follow">
 
       <link rel="canonical" href="{{ .Permalink }}">
       <meta property="og:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
@@ -20,6 +21,8 @@
       <meta name="twitter:domain" content="larsgraubner.com" />
       <meta name="twitter:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
       <meta name="twitter:description" content="{{ .Params.Description }}" />
+
+      {{ if .IsHome }}
       <script type="application/ld+json">
       { "@context" : "http://schema.org",
         "@type" : "Person",
@@ -28,6 +31,7 @@
         "sameAs" : ["https://twitter.com/larsgraubner"]
       }
       </script>
+      {{ end }}
 
       <link rel="dns-prefetch" href="//twemoji.maxcdn.com" />
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />

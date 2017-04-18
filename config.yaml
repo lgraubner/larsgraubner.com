@@ -3,4 +3,8 @@ title: "Lars Graubner"
 baseURL: "https://larsgraubner.com"
 paginate: 3
 permalinks:
-  post: /:title/
+  post: "/:title/"
+taxonomies:
+  category: "categories"
+PygmentsCodeFences: true
+PygmentsStyle: "monokai"

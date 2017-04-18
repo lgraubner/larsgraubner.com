@@ -1,5 +1,5 @@
 ---
-title: Work
+title: Learning
 type: page
 description:
 date: 2016-08-10T15:08:42+00:00

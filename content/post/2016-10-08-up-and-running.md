@@ -6,7 +6,6 @@ type: post
 url: /up-and-running/
 categories:
   - Blog
-  - Featured
 
 ---
 I&#8217;m proud to announce my new blog and website! 🎉 After years of unsatisfying approaches and several restarts I can present a result I&#8217;m happy with.

@@ -7,6 +7,7 @@
 // import vendor styles
 // @import '../vendor/file';
 @import '~normalize.css/normalize.css';
+@import '~prismjs/themes/prism-okaidia.css';
 
 @import 'base/helpers';
 @import 'base/reset';
@@ -25,10 +26,11 @@
 @import 'layout/post-preview';
 @import 'layout/page';
 @import 'layout/nav-footer';
+@import 'layout/taxonomy';
 
 @import 'components/author';
 @import 'components/button';
 @import 'components/pagination';
 @import 'components/social';
 @import 'components/title';
-@import 'components/tags';
+@import 'components/categories';

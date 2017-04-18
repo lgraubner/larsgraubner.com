@@ -1,5 +1,5 @@
 ---
-title: About me
+title: About
 description: "I'm a 25 years old front-end developer. I’m building web sites and web applications aiming for clean and efficient code to make the web even more awesome."
 type: page
 date: 2016-08-10T15:08:42+00:00

@@ -5,10 +5,7 @@ type: post
 date: 2016-10-13T08:00:09+00:00
 url: /recap-code-talks-2016/
 categories:
-  - Conference
-  - Featured
-tags:
-  - Conference
+  - Conferences
 
 ---
 This year in September it was all about popcorn, nachos and code again. The code.talks conference took place in Hamburg in a new location with lots of great talks. This is a recap of the best talks I attended and the conference at all.

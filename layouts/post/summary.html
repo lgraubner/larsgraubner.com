@@ -1,0 +1,18 @@
+<div class="post-preview">
+  <div class="post-preview__date">
+    {{ dateFormat "January 01, 2006" .Date }}
+  </div>
+  <h2 class="post-preview__title title">
+    <a href="{{ .RelPermalink }}">
+      {{ .Title }}
+    </a>
+  </h2>
+  <div class="post-preview__summary">
+    <p>
+      {{ .Summary }}
+    </p>
+  </div>
+  {{ if .Truncated }}
+  <a href="{{ .RelPermalink }}" class="post-preview__read-more button">Read More</a>
+  {{ end }}
+</div>
