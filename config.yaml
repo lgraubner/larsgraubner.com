@@ -6,5 +6,3 @@ permalinks:
   post: "/:title/"
 taxonomies:
   category: "categories"
-PygmentsCodeFences: true
-PygmentsStyle: "monokai"

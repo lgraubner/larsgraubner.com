@@ -7,11 +7,16 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 13px;
+    display: block;
   }
 
   &__item {
     display: inline-block;
-    margin: 0 40px;
+    margin: 0 15px;
+
+    @include min-width($bp-small) {
+      margin: 0 40px;
+    }
 
     &--current a {
       color: $color-white-dim;

@@ -9,6 +9,12 @@ body {
   @include min-width($bp-small) {
     width: 740px;
   }
+
+  #content & {
+    @include max-width($bp-small - 1) {
+      width: 100%;
+    }
+  }
 }
 
 ul {

@@ -22,7 +22,7 @@ You should use a Type System. Thats the essence of this great talk from Oliver Z
 
 Hearing this talk definitely encourages to use a Type System for the next project. I will try to dig deeper in Flow and implement type checking more often. Flow wins for me as it doesn&#8217;t have to compile. You only have to strip away the annotations on build. Also with Flow it&#8217;s not mandatory to use it everywhere. That&#8217;s a good point to implement it step by step for existing code bases.
 
-[View Slides][4]{.button}
+[View Slides][4]
 
 ## AMP tries to fix the web. What can we learn from it?
 
@@ -30,7 +30,7 @@ Another great talk was from Stefan Judis. He explains how [Googles AMP][5] can b
 
 The talk includes a lot of tricks you can learn from AMP and start using today to speed up your website. Performance is a very important aspect you should not ignore. Personally I got more insights of how AMP is working and what it&#8217;s doing right.
 
-[View Slides][6]{.button}
+[View Slides][6]
 
 ## Summary
 

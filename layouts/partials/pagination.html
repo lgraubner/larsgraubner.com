@@ -1,21 +1,23 @@
 {{ if gt .Paginator.TotalPages 1 }}
-<div class="pagination clearfix">
-  {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}" class="pagination__nav pagination__nav--prev">Previous Page</a>
-  {{ end }}
-  {{ range .Paginator.Pagers }}
-  {{ if eq $.Paginator.PageNumber .PageNumber }}
-    <span class="pagination__item pagination__item--current">
-      {{ .PageNumber }}
-    </span>
-  {{ else }}
-    <a href="{{ .URL }}" class="pagination__item">
-      {{ .PageNumber }}
-    </a>
-  {{ end }}
-  {{ end }}
-  {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}" class="pagination__nav pagination__nav--next">Next Page</a>
-  {{ end }}
+<div class="pagination">
+  <div class="inner clearfix">
+    {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}" class="pagination__nav pagination__nav--prev">Previous Page</a>
+    {{ end }}
+    {{ range .Paginator.Pagers }}
+    {{ if eq $.Paginator.PageNumber .PageNumber }}
+      <span class="pagination__item pagination__item--current">
+        {{ .PageNumber }}
+      </span>
+    {{ else }}
+      <a href="{{ .URL }}" class="pagination__item">
+        {{ .PageNumber }}
+      </a>
+    {{ end }}
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}" class="pagination__nav pagination__nav--next">Next Page</a>
+    {{ end }}
+  </div>
 </div>
 {{ end }}

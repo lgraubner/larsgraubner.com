@@ -1,18 +1,20 @@
-<div class="post-preview">
-  <div class="post-preview__date">
-    {{ dateFormat "January 01, 2006" .Date }}
-  </div>
-  <h2 class="post-preview__title title">
-    <a href="{{ .RelPermalink }}">
-      {{ .Title }}
-    </a>
-  </h2>
-  <div class="post-preview__summary">
+<div class="post post--preview">
+  <header class="post__header">
+    <div class="post__date">
+      {{ dateFormat "January 01, 2006" .Date }}
+    </div>
+    <h2 class="post__title">
+      <a href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+    </h2>
+  </header>
+  <div class="content">
     <p>
       {{ .Summary }}
     </p>
   </div>
   {{ if .Truncated }}
-  <a href="{{ .RelPermalink }}" class="post-preview__read-more button">Read More</a>
+  <a href="{{ .RelPermalink }}" class="button">Read More</a>
   {{ end }}
 </div>

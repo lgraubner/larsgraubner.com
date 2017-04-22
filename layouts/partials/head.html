@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" itemscope itemtype="http://schema.org/" prefix="og: http://ogp.me/ns#"  class="no-js">
+<html lang="en-US" class="no-js">
     <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,7 +16,7 @@
       <meta property="og:url" content="{{ .Site.BaseURL }}" />
       <meta property="og:site_name" content="Lars Graubner" />
       <meta property="og:description" content="{{ .Params.Description }}" />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@larsgraubner" />
       <meta name="twitter:domain" content="larsgraubner.com" />
       <meta name="twitter:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
@@ -36,15 +36,6 @@
       <link rel="dns-prefetch" href="//twemoji.maxcdn.com" />
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet">
-
-      {{ if (isset .Site.Data "assets") }}
-      <link rel="stylesheet" href="/styles/{{ index .Site.Data.assets "app.css" }}" type="text/css" />
-      {{ end }}
-
-      <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-
       <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}/apple-touch-icon.png">
       <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}/favicon-16x16.png" sizes="16x16">
@@ -53,4 +44,14 @@
       <link rel="shortcut icon" href="{{ .Site.BaseURL }}/favicon.ico">
       <meta name="msapplication-config" content="{{ .Site.BaseURL }}/browserconfig.xml">
       <meta name="theme-color" content="#ffffff">
+
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet">
+
+      {{ if (isset .Site.Data "assets") }}
+      <link rel="stylesheet" href="/styles/{{ index .Site.Data.assets "app.css" }}" type="text/css" />
+      {{ end }}
+
+      <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
     </head>
+    <body class="{{ if .IsHome }}home {{ end }}{{ if (isset .Data "Singular") }}{{ .Data.Singular }}{{ end }}">

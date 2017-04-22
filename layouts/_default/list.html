@@ -1,21 +1,22 @@
 {{ define "content" }}
 {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-<div class="taxonomy">
+<div class="taxonomy-header">
   <div class="inner">
-    <header class="taxonomy__header">
-      <h1 class="taxonomy__title">
-        {{ .Title }}
-      </h1>
-      <div class="taxonomy__count">
-        ({{ $paginator.TotalNumberOfElements }} Post{{ if gt $paginator.TotalNumberOfElements 1 }}s{{ end }})
-      </div>
-    </header>
-    <div class="post-list">
-    {{ range $paginator.Pages }}
-      {{ .Render "summary" }}
-    {{ end }}
+    <h1 class="taxonomy-header__title">
+      {{ .Title }}
+    </h1>
+    <div class="taxonomy-header__count">
+      ({{ $paginator.TotalNumberOfElements }} Post{{ if gt $paginator.TotalNumberOfElements 1 }}s{{ end }})
     </div>
-    {{ partial "pagination.html" . }}
   </div>
+</div>
+  <div class="post-list">
+    <div class="inner">
+      {{ range $paginator.Pages }}
+        {{ .Render "summary" }}
+      {{ end }}
+    </div>
+  </div>
+  {{ partial "pagination.html" . }}
 </div>
 {{ end }}

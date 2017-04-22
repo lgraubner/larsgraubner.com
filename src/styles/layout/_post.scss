@@ -3,10 +3,26 @@
   box-shadow: $box-shadow;
   background: #fff;
 
+  &--preview {
+    text-align: center;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
   &__header {
     margin-bottom: 30px;
     text-align: center;
-    padding: 0 65px;
+    padding: 0 5%;
+
+    @include min-width($bp-small) {
+      padding: 0 65px;
+    }
   }
 
   &__date {
@@ -15,6 +31,24 @@
     font-size: 16px;
     font-style: italic;
   }
+
+  &__title {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.15em;
+    font-weight: 700;
+    color: $color-text;
+
+    @include min-width($bp-small) {
+      font-size: 36px;
+    }
+
+    a {
+      color: currentColor;
+    }
+  }
+
 
   &__footer {
     margin-top: 40px;

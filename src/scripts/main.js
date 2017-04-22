@@ -6,5 +6,6 @@ import load from './helpers/loader';
 
 import common from './modules/common';
 import syntaxHighlighting from './modules/syntax-highlighting';
+import anchors from './modules/anchors';
 
-ready(() => load([common, syntaxHighlighting]));
+ready(() => load([common, syntaxHighlighting, anchors]));

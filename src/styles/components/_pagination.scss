@@ -1,9 +1,12 @@
 .pagination {
-  background: $color-dark-blue;
-  padding: 20px $post-padding;
   text-align: center;
-  box-shadow: $box-shadow;
   line-height: 20px;
+
+  .inner {
+    background: $color-dark-blue;
+    padding: 20px $post-padding;
+    box-shadow: $box-shadow;
+  }
 
   &__item {
     color: $color-white-dim;

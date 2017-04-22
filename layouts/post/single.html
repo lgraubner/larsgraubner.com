@@ -5,12 +5,12 @@
       <div class="post__date">
         {{ dateFormat "January 01, 2006" .Date }}
       </div>
-      <h1 class="post__title title">
+      <h1 class="post__title">
         {{ .Title }}
       </h1>
       {{ partial "categories" . }}
     </header>
-    <div class="post__content content">
+    <div class="content">
       {{ .Content }}
     </div>
   </article>

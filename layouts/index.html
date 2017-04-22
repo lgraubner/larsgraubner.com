@@ -1,13 +1,11 @@
 {{ define "content" }}
-<div class="homeaaaaaa">
+<div class="post-list">
   <div class="inner">
-    <div class="post-list">
     {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
     {{ range $paginator.Pages }}
       {{ .Render "summary" }}
     {{ end }}
-    </div>
-    {{ partial "pagination.html" . }}
   </div>
 </div>
+{{ partial "pagination.html" . }}
 {{ end }}

@@ -1,30 +1,55 @@
 .author {
-  padding: 40px 0;
+  padding: 30px 0;
   background: #841e99;
   background: -moz-linear-gradient(left, #841e99 0%, #625dad 100%);
   background: -webkit-linear-gradient(left, #841e99 0%,#625dad 100%);
   background: linear-gradient(to right, #841e99 0%,#625dad 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#841e99', endColorstr='#625dad',GradientType=1 );
 
+  @include min-width($bp-small) {
+    padding: 40px 0;
+  }
+
   &__portrait {
     display: block;
-    float: left;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 20px;
-    margin-top: -5px;
+    margin: 0 auto 20px;
+
+    @include min-width($bp-small) {
+      float: left;
+      margin-right: 20px;
+      margin-top: -5px;
+      margin-bottom: 0;
+    }
+
+    img {
+      display: block;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      @include min-width($bp-small) {
+        width: 90px;
+        height: 90px;
+      }
+    }
   }
 
   p {
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7em;
-  }
+    text-align: center;
+    margin: 0;
 
-  a {
-    color: #fff;
-    border-bottom: 1px solid currentColor;
+    @include min-width($bp-small) {
+      text-align: left;
+      font-size: 16px;
+    }
+
+    a {
+      color: #fff;
+      border-bottom: 1px solid currentColor;
+    }
   }
 }
