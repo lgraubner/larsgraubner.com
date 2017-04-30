@@ -13,6 +13,16 @@
     <div class="content">
       {{ .Content }}
     </div>
+    <footer class="post__footer">
+      <div class="prevnext clear">
+        {{ if .PrevInSection }}
+          <a href="{{ .PrevInSection.Permalink }}" class="prevnext__link prevnext__link--prev">{{ .PrevInSection.Title }}</a>
+        {{ end }}
+        {{ if .NextInSection }}
+          <a href="{{ .NextInSection.Permalink }}" class="prevnext__link prevnext__link--next">{{ .NextInSection.Title }}</a>
+        {{ end }}
+      </div>
+    </footer>
   </article>
 </div>
 {{ end }}

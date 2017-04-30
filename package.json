@@ -51,7 +51,7 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "scripts": {
-    "lint": "eslint src/js/**/*.js",
+    "lint": "eslint \"src/js/**\"",
     "precommit": "lint-staged",
     "dev": "concurrently \"hugo --watch\" \"cross-env NODE_ENV=development node server.js\"",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress"

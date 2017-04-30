@@ -1,11 +1,11 @@
 {{ define "content" }}
 {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-<div class="taxonomy-header">
+<div class="page-header">
   <div class="inner">
-    <h1 class="taxonomy-header__title">
+    <h1 class="page-header__title">
       {{ .Title }}
     </h1>
-    <div class="taxonomy-header__count">
+    <div class="page-header__count">
       ({{ $paginator.TotalNumberOfElements }} Post{{ if gt $paginator.TotalNumberOfElements 1 }}s{{ end }})
     </div>
   </div>

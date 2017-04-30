@@ -1,19 +1,7 @@
 .post {
-  padding: 45px 0;
+  padding: 45px 0 0;
   box-shadow: $box-shadow;
   background: #fff;
-
-  &--preview {
-    text-align: center;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid #eee;
-    }
-
-    p {
-      margin: 0;
-    }
-  }
 
   &__header {
     margin-bottom: 30px;
@@ -26,10 +14,10 @@
   }
 
   &__date {
-    color: $color-gray;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 16px;
     font-style: italic;
+    color: rgba(0, 0, 0, 0.35);
   }
 
   &__title {
@@ -49,8 +37,7 @@
     }
   }
 
-
-  &__footer {
-    margin-top: 40px;
+  .content {
+    margin-bottom: 70px;
   }
 }

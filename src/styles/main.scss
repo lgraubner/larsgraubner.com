@@ -23,10 +23,12 @@
 @import 'layout/footer';
 @import 'layout/post';
 @import 'layout/page';
-@import 'layout/taxonomy-header';
+@import 'layout/page-header';
 
 @import 'components/author';
 @import 'components/button';
 @import 'components/pagination';
-@import 'components/social';
+@import 'components/social-icon';
 @import 'components/categories';
+@import 'components/post-link';
+@import 'components/prevnext';

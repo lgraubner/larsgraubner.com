@@ -20,7 +20,7 @@ To get started you have to follow the steps from the official [telegram bot docs
 
 const app = new Telegraf(YOUR_BOT_TOKEN);
 // register command "lights"
-app.command('lights', (ctx) =&gt; ctx.reply('Hello from the bot side.'));
+app.command('lights', (ctx) => ctx.reply('Hello from the bot side.'));
 // start listening for messages
 app.startPolling();</code></pre>
 
@@ -32,7 +32,7 @@ A middleware is a function hooked into the message flow. If the bot receives a m
 
 Our middleware will parse the sent message text and store the results in the recommended namespace `ctx.state`. We will extract the command itself, the arguments and expose it along the raw command.
 
-<pre><code class="language-clike">const commandArgs = () =&gt; (ctx, next) =&gt; {
+<pre><code class="language-clike">const commandArgs = () => (ctx, next) => {
   if (ctx.updateType === 'message' && ctx.updateSubType === 'text') {
     const text = ctx.update.message.text.toLowerCase();
     if (text.startsWith('/')) {
@@ -70,7 +70,7 @@ const app = new Telegraf(YOUR_BOT_TOKEN);
 // enable our middleware
 app.use(commandArgsMiddleware());
 
-app.command('lights', (ctx) =&gt; {
+app.command('lights', (ctx) => {
   console.log(ctx.state.command); // command object
 });
 
@@ -86,7 +86,7 @@ An example command object looks like this:
 
 ## Wrapping up
 
-Initially I thought there has to be a builtin way to get the command arguments with Telegraf. I was wrong. 🙈 But as it&#8217;s a very well written library and supports middlewares it&#8217;s no problem to parse them by yourself. This is a good example of the power of middlewares which are also used with the popular [Express framework][5].
+Initially I thought there has to be a builtin way to get the command arguments with Telegraf. I was wrong. 🙈 But as it's a very well written library and supports middlewares it's no problem to parse them by yourself. This is a good example of the power of middlewares which are also used with the popular [Express framework][5].
 
 My personal assistant is already able to answer my commands. Soon it will use a Raspberry Pi to wirelessly control the lights. 😊
 

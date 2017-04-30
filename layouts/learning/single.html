@@ -1,0 +1,18 @@
+{{ define "content" }}
+<div class="inner">
+  <article class="post">
+    <header class="post__header">
+      <div class="post__date">
+        {{ dateFormat "January 01, 2006" .Date }}
+      </div>
+      <h1 class="post__title">
+        {{ .Title }}
+      </h1>
+      {{ partial "categories" . }}
+    </header>
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}

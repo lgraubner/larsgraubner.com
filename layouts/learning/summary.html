@@ -1,0 +1,15 @@
+<div class="post post--preview">
+  <header class="post__header">
+    <div class="post__date">
+      {{ dateFormat "January 01, 2006" .Date }}
+    </div>
+    <h2 class="post__title">
+      <a href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+    </h2>
+  </header>
+  <div class="content">
+    {{ .Content }}
+  </div>
+</div>

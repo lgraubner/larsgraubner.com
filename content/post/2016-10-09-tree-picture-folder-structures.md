@@ -12,7 +12,7 @@ A couple days ago I was documenting the architecture of a website and wanted to 
 
 <!--more-->
 
-`tree` is a simple cli tool for unix systems to print folder structures recursively to the console. It can be installed on macOS via <a href="http://brew.sh/" target="_blank">homebrew</a> and is also available for all common Linux distributions.
+`tree` is a simple cli tool for unix systems to print folder structures recursively to the console. It can be installed on macOS via [homebrew][1] and is also available for all common Linux distributions.
 
 <pre><code class="language-clike">$ brew install tree</code></pre>
 
@@ -44,10 +44,11 @@ Which outputs the following folder structure:
 
 18 directories</code></pre>
 
-For a lot more options you can checkout the [ubuntuusers Wiki][1] or type `man tree` after installation to find out more.
+For a lot more options you can checkout the [ubuntuusers Wiki][2] or type `man tree` after installation to find out more.
 
 ## Conclusion
 
-`tree` is a simple to use tool to quickly document folder structures. I clearly recommend this for readable directory listings in documentations. I&#8217;m regularly using it.
+`tree` is a simple to use tool to quickly document folder structures. I clearly recommend this for readable directory listings in documentations. I'm regularly using it.
 
- [1]: https://wiki.ubuntuusers.de/tree/
+ [1]: http://brew.sh/
+ [2]: https://wiki.ubuntuusers.de/tree/
