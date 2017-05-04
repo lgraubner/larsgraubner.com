@@ -4,13 +4,13 @@
   text-align: center;
 
   @include min-width($bp-small) {
-    margin-top: 0;
+    margin-top: 0px;
     margin-bottom: 40px;
   }
 
   &__title {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 0 5px;
 
     @include min-width($bp-small) {

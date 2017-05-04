@@ -1,10 +1,7 @@
 .author {
   padding: 30px 0;
-  background: #841e99;
-  background: -moz-linear-gradient(left, #841e99 0%, #625dad 100%);
-  background: -webkit-linear-gradient(left, #841e99 0%,#625dad 100%);
-  background: linear-gradient(to right, #841e99 0%,#625dad 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#841e99', endColorstr='#625dad',GradientType=1 );
+  background: $color-gradient;
+  background: linear-gradient(to right, $color-gradient 0%, $color-primary 100%);
 
   @include min-width($bp-small) {
     padding: 40px 0;

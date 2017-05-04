@@ -1,0 +1,13 @@
+.nav-footer {
+  font-size: 14px;
+
+  li {
+    display: inline;
+
+    &:not(:first-child):before {
+      content: '–';
+      margin: 0 0.5em;
+      color: $color-gray;
+    }
+  }
+}

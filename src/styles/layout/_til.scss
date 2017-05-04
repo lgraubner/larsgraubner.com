@@ -1,0 +1,16 @@
+.til {
+  background: #fff;
+  padding: 45px 0;
+
+  &:not(:first-child) {
+
+  }
+
+  &__header {
+    padding: 0 65px;
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+}

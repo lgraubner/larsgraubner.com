@@ -1,7 +1,16 @@
     <footer class="footer" role="contentinfo">
-      <a href="/imprint">
-        Imprint
-      </a>
+      <nav role="navigation" class="nav-footer">
+        <ul>
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.footer }}
+            <li class="nav-footer__item{{if $currentPage.IsMenuCurrent "footer" . }} nav-footer__item--current{{end}}">
+              <a href="{{ .URL }}">
+                {{ .Name }}
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
     </footer>
     {{ if (isset .Site.Data "assets") }}
       <script src="/scripts/{{ index .Site.Data.assets "app.js" }}"></script>

@@ -51,14 +51,13 @@ $post-padding: 65px;
 
   a {
     color: $color-primary;
-    font-weight: 600;
-    transition: color, border-color 100ms ease-in-out;
-    border-bottom: 1px solid transparent;
+    font-weight: 400;
+    transition: color, text-decoration 100ms ease-in-out;
+    text-decoration: underline;
 
     &:hover,
     &:focus {
       color: $color-text;
-      border-color: currentColor;
     }
   }
 
@@ -103,5 +102,15 @@ $post-padding: 65px;
     display: block;
     margin: 0 auto;
     max-width: 100%;
+  }
+
+  ul {
+    margin: 0 0 1.8em;
+    padding: 0 $post-padding;
+    list-style: square;
+  }
+
+  li {
+    line-height: 1.8em;
   }
 }
