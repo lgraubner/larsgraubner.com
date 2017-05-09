@@ -71,7 +71,7 @@
   }
 
   p code {
-    background: #f7f7f9;
+    background: rgba(0, 0, 0, 0.025);
     font-size: 90%;
     font-family: $font-monospace;
     color: $color-primary;
@@ -85,9 +85,10 @@
     max-width: 100%;
   }
 
-  ul {
+  ul,
+  ol {
     margin: 0 0 1.8em;
-    padding: 0;
+    padding: 0 0 0 20px;
     list-style: square;
   }
 

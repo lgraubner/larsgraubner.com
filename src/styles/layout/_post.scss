@@ -11,12 +11,13 @@
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 25px;
-    line-height: 1.15em;
+    line-height: 1.3em;
     font-weight: 300;
     color: $color-black;
 
     @include min-width($bp-small) {
       font-size: 34px;
+      line-height: 1.15em;
     }
 
     a {
@@ -25,10 +26,14 @@
   }
 
   &__date {
-    font-size: 14px;
+    font-size: 12px;
     color: $color-gray;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
+
+    @include min-width($bp-small) {
+      font-size: 14px;
+    }
   }
 }
