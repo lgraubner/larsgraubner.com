@@ -1,13 +1,21 @@
 .nav-footer {
-  font-size: 14px;
+  font-size: 15px;
+  float: right;
 
   li {
     display: inline;
 
-    &:not(:first-child):before {
-      content: '–';
-      margin: 0 0.5em;
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+
+    a {
       color: $color-gray;
+      font-weight: 300;
+
+      &:hover {
+        color: $color-text;
+      }
     }
   }
 }

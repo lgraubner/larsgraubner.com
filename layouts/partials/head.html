@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Site.languageCode }}" class="no-js">
+<html lang="{{ .Site.LanguageCode }}" class="no-js">
     <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -50,7 +50,7 @@
       <meta name="msapplication-config" content="{{ .Site.BaseURL }}/browserconfig.xml">
       <meta name="theme-color" content="#ffffff">
 
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
 
       {{ if (isset .Site.Data "assets") }}
       <link rel="stylesheet" href="/styles/{{ index .Site.Data.assets "app.css" }}" type="text/css" />

@@ -19,18 +19,12 @@
 @import 'layout/common';
 @import 'layout/content';
 @import 'layout/header';
+@import 'layout/header-small';
 @import 'layout/nav';
 @import 'layout/footer';
 @import 'layout/post';
-@import 'layout/page';
-@import 'layout/page-header';
 @import 'layout/nav-footer';
-@import 'layout/til';
+@import 'layout/post-list';
+@import 'layout/banner';
 
-@import 'components/author';
-@import 'components/button';
-@import 'components/pagination';
 @import 'components/social-icon';
-@import 'components/categories';
-@import 'components/post-link';
-@import 'components/prevnext';

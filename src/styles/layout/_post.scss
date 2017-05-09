@@ -1,35 +1,22 @@
 .post {
-  padding: 45px 0 0;
-  box-shadow: $box-shadow;
+  margin-top: 120px;
   background: #fff;
 
   &__header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: center;
-    padding: 0 5%;
-
-    @include min-width($bp-small) {
-      padding: 0 65px;
-    }
-  }
-
-  &__date {
-    margin-bottom: 10px;
-    font-size: 16px;
-    font-style: italic;
-    color: rgba(0, 0, 0, 0.35);
   }
 
   &__title {
     font-size: 24px;
     margin-top: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 25px;
     line-height: 1.15em;
-    font-weight: 700;
-    color: $color-text;
+    font-weight: 300;
+    color: $color-black;
 
     @include min-width($bp-small) {
-      font-size: 36px;
+      font-size: 34px;
     }
 
     a {
@@ -37,7 +24,11 @@
     }
   }
 
-  .content {
-    margin-bottom: 70px;
+  &__date {
+    font-size: 14px;
+    color: $color-gray;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 }

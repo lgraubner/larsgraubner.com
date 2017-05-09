@@ -11,12 +11,12 @@ $bp-wide: 1280px;
 
 // Colors
 
-$color-primary: #348AC7 !default;
-$color-gradient: #7474BF;
-$color-text: #34495e !default;
+$color-primary: #5694f1 !default;
+$color-text: #666 !default;
 $color-gray: #999;
-$color-dark-blue: #3a4250;
-$color-white-dim: rgba(255, 255, 255, 0.95);
+$color-gray-lighter: #eee;
+$color-heading: #222;
+$color-black: #333;
 
 // Fonts
 
@@ -26,4 +26,3 @@ $font-monospace: Consolas, Liberation Mono, Menlo, Courier, monospace;
 
 // Miscellaneous
 $image-path: '../images/';
-$box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);

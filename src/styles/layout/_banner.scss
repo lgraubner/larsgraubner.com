@@ -1,0 +1,42 @@
+.banner {
+  .inner {
+    border-bottom: 1px solid $color-gray-lighter;
+    padding-bottom: 40px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include min-width($bp-small) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0 0 10px;
+    color: $color-heading;
+  }
+
+  h2 {
+    font-size: 14px;
+    line-height: 1.7em;
+    text-align: center;
+    margin: 0;
+    font-weight: normal;
+    padding: 0 40px;
+    color: $color-gray;
+    font-weight: 300;
+
+    @include min-width($bp-small) {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,19 +1,19 @@
 .footer {
-  text-align: center;
-  font-size: 16px;
-  margin: 20px 0 30px;
+  font-size: 15px;
+  margin: 40px 0 30px;
 
   @include min-width($bp-small) {
-    margin: 30px 0 60px;
+    margin: 100px 0 60px;
   }
 
-  a {
-    color: $color-gray;
-    transition: color, border-color 100ms ease-in-out;
-    border-bottom: 1px solid transparent;
+  .inner {
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+  }
 
-    &:hover {
-      border-color: currentColor;
-    }
+  .copyright {
+    color: $color-gray;
+    font-weight: 300;
+    float: left;
   }
 }

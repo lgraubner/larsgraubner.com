@@ -1,34 +1,21 @@
-$post-padding: 65px;
-
 .content {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7em;
 
-  @include min-width($bp-small) {
-    font-size: 17px;
+  h2, h3, h4, h5 {
+    margin: 1.5em 0 1em;
+    line-height: 1.3em;
+    font-weight: normal;
+    color: $color-black;
   }
 
   h2 {
-    padding: 0 20px;
-    margin: 1.5em 0 1em;
-    font-size: 26px;
-    font-weight: normal;
-    line-height: 1.3em;
-
-    @include min-width($bp-small) {
-      padding: 0 $post-padding;
-    }
+    font-size: 24px;
   }
 
   h3 {
     padding: 0 20px;
-    margin: 1.5em 0 1em;
     font-size: 20px;
-    font-weight: 600;
-
-    @include min-width($bp-small) {
-      padding: 0 $post-padding;
-    }
   }
 
   h2, h3, h4, h5, h6 {
@@ -40,6 +27,10 @@ $post-padding: 65px;
 
         &:after {
           content: '#';
+        }
+
+        &:hover {
+          text-decoration: none;
         }
       }
 
@@ -53,21 +44,16 @@ $post-padding: 65px;
     color: $color-primary;
     font-weight: 400;
     transition: color, text-decoration 100ms ease-in-out;
-    text-decoration: underline;
 
     &:hover,
     &:focus {
       color: $color-text;
+      text-decoration: underline;
     }
   }
 
   p {
     margin: 0;
-    padding: 0 20px;
-
-    @include min-width($bp-small) {
-      padding: 0 $post-padding;
-    }
 
     &:not(:last-child) {
       margin-bottom: 1.8em;
@@ -75,7 +61,6 @@ $post-padding: 65px;
   }
 
   pre {
-    background: $color-dark-blue;
     color: #fff;
     padding: 30px 20px !important;
     overflow: auto;
@@ -83,17 +68,13 @@ $post-padding: 65px;
     border-radius: 0 !important;
     margin: 0 0 1.8em !important;
     line-height: 1.7em !important;
-
-    @include min-width($bp-small) {
-      padding: 30px $post-padding !important;
-    }
   }
 
   p code {
     background: #f7f7f9;
     font-size: 90%;
     font-family: $font-monospace;
-    color: #2f6f9f;
+    color: $color-primary;
     padding: 0.3em;
     border-radius: 2px;
   }
@@ -106,7 +87,7 @@ $post-padding: 65px;
 
   ul {
     margin: 0 0 1.8em;
-    padding: 0 $post-padding;
+    padding: 0;
     list-style: square;
   }
 

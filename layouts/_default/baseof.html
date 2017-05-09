@@ -1,6 +1,9 @@
-{{ partial "header.html" . }}
+{{ partial "head" . }}
+{{ block "header" . }}
+  {{ partial "header" . }}
+{{ end }}
 <main id="content" role="main">
   {{ block "content" . }}
   {{ end }}
 </main>
-{{ partial "footer.html" . }}
+{{ partial "footer" . }}

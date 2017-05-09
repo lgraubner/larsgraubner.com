@@ -1,19 +1,10 @@
-body {
-  background: #f2f3f5;
-}
 
 .inner {
   width: 90%;
   margin: 0 auto;
 
   @include min-width($bp-small) {
-    width: 740px;
-  }
-
-  #content & {
-    @include max-width($bp-small - 1) {
-      width: 100%;
-    }
+    width: 520px;
   }
 }
 

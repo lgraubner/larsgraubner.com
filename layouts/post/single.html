@@ -1,28 +1,20 @@
+{{ define "header" }}
+  {{ partial "header-small" . }}
+{{ end }}
 {{ define "content" }}
-<div class="inner">
-  <article class="post">
+<article class="post">
+  <div class="inner">
     <header class="post__header">
-      <div class="post__date">
-        {{ dateFormat "January 01, 2006" .Date }}
-      </div>
       <h1 class="post__title">
         {{ .Title }}
       </h1>
-      {{ partial "categories" . }}
+      <div class="post__date">
+        {{ dateFormat "January 01, 2006" .Date }}
+      </div>
     </header>
     <div class="content">
       {{ .Content }}
     </div>
-    <footer class="post__footer">
-      <div class="prevnext clear">
-        {{ if .PrevInSection }}
-          <a href="{{ .PrevInSection.Permalink }}" class="prevnext__link prevnext__link--prev">{{ .PrevInSection.Title }}</a>
-        {{ end }}
-        {{ if .NextInSection }}
-          <a href="{{ .NextInSection.Permalink }}" class="prevnext__link prevnext__link--next">{{ .NextInSection.Title }}</a>
-        {{ end }}
-      </div>
-    </footer>
-  </article>
-</div>
+  </div>
+</article>
 {{ end }}

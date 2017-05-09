@@ -1,25 +1,20 @@
 .nav {
-  text-align: center;
-  box-shadow: $box-shadow;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  line-height: 20px;
 
-  a {
-    color: rgba(255, 255, 255, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 13px;
-    display: block;
-  }
-
-  &__item {
+  li {
     display: inline-block;
-    margin: 0 15px;
 
-    @include min-width($bp-small) {
-      margin: 0 40px;
+    &:not(:first-child) {
+      margin-left: 20px;
     }
 
-    &--current a {
-      color: $color-white-dim;
+    a {
+      padding: 5px 8px;
+      color: $color-primary;
+      font-size: 15px;
     }
   }
 }

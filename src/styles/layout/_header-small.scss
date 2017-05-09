@@ -1,0 +1,14 @@
+.header-small {
+  .logo {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+
+    a {
+      color: $color-heading;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 1em;
+    }
+  }
+}

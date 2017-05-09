@@ -1,22 +1,10 @@
 {{ define "content" }}
-{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-<div class="page-header">
+<div class="post-list">
   <div class="inner">
-    <h1 class="page-header__title">
+    {{ range .Paginator.Pages }}
       {{ .Title }}
-    </h1>
-    <div class="page-header__count">
-      ({{ $paginator.TotalNumberOfElements }} Post{{ if gt $paginator.TotalNumberOfElements 1 }}s{{ end }})
-    </div>
+    {{ end }}
   </div>
 </div>
-  <div class="post-list">
-    <div class="inner">
-      {{ range $paginator.Pages }}
-        {{ .Render "summary" }}
-      {{ end }}
-    </div>
-  </div>
-  {{ partial "pagination.html" . }}
-</div>
+{{ partial "pagination.html" . }}
 {{ end }}

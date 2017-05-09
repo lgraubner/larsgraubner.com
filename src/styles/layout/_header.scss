@@ -1,9 +1,4 @@
 .header {
-  background: $color-dark-blue;
-  line-height: 60px;
-  box-shadow: $box-shadow;
-
-  @include min-width($bp-small) {
-    margin-bottom: 50px;
-  }
+  padding-top: 120px;
+  margin-bottom: 40px;
 }

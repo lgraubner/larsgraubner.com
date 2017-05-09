@@ -1,0 +1,35 @@
+.post-list {
+  li {
+    border-bottom: 1px solid $color-gray-lighter;
+    padding: 20px 0;
+  }
+
+  a {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5em;
+    position: relative;
+    width: 100%;
+    display: block;
+    color: #333;
+
+    &:hover, &:hover .date {
+      color: $color-primary;
+    }
+  }
+
+  .title {
+    padding-right: 130px;
+    display: block;
+  }
+
+  .date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: normal;
+    color: $color-gray;
+    font-weight: 300;
+    font-size: 16px;
+  }
+}

@@ -8,8 +8,10 @@ html {
 }
 
 body {
-  // remove body margin
-  margin: 0;
+  // optimize font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 *, *:after, *:before {

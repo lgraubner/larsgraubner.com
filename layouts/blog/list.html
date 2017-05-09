@@ -1,0 +1,21 @@
+{{ define "content" }}
+<div class="post-list">
+  <div class="inner">
+    <ul>
+      {{ range .Paginator.Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">
+            <span class="title">
+              {{ .Title }}
+            </span>
+            <span class="date">
+              {{ dateFormat "Jan 01, 2006" .Date }}
+            </span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ partial "pagination.html" . }}
+{{ end }}

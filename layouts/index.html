@@ -1,17 +1,10 @@
 {{ define "content" }}
-<div class="page-header">
+<div class="content">
   <div class="inner">
-    <h1 class="page-header__title">
-      Latest blog posts
-    </h1>
-  </div>
-</div>
-<div class="post-list">
-  <div class="inner">
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-    {{ range $paginator.Pages }}
-      {{ .Render "summary" }}
-    {{ end }}
+    <h2>Things I've made</h2>
+    <p>I created <a href="#">sitemap-generator</a>, a tool to easily generate sitemaps. You can find more on <a href="#">GitHub</a>
+    <h2>Blog</h2>
+    <p>My latest blog post is <a href="#">Creating a Telegraf middleware for command arguments parsing</a>.</p>
   </div>
 </div>
 {{ partial "pagination.html" . }}
