@@ -17,12 +17,14 @@ $color-gray: #999;
 $color-gray-lighter: #eee;
 $color-heading: #222;
 $color-black: #333;
+$color-pre: #272b2d;
 
 // Fonts
 
 $font-base-size: 14px !default;
 $font-primary: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
-$font-monospace: Consolas, Liberation Mono, Menlo, Courier, monospace;
+$font-monospace: 'Source Code Pro', Menlo, monospace;
 
 // Miscellaneous
 $image-path: '../images/';
+$border-radius: 3px;

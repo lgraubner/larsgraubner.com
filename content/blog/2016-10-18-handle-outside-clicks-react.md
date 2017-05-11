@@ -36,45 +36,44 @@ To solve this problem we avoid the React Event System. React builds a wrapper ar
 
   render() {
     return (
-      <div>
-        <button
+      &lt;div&gt;
+        &lt;button
           onClick={this.handleClick}
-        >
+        &gt;
           Toggle Popover
-        </button>
+        &lt;/button&gt;
         {this.state.popupVisible && (
-          <div className="popover">
+          &lt;div className="popover"&gt;
             I'm a popover!
-         </div>
+         &lt;/div&gt;
          )}
-      </div>
+      &lt;/div&gt;
     );
   }
 }</code></pre>
 
 This is a quite simple component which toggles a `div` whenever the button is clicked. To reference the node we have to alter the render method:
 
-<pre><code class="language-jsx" data-line="8">
-  render() {
+<pre><code class="language-jsx" data-line="8">render() {
     return (
-      <div
+      &lt;div
         className="popover-wrapper"
         // ref callback for storing node reference
         ref={node => { this.node = node; }}
-      >
-        <button
+      &gt;
+        &lt;button
           onClick={this.handleClick}
-        >
+        &gt;
           Toggle Popover
-        </button>
+        &lt;/button&gt;
         {this.state.popupVisible && (
-         <div
+         &lt;div
             className="popover"
-          >
+          &gt;
             I'm a popover!
-          </div>
+          &lt;/div&gt;
          )}
-      </div>
+      &lt;/div&gt;
     );
   }
 }</code></pre>

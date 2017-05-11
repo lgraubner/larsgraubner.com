@@ -17,10 +17,3 @@
         </nav>
       </div>
     </footer>
-    {{ if (isset .Site.Data "assets") }}
-      <script src="/scripts/{{ index .Site.Data.assets "app.js" }}"></script>
-    {{ else }}
-      <script src="/scripts/main.js"></script>
-    {{ end }}
-  </body>
-</html>

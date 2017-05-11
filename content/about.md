@@ -6,6 +6,7 @@ date: 2016-08-10T15:08:42+00:00
 menu: main
 weight: 120
 ---
+
 My name is Lars Graubner. I&#8217;m a 24 years old front-end developer from Germany. The endless possibilities of the web excite me. I love learning new things every day, so I always try to catch up with the latest trends.
 
 Mainly I&#8217;m working with JavaScript. It can be a great programming language if used right. I&#8217;m trying to write well architectured applications with great user experience. For this task React comes into place often as it&#8217;s modular approach fits my needs in many cases and let&#8217;s me split up complex code into small chunks.

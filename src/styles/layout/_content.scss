@@ -14,7 +14,6 @@
   }
 
   h3 {
-    padding: 0 20px;
     font-size: 20px;
   }
 
@@ -61,22 +60,28 @@
   }
 
   pre {
-    color: #fff;
-    padding: 30px 20px !important;
-    overflow: auto;
-    font-size: 14px;
-    border-radius: 0 !important;
+    padding: 20px !important;
+    background: $color-pre;
+    border-radius: $border-radius;
     margin: 0 0 1.8em !important;
-    line-height: 1.7em !important;
+    overflow: auto;
+  }
+
+  pre,
+  code {
+    white-space: pre-wrap;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.5em;
+    text-shadow: none !important;
   }
 
   p code {
-    background: rgba(0, 0, 0, 0.025);
-    font-size: 90%;
+    background: rgba(0, 0, 0, 0.04);
+    font-size: 85%;
     font-family: $font-monospace;
-    color: $color-primary;
     padding: 0.3em;
-    border-radius: 2px;
+    border-radius: $border-radius;
   }
 
   img:not([class]) {

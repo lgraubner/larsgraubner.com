@@ -1,10 +1,12 @@
 {{ define "content" }}
 <div class="content">
   <div class="inner">
+    <h2>Hi there!</h2>
+    <p>I'm Lars, a 25 year old Front-end developer from germany. You can read more <a href="/about/">about me</a> if you like to.</p>
     <h2>Things I've made</h2>
-    <p>I created <a href="#">sitemap-generator</a>, a tool to easily generate sitemaps. You can find more on <a href="#">GitHub</a>
+    <p>I created <a href="https://github.com/lgraubner/sitemap-generator">sitemap-generator</a>, a tool to easily generate sitemaps. You can find more projects from me on <a href="https://github.com/lgraubner">GitHub</a>.
     <h2>Blog</h2>
-    <p>My latest blog post is <a href="#">Creating a Telegraf middleware for command arguments parsing</a>.</p>
+    <p><a href="/blog/">I write</a> about JavaScript, React, web performance and more. My latest blog post is {{ range first 1 (where .Site.Pages "Type" "post") }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}.</p>
   </div>
 </div>
 {{ partial "pagination.html" . }}

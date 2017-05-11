@@ -1,9 +1,18 @@
-{{ partial "head" . }}
-{{ block "header" . }}
-  {{ partial "header" . }}
-{{ end }}
-<main id="content" role="main">
-  {{ block "content" . }}
-  {{ end }}
-</main>
-{{ partial "footer" . }}
+    {{ partial "head" . }}
+    {{ block "header" . }}
+      {{ partial "header" . }}
+    {{ end }}
+    <main id="content" role="main">
+      {{ block "content" . }}
+      {{ end }}
+    </main>
+    {{ block "footer" . }}
+      {{ partial "footer" . }}
+    {{ end }}
+    {{ if (isset .Site.Data "assets") }}
+      <script src="/scripts/{{ index .Site.Data.assets "app.js" }}"></script>
+    {{ else }}
+      <script src="/scripts/main.js"></script>
+    {{ end }}
+  </body>
+</html>
