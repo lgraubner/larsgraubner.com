@@ -9,5 +9,4 @@
     <p><a href="/blog/">I write</a> about JavaScript, React, web performance and more. My latest blog post is {{ range first 1 (where .Site.Pages "Type" "post") }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}.</p>
   </div>
 </div>
-{{ partial "pagination.html" . }}
 {{ end }}

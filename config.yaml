@@ -1,7 +1,7 @@
 languageCode: "en"
 title: "larsgraubner.com"
 baseURL: "https://larsgraubner.com"
-paginate: 10
+paginate: 3
 permalinks:
   post: "/:title/"
 taxonomies:
