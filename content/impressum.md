@@ -8,7 +8,9 @@ noindex: true
 nofollow: true
 ---
 
-*The following information (Impressum) is required under German law.*
+<div class="notice">
+  The following information is required under German law.
+</div>
 
 ## Angaben gemäß § 5 TMG:
 

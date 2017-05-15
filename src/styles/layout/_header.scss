@@ -1,4 +1,9 @@
 .header {
-  padding-top: 120px;
-  margin-bottom: 40px;
+  padding-top: 80px;
+  margin-bottom: 30px;
+
+  @include min-width($bp-small) {
+    padding-top: 120px;
+    margin-bottom: 40px;
+  }
 }

@@ -8,12 +8,19 @@
 
   .inner {
     border-top: 1px solid #eee;
-    padding-top: 40px;
+    padding-top: 30px;
+
+    @include min-width($bp-small) {
+      padding-top: 40px;
+    }
   }
 
   .copyright {
     color: $color-gray;
     font-weight: 300;
-    float: left;
+
+    @include min-width($bp-small) {
+      float: left;
+    }
   }
 }

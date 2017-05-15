@@ -1,7 +1,11 @@
 .banner {
   .inner {
     border-bottom: 1px solid $color-gray-lighter;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
+
+    @include min-width($bp-small) {
+      padding-bottom: 40px;
+    }
   }
 
   img {
@@ -20,7 +24,7 @@
 
   h1 {
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     margin: 0 0 10px;
     color: $color-heading;
 

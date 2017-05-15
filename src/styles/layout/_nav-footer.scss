@@ -1,12 +1,24 @@
 .nav-footer {
   font-size: 15px;
-  float: right;
+  margin-top: 15px;
+
+  @include min-width($bp-small) {
+    margin-top: 0;
+    float: right;
+  }
 
   li {
-    display: inline;
+    @include min-width($bp-small) {
+      display: inline;
+    }
 
     &:not(:first-child) {
-      margin-left: 30px;
+      margin-top: 10px;
+
+      @include min-width($bp-small) {
+        margin-top: 0;
+        margin-left: 30px;
+      }
     }
 
     a {

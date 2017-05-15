@@ -11,6 +11,5 @@ Author:
   email: mail@larsgraubner.de
 blackfriday:
   extensionsmask: ["autolink"]
-
 params:
   slogan: Front-end developer. Passionate about React and web performance. 🚀

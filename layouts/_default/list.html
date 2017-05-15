@@ -1,9 +1,27 @@
 {{ define "content" }}
+{{ if eq .Page.Kind "taxonomy" }}
+<div class="inner">
+  <h2 class="taxonomy-title">
+    {{ .Title }}
+  </h2>
+</div>
+{{ end }}
 <div class="post-list">
   <div class="inner">
-    {{ range .Paginator.Pages }}
-      {{ .Title }}
-    {{ end }}
+    <ul>
+      {{ range .Paginator.Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">
+            <span class="title">
+              {{ .Title }}
+            </span>
+            <span class="date">
+              {{ dateFormat "Jan 01, 2006" .Date }}
+            </span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
   </div>
 </div>
 {{ partial "pagination.html" . }}
