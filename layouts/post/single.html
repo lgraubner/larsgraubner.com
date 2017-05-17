@@ -17,8 +17,8 @@
     </div>
     <footer class="post__footer">
       <div class="categories">
-        Posted in
-        {{ range $i, $e := .Params.categories }}{{ if $i }}, {{ end }}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/">{{ $e }}</a>{{ end }}
+        Published in
+        {{ range $i, $e := .Params.categories }}{{ if $i }} • {{ end }}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/">{{ $e }}</a>{{ end }}
       </div>
     </footer>
   </div>

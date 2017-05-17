@@ -9,7 +9,7 @@ nofollow: true
 ---
 
 <div class="notice">
-  The following information is required under German law.
+  The following information is required due to German law.
 </div>
 
 ## Angaben gemäß § 5 TMG:

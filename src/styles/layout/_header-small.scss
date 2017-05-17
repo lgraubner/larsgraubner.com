@@ -1,8 +1,12 @@
 .header-small {
   .logo {
     position: absolute;
-    left: 30px;
+    left: 5%;
     top: 20px;
+
+    @include min-width($bp-small) {
+      left: 30px;
+    }
 
     a {
       color: $color-heading;

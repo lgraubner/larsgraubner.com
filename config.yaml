@@ -13,3 +13,5 @@ blackfriday:
   extensionsmask: ["autolink"]
 params:
   slogan: Front-end developer. Passionate about React and web performance. 🚀
+outputs:
+  home: ["HTML"]

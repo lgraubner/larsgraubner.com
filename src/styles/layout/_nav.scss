@@ -1,8 +1,12 @@
 .nav {
   position: absolute;
   top: 20px;
-  right: 30px;
+  right: 5%;
   line-height: 20px;
+
+  @include min-width($bp-small) {
+    right: 30px;
+  }
 
   li {
     display: inline-block;

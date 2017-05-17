@@ -1,4 +1,10 @@
 .post-list {
+  text-align: center;
+
+  @include min-width($bp-small) {
+    text-align: left;
+  }
+
   li {
     border-bottom: 1px solid $color-gray-lighter;
     padding: 20px 0;
@@ -29,12 +35,13 @@
   .date {
     color: $color-gray;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 14px;
 
     @include min-width($bp-small) {
       position: absolute;
       right: 0;
       top: 0;
+      font-size: 16px;
     }
   }
 }

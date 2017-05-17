@@ -12,7 +12,7 @@
   }
 
   &__title {
-    font-size: 24px;
+    font-size: 26px;
     margin-top: 0;
     margin-bottom: 25px;
     line-height: 1.3em;
@@ -43,5 +43,9 @@
 
   &__footer {
     margin-top: 40px;
+
+    @include min-width($bp-small) {
+      margin-top: 60px;
+    }
   }
 }

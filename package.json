@@ -1,5 +1,6 @@
 {
   "name": "larsgraubner-blog",
+  "description": "Personal blog from Lars Graubner",
   "version": "2.0.0",
   "repository": {
     "type": "git",
@@ -21,7 +22,6 @@
     "babel-core": "^6.23.1",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.22.0",
-    "clean-webpack-plugin": "^0.1.16",
     "concurrently": "^3.4.0",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.0",
@@ -40,9 +40,11 @@
     "image-webpack-loader": "^3.3.1",
     "lint-staged": "^3.3.1",
     "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.1",
     "postcss-loader": "^2.0.5",
     "prettier": "^1.2.2",
+    "rimraf": "^2.6.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.7",
@@ -51,10 +53,15 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "scripts": {
-    "lint": "eslint \"src/js/**\"",
     "precommit": "lint-staged",
+    "lint": "eslint \"src/js/**\"",
     "dev": "concurrently \"hugo --watch\" \"cross-env NODE_ENV=development node server.js\"",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress"
+    "clean": "rimraf public",
+    "build:hugo": "hugo",
+    "build:assets": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",
+    "build": "npm-run-all lint clean build:*",
+    "copy": "rsync -avz --delete public/ root@larsgraubner.de:/srv/www/larsgraubner.de",
+    "deploy": "npm-run-all build copy"
   },
   "lint-staged": {
     "*.js": [
