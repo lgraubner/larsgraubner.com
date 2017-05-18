@@ -9,3 +9,6 @@ yarn-error.log
 
 # build folder
 public
+
+# asset file names
+data/assets.json

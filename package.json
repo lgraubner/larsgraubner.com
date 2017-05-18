@@ -60,7 +60,7 @@
     "build:hugo": "hugo",
     "build:assets": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",
     "build": "npm-run-all lint clean build:*",
-    "copy": "rsync -avz --delete public/ root@larsgraubner.de:/var/www/larsgraubner.com/public/",
+    "copy": "rsync -avz --delete public/ root@larsgraubner.com:/var/www/larsgraubner.com/public/",
     "deploy": "npm-run-all build copy"
   },
   "lint-staged": {
