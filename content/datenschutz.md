@@ -53,7 +53,7 @@ Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ih
 
 ### Widerspruch gegen Datenerfassung
 
-Sie können die Erfassung Ihrer Daten durch Google Analytics verhindern, indem Sie auf folgenden Link klicken. Es wird ein Opt-Out-Cookie gesetzt, der die Erfassung Ihrer Daten bei zukünftigen Besuchen dieser Website verhindert: Google Analytics deaktivieren
+Sie können die Erfassung Ihrer Daten durch Google Analytics verhindern, indem Sie auf folgenden Link klicken. Es wird ein Opt-Out-Cookie gesetzt, der die Erfassung Ihrer Daten bei zukünftigen Besuchen dieser Website verhindert: <a href="#" class="ga-disable">Google Analytics deaktivieren</a>
 
 ## SSL-Verschlüsselung
 

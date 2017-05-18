@@ -1,19 +1,16 @@
 .nav-footer {
   font-size: 15px;
-  margin-top: 15px;
 
   @include min-width($bp-small) {
-    margin-top: 0;
     float: right;
   }
 
   li {
-    @include min-width($bp-small) {
-      display: inline;
-    }
+    display: inline;
 
     &:not(:first-child) {
       margin-top: 10px;
+      margin-left: 15px;
 
       @include min-width($bp-small) {
         margin-top: 0;

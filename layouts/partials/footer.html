@@ -1,19 +1,16 @@
-    <footer class="footer" role="contentinfo">
-      <div class="inner clearfix">
-        <div class="copyright">
-          &copy; 2017 Lars Graubner
-        </div>
-        <nav role="navigation" class="nav-footer">
-          <ul>
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.footer }}
-              <li>
-                <a href="{{ .URL }}">
-                  {{ .Name }}
-                </a>
-              </li>
-            {{ end }}
-          </ul>
-        </nav>
-      </div>
-    </footer>
+<footer class="footer" role="contentinfo">
+  <div class="inner clearfix">
+    <nav role="navigation" class="nav-footer">
+      <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.footer }}
+        <li>
+          <a href="{{ .URL }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</footer>

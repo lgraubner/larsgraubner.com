@@ -42,10 +42,10 @@
   }
 
   &__footer {
-    margin-top: 40px;
+    margin-top: 30px;
 
     @include min-width($bp-small) {
-      margin-top: 60px;
+      margin-top: 40px;
     }
   }
 }

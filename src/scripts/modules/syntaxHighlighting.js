@@ -12,7 +12,8 @@ export default {
     Prism.highlightAll();
     Prism.hooks.add('after-highlight', env => {
       // eslint-disable-next-line
-      env.element.innerHTML = '<div class="line">' +
+      env.element.innerHTML =
+        '<div class="line">' +
         env.highlightedCode.replace(/\r\n?|\n/g, '</div><div class="line">') +
         '</div>';
 

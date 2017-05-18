@@ -1,0 +1,42 @@
+.error404 {
+  padding: 0;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  h1 {
+    font-weight: 600;
+    color: $color-heading;
+    font-size: 24px;
+    padding: 10px 20px 10px 0;
+    border-right: 1px solid $color-gray-lighter;
+    display: inline-block;
+    margin: 0 20px 0 0;
+    vertical-align: top;
+  }
+
+  h2 {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 51px;
+    margin: 0;
+    vertical-align: middle;
+    height: 49px;
+    color: $color-heading;
+  }
+
+  .link {
+    display: block;
+    text-align: center;
+    margin-top: 60px;
+
+    a {
+      color: $color-primary;
+    }
+  }
+}

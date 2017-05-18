@@ -1,3 +1,23 @@
-{{ partial "header.html" . }}
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}" class="no-js">
+  <head>
+    {{ partial "head" . }}
+  </head>
+  <body class="error404">
+    <div class="container">
+      <div class="title">
+        <h1>404</h1>
+        <h2>Page not found.</h2>
+        <div class="link">
+          <a href="/">&larr; Take me back</a>
+        </div>
+      </div>
+    </div>
+    {{ if (isset .Site.Data "assets") }}
+      <script src="/scripts/{{ index .Site.Data.assets "app.js" }}"></script>
+    {{ else }}
+      <script src="/scripts/main.js"></script>
+    {{ end }}
+  </body>
+</html>
 
-{{ partial "footer.html" . }}
