@@ -1,7 +1,7 @@
 ---
 title: Up and running
-date: 2016-10-08T09:00:52+00:00
 description: "Announcing my new blog and website! After years of unsatisfying approaches and several restarts I can present a result I'm happy with."
+date: 2016-10-08T09:00:52+00:00
 type: post
 url: /up-and-running/
 categories:

@@ -2,7 +2,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}</title>
+<title>{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ if eq .Page.Kind "taxonomy" }}Posts in {{ end}}{{ .Title }} – Lars Graubner{{ end }}</title>
 
 <meta name="description"  content="{{ .Params.Description }}" />
 <meta name="robots" content="{{ if or (.Params.noindex) (eq .Page.Kind "taxonomy") }}no{{ end }}index,{{ if .Params.nofollow }}no{{ end }}follow">
@@ -10,7 +10,7 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <meta property="og:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
 <meta property="og:type" content="blog" />
-<meta property="og:url" content="{{ .Site.BaseURL }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="Lars Graubner" />
 <meta property="og:description" content="{{ .Params.Description }}" />
 <meta name="twitter:card" content="summary" />

@@ -14,11 +14,15 @@
     &:not(:first-child) {
       margin-left: 20px;
     }
+  }
 
-    a {
-      padding: 5px 8px;
-      color: $color-primary;
-      font-size: 15px;
+  a {
+    padding: 5px 8px;
+    color: $color-primary;
+    font-size: 15px;
+
+    &:hover {
+      color: $color-text;
     }
   }
 }

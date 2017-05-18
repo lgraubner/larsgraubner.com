@@ -55,7 +55,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint \"src/js/**\"",
-    "dev": "concurrently \"hugo --watch\" \"cross-env NODE_ENV=development node server.js\"",
+    "dev": "concurrently \"hugo --watch --buildDrafts\" \"cross-env NODE_ENV=development node server.js\"",
     "clean": "rimraf public",
     "build:hugo": "hugo",
     "build:assets": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",

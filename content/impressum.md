@@ -14,8 +14,8 @@ nofollow: true
 
 ## Angaben gemäß § 5 TMG:
 
-Lars Graubner
-Süderstr. 8
+Lars Graubner  
+Süderstr. 8  
 23554 Lübeck
 
 ## Kontakt:
@@ -24,7 +24,8 @@ E-Mail: mail@larsgraubner.de
 
 ## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 
-Lars GraubnerSüderstr. 8
+Lars Graubner  
+Süderstr. 8  
 23554 Lübeck
 
 ## Haftung für Inhalte
