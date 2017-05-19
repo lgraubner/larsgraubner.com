@@ -40,7 +40,6 @@
     "image-webpack-loader": "^3.3.1",
     "lint-staged": "^3.3.1",
     "node-sass": "^4.5.2",
-    "npm-run-all": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.1",
     "postcss-loader": "^2.0.5",
     "prettier": "^1.2.2",
@@ -54,14 +53,12 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "lint": "eslint \"src/js/**\"",
     "dev": "concurrently \"hugo --watch --buildDrafts\" \"cross-env NODE_ENV=development node server.js\"",
     "clean": "rimraf public",
-    "build:hugo": "hugo",
-    "build:assets": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",
-    "build": "npm-run-all lint clean build:*",
-    "copy": "rsync -avz --delete public/ root@larsgraubner.com:/var/www/larsgraubner.com/public/",
-    "deploy": "npm-run-all build copy"
+    "prebuild": "npm run clean",
+    "build": "hugo && cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",
+    "predeploy": "npm run build",
+    "deploy": "rsync -avz --delete public/ root@larsgraubner.com:/var/www/larsgraubner.com/public/"
   },
   "lint-staged": {
     "*.js": [
