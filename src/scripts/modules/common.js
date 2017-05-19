@@ -23,7 +23,13 @@ export default {
    * @function
    */
   addEmojis() {
-    twemoji.parse(document.body);
+    const emojiElements = document.getElementsByClassName('twemoji');
+    if (emojiElements.length) {
+      // eslint-disable-next-line
+      for (let el of emojiElements) {
+        twemoji.parse(el);
+      }
+    }
   },
 
   /**
