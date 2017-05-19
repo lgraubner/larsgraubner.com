@@ -13,10 +13,13 @@
         </div>
       </div>
     </div>
-    {{ if (isset .Site.Data "assets") }}
-      <script src="/scripts/{{ index .Site.Data.assets "app.js" }}"></script>
-    {{ else }}
-      <script src="/scripts/main.js"></script>
+
+    {{ if not .Site.BuildDrafts }}
+      {{ partial "google_analytics" . }}
+    {{ end }}
+
+    {{ with (index .Site.Data.assets "app.js") }}
+      <script src="/scripts/{{ . }}"></script>
     {{ end }}
   </body>
 </html>

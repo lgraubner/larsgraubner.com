@@ -56,7 +56,7 @@
     "dev": "concurrently \"hugo --watch --buildDrafts\" \"cross-env NODE_ENV=development node server.js\"",
     "clean": "rimraf public",
     "prebuild": "npm run clean",
-    "build": "hugo && cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress && hugo",
     "predeploy": "npm run build",
     "deploy": "rsync -avz --delete public/ root@larsgraubner.com:/var/www/larsgraubner.com/public/"
   },

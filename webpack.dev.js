@@ -1,15 +1,31 @@
 /* eslint import/no-extraneous-dependencies:0 */
 const webpack = require('webpack');
 const path = require('path');
+const AssetsPlugin = require('assets-webpack-plugin');
+const forEach = require('lodash.foreach');
 
 const config = require('./src/config');
 
+const assetsPluginProcessOutput = function process(assets) {
+  const results = {};
+
+  forEach(assets, (chunk, key) => {
+    forEach(chunk, (filename, ext) => {
+      results[`${key}.${ext}`] = path.basename(filename);
+    });
+  });
+
+  return JSON.stringify(results);
+};
+
 const webpackConfig = {
-  entry: [
-    'webpack-hot-middleware/client',
-    path.join(__dirname, './src/scripts/main.js'),
-    path.join(__dirname, './src/styles/main.scss'),
-  ],
+  entry: {
+    app: [
+      'webpack-hot-middleware/client',
+      path.join(__dirname, './src/scripts/main.js'),
+      path.join(__dirname, './src/styles/main.scss'),
+    ],
+  },
   output: {
     publicPath: config.output.publicPath,
     filename: 'scripts/[name].js',
@@ -49,6 +65,12 @@ const webpackConfig = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
+    }),
+    new AssetsPlugin({
+      path: './data',
+      filename: 'assets.json',
+      fullPath: false,
+      processOutput: assetsPluginProcessOutput,
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),

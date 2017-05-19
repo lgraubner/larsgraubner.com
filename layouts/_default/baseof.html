@@ -14,14 +14,13 @@
     {{ block "footer" . }}
       {{ partial "footer" . }}
     {{ end }}
+
     {{ if not .Site.BuildDrafts }}
       {{ partial "google_analytics" . }}
     {{ end }}
 
-    {{ if .Site.Data.assets }}
-      <script src="/scripts/{{ index .Site.Data.assets "app.js" }}"></script>
-    {{ else }}
-      <script src="/scripts/main.js"></script>
+    {{ with (index .Site.Data.assets "app.js") }}
+      <script src="/scripts/{{ . }}"></script>
     {{ end }}
   </body>
 </html>
