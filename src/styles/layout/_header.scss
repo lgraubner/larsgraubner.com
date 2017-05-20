@@ -35,6 +35,7 @@
     font-size: 28px;
     margin: 0 0 10px;
     color: $color-heading;
+    font-weight: bold;
 
     @include min-width($bp-small) {
       font-size: 40px;
