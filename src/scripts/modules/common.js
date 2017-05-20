@@ -5,7 +5,7 @@
  */
 import twemoji from 'twemoji';
 
-const gaProperty = 'UA-XXXXXXXX-X';
+const gaProperty = 'UA-44046571-2';
 const disableStr = `ga-disable-${gaProperty}`;
 
 export default {

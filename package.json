@@ -58,7 +58,7 @@
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress && hugo",
     "predeploy": "npm run build",
-    "deploy": "rsync -avz --delete public/ root@larsgraubner.com:/var/www/larsgraubner.com/public/"
+    "deploy": "rsync -rvz --delete public/ root@larsgraubner.com:/var/www/larsgraubner.com/public/"
   },
   "lint-staged": {
     "*.js": [
