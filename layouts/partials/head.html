@@ -9,15 +9,18 @@
 
 <link rel="canonical" href="{{ .Permalink }}">
 <meta property="og:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
-<meta property="og:type" content="blog" />
+<meta property="og:type" content="{{ if eq .Page.Params.type "post" }}article{{ else if or (eq .Page.Kind "taxonomy") (eq .Page.Title "Blog") }}blog{{ else }}website{{ end }}" />
+
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="Lars Graubner" />
 <meta property="og:description" content="{{ .Params.Description }}" />
+<meta property="og:image" content"/images/lars-1200x1200.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@larsgraubner" />
 <meta name="twitter:domain" content="larsgraubner.com" />
 <meta name="twitter:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
 <meta name="twitter:description" content="{{ .Params.Description }}" />
+<meta name="twitter:image" content="/images/lars-1200x1200.jpg" />
 
 {{ if .IsHome }}
 <script type="application/ld+json">
