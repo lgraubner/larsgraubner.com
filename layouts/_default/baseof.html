@@ -20,7 +20,7 @@
     {{ end }}
 
     {{ with (index .Site.Data.assets "app.js") }}
-      <script src="/scripts/{{ . }}"></script>
+      <script src="/scripts/{{ . }}" async></script>
     {{ end }}
   </body>
 </html>
