@@ -4,7 +4,7 @@
 
 <title>{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ if eq .Page.Kind "taxonomy" }}Posts in {{ end}}{{ .Title }} – Lars Graubner{{ end }}</title>
 
-<meta name="description"  content="{{ .Params.Description }}" />
+<meta name="description" content="{{ if (eq .Page.Kind "taxonomy") }}{{ with (index .Site.Data.categories .Title)}}{{.}}{{ end }}{{ else }}{{ .Params.Description }}{{ end }}" />
 <meta name="robots" content="{{ if or (.Params.noindex) (eq .Page.Kind "taxonomy") }}no{{ end }}index,{{ if .Params.nofollow }}no{{ end }}follow">
 
 <link rel="canonical" href="{{ .Permalink }}">
@@ -13,13 +13,13 @@
 
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="Lars Graubner" />
-<meta property="og:description" content="{{ .Params.Description }}" />
+<meta property="og:description" content="{{ if (eq .Page.Kind "taxonomy") }}{{ with (index .Site.Data.categories .Title)}}{{.}}{{ end }}{{ else }}{{ .Params.Description }}{{ end }}" />
 <meta property="og:image" content="{{ .Site.BaseURL }}/images/lars-1200x1200.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@larsgraubner" />
 <meta name="twitter:domain" content="larsgraubner.com" />
 <meta name="twitter:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
-<meta name="twitter:description" content="{{ .Params.Description }}" />
+<meta name="twitter:description" content="{{ if (eq .Page.Kind "taxonomy") }}{{ with (index .Site.Data.categories .Title)}}{{.}}{{ end }}{{ else }}{{ .Params.Description }}{{ end }}" />
 <meta name="twitter:image" content="{{ .Site.BaseURL }}/images/lars-1200x1200.jpg" />
 
 {{ if .IsHome }}
