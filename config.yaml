@@ -6,7 +6,7 @@ permalinks:
   post: "/:title/"
 taxonomies:
   category: "categories"
-Author:
+author:
   name: Lars Graubner
   email: mail@larsgraubner.de
 blackfriday:
