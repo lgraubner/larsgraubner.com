@@ -6,7 +6,6 @@ date: 2016-10-09T08:00:06+00:00
 url: /tree-picture-folder-structures/
 categories:
   - Tooling
-
 ---
 A couple days ago I was documenting the architecture of a website and wanted to write down the folder structure on a wiki page. After struggling with writing it down by hand which was not quite readable I searched for other solutions and found the handy tool tree.
 

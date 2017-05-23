@@ -20,10 +20,9 @@
         Published in
         {{ range $i, $e := .Params.categories }}{{ if $i }} • {{ end }}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/">{{ $e }}</a>{{ end }}
       </div>
+      {{ partial "author" . }}
+      {{ partial "related" . }}
     </footer>
   </div>
 </article>
-{{ end }}
-{{ define "footer" }}
-  {{ partial "author" . }}
 {{ end }}

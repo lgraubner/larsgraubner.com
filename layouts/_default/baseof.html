@@ -11,7 +11,7 @@
       {{ block "content" . }}
       {{ end }}
     </main>
-    {{ block "footer" . }}
+    {{ if not (eq .Page.Params.type "post") }}
       {{ partial "footer" . }}
     {{ end }}
 

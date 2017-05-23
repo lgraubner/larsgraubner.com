@@ -6,7 +6,6 @@ type: post
 url: /up-and-running/
 categories:
   - Blog
-
 ---
 I'm proud to announce my new blog and website! 🎉 After years of unsatisfying approaches and several restarts I can present a result I'm happy with.
 
@@ -21,8 +20,6 @@ For this site I'm using WordPress as CMS. WordPress is very solid in terms of lo
 In the past I gave the static site generator [Jekyll](https://jekyllrb.com/) a try. It is quite nice and easy to use, but in the end I found myself reinventing the wheel for simple things like SEO tasks. Plugins are rare and often not up to date. As I worked a while with [Contao](https://contao.org/de/) I also tried to get a site running with it. In general it works great as this is a great CMS, but the documentation is not as good as WordPress and for blogging purposes this isn't the best option.
 
 Therefore I'm using WordPress which I'm quite familiar with. It helps me to focus on content and features instead of basic tasks.
-
-[![wordpress](https://larsgraubner.com/app/uploads/wordpress-375x136.png)](https://wordpress.org/)
 
 I tried to create a clean layout focusing on the content and a good reading experience. I'm a big fan of minimalist approaches. Aside of this I try to optimize for speed a lot reducing unnecessary requests and use extensive caching. For hosting I'm using <a href="https://m.do.co/c/8f80e84ee2a2" target="_blank">Digital Ocean</a>* as it's very easy to use and manage.
 

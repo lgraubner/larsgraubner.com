@@ -1,0 +1,25 @@
+.related {
+  margin-bottom: 40px;
+
+  &__title {
+    font-weight: normal;
+    font-size: 20px;
+    color: $color-black;
+    margin-bottom: 25px;
+  }
+
+  ul {
+    list-style: square;
+    padding-left: 25px;
+  }
+
+  li {
+    line-height: 1.7em;
+    margin-bottom: 10px;
+  }
+
+  a {
+    font-size: 16px;
+    color: $color-primary;
+  }
+}
