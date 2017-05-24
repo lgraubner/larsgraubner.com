@@ -1,3 +1,7 @@
 {
-
+  "React" : "The React library allows to build powerful user interfaces and apps. I write about my daily findings and use cases for different patterns.",
+  "JavaScript": "I'm working a lot with JavaScript and ECMAScript 2015 and write about it. It is a versatile language and can be used for almost everything.",
+  "Conferences": "From time to time I attend different conferences. My expereciences and learning are written down here.",
+  "Tooling": "The modern development environment requires tooling for all kind of tasks. Here I show you my way of approaching things.",
+  "Blog": "All things about this blog belong here. Announcements, information and more."
 }

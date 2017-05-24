@@ -1,8 +1,9 @@
 ---
+title: ""
 description: ""
-date:
-categories: []
-draft: true
 type: post
-url:
+date: ""
+categories: []
+url: ""
+draft: true
 ---

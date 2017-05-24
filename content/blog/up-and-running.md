@@ -32,3 +32,7 @@ This blog will be about anything I encounter daily as developer. This may be pro
 ## Coming soon
 
 I have several more Features in mind for this site which will come soon. This is the so called _minimum viable product_ serving you the most important part: The content. This will be my playground to test out cutting edge technology and writing about it. Stay tuned!
+
+## *Update:*
+
+As of now this blog is powered by [Hugo](https://gohugo.io), a static site generator written in Go. It's amazingly fast and has everything you need builtin. Wordpress had too much overhead in terms of deployment, database and development environment. Now it's much simpler to build and deploy, couldn't be happier.
