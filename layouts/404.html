@@ -14,13 +14,7 @@
       </div>
     </div>
 
-    {{ if not .Site.BuildDrafts }}
-      {{ partial "google_analytics" . }}
-    {{ end }}
-
-    {{ with (index .Site.Data.assets "app.js") }}
-      <script src="/scripts/{{ . }}"></script>
-    {{ end }}
+    {{ partial "foot" . }}
   </body>
 </html>
 
