@@ -27,3 +27,9 @@ img.emoji {
    margin: 0 .05em 0 .1em;
    vertical-align: -0.1em;
 }
+
+a:focus,
+a:focus img {
+  box-shadow: 0 0 0 2px #fff, 0 0 2px 4px rgba($color-primary, 0.7);
+  outline: 0;
+}
