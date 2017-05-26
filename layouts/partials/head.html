@@ -2,7 +2,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ if eq .Page.Kind "taxonomy" }}Posts in the {{ end}}{{ .Title }} category – Lars Graubner{{ end }}</title>
+<title>{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ if eq .Page.Kind "taxonomy" }}{{ end }}{{ .Title }} – Lars Graubner{{ end }}</title>
 
 <meta name="description" content="{{ if (eq .Page.Kind "taxonomy") }}{{ with (index .Site.Data.categories .Title)}}{{.}}{{ end }}{{ else }}{{ .Params.Description }}{{ end }}" />
 <meta name="robots" content="{{ if or (.Params.noindex) (eq .Page.Kind "taxonomy") }}no{{ end }}index,{{ if .Params.nofollow }}no{{ end }}follow">
