@@ -56,8 +56,7 @@
     font-weight: 400;
     transition: color, text-decoration 100ms ease-in-out;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: $color-text;
       text-decoration: underline;
     }
