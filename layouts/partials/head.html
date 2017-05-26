@@ -33,6 +33,16 @@
 </script>
 {{ end }}
 
+{{ if not .Site.BuildDrafts }}
+<script>
+  (function () {
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  })();
+</script>
+{{ end }}
+
 <link rel="dns-prefetch" href="//twemoji.maxcdn.com" />
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 

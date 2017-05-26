@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 const forEach = require('lodash.foreach');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const config = require('./src/config');
 
@@ -151,6 +152,14 @@ const webpackConfig = {
       cssProcessor: cssnano,
       cssProcessorOptions: { discardComments: { removeAll: true } },
       canPrint: true,
+    }),
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'larsgraubner.com',
+      filename: 'sw.js',
+      minify: true,
+      staticFileGlobs: ['static/**/*.jpg'],
+      mergeStaticsConfig: true,
+      stripPrefix: 'static',
     }),
   ],
   target: 'web',
