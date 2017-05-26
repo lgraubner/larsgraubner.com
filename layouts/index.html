@@ -1,11 +1,11 @@
 {{ define "content" }}
 <div class="content">
   <div class="inner">
-    <h2>Hi there!</h2>
+    <h3>Hi there!</h3>
     <p>I'm Lars, a 25 year old Front-end developer from germany. I love learning new things and build awesome websites. <a href="/about/">Read more about me</a></p>
-    <h2>Things I've made</h2>
+    <h3>Things I've made</h3>
     <p>I created <a href="https://github.com/lgraubner/sitemap-generator">sitemap-generator</a>, a tool to easily generate sitemaps. You can find more projects from me on <a href="https://github.com/lgraubner">GitHub</a>.
-    <h2>Blog</h2>
+    <h3>Blog</h3>
     <p>I'm writing about JavaScript, React, web performance and more in <a href="/blog/">my blog</a>. My latest blog post is {{ range first 1 (where .Site.Pages "Type" "post") }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}.</p>
   </div>
 </div>
