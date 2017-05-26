@@ -9,8 +9,6 @@ categories:
 ---
 A couple days ago I was documenting the architecture of a website and wanted to write down the folder structure on a wiki page. After struggling with writing it down by hand which was not quite readable I searched for other solutions and found the handy tool tree.
 
-<!--more-->
-
 `tree` is a simple cli tool for unix systems to print folder structures recursively to the console. It can be installed on macOS via [homebrew][1] and is also available for all common Linux distributions.
 
 <pre><code class="language-clike">$ brew install tree</code></pre>

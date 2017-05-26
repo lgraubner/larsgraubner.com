@@ -6,11 +6,8 @@ date: 2016-10-13T08:00:09+00:00
 url: /recap-code-talks-2016/
 categories:
   - Conferences
-
 ---
 This year in September it was all about popcorn, nachos and code again. The code.talks conference took place in Hamburg in a new location with lots of great talks. This is a recap of the best talks I attended and the conference at all.
-
-<!--more-->
 
 The [code.talks conference][1] takes place every September in Hamburg since 2014. It's one of the biggest conferences in Europe and covers a variety of web development talks. It has a very nice atmosphere and feels just like the right place to be as developer. Next to the talks there are lots of booths where you get informed about the companies and might get some gimmicks. Finally on the first day the infamous party takes place.
 

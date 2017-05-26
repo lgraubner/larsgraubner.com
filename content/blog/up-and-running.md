@@ -9,8 +9,6 @@ categories:
 ---
 I'm proud to announce my new blog and website! 🎉 After years of unsatisfying approaches and several restarts I can present a result I'm happy with.
 
-<!--more-->
-
 To represent myself in the world wide web I always wanted to built a website for myself. I found this quite difficult as I'm always striving for perfection. A lot of approaches have been made, but at some point I always were unsure about the design or the technology used and threw it away.
 
 ## How it's build
