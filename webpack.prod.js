@@ -157,16 +157,28 @@ const webpackConfig = {
       cacheId: 'larsgraubner.com',
       filename: 'sw.js',
       minify: false,
-      staticFileGlobs: ['static/**/*.jpg', 'layouts/index.html'],
+      staticFileGlobs: ['static/**/*.{jpg,png,svg,ico,json}'],
       mergeStaticsConfig: true,
-      stripPrefixMulti: {
-        static: '',
-        layouts: '',
+      stripPrefix: 'static',
+      dynamicUrlToDependencies: {
+        '/': ['layouts/index.html'],
       },
       runtimeCaching: [
         {
-          urlPattern: /\.html$/,
-          handler: 'networkFirst',
+          urlPattern: '/',
+          handler: 'cacheFirst',
+        },
+        {
+          urlPattern: /fonts\.googleapis\.com/,
+          handler: 'cacheFirst',
+        },
+        {
+          urlPattern: /fonts\.gstatic\.com/,
+          handler: 'cacheFirst',
+        },
+        {
+          urlPattern: /twemoji\.maxcdn\.com/,
+          handler: 'cacheFirst',
         },
       ],
     }),
