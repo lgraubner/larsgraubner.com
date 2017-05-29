@@ -1,6 +1,7 @@
 {
   "name": "Lars Graubner's Blog",
-  "short_name": "LG Blog",
+  "short_name": "Lars' Blog",
+  "start_url": ".",
   "icons": [
     {
       "src": "\/android-chrome-192x192.png",
@@ -9,5 +10,10 @@
     }
   ],
   "theme_color": "#ffffff",
-  "display": "minimal-ui"
+  "display": "minimal-ui",
+  "related_applications": [
+    {
+      "platform": "web"
+    }
+  ]
 }
