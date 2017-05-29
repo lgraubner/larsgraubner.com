@@ -156,10 +156,19 @@ const webpackConfig = {
     new SWPrecacheWebpackPlugin({
       cacheId: 'larsgraubner.com',
       filename: 'sw.js',
-      minify: true,
-      staticFileGlobs: ['static/**/*.jpg'],
+      minify: false,
+      staticFileGlobs: ['static/**/*.jpg', 'layouts/index.html'],
       mergeStaticsConfig: true,
-      stripPrefix: 'static',
+      stripPrefixMulti: {
+        static: '',
+        layouts: '',
+      },
+      runtimeCaching: [
+        {
+          urlPattern: /\.html$/,
+          handler: 'networkFirst',
+        },
+      ],
     }),
   ],
   target: 'web',
