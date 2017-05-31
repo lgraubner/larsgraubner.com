@@ -1,0 +1,22 @@
+.skip-navigation {
+  position: fixed;
+  top: -30em;
+  left: -30px;
+  display: inline-block;
+  background: $color-primary;
+  color: #fff;
+  font-weight: 600;
+  padding: 6px;
+  font-size: 12px;
+  border-radius: $border-radius;
+
+  &:focus {
+    top: 20px;
+    left: 5%;
+    text-decoration: none;
+
+    @include min-width($bp-small) {
+      left: 30px;
+    }
+  }
+}
