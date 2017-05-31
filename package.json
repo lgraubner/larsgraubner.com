@@ -36,6 +36,7 @@
     "express": "^4.15.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
+    "html-minifier": "^3.5.2",
     "husky": "^0.13.2",
     "image-webpack-loader": "^3.3.1",
     "lint-staged": "^3.3.1",
@@ -58,6 +59,7 @@
     "clean": "rimraf public",
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress && hugo",
+    "postbuild": "html-minifier -c htmlminifier.json --input-dir=public --output-dir=public --file-ext=html",
     "predeploy": "npm run build",
     "deploy": "rsync -rvz --delete public/ root@larsgraubner.com:/var/www/larsgraubner.com/public/"
   },

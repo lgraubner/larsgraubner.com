@@ -156,7 +156,7 @@ const webpackConfig = {
     new SWPrecacheWebpackPlugin({
       cacheId: 'larsgraubner.com',
       filename: 'sw.js',
-      minify: false,
+      minify: true,
       staticFileGlobs: ['static/**/*.{jpg,png,svg,ico,json}'],
       mergeStaticsConfig: true,
       stripPrefix: 'static',
