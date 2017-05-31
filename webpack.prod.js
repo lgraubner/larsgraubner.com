@@ -161,7 +161,7 @@ const webpackConfig = {
       mergeStaticsConfig: true,
       stripPrefix: 'static',
       dynamicUrlToDependencies: {
-        '/': ['layouts/index.html'],
+        '/': ['layouts/index.html', 'data/assets.json'],
       },
       runtimeCaching: [
         {
@@ -179,6 +179,16 @@ const webpackConfig = {
         {
           urlPattern: /twemoji\.maxcdn\.com/,
           handler: 'cacheFirst',
+        },
+        {
+          urlPattern: /larsgraubner\.com\/.+\//,
+          handler: 'networkFirst',
+          options: {
+            cache: {
+              maxEntries: 20,
+              name: 'runtime-cache',
+            },
+          },
         },
       ],
     }),
