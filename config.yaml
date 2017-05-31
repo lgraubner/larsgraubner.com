@@ -7,12 +7,14 @@ permalinks:
 taxonomies:
   category: "categories"
 author:
-  name: Lars Graubner
-  email: mail@larsgraubner.de
+  name: "Lars Graubner"
+  email: "mail@larsgraubner.de"
 blackfriday:
   extensionsmask: ["autolink"]
 params:
-  slogan: Front-end developer. Passionate about React and web performance. 🚀
+  slogan: "Front-end developer. Passionate about React and web performance. 🚀"
 outputs:
   home: ["HTML"]
 preserveTaxonomyNames: true
+disableHugoGeneratorInject: true
+metaDataFormat: "yaml"
