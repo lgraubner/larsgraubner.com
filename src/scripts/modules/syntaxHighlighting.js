@@ -21,7 +21,7 @@ export default {
       let lines = null;
       if (dataLine) {
         // eslint-disable-next-line
-        dataLine = dataLine.replace(/(\d+)-(\d+)/, (match, p1, p2) => {
+        dataLine = dataLine.replace(/(\d+)-(\d+)/g, (match, p1, p2) => {
           return range(parseInt(p1, 10), parseInt(p2, 10) + 1).join(',');
         });
         lines = dataLine.split(',');
