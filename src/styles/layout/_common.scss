@@ -31,4 +31,8 @@ img.emoji {
 a:focus {
   text-decoration: underline;
   outline: 0;
+
+  img {
+    box-shadow: 0 0 10px $color-primary;
+  }
 }
