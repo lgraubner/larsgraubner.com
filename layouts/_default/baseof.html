@@ -3,7 +3,7 @@
   <head>
     {{ partial "head" . }}
   </head>
-  <body>
+  <body{{ if eq .Page.Params.type "post" }} class="is-post"{{ end }}>
     {{ block "header" . }}
       {{ partial "header" . }}
     {{ end }}

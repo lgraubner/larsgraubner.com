@@ -1,5 +1,5 @@
 .skip-navigation {
-  position: fixed;
+  position: absolute;
   top: -30em;
   left: -30px;
   display: inline-block;
@@ -11,12 +11,21 @@
   border-radius: $border-radius;
 
   &:focus {
-    top: 20px;
+    top: 17px;
     left: 5%;
     text-decoration: none;
 
     @include min-width($bp-small) {
       left: 30px;
+    }
+
+    .is-post & {
+      top: 50px;
+
+      @include min-width($bp-small) {
+        top: 17px;
+        left: 190px;
+      }
     }
   }
 }
