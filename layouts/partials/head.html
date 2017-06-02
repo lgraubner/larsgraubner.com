@@ -22,17 +22,6 @@
 <meta name="twitter:description" content="{{ if (eq .Page.Kind "taxonomy") }}{{ with (index .Site.Data.categories .Title)}}{{.}}{{ end }}{{ else }}{{ .Params.Description }}{{ end }}" />
 <meta name="twitter:image" content="{{ .Site.BaseURL }}/images/lars-1200x1200.jpg" />
 
-{{ if .IsHome }}
-<script type="application/ld+json">
-{ "@context" : "http://schema.org",
-  "@type" : "Person",
-  "name" : "Lars Graubner",
-  "url" : "https://larsgraubner.com",
-  "sameAs" : ["https://twitter.com/larsgraubner"]
-}
-</script>
-{{ end }}
-
 <link rel="dns-prefetch" href="//twemoji.maxcdn.com" />
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
@@ -52,6 +41,17 @@
 
 {{ with (index .Site.Data.assets "app.css") }}
 <link rel="stylesheet" href="/styles/{{ . }}" type="text/css" />
+{{ end }}
+
+{{ if .IsHome }}
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Person",
+  "name" : "Lars Graubner",
+  "url" : "https://larsgraubner.com",
+  "sameAs" : ["https://twitter.com/larsgraubner"]
+}
+</script>
 {{ end }}
 
 {{ if not .Site.BuildDrafts }}

@@ -16,7 +16,7 @@
   "preventAttributesEscaping": false,
   "processConditionalComments": true,
   "processScripts": [
-    "text/html"
+    "application/ld+json"
   ],
   "removeAttributeQuotes": true,
   "removeComments": true,
