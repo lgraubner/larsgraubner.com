@@ -61,7 +61,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress && hugo",
     "postbuild": "html-minifier -c htmlminifier.json --input-dir=public --output-dir=public --file-ext=html",
     "predeploy": "npm run build",
-    "deploy": "rsync -rvz --delete public/ root@larsgraubner.com:/var/www/larsgraubner.com/public/"
+    "deploy": "rsync -rvz --delete public/ root@larsgraubner.de:/var/www/larsgraubner.com/public/"
   },
   "lint-staged": {
     "*.js": [
