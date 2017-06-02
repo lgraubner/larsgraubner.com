@@ -33,16 +33,6 @@
 </script>
 {{ end }}
 
-{{ if not .Site.BuildDrafts }}
-<script>
-  (function () {
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
-    }
-  })();
-</script>
-{{ end }}
-
 <link rel="dns-prefetch" href="//twemoji.maxcdn.com" />
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
@@ -62,6 +52,16 @@
 
 {{ with (index .Site.Data.assets "app.css") }}
 <link rel="stylesheet" href="/styles/{{ . }}" type="text/css" />
+{{ end }}
+
+{{ if not .Site.BuildDrafts }}
+<script>
+  (function () {
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  })();
+</script>
 {{ end }}
 
 <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
