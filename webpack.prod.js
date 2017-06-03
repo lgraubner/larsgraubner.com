@@ -91,12 +91,8 @@ const webpackConfig = {
               optipng: {
                 optimizationLevel: 7,
               },
-              gifcicle: {
-                interlaced: false,
-              },
               pngquant: {
                 quality: '65-90',
-                speed: 4,
               },
               mozjpeg: {
                 quality: 65,

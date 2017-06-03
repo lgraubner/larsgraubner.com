@@ -84,27 +84,15 @@ So let's skip to some code to make some basic image processing with webpack. We 
           },
           {
             loader: 'image-webpack-loader',
-            options: {
-              optipng: {
-                optimizationLevel: 7,
-              },
-              gifcicle: {
-                interlaced: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-              mozjpeg: {
-                quality: 65,
-              },
-            },
           },
         ],
       },
     ],
   },
 };</code></pre>
+
+@TODO url-loader contains file-loader  
+@TODO image-webpack-loader options
 
 ## Conclusion
 
