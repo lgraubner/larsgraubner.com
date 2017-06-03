@@ -3,11 +3,7 @@
  * Taken from HTML5 boilerplate (https://html5boilerplate.com/)
  */
 @media print {
-  *,
-  *:before,
-  *:after,
-  *:first-letter,
-  *:first-line {
+  *, *:before, *:after, *:first-letter, *:first-line {
     background: transparent !important;
     // Black prints faster:
     // http://www.sanbeiji.com/archives/953
@@ -16,8 +12,7 @@
     text-shadow: none !important;
   }
 
-  a,
-  a:visited {
+  a, a:visited {
     text-decoration: underline;
   }
 
@@ -31,13 +26,11 @@
 
   // Don't show links that are fragment identifiers,
   // or use the `javascript:` pseudo protocol
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
+  a[href^="#"]:after, a[href^="javascript:"]:after {
     content: "";
   }
 
-  pre,
-  blockquote {
+  pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
@@ -48,8 +41,7 @@
     display: table-header-group;
   }
 
-  tr,
-  img {
+  tr, img {
     page-break-inside: avoid;
   }
 
@@ -57,15 +49,12 @@
     max-width: 100% !important;
   }
 
-  p,
-  h2,
-  h3 {
+  p, h2, h3 {
     orphans: 3;
     widows: 3;
   }
 
-  h2,
-  h3 {
+  h2, h3 {
     page-break-after: avoid;
   }
 }

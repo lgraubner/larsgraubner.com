@@ -35,10 +35,9 @@
   }
 
   .info {
-
     @include min-width($bp-small) {
       float: left;
-    max-width: 80%;
+      max-width: 80%;
     }
   }
 

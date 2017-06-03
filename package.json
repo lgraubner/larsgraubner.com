@@ -67,6 +67,10 @@
     "*.js": [
       "prettier --single-quote --trailing-comma es5 --write",
       "git add"
+    ],
+    "*.scss": [
+      "prettier --parser=postcss --write",
+      "git add"
     ]
   }
 }

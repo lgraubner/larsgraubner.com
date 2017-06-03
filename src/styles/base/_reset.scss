@@ -36,8 +36,7 @@ a {
 }
 
 // Reset button styling
-button,
-input[type='button'] {
+button, input[type='button'] {
   outline: 0;
   -webkit-appearance: none;
   border-radius: 0;
@@ -70,12 +69,7 @@ textarea {
 }
 
 // Remove gap beneath elements
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+audio, canvas, iframe, img, svg, video {
   vertical-align: middle;
 }
 
