@@ -2,7 +2,7 @@
 categories:
   - Tooling
   - JavaScript
-date: 2017-05-24T17:41:26+02:00
+date: 2017-06-08T10:00:00+02:00
 description: ""
 draft: true
 title: Processing images with webpack
