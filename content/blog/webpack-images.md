@@ -34,7 +34,7 @@ Webpack works different which can be confusing. Rather than handling direct imag
   background: url('/images/button.png') center center no-repeat;
 }</code></pre>
 
-But here comes the clue. Normally you specify the path with your final URL structure in mind. So the previous example would resolve to <code>http://example.com/images/button.png</code>. But if <code>/images/button.png</code> doesn't resolve to the image locally webpack will just ignore it and output as is.
+But here comes the clue. Normally you specify the path with your final URL structure in mind. So the previous example would resolve to `http://example.com/images/button.png`. But if `/images/button.png` doesn't resolve to the image locally webpack will just ignore it and output as is.
 
 Assuming our file structure looks like this:
 
@@ -91,6 +91,7 @@ So let's skip to some code to make some basic image processing with webpack. We 
   },
 };</code></pre>
 
+Heads up! `url-loader` is a wrapper for `file-loader`. If the file is too big it will fall back to `file-loader`. Therefore you don't have to specify the `file-loader` beside the `url-loader`.
 @TODO url-loader contains file-loader  
 @TODO image-webpack-loader options
 
