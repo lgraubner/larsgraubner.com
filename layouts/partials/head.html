@@ -61,9 +61,16 @@
   "@context": "http://schema.org",
   "@type": "Article",
   "headline": "{{ .Title }}",
-  "author": "{{ .Site.Author.name }}",
+  "author": {
+    "name": "{{ .Site.Author.name }}"
+  },
   "datePublished": "{{ dateFormat "2006-01-02" .Date }}",
-  "description": "{{ .Params.description }}"
+  "description": "{{ .Params.description }}",
+  "image": {
+    "url": "https://larsgraubner.com/images/lars-1200x1200.jpg",
+    "width": 1200,
+    "height": 1200
+  }
 }
 </script>
 {{ else if (eq .Page.Title "Blog") }}
