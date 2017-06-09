@@ -4,7 +4,6 @@ categories:
   - JavaScript
 date: 2017-06-09T22:00:00+02:00
 description: "Images should be optimized as good as possible. This post describes image processing with webpack and how it differs from gulp, Grunt and similar tools."
-draft: true
 title: Processing images with webpack
 type: "post"
 url: /webpack-images/
