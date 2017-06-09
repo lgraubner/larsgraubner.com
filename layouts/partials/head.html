@@ -2,23 +2,23 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ if eq .Page.Kind "taxonomy" }}{{ end }}{{ .Title }} – Lars Graubner{{ end }}</title>
+<title>{{ if .IsHome }}{{ .Site.Author.name }} – Front-end Developer{{ else }}{{ if eq .Page.Kind "taxonomy" }}{{ end }}{{ .Title }}{{ if not (eq .Page.Params.type "post") }} – {{ .Site.Author.name }}{{ end }}{{ end }}</title>
 
 <meta name="description" content="{{ if (eq .Page.Kind "taxonomy") }}{{ with (index .Site.Data.categories .Title)}}{{.}}{{ end }}{{ else }}{{ .Params.Description }}{{ end }}" />
 <meta name="robots" content="{{ if or (.Params.noindex) (eq .Page.Kind "taxonomy") }}no{{ end }}index,{{ if .Params.nofollow }}no{{ end }}follow">
 
 <link rel="canonical" href="{{ .Permalink }}">
-<meta property="og:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Author.name }} – Front-end Developer{{ else }}{{ .Title }}{{ if not (eq .Page.Params.type "post") }} – {{ .Site.Author.name }}{{ end }}{{ end }}" />
 <meta property="og:type" content="{{ if eq .Page.Params.type "post" }}article{{ else if or (eq .Page.Kind "taxonomy") (eq .Page.Title "Blog") }}blog{{ else }}website{{ end }}" />
 
 <meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:site_name" content="Lars Graubner" />
+<meta property="og:site_name" content="{{ .Site.Author.name }}" />
 <meta property="og:description" content="{{ if (eq .Page.Kind "taxonomy") }}{{ with (index .Site.Data.categories .Title)}}{{.}}{{ end }}{{ else }}{{ .Params.Description }}{{ end }}" />
 <meta property="og:image" content="{{ .Site.BaseURL }}/images/lars-1200x1200.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@larsgraubner" />
 <meta name="twitter:domain" content="larsgraubner.com" />
-<meta name="twitter:title" content="{{ if .IsHome }}Lars Graubner – Front-end Developer{{ else }}{{ .Title }} – Lars Graubner{{ end }}" />
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Author.name }} – Front-end Developer{{ else }}{{ .Title }} – {{ .Site.Author.name }}{{ end }}" />
 <meta name="twitter:description" content="{{ if (eq .Page.Kind "taxonomy") }}{{ with (index .Site.Data.categories .Title)}}{{.}}{{ end }}{{ else }}{{ .Params.Description }}{{ end }}" />
 <meta name="twitter:image" content="{{ .Site.BaseURL }}/images/lars-1200x1200.jpg" />
 
@@ -45,11 +45,42 @@
 
 {{ if .IsHome }}
 <script type="application/ld+json">
-{ "@context" : "http://schema.org",
+{
+  "@context" : "http://schema.org",
   "@type" : "Person",
-  "name" : "Lars Graubner",
+  "name" : "{{ .Site.Author.name }}",
+  "image": "https://larsgraubner.com/images/lars-1200x1200.jpg",
+  "jobTitle": "Front-end developer",
   "url" : "https://larsgraubner.com",
   "sameAs" : ["https://twitter.com/larsgraubner"]
+}
+</script>
+{{ else if (eq .Page.Params.type "post" )}}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "author": "{{ .Site.Author.name }}",
+  "datePublished": "{{ dateFormat "2006-01-02" .Date }}",
+  "description": "{{ .Params.description }}"
+}
+</script>
+{{ else if (eq .Page.Title "Blog") }}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Blog",
+  "name": "Lars' Blog",
+  "url": "https://larsgraubner.com/blog/",
+  "description": "{{ .Params.description }}",
+  "sameAs": [
+    "https://twitter.com/larsgraubner"
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ .Site.Author.name }}"
+  }
 }
 </script>
 {{ end }}

@@ -10,7 +10,7 @@ type: "post"
 url: /webpack-images/
 ---
 
-Images are a crucial part of any website. Mostly they make the most of the transferred bytes. Therefore it's important to optimize them as much as possible. Modern build tools such as [Webpack](https://webpack.js.org/) or [gulp](http://gulpjs.com/) offer all kind of plugins to optimize your images. In this post I'm going to have a closer look at webpack and image processing as it differs from gulp, [Grunt](https://gruntjs.com/) and similar tools.
+Images are a crucial part of any website. Often they make the most of the transferred bytes. Therefore it's important to optimize them as good as possible. Modern build tools such as [Webpack](https://webpack.js.org/) or [gulp](http://gulpjs.com/) offer all kind of plugins to optimize your images. In this post I'm going to have a closer look at webpack and image processing and how it differs from gulp, [Grunt](https://gruntjs.com/) and similar tools.
 
 *This post is assuming webpack v2. Loader syntaxes might vary in other versions.*
 
@@ -56,7 +56,7 @@ we have to adjust our css:
   background: url('../images/button.png') center center no-repeat;
 }</code></pre>
 
-Now webpack can resolve the image url correctly. Note that this part is not relevant for the final output path anymore, we care about this later. Having the image we can now process it. Handling images like this has a big advantage: We can alter the filename, filepath and the image itself automatically in our build process. Things like filename hashes for cache busting and inlining images can be done easily.
+Now webpack can resolve the image url correctly. This also works for any kind of file type (js, html) as long they are handled by a loader. Note that this part is not relevant for the final output path anymore, we care about this later. Having the image we can now process it. Handling images like this has a big advantage: We can alter the filename, filepath and the image itself automatically in our build process. Things like filename hashes for cache busting and inlining images can be done easily.
 
 A very basic webpack config loading images could look like the following. If you are not familiar with webpack configuration [check out the docs](https://webpack.js.org/guides/get-started/).
 
@@ -125,7 +125,7 @@ Another performance optimization technique is to inline small images. Inlining i
 
 The only important option is `limit`. All images below the byte limit are inlined to the source file as data URL. SVG files should not be processed with url-loader ([issue](https://github.com/webpack-contrib/url-loader/issues/6#issuecomment-63182275)).
 
-<div class="notice">Heads up, url-loader is a wrapper for file-loader. If the file is too big it will fall back to file-loader. Therefore you can omit the file-loader. All options are passed through.</div>
+<div class="notice">Heads up: url-loader is a wrapper for file-loader. If the file is too big it will fall back to file-loader. Therefore you can omit the file-loader. All options are passed through.</div>
 
 ### image-webpack-loader
 
