@@ -62,14 +62,20 @@
   "@type": "Article",
   "headline": "{{ .Title }}",
   "author": {
+    "@type": "Person",
     "name": "{{ .Site.Author.name }}"
   },
-  "datePublished": "{{ dateFormat "2006-01-02" .Date }}",
+  "datePublished": "{{ .Date }}",
   "description": "{{ .Params.description }}",
   "image": {
+    "@type": "ImageObject",
     "url": "https://larsgraubner.com/images/lars-1200x1200.jpg",
-    "width": 1200,
-    "height": 1200
+    "height": 1200,
+    "width": 1200
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ .Site.Author.name }}"
   }
 }
 </script>
