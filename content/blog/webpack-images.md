@@ -2,19 +2,19 @@
 categories:
   - Tooling
   - JavaScript
-date: 2017-06-08T10:00:00+02:00
-description: ""
+date: 2017-06-09T22:00:00+02:00
+description: "Images should be optimized as good as possible. This post describes image processing with webpack and how it differs from gulp, Grunt and similar tools."
 draft: true
 title: Processing images with webpack
 type: "post"
 url: /webpack-images/
 ---
 
-Images are a crucial part of any website. Often they make the most of the transferred bytes. Therefore it's important to optimize them as good as possible. Modern build tools such as [Webpack](https://webpack.js.org/) or [gulp](http://gulpjs.com/) offer all kind of plugins to optimize your images. In this post I'm going to have a closer look at webpack and image processing and how it differs from gulp, [Grunt](https://gruntjs.com/) and similar tools.
+Images are a crucial part of any website. Often they make the most of the transferred bytes. Therefore it's important to optimize them as good as possible. Modern build tools such as [Webpack](https://webpack.js.org/) or [gulp](http://gulpjs.com/) offer all kind of plugins to optimize your images. In this post I'm going to have a closer look at image processing with webpack and how it differs from gulp, [Grunt](https://gruntjs.com/) and similar tools.
 
 *This post is assuming webpack v2. Loader syntaxes might vary in other versions.*
 
-## Migrating from gulp and similar tools
+## Migrating from gulp
 
 When I started to migrate from gulp to webpack I struggled getting image processing to work as I used to do it before. Gulp handles images like this: Provide a folder with images, process them and output at the given location.
 
@@ -33,7 +33,7 @@ Webpack works different which can be confusing. Rather than handling direct imag
   display: block;
   width: 100px;
   height: 40px;
-  background: url('/images/button.png') center center no-repeat;
+  background-image: url('/images/button.png');
 }</code></pre>
 
 But here comes the clue. Normally you specify the path with your final URL structure in mind. So the previous example would resolve to `http://example.com/images/button.png`. But if `/images/button.png` doesn't resolve to the image locally webpack will just ignore it and output the path as is.
@@ -47,13 +47,13 @@ Assuming our file structure looks like this:
 `-- webpack.conf.js
 </code></pre>
 
-we have to adjust our css:
+we have to adjust our css as follows:
 
 <pre class="language-css"><code>.button {
   display: block;
   width: 100px;
   height: 40px;
-  background: url('../images/button.png') center center no-repeat;
+  background-image: url('../images/button.png');
 }</code></pre>
 
 Now webpack can resolve the image url correctly. This also works for any kind of file type (js, html) as long they are handled by a loader. Note that this part is not relevant for the final output path anymore, we care about this later. Having the image we can now process it. Handling images like this has a big advantage: We can alter the filename, filepath and the image itself automatically in our build process. Things like filename hashes for cache busting and inlining images can be done easily.
@@ -76,21 +76,21 @@ A very basic webpack config loading images could look like the following. If you
         test: /.*\.(gif|png|jpe?g)$/i,
         use: [
           {
-            loader: 'file-loader',
-          },
-        ],
-      },
-    ],
-  },
+            loader: 'file-loader'
+          }
+        ]
+      }
+    ]
+  }
 };</code></pre>
 
 ## Loaders
 
-Webpack is using loaders to process different filetypes. We want to optimize our images to reduce file sizes and make them load as fast as possible.
+Webpack is using loaders to process different filetypes. We want to optimize our images to reduce file sizes and make them load as fast as possible. The following loaders help us to achieve this task.
 
 ### file-loader
 
-The [file-loader](https://github.com/webpack-contrib/file-loader) is a simple loader which does not touch the file itself. The main purpose is to alter the filename and path for the public use.
+The [file-loader](https://github.com/webpack-contrib/file-loader) is a simple loader which does not touch the file itself. The main purpose is to alter the filename and path for public use.
 
 <pre class="language-javascript"><code>{
   test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -115,7 +115,8 @@ Another performance optimization technique is to inline small images. Inlining i
 <pre class="language-javascript"><code>{
   test: /.*\.(gif|png|jpe?g)$/i,
   use: [
-    loader: 'url-loader',
+    {
+      loader: 'url-loader',
       options: {
         limit: 8000,
       },
@@ -123,13 +124,13 @@ Another performance optimization technique is to inline small images. Inlining i
   ]
 }</code></pre>
 
-The only important option is `limit`. All images below the byte limit are inlined to the source file as data URL. SVG files should not be processed with url-loader ([issue](https://github.com/webpack-contrib/url-loader/issues/6#issuecomment-63182275)).
+The only important option is `limit`. All images below the byte limit are inlined to the source file as data URL. Note: SVG files should not be processed with url-loader ([issue](https://github.com/webpack-contrib/url-loader/issues/6#issuecomment-63182275)). The right byte limit is up to you. You have to evaluate your resulting stylesheet filesize and saved network requests.
 
 <div class="notice">Heads up: url-loader is a wrapper for file-loader. If the file is too big it will fall back to file-loader. Therefore you can omit the file-loader. All options are passed through.</div>
 
 ### image-webpack-loader
 
-One final and essential task provides the [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader). It compresses the images.
+One final and essential task provides the [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader). It compresses the images with suitable libraries for each file type.
 
 <pre class="language-javascript"><code>{
   test: /.*\.(gif|png|jpe?g)$/i,
@@ -141,8 +142,8 @@ One final and essential task provides the [image-webpack-loader](https://github.
   ]
 }</code></pre>
 
-The loader accepts fine grained options for the underlying minifiers. This is a must have to avoid serving images with large file sizes.
+The loader accepts fine grained [options](https://github.com/tcoopman/image-webpack-loader#usage) for the underlying minifiers. This is a must have to avoid serving images with large file sizes.
 
 ## Conclusion
 
-Using webpack for bundling and image processing might be confusing at first and take initially some more time compared to gulp and Grunt, but it's worth the hassle. The presented loaders provide a solid starting point for performant images. It enables powerful techniques such as image inlining. If you didn't check out webpack yet you should definately do so.
+Using webpack for bundling and image processing might be confusing at first and take initially some more time compared to gulp and Grunt, but it's worth the hassle. The presented loaders provide a solid starting point for optimized images. It enables useful techniques such as image inlining and cache busting. A full example webpack configuration can be found on [GitHub](https://gist.github.com/lgraubner/809b9c806c82366af34193ade5cfeb57). If you didn't check out webpack yet you should definitely do so.
