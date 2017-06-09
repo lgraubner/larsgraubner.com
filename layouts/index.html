@@ -6,9 +6,7 @@
     <h3>Things I've made</h3>
     <p>I created <a href="https://github.com/lgraubner/sitemap-generator">sitemap-generator</a>, a tool to easily generate sitemaps. You can find more projects from me on <a href="https://github.com/lgraubner">GitHub</a>.
     <h3>Blog</h3>
-    <p>I'm writing about JavaScript, React, web performance and more in <a href="/blog/">my blog</a>. My latest blog post is {{ range first 1 (where .Site.Pages "Type" "post") }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}.</p>
+    <p>I'm writing about JavaScript, React and web performance in my <a href="/blog/">blog</a>.</p>
   </div>
 </div>
 {{ end }}
-
-<!-- bump -->
