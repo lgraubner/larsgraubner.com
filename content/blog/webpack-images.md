@@ -105,7 +105,7 @@ The [file-loader](https://github.com/webpack-contrib/file-loader) is a simple lo
 
 This will pick up all images with the given extension and copy it to the output path defined in your webpack config. Also the file names are changed by the defined pattern `/images/[name]_[hash:7].[ext]`. This basically translates to: Put file in folder `images`, rename image to the original name followed by the first seven characters of it's hash and the original extension. The path in your output is formatted accordingly.
 
-Without much effort we enabled [cache busting](https://www.keycdn.com/support/what-is-cache-busting/). Everytime an image changes the hash in the filename differs and forces website visitors to redownload the image.
+Without much effort we enabled [cache busting](https://www.keycdn.com/support/what-is-cache-busting/). Every time an image changes the hash in the filename differs and forces website visitors to redownload the image.
 
 ### url-loader
 
