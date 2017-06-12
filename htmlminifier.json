@@ -18,7 +18,7 @@
   "processScripts": [
     "application/ld+json"
   ],
-  "removeAttributeQuotes": true,
+  "removeAttributeQuotes": false,
   "removeComments": true,
   "removeEmptyAttributes": true,
   "removeEmptyElements": true,
@@ -26,7 +26,7 @@
   "removeRedundantAttributes": true,
   "removeScriptTypeAttributes": true,
   "removeStyleLinkTypeAttributes": true,
-  "removeTagWhitespace": true,
+  "removeTagWhitespace": false,
   "sortAttributes": true,
   "sortClassName": true,
   "trimCustomFragments": true,
