@@ -156,14 +156,7 @@ const webpackConfig = {
       staticFileGlobs: ['static/**/*.{jpg,png,svg,ico,json}'],
       mergeStaticsConfig: true,
       stripPrefix: 'static',
-      dynamicUrlToDependencies: {
-        '/': ['layouts/index.html', 'data/assets.json'],
-      },
       runtimeCaching: [
-        {
-          urlPattern: '/',
-          handler: 'cacheFirst',
-        },
         {
           urlPattern: /fonts\.googleapis\.com/,
           handler: 'cacheFirst',

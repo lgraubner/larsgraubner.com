@@ -1,12 +1,26 @@
 {{ define "content" }}
 <div class="content">
   <div class="inner">
-    <h3>Hi there!</h3>
-    <p>I'm Lars, a 25 year old Front-end developer from Germany. I love learning new things and build awesome websites. <a href="/about/">Read more about me</a></p>
-    <h3>Things I've made</h3>
-    <p>I created <a href="https://github.com/lgraubner/sitemap-generator">sitemap-generator</a>, a tool to easily generate sitemaps. You can find more projects from me on <a href="https://github.com/lgraubner">GitHub</a>.
-    <h3>Blog</h3>
-    <p>I'm writing about JavaScript, React and web performance in my <a href="/blog/">blog</a>.</p>
+    <p class="intro">Hello, I'm <strong>Lars Graubner</strong>, a front-end developer who cares about structured code and web performance. I love to try out new things and <a href="/blog">share what I learned</a>.</p>
+
+    <p>If you want to keep up with what I do you should follow me on <a href="https://twitter.com/larsgraubner" target="_blank" rel="nofollow">Twitter</a> and <a href="https://github.com/lgraubner" target="_blank" rel="nofollow">GitHub</a>.</p>
+
+    <h3>Recent posts</h3>
+    <ul>
+      {{ range first 5 (where .Site.Pages "Type" "post") }}
+        <li>
+          <a href="{{ .RelPermalink }}">
+            <span class="title">
+              {{ .Title }}
+            </span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+
+    <a style="font-size:15px;" href="/blog">Show more &raquo;</a>
+
+    <h3>Work</h3>
   </div>
 </div>
 {{ end }}
