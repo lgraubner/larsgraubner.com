@@ -170,7 +170,7 @@ const webpackConfig = {
           handler: 'cacheFirst',
         },
         {
-          urlPattern: /larsgraubner\.com\/.*\//,
+          urlPattern: /larsgraubner\.com.*\//,
           handler: 'networkFirst',
           options: {
             cache: {
