@@ -5,6 +5,14 @@
     text-align: left;
   }
 
+  &__year {
+    font-weight: 600;
+    font-size: 20px;
+    color: $color-gray;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+
   ul {
     list-style: none;
     padding-left: 0;

@@ -11,15 +11,29 @@
   li {
     display: inline-block;
 
+    &:last-child {
+      @include max-width($bp-small - 1) {
+        display: none;
+      }
+    }
+
     &:not(:first-child) {
-      margin-left: 20px;
+      margin-left: 10px;
+
+      @include min-width($bp-small) {
+        margin-left: 20px;
+      }
     }
   }
 
   a {
     padding: 5px 8px;
     color: $color-primary;
-    font-size: 15px;
+    font-size: 14px;
+
+    @include min-width($bp-small) {
+      font-size: 15px;
+    }
 
     &:hover {
       color: $color-text;

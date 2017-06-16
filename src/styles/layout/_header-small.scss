@@ -11,8 +11,12 @@
     a {
       color: $color-heading;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1em;
+
+      @include min-width($bp-small) {
+        font-size: 20px;
+      }
     }
   }
 }

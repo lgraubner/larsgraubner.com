@@ -109,4 +109,13 @@
   li {
     line-height: 1.7em;
   }
+
+  hr {
+    background: none;
+    border: 0;
+    border-bottom: 2px solid $color-gray-lighter;
+    width: 60px;
+    margin: 40px auto;
+    display: block;
+  }
 }

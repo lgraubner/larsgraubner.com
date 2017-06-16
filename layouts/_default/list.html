@@ -8,8 +8,12 @@
 {{ end }}
 <div class="post-list">
   <div class="inner">
-    <ul>
-      {{ range .Paginator.Pages }}
+    {{ range .Paginator.Pages.GroupByDate "2006" }}
+      <div class="post-list__year">
+        {{ .Key }}
+      </div>
+      <ul>
+      {{ range .Pages }}
         <li>
           <a href="{{ .RelPermalink }}">
             <span class="title">
@@ -21,7 +25,8 @@
           </a>
         </li>
       {{ end }}
-    </ul>
+      </ul>
+    {{ end }}
   </div>
 </div>
 {{ partial "pagination.html" . }}
