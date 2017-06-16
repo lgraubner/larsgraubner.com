@@ -1,0 +1,32 @@
+.post-list-small {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: $color-text;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .date {
+    display: block;
+    color: $color-gray;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .title {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

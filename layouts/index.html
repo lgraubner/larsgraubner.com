@@ -1,26 +1,48 @@
 {{ define "content" }}
 <div class="content">
   <div class="inner">
-    <p class="intro">Hello, I'm <strong>Lars Graubner</strong>, a front-end developer who cares about structured code and web performance. I love to try out new things and <a href="/blog">share what I learned</a>.</p>
+    <p class="intro">Hello, I'm <strong>Lars Graubner</strong>, a front-end developer who cares about performance and structured code. I love to check out new things and <a href="/blog/">share what I learned</a>.</p>
 
     <p>If you want to keep up with what I do you should follow me on <a href="https://twitter.com/larsgraubner" target="_blank" rel="nofollow">Twitter</a> and <a href="https://github.com/lgraubner" target="_blank" rel="nofollow">GitHub</a>.</p>
 
-    <h3>Recent posts</h3>
-    <ul>
-      {{ range first 5 (where .Site.Pages "Type" "post") }}
-        <li>
-          <a href="{{ .RelPermalink }}">
-            <span class="title">
-              {{ .Title }}
-            </span>
-          </a>
-        </li>
-      {{ end }}
-    </ul>
+    <h3>Recent blog posts</h3>
+    <div class="post-list-small">
+      <ul>
+        {{ range first 3 (where .Site.Pages "Type" "post") }}
+          <li>
+            <a href="{{ .RelPermalink }}">
+              <span class="date">
+                {{ dateFormat "Jan 2, 2006" .Date }}
+              </span>
+              <span class="title">
+                {{ .Title }}
+              </span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
 
-    <a style="font-size:15px;" href="/blog">Show more &raquo;</a>
+    <a style="font-size:15px;" href="/blog/">More posts &raquo;</a>
 
     <h3>Work</h3>
+
+    <p>I released several open source Projects on <a href="https://github.com/lgraubner">GitHub</a>.</p>
+
+    <ul>
+      <li><a href="https://github.com/lgraubner/mqr">mqr</a> - Functional matchMedia wrapper for media query handling.</li>
+      <li><a href="https://github.com/lgraubner/sitemap-generator">sitemap-generator</a> - Easily create XML sitemaps for your website.</li>
+      <li><a href="https://github.com/lgraubner/hash-handler">hash-handler</a> - Handle location hash query strings with ease.</li>
+      <li><a href="https://github.com/lgraubner/webpack-boilerplate-react">webpack-boilerplate-react</a> - Basic Webpack boilerplate for React projects.</li>
+    </ul>
+
+    Also I created the following sites:
+
+    <ul>
+      <li>
+        <a href="https://rabaukenliebe.de">rabaukenliebe.de</a> - Shop for lovely handmade child clothes
+      </li>
+    </ul>
   </div>
 </div>
 {{ end }}
