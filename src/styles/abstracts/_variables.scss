@@ -12,7 +12,7 @@ $bp-wide: 1280px;
 // Colors
 
 $color-primary: #5694f1 !default;
-$color-text: #666 !default;
+$color-text: #444 !default;
 $color-gray: #999;
 $color-gray-lighter: #eee;
 $color-heading: #222;
@@ -22,12 +22,8 @@ $color-pre: #272b2d;
 // Fonts
 
 $font-base-size: 14px !default;
-$font-primary: 'Open Sans',
-  'Helvetica Neue Light',
-  'Helvetica Neue',
-  Helvetica,
-  Arial,
-  sans-serif !default;
+$font-primary: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica,
+  Arial, sans-serif !default;
 $font-monospace: 'Source Code Pro', Menlo, monospace;
 
 // Miscellaneous

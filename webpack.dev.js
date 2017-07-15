@@ -21,7 +21,6 @@ const assetsPluginProcessOutput = function process(assets) {
 const webpackConfig = {
   entry: {
     app: [
-      'webpack-hot-middleware/client',
       path.join(__dirname, './src/scripts/main.js'),
       path.join(__dirname, './src/styles/main.scss'),
     ],
@@ -77,6 +76,10 @@ const webpackConfig = {
   ],
   target: 'web',
   devtool: 'eval-source-map',
+  devServer: {
+    contentBase: 'public',
+    hot: true,
+  },
 };
 
 module.exports = webpackConfig;
