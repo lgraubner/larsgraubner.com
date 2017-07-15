@@ -9,7 +9,9 @@
   "author": "Lars Graubner <mail@larsgraubner.de>",
   "license": "MIT",
   "dependencies": {
+    "@graubnla/helpers": "^3.0.0",
     "headroom.js": "^0.9.4",
+    "highlight.js": "^9.12.0",
     "interactive": "^0.1.9",
     "lodash.foreach": "4.5.0",
     "lodash.range": "^3.2.0",

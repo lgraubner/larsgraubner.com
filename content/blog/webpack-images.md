@@ -39,7 +39,7 @@ But here comes the clue. Normally you specify the path with your final URL struc
 
 Assuming our file structure looks like this:
 
-<pre><code>|-- images
+<pre><code class="language-bash">|-- images
 |   `-- button.png
 |-- styles
 |   `-- button.css

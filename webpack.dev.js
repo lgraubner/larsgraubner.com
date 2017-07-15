@@ -34,24 +34,21 @@ const webpackConfig = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader',
+        use: 'eslint-loader',
         enforce: 'pre',
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: [['es2015', { modules: false }]],
-        },
+        use: 'babel-loader',
       },
       {
         test: /\.s?css$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
-        loader: 'file-loader',
+        use: 'file-loader',
       },
     ],
   },

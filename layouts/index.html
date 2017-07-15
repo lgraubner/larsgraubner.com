@@ -7,15 +7,12 @@
 
     <hr>
 
-    <h3>Recent blog posts</h3>
+    <h3>Blog posts</h3>
     <div class="post-list-small">
       <ul>
-        {{ range first 3 (where .Site.Pages "Type" "post") }}
+        {{ range first 5 (where .Site.Pages "Type" "post") }}
           <li>
             <a href="{{ .RelPermalink }}">
-              <span class="date">
-                {{ dateFormat "Jan 2, 2006" .Date }}
-              </span>
               <span class="title">
                 {{ .Title }}
               </span>
@@ -26,27 +23,6 @@
     </div>
 
     <a style="font-size:15px;" href="/blog/">More posts &raquo;</a>
-
-    <hr>
-
-    <h3>Work</h3>
-
-    <p>I released several open source Projects on <a href="https://github.com/lgraubner">GitHub</a>.</p>
-
-    <ul>
-      <li><a href="https://github.com/lgraubner/mqr">mqr</a> - Functional matchMedia wrapper for media query handling.</li>
-      <li><a href="https://github.com/lgraubner/sitemap-generator">sitemap-generator</a> - Easily create XML sitemaps for your website.</li>
-      <li><a href="https://github.com/lgraubner/hash-handler">hash-handler</a> - Handle location hash query strings with ease.</li>
-      <li><a href="https://github.com/lgraubner/webpack-boilerplate-react">webpack-boilerplate-react</a> - Basic Webpack boilerplate for React projects.</li>
-    </ul>
-
-    Also I created the following sites:
-
-    <ul>
-      <li>
-        <a href="https://rabaukenliebe.de">rabaukenliebe.de</a> - Shop for lovely handmade child clothes
-      </li>
-    </ul>
   </div>
 </div>
 {{ end }}

@@ -1,7 +1,8 @@
 /* eslint-disable */
-import Prism from 'prismjs';
-import 'prismjs/components/prism-jsx';
-import range from 'lodash.range';
+import hljs from 'highlight.js/lib/highlight';
+import javascript from 'highlight.js/lib/languages/javascript';
+import bash from 'highlight.js/lib/languages/bash';
+import css from 'highlight.js/lib/languages/css';
 
 /**
  * Enables syntax highlighting with prismjs. Adds line highlighting
@@ -9,34 +10,9 @@ import range from 'lodash.range';
  */
 export default {
   init() {
-    Prism.highlightAll();
-    Prism.hooks.add('after-highlight', env => {
-      // eslint-disable-next-line
-      env.element.innerHTML =
-        '<div class="line">' +
-        env.highlightedCode.replace(/\r\n?|\n/g, '</div><div class="line">') +
-        '</div>';
-
-      let dataLine = env.element.getAttribute('data-line');
-      let lines = null;
-      if (dataLine) {
-        // eslint-disable-next-line
-        dataLine = dataLine.replace(/(\d+)-(\d+)/g, (match, p1, p2) => {
-          return range(parseInt(p1, 10), parseInt(p2, 10) + 1).join(',');
-        });
-        lines = dataLine.split(',');
-        lines.map(line => {
-          const child = env.element.querySelector(`.line:nth-child(${line})`);
-          const className = 'line--highlight';
-          if (child.classList) {
-            child.classList.add(className);
-          } else {
-            child.className += ` ${className}`;
-          }
-
-          return child;
-        });
-      }
-    });
+    hljs.registerLanguage('javascript', javascript);
+    hljs.registerLanguage('bash', bash);
+    hljs.registerLanguage('css', css);
+    hljs.initHighlightingOnLoad();
   },
 };

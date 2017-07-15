@@ -1,7 +1,13 @@
 .notice {
-  background: #f3fafd;
+  background: #d9edf7;
   padding: 15px 20px;
   font-size: 95%;
   border-radius: $border-radius;
-  color: #555;
+  color: #31708f;
+
+  @include min-width($bp-small) {
+    width: 110%;
+    margin-left: -5%;
+    padding: 15px 5%;
+  }
 }

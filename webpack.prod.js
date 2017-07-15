@@ -37,7 +37,7 @@ const webpackConfig = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: {
+        use: {
           loader: 'eslint-loader',
           options: {
             failOnWarning: false,
@@ -49,17 +49,13 @@ const webpackConfig = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: [['es2015', { modules: false }]],
-          cacheDirectory: true,
-        },
+        use: 'babel-loader',
       },
       {
         test: /\.s?css$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: [
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
             {
               loader: 'css-loader',
               options: {
@@ -112,7 +108,6 @@ const webpackConfig = {
           },
           {
             loader: 'image-webpack-loader',
-            options: {},
           },
         ],
       },
@@ -181,6 +176,10 @@ const webpackConfig = {
         },
       ],
     }),
+    new webpack.ContextReplacementPlugin(
+      /highlight\.js\/lib\/languages$/,
+      new RegExp(`^./(${['javascript'].join('|')})$`)
+    ),
   ],
   target: 'web',
   devtool: 'cheap-module-source-map',
