@@ -16,6 +16,11 @@
       {{ .Content }}
     </div>
     <footer class="post__footer">
+        <div class="post__share">
+            <a href="https://twitter.com/intent/tweet?text=%22{{ .Title }}%22 by @larsgraubner {{ .Permalink }}" class="button" rel="nofollow" target="_blank">
+              Share on Twitter
+            </a>
+          </div>
       <div class="categories">
         Published in
         {{ range $i, $e := .Params.categories }}{{ if $i }} • {{ end }}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/">{{ $e }}</a>{{ end }}

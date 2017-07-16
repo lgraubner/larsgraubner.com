@@ -4,7 +4,6 @@
 
   @include min-width($bp-small) {
     padding-top: 120px;
-    margin-bottom: 40px;
   }
 
   .inner {
@@ -12,7 +11,8 @@
     padding-bottom: 30px;
 
     @include min-width($bp-small) {
-      padding-bottom: 40px;
+      width: 600px;
+      padding: 0 40px 40px;
     }
   }
 

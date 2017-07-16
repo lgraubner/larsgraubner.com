@@ -11,12 +11,6 @@
   li {
     display: inline-block;
 
-    &:last-child {
-      @include max-width($bp-small - 1) {
-        display: none;
-      }
-    }
-
     &:not(:first-child) {
       margin-left: 10px;
 

@@ -1,9 +1,6 @@
 .nav-footer {
   font-size: 15px;
-
-  @include min-width($bp-small) {
-    float: right;
-  }
+  text-align: center;
 
   li {
     display: inline;

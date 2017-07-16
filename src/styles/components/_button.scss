@@ -19,4 +19,8 @@
     color: #fff !important;
     background-color: $color-primary;
   }
+
+  &:focus {
+    text-decoration: none;
+  }
 }
