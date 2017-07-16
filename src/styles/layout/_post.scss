@@ -46,11 +46,11 @@
 
     a {
       padding-left: 42px;
-      background: image('/icons/twitter.svg') 17px center no-repeat;
+      background: image('icons/twitter.svg') 17px center no-repeat;
       background-size: 20px;
 
       &:hover {
-        background-image: image('/icons/twitter-white.svg');
+        background-image: image('icons/twitter-white.svg');
       }
     }
   }
