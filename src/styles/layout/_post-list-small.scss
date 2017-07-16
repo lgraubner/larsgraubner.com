@@ -2,7 +2,11 @@
   ul {
     list-style: disc;
     color: #d4d9dd;
-    padding: 0;
+    padding: 0 0 0 25px;
+
+    @include min-width($bp-small) {
+      padding-left: 0;
+    }
   }
 
   li:not(:last-child) {

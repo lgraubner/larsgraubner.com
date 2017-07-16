@@ -1,0 +1,22 @@
+.button {
+  display: inline-block;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  font-weight: 600 !important;
+  padding: 10px 20px;
+  font-size: 13px !important;
+  border-radius: $border-radius;
+  line-height: 1em;
+  transition: background-color 75ms ease-in-out !important;
+
+  &--small {
+    font-size: 12px !important;
+    padding: 6px;
+  }
+
+  &:hover {
+    text-decoration: none !important;
+    color: #fff !important;
+    background-color: $color-primary;
+  }
+}

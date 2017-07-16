@@ -2,13 +2,6 @@
   position: absolute;
   top: -30em;
   left: -30px;
-  display: inline-block;
-  border: 1px solid $color-primary;
-  color: $color-primary;
-  font-weight: 600;
-  padding: 6px;
-  font-size: 12px;
-  border-radius: $border-radius;
 
   &:focus {
     top: 17px;

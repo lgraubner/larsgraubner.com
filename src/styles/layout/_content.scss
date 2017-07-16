@@ -93,9 +93,13 @@
   code {
     white-space: wrap;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.7em;
     font-family: $font-monospace;
+
+    @include min-width($bp-wide) {
+      font-size: 14px;
+    }
   }
 
   pre code {
