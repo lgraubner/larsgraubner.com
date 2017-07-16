@@ -78,7 +78,7 @@ const webpackConfig = {
             loader: 'url-loader',
             options: {
               limit: 8000,
-              name: '/images/[name]_[sha512:hash:base64:7].[ext]',
+              name: 'images/[name]_[sha512:hash:base64:7].[ext]',
             },
           },
           {
@@ -103,7 +103,7 @@ const webpackConfig = {
           {
             loader: 'file-loader',
             options: {
-              name: '/images/[name]_[sha512:hash:base64:7].[ext]',
+              name: 'images/[name]_[sha512:hash:base64:7].[ext]',
             },
           },
           {
