@@ -91,7 +91,6 @@
 
   pre,
   code {
-    white-space: wrap;
     font-weight: 500;
     font-size: 13px;
     line-height: 1.7em;
@@ -104,6 +103,9 @@
 
   pre code {
     padding: 20px;
+    background: #1e1e1e;
+    color: #dcdcdc;
+    display: block;
 
     @include min-width($bp-small) {
       padding: 20px 5%;

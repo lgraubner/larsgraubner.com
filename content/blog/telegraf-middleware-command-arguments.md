@@ -15,7 +15,7 @@ The year 2016 was all about chatbots. 🤖 Facebook [announced them][2], Telegra
 
 To get started you have to follow the steps from the official [telegram bot docs][4]. Once you have an authorization token you can start right away.
 
-<pre><code class="language-javascript">const Telegraf = require('telegraf');
+<pre><code class="javascript">const Telegraf = require('telegraf');
 
 const app = new Telegraf(YOUR_BOT_TOKEN);
 // register command "lights"
@@ -31,7 +31,7 @@ A middleware is a function hooked into the message flow. If the bot receives a m
 
 Our middleware will parse the sent message text and store the results in the recommended namespace `ctx.state`. We will extract the command itself, the arguments and expose it along the raw command.
 
-<pre><code class="language-javascript">const commandArgs = () => (ctx, next) => {
+<pre><code class="javascript">const commandArgs = () => (ctx, next) => {
   if (ctx.updateType === 'message' && ctx.updateSubType === 'text') {
     const text = ctx.update.message.text.toLowerCase();
     if (text.startsWith('/')) {
@@ -61,7 +61,7 @@ module.exports = commandArgs;</code></pre>
 
 Now we can easily access the parsed arguments in the `ctx` variable. The middleware can be used like this:
 
-<pre><code class="language-javascript" data-line="7">const Telegraf = require('telegraf');
+<pre><code class="javascript" data-line="7">const Telegraf = require('telegraf');
 const commandArgsMiddleware = require('./commandArgs');
 
 const app = new Telegraf(YOUR_BOT_TOKEN);
@@ -77,7 +77,7 @@ app.startPolling();</code></pre>
 
 An example command object looks like this:
 
-<pre><code class="language-javascript">{
+<pre><code class="javascript">{
   raw: '/lights on',
   command: 'lights',
   args: ['on']

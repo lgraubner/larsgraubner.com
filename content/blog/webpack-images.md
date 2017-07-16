@@ -17,7 +17,7 @@ Images are a crucial part of any website. Often they make the most of the transf
 
 When I started to migrate from gulp to webpack I struggled getting image processing to work as I used to do it before. Gulp handles images like this: Provide a folder with images, process them and output at the given location.
 
-<pre class="language-javascript"><code>const gulp = require('gulp');
+<pre><code class="javascript">const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 
 gulp.task('default', () =>
@@ -28,7 +28,7 @@ gulp.task('default', () =>
 
 Webpack works different which can be confusing. Rather than handling direct image input webpack is looking for references of images in your source code. So if you include a background image defined in a stylesheet webpack is able to pick it up.
 
-<pre class="language-css"><code>.button {
+<pre><code class="css">.button {
   display: block;
   width: 100px;
   height: 40px;
@@ -39,7 +39,7 @@ But here comes the clue. Normally you specify the path with your final URL struc
 
 Assuming our file structure looks like this:
 
-<pre><code class="language-bash">|-- images
+<pre><code>|-- images
 |   `-- button.png
 |-- styles
 |   `-- button.css
@@ -48,7 +48,7 @@ Assuming our file structure looks like this:
 
 we have to adjust our css as follows:
 
-<pre class="language-css"><code>.button {
+<pre><code class="css">.button {
   display: block;
   width: 100px;
   height: 40px;
@@ -59,7 +59,7 @@ Now webpack can resolve the image url correctly. This also works for any kind of
 
 A very basic webpack config loading images could look like the following. If you are not familiar with webpack configuration [check out the docs](https://webpack.js.org/guides/get-started/).
 
-<pre class="language-javascript"><code>const webpackConfig = {
+<pre><code class="javascript">const webpackConfig = {
   entry: './app/index.js',
   output: {
     filename: 'bundle.js',
@@ -91,7 +91,7 @@ Webpack is using loaders to process different filetypes. We want to optimize our
 
 The [file-loader](https://github.com/webpack-contrib/file-loader) is a simple loader which does not touch the file itself. The main purpose is to alter the filename and path for public use.
 
-<pre class="language-javascript"><code>{
+<pre><code class="javascript">{
   test: /.*\.(gif|png|jpe?g|svg)$/i,
   use: [
     {
@@ -111,7 +111,7 @@ Without much effort we enabled [cache busting](https://www.keycdn.com/support/wh
 
 Another performance optimization technique is to inline small images. Inlining images is saving network requests and can make your page faster. For this purpose [url-loader](https://github.com/webpack-contrib/url-loader) was created.
 
-<pre class="language-javascript"><code>{
+<pre><code class="javascript">{
   test: /.*\.(gif|png|jpe?g)$/i,
   use: [
     {
@@ -131,7 +131,7 @@ The only important option is `limit`. All images below the byte limit are inline
 
 One final and essential task provides the [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader). It compresses the images with suitable libraries for each file type.
 
-<pre class="language-javascript"><code>{
+<pre><code class="javascript">{
   test: /.*\.(gif|png|jpe?g)$/i,
   use: [
     {

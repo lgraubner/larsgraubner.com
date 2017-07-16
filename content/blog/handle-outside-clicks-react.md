@@ -14,7 +14,7 @@ As a developer you want to guarantee an excellent user experience, so you have t
 
 To solve this problem we avoid the React Event System. React builds a wrapper around native events to handle them. Instead we attach an event directly to the DOM. Just like in the old days without React. But first let's create a simple component.
 
-<pre><code class="language-jsx">class Popover extends React.Component {
+<pre><code class="jsx">class Popover extends React.Component {
   constructor() {
     super();
 
@@ -51,7 +51,7 @@ To solve this problem we avoid the React Event System. React builds a wrapper ar
 
 This is a quite simple component which toggles a `div` whenever the button is clicked. To reference the node we have to alter the render method:
 
-<pre><code class="language-jsx" data-line="8">render() {
+<pre><code class="jsx" data-line="8">render() {
     return (
       &lt;div
         className="popover-wrapper"
@@ -77,7 +77,7 @@ This is a quite simple component which toggles a `div` whenever the button is cl
 
 This is the preferred way to get the associated DOM node. Now we can attach our event handler. Beware that only full components can reference it's nodes using the [ref callback attribute][1]. By design it's not possible for [stateless components][2] to access the respective DOM element.
 
-<pre><code class="language-jsx" data-line="5,11-15,22-29">class Popover extends React.component {
+<pre><code class="jsx" data-line="5,11-15,22-29">class Popover extends React.component {
   constructor() {
     super();
 
