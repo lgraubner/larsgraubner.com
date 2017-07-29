@@ -22,7 +22,7 @@
   "removeComments": true,
   "removeEmptyAttributes": true,
   "removeEmptyElements": true,
-  "removeOptionalTags": true,
+  "removeOptionalTags": false,
   "removeRedundantAttributes": true,
   "removeScriptTypeAttributes": true,
   "removeStyleLinkTypeAttributes": true,
