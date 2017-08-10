@@ -1,11 +1,11 @@
 ---
-title: Legal information
-description: "Legal information for larsgraubner.com."
-type: page
 date: 2016-09-13T19:50:48+00:00
+description: "Legal information for larsgraubner.com."
 menu: footer
-noindex: true
 nofollow: true
+noindex: true
+title: Legal information
+type: page
 ---
 
 <div class="notice">

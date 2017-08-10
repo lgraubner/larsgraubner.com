@@ -1,11 +1,11 @@
 ---
-title: Up and running
-description: "Announcing my new blog and website! After years of unsatisfying approaches and several restarts I can present a result I'm happy with."
-date: 2016-10-08T09:00:52+00:00
-type: post
-url: /up-and-running/
 categories:
   - Blog
+date: 2016-10-08T09:00:52+00:00
+description: "Announcing my new blog and website! After years of unsatisfying approaches and several restarts I can present a result I'm happy with."
+title: Up and running
+type: post
+url: /up-and-running/
 ---
 I'm proud to announce my new blog and website! 🎉 After years of unsatisfying approaches and several restarts I can present a result I'm happy with.
 
