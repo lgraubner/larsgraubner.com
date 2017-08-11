@@ -1,5 +1,9 @@
-const anchors = {
-  init() {
+/**
+ * Adds anchor links to content headings.
+ * @module common
+ */
+const anchors = () => ({
+  init: () => {
     const headingNodes = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
     if (headingNodes.length) {
       Array.from(headingNodes)
@@ -11,6 +15,6 @@ const anchors = {
         });
     }
   },
-};
+});
 
 export default anchors;

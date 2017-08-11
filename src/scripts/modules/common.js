@@ -5,32 +5,15 @@
  */
 import twemoji from 'twemoji';
 
-const gaProperty = 'UA-44046571-2';
-const disableStr = `ga-disable-${gaProperty}`;
+const common = () => {
+  const gaProperty = 'UA-44046571-2';
+  const disableStr = `ga-disable-${gaProperty}`;
 
-export default {
-  /**
-   * Init function
-   * @function
-   */
-  init() {
-    this.addEmojis();
-    this.gaOptout();
-  },
-
-  /**
-   * Enable emoji replacement with twemoji
-   * @function
-   */
-  addEmojis() {
+  const addEmojis = () => {
     twemoji.parse(document.body);
-  },
+  };
 
-  /**
-   * Google Analytics Optout
-   * @function
-   */
-  gaOptout() {
+  const gaOptout = () => {
     if (document.cookie.indexOf(`${disableStr}=true`) > -1) {
       window[disableStr] = true;
     }
@@ -44,5 +27,14 @@ export default {
         alert('Google Analytics wurde deaktiviert.');
       });
     }
-  },
+  };
+
+  return {
+    init: () => {
+      gaOptout();
+      addEmojis();
+    },
+  };
 };
+
+export default common;
