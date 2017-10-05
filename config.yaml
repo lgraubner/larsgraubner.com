@@ -12,7 +12,7 @@ author:
 blackfriday:
   extensionsmask: ["autolink"]
 params:
-  slogan: "Front-end developer. Passionate about React and web performance. 🚀"
+  slogan: "Front-end developer. Passionate about React and Full Stack JavaScript. 🚀"
 outputs:
   home: ["HTML"]
 preserveTaxonomyNames: true
