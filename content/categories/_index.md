@@ -1,3 +1,0 @@
----
-noindex: true
----
