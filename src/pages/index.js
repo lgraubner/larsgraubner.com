@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash.get'
@@ -50,7 +51,11 @@ const Nav = styled.nav`
   }
 `
 
-const Index = ({ data }) => {
+type Props = {
+  data: Object
+}
+
+const Index = ({ data }: Props) => {
   const author = get(data, 'site.siteMetadata.author')
   return (
     <Wrapper>

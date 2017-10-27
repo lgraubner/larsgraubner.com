@@ -3,7 +3,7 @@ const path = require('path')
 exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === 'develop') {
     config.preLoader('eslint-loader', {
-      test: /\.jsx?$/,
+      test: /\.js$/,
       exclude: /node_modules/,
     })
   }

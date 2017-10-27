@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
@@ -7,7 +8,11 @@ const Post = styled.article`
   margin: 0 auto;
 `
 
-const BlogPostTemplate = ({ data }) => {
+type Props = {
+  data: Object
+}
+
+const BlogPostTemplate = ({ data }: Props) => {
   const post = data.markdownRemark
 
   return (

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash.get'
@@ -76,7 +77,11 @@ const PostDate = styled.span`
   }
 `
 
-const Blog = ({ data }) => {
+type Props = {
+  data: Object
+}
+
+const Blog = ({ data }: Props) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allMarkdownRemark.edges')
 

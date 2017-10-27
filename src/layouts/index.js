@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
@@ -31,6 +32,10 @@ const Wrapper = styled.div`
   }
 `
 
-const Template = ({ children }) => <Wrapper>{children()}</Wrapper>
+type Props = {
+  children: Function
+}
+
+const Template = ({ children }: Props) => <Wrapper>{children()}</Wrapper>
 
 export default Template
