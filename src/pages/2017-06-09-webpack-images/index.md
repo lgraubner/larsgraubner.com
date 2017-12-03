@@ -4,7 +4,7 @@ categories:
   - JavaScript
 date: 2017-06-09T22:00:00+02:00
 description: "Images should be optimized as good as possible. This post describes image processing with webpack and how it differs from gulp, Grunt and similar tools."
-title: Processing images with webpack
+title: Process images with webpack
 path: /webpack-images/
 ---
 
@@ -16,49 +16,57 @@ Images are a crucial part of any website. Often they make the most of the transf
 
 When I started to migrate from gulp to webpack I struggled getting image processing to work as I used to do it before. Gulp handles images like this: Provide a folder with images, process them and output at the given location.
 
-<pre><code class="javascript">const gulp = require('gulp');
+```javascript
+const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 
 gulp.task('default', () =>
   gulp.src('src/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'))
-);</code></pre>
+);
+```
 
 Webpack works different which can be confusing. Rather than handling direct image input webpack is looking for references of images in your source code. So if you include a background image defined in a stylesheet webpack is able to pick it up.
 
-<pre><code class="css">.button {
+```css
+.button {
   display: block;
   width: 100px;
   height: 40px;
   background-image: url('/images/button.png');
-}</code></pre>
+}
+```
 
 But here comes the clue. Normally you specify the path with your final URL structure in mind. So the previous example would resolve to `http://example.com/images/button.png`. But if `/images/button.png` doesn't resolve to the image locally webpack will just ignore it and output the path as is.
 
 Assuming our file structure looks like this:
 
-<pre><code>|-- images
+```
+|-- images
 |   `-- button.png
 |-- styles
 |   `-- button.css
 `-- webpack.conf.js
-</code></pre>
+```
 
 we have to adjust our css as follows:
 
-<pre><code class="css">.button {
+```css
+.button {
   display: block;
   width: 100px;
   height: 40px;
   background-image: url('../images/button.png');
-}</code></pre>
+}
+```
 
 Now webpack can resolve the image url correctly. This also works for any kind of file type (js, html) as long they are handled by a loader. Note that this part is not relevant for the final output path anymore, we care about this later. Having the image we can now process it. Handling images like this has a big advantage: We can alter the filename, filepath and the image itself automatically in our build process. Things like filename hashes for cache busting and inlining images can be done easily.
 
 A very basic webpack config loading images could look like the following. If you are not familiar with webpack configuration [check out the docs](https://webpack.js.org/guides/get-started/).
 
-<pre><code class="javascript">const webpackConfig = {
+```javascript
+const webpackConfig = {
   entry: './app/index.js',
   output: {
     filename: 'bundle.js',
@@ -80,7 +88,8 @@ A very basic webpack config loading images could look like the following. If you
       }
     ]
   }
-};</code></pre>
+};
+```
 
 ## Loaders
 
@@ -90,7 +99,8 @@ Webpack is using loaders to process different filetypes. We want to optimize our
 
 The [file-loader](https://github.com/webpack-contrib/file-loader) is a simple loader which does not touch the file itself. The main purpose is to alter the filename and path for public use.
 
-<pre><code class="javascript">{
+```javascript
+{
   test: /.*\.(gif|png|jpe?g|svg)$/i,
   use: [
     {
@@ -100,7 +110,8 @@ The [file-loader](https://github.com/webpack-contrib/file-loader) is a simple lo
       }
     },
   ]
-}</code></pre>
+}
+```
 
 This will pick up all images with the given extension and copy it to the output path defined in your webpack config. Also the file names are changed by the defined pattern `/images/[name]_[hash:7].[ext]`. This basically translates to: Put file in folder `images`, rename image to the original name followed by the first seven characters of it's hash and the original extension. The path in your output is formatted accordingly.
 
@@ -110,7 +121,8 @@ Without much effort we enabled [cache busting](https://www.keycdn.com/support/wh
 
 Another performance optimization technique is to inline small images. Inlining images is saving network requests and can make your page faster. For this purpose [url-loader](https://github.com/webpack-contrib/url-loader) was created.
 
-<pre><code class="javascript">{
+```javascript
+{
   test: /.*\.(gif|png|jpe?g)$/i,
   use: [
     {
@@ -120,17 +132,19 @@ Another performance optimization technique is to inline small images. Inlining i
       },
     },
   ]
-}</code></pre>
+}
+```
 
 The only important option is `limit`. All images below the byte limit are inlined to the source file as data URL. Note: SVG files should not be processed with url-loader ([issue](https://github.com/webpack-contrib/url-loader/issues/6#issuecomment-63182275)). The right byte limit is up to you. You have to evaluate your resulting stylesheet filesize and saved network requests.
 
-<div class="notice">Heads up: url-loader is a wrapper for file-loader. If the file is too big it will fall back to file-loader. Therefore you can omit the file-loader. All options are passed through.</div>
+<div class="notice"><p>Heads up: url-loader is a wrapper for file-loader. If the file is too big it will fall back to file-loader. Therefore you can omit the file-loader. All options are passed through.</p></div>
 
 ### image-webpack-loader
 
 One final and essential task provides the [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader). It compresses the images with suitable libraries for each file type.
 
-<pre><code class="javascript">{
+```javascript
+{
   test: /.*\.(gif|png|jpe?g)$/i,
   use: [
     {
@@ -138,7 +152,8 @@ One final and essential task provides the [image-webpack-loader](https://github.
       options: {...},
     }
   ]
-}</code></pre>
+}
+```
 
 The loader accepts fine grained [options](https://github.com/tcoopman/image-webpack-loader#usage) for the underlying minifiers. This is a must have to avoid serving images with large file sizes.
 

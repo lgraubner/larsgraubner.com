@@ -13,24 +13,28 @@ Recently I struggled setting up Let's Encrypt certificate renewal with nginx on 
 
 I managed to create a certificate for this blog without much struggle, but when it came to renew it I ran into a problem. I received an "unauthorized" error. The certbot was not able to reach `/.well-known/acme-challenge` and got a 404 error. I noticed it was redirected to HTTPS which made sense. After setting up SSL I added redirect rules to redirect from HTTP to HTTPS which looks like this:
 
-<pre><code class="nginx">server {
+```nginx
+server {
   listen [::]:80;
   listen 80;
 
   # listen on both hosts
-  server_name larsgraubner.com www.larsgraubner.com; 
+  server_name larsgraubner.com www.larsgraubner.com;
 
   # and redirect to the https host (declared below)
   # avoiding http://www -> https://www -> https:// chain.
   return 301 https://larsgraubner.com$request_uri;
-}</code></pre>
+}
+```
 
 To make Let's Encrypt authorize via HTTP I added the following block to my redirection server block.
 
-<pre><code class="nginx">location /.well-known/acme-challenge {
+```nginx
+location /.well-known/acme-challenge {
   root /usr/share/nginx/html;
   allow all;
-}</code></pre>
+}
+```
 
 Should work, right? It did not. It was still redirecting to HTTPS and failing the renew process. After trying out various things I finally found a solution.
 
@@ -38,12 +42,13 @@ Should work, right? It did not. It was still redirecting to HTTPS and failing th
 
 I'm not a nginx expert, but the following is working fine for me:
 
-<pre><code class="nginx">server {
+```nginx
+server {
   listen [::]:80;
   listen 80;
 
   # listen on both hosts
-  server_name larsgraubner.com www.larsgraubner.com; 
+  server_name larsgraubner.com www.larsgraubner.com;
 
   location /.well-known/acme-challenge {
     root /usr/share/nginx/html;
@@ -55,7 +60,8 @@ I'm not a nginx expert, but the following is working fine for me:
     # avoiding http://www -> https://www -> https:// chain.
     return 301 https://larsgraubner.com$request_uri;
   }
-}</code></pre>
+}
+```
 
 It seems like return is called every time, even when an location block matches. Wrapping the return in another location block fixes the problem as the .well-known block matches first and ignores all following location blocks.
 

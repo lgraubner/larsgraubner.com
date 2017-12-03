@@ -3,6 +3,8 @@ import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
 
+import 'prism-themes/themes/prism-atom-dark.css'
+
 // eslint-disable-next-line
 injectGlobal`
   ${normalize()}

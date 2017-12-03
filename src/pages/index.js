@@ -7,14 +7,16 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   width: 620px;
+  padding: 100px 0;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 `
 
 const Title = styled.h1`
   font-weight: 600;
   font-size: 22px;
-  margin: 0 0 2.5vh;
+  margin: 0 0 1em;
   color: #222;
   text-decoration: none;
 `
@@ -22,7 +24,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-size: 18px;
   color: #222;
-  margin: 0 0 10vh;
+  margin: 0 0 3em;
   font-weight: 400;
   line-height: 1.7em;
 `
@@ -41,7 +43,7 @@ const Nav = styled.nav`
 
   a {
     color: #222;
-    border-bottom: 3px solid #ddd;
+    border-bottom: 1px solid currentColor;
     text-decoration: none;
     font-size: 18px;
 
@@ -49,6 +51,14 @@ const Nav = styled.nav`
       border-bottom: 0;
     }
   }
+`
+
+const Logo = styled.img`
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto 3em;
+  width: 100px;
+  height: 100px;
 `
 
 type Props = {
@@ -59,11 +69,13 @@ const Index = ({ data }: Props) => {
   const author = get(data, 'site.siteMetadata.author')
   return (
     <Wrapper>
-      <Helmet title={`Hi, I'm ${author}`} />
+      <Helmet title={`${author} - Front-end developer`} />
+      <Logo src="/apple-touch-icon.png" alt="Lars Graubner" />
       <Title>Hi, I{"'"}m Lars Graubner</Title>
       <Subtitle>
-        I{"'"}ve been addicted to the web since my childhood. At the moment I{"'"}m
-        working as a front-end developer.
+        I{"'"}ve been addicted to the web since my childhood. At the moment I{
+          "'"
+        }m working as a front-end developer.
       </Subtitle>
       <Nav>
         <ul>

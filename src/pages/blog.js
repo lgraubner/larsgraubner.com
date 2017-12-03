@@ -90,7 +90,7 @@ const Blog = ({ data }: Props) => {
       <Helmet title={`Blog${siteTitle}`} />
       <Title>Blog</Title>
       <BackButton>
-        <Link to="/blog/">
+        <Link to="/">
           <span role="img" aria-label="back">
             ↩
           </span>
