@@ -3,60 +3,58 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-const Header = styled.header`
-  margin-top: 3em;
-  margin-bottom: 2.5em;
+import Title from '../components/Title'
 
-  h1 {
-    margin: 0 0 0.5em;
-    font-weight: 600;
-  }
+import { textStyles } from '../components/Text'
+
+import { LIGHT_COLOR, BOLD_COLOR } from '../colors'
+
+const Header = styled.header`
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 `
 
 const Post = styled.article`
   max-width: 620px;
-  margin: 0 auto;
+  margin: 0 auto 8rem;
 
   h2 {
-    margin: 2em 0 1em;
-    font-size: 26px;
+    margin: 2rem 0 1.5rem;
+    font-size: 1.85rem;
     font-weight: 600;
+    line-height: 2.5rem;
+    color: ${BOLD_COLOR};
   }
 
   h3 {
-    margin: 2em 0 1em;
-    font-size: 22px;
+    margin: 2rem 0 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    line-height: 2.5rem;
+    color: ${BOLD_COLOR};
   }
 
   p {
-    line-height: 1.7em;
-    font-size: 18px;
-    margin: 0 0 1.7em;
-
-    a {
-      color: rgb(0, 51, 206);
-      text-decoration-skip: ink;
-    }
+    ${textStyles()};
 
     code {
       font-size: 90%;
-      padding: 0.2rem 0.4rem;
-      background-color: #f8f9fa;
+      padding: 0.2em 0.4em;
+      background-color: rgba(0, 0, 0, 0.05);
       border-radius: 0.25rem;
-      color: #bd4147;
+      color: rgba(0, 0, 0, 0.65);
     }
   }
 
   .gatsby-highlight {
-    margin: 2.5em 0 2.5em -4%;
+    margin: 2rem 0 2rem -4%;
     width: 108%;
 
     pre {
       margin: 0;
-      border-radius: 0;
+      border-radius: 3px;
       padding: 20px 4%;
-      font-size: 15px;
+      font-size: 1rem;
     }
   }
 
@@ -65,8 +63,10 @@ const Post = styled.article`
 `
 
 const Date = styled.div`
-  font-size: 16px;
-  color: rgb(124, 124, 124);
+  font-size: 1.1rem;
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+  color: ${LIGHT_COLOR};
 `
 
 type Props = {
@@ -80,8 +80,8 @@ const BlogPostTemplate = ({ data }: Props) => {
     <Post>
       <Helmet title={post.frontmatter.title} />
       <Header>
-        <h1>{post.frontmatter.title}</h1>
         <Date>{post.frontmatter.date}</Date>
+        <Title>{post.frontmatter.title}</Title>
       </Header>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Post>

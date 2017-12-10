@@ -1,40 +1,17 @@
 // @flow
 import React from 'react'
 import Link from 'gatsby-link'
-import get from 'lodash.get'
+import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-const Title = styled.h1`
-  font-weight: 600;
-  font-size: 38px;
-  margin: 0 0 1.25em;
-`
+import Title from '../components/Title'
 
-const BackButton = styled.div`
-  position: absolute;
-  right: 50px;
-  top: 50px;
-
-  a {
-    color: #222;
-    text-decoration: none;
-    display: block;
-    width: 55px;
-    height: 55px;
-    line-height: 66px;
-    text-align: center;
-    background-color: #efefef;
-    border-radius: 50%;
-    font-weight: bold;
-    font-family: 'Courier New', serif;
-    font-size: 22px;
-  }
-`
+import { BOLD_COLOR, TEXT_COLOR, LIGHT_COLOR } from '../colors'
 
 const PostList = styled.ul`
   list-style: none;
-  margin: 0;
+  margin: 2rem 0 0;
   padding: 0;
 `
 
@@ -43,16 +20,16 @@ const PostTitle = styled.li`
   margin-bottom: 1.5em;
 
   a {
-    color: #222;
+    color: ${BOLD_COLOR};
     text-decoration: none;
     font-size: 18px;
 
     @media (min-width: 990px) {
-      color: #555;
+      color: ${TEXT_COLOR};
 
       &:focus,
       &:hover {
-        color: #222;
+        color: ${BOLD_COLOR};
 
         + span {
           display: inline;
@@ -63,7 +40,7 @@ const PostTitle = styled.li`
 `
 
 const PostDate = styled.span`
-  color: rgba(0, 0, 0, 0.35);
+  color: ${LIGHT_COLOR};
   display: block;
   font-size: 14px;
 
@@ -88,14 +65,7 @@ const Blog = ({ data }: Props) => {
   return (
     <div>
       <Helmet title={`Blog${siteTitle}`} />
-      <Title>Blog</Title>
-      <BackButton>
-        <Link to="/">
-          <span role="img" aria-label="back">
-            ↩
-          </span>
-        </Link>
-      </BackButton>
+      <Title marginBottom="3rem">Lars{"'"} Blog</Title>
       <PostList>
         {posts.map(post => {
           const title = get(post, 'node.frontmatter.title') || post.node.path

@@ -33,18 +33,18 @@ class Popover extends React.Component {
 
   render() {
     return (
-      &lt;div&gt;
-        &lt;button
+      <div>
+        <button
           onClick={this.handleClick}
-        &gt;
+        >
           Toggle Popover
-        &lt;/button&gt;
+        </button>
         {this.state.popupVisible && (
-          &lt;div className="popover"&gt;
+          <div className="popover">
             I'm a popover!
-         &lt;/div&gt;
+         </div>
          )}
-      &lt;/div&gt;
+      </div>
     );
   }
 }
@@ -55,24 +55,24 @@ This is a quite simple component which toggles a `div` whenever the button is cl
 ```javascript
 render() {
     return (
-      &lt;div
+      <div
         className="popover-wrapper"
         // ref callback for storing node reference
         ref={node => { this.node = node; }}
-      &gt;
-        &lt;button
+      >
+        <button
           onClick={this.handleClick}
-        &gt;
+        >
           Toggle Popover
-        &lt;/button&gt;
+        </button>
         {this.state.popupVisible && (
-         &lt;div
+         <div
             className="popover"
-          &gt;
+          >
             I'm a popover!
-          &lt;/div&gt;
+          </div>
          )}
-      &lt;/div&gt;
+      </div>
     );
   }
 }

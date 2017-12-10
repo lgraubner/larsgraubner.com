@@ -10,19 +10,19 @@ A couple days ago I was documenting the architecture of a website and wanted to 
 
 `tree` is a simple cli tool for unix systems to print folder structures recursively to the console. It can be installed on macOS via [homebrew][1] and is also available for all common Linux distributions.
 
-```bash
+```
 $ brew install tree
 ```
 
 For my case I had to print out all folders, ignoring certain folders such as `node_modules` as those are generic. To achieve this I used the following command:
 
-```bash
+```
 $ tree -d -I node_modules
 ```
 
 Which outputs the following folder structure:
 
-```bash
+```
 .
 |-- assets
 |   |-- images

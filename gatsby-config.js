@@ -21,13 +21,13 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 590
+              maxWidth: 620
             }
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
-              wrapperStyle: 'margin-bottom: 1.0725rem'
+              wrapperStyle: 'margin-bottom: 2rem'
             }
           },
           'gatsby-remark-prismjs',
@@ -63,23 +63,27 @@ module.exports = {
         }`,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => allMarkdownRemark.edges.map(edge => Object.assign(
+            serialize: ({ query: { site, allMarkdownRemark } }) =>
+              allMarkdownRemark.edges.map(edge =>
+                Object.assign(
                   {},
                   {
                     title: edge.node.frontmatter.title,
                     description: edge.node.html,
-                    date: require('moment')(edge.node.fields.date).format(
+                    date: require('date-fns/format')(
+                      edge.node.fields.date,
                       'MMMM DD, YYYY, h:mm A'
                     ),
                     url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                     guid: site.siteMetadata.siteUrl + edge.node.fields.slug
                   }
-                )),
+                )
+              ),
             query: `
               {
                   allMarkdownRemark
                   (limit: 10,
-                  filter: {id: {regex: "/blog/"}},
+                  filter: {id: {regex: "/^\d{4}/"}},
                   sort: {fields: [fields___date],
                   order: DESC}) {
                     edges {
@@ -129,6 +133,7 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    'gatsby-plugin-netlify'
   ]
 }
