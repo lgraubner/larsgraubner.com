@@ -2,6 +2,7 @@
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
+import Helmet from 'react-helmet'
 
 import 'prism-themes/themes/prism-atom-dark.css'
 
@@ -41,6 +42,29 @@ type Props = {
   children: Function
 }
 
-const Template = ({ children }: Props) => <Wrapper>{children()}</Wrapper>
+const Template = ({ children }: Props) => (
+  <Wrapper>
+    <Helmet>
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+    </Helmet>
+    {children()}
+  </Wrapper>
+)
 
 export default Template
