@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
+import values from 'lodash/values'
 
 import { BOLD_COLOR, TEXT_COLOR, LIGHT_COLOR, PRIMARY_COLOR } from '../colors'
 
@@ -100,7 +101,7 @@ const Blog = ({ data }: Props) => {
       <BlogHeader>
         <Link to="blog">Lars{"'"} Blog</Link>
       </BlogHeader>
-      {Object.values(yearPosts)
+      {values(yearPosts)
         .reverse()
         .map(year => (
           <PostList key={year[0].node.frontmatter.year}>
