@@ -2,22 +2,36 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
+import Link from 'gatsby-link'
 
 import Title from '../components/Title'
 
 import { textStyles } from '../components/Text'
 
-import { LIGHT_COLOR, BOLD_COLOR } from '../colors'
+import { LIGHT_COLOR, BOLD_COLOR, PRIMARY_COLOR } from '../colors'
 
-const Header = styled.header`
-  margin-top: 1rem;
+const Wrapper = styled.div`
+  max-width: 620px;
+  margin: 0 auto 8rem;
+`
+
+const BlogHeader = styled.div`
+  margin-bottom: 4rem;
+
+  a {
+    color: ${BOLD_COLOR};
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-decoration: none;
+    border-bottom: 3px solid ${PRIMARY_COLOR};
+  }
+`
+
+const PostHeader = styled.header`
   margin-bottom: 2rem;
 `
 
 const Post = styled.article`
-  max-width: 620px;
-  margin: 0 auto 8rem;
-
   h2 {
     margin: 2rem 0 1.5rem;
     font-size: 1.85rem;
@@ -77,14 +91,19 @@ const BlogPostTemplate = ({ data }: Props) => {
   const post = data.markdownRemark
 
   return (
-    <Post>
+    <Wrapper>
       <Helmet title={post.frontmatter.title} />
-      <Header>
-        <Date>{post.frontmatter.date}</Date>
-        <Title>{post.frontmatter.title}</Title>
-      </Header>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Post>
+      <BlogHeader>
+        <Link to="blog">Lars{"'"} Blog</Link>
+      </BlogHeader>
+      <Post>
+        <PostHeader>
+          <Date>{post.frontmatter.date}</Date>
+          <Title>{post.frontmatter.title}</Title>
+        </PostHeader>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Post>
+    </Wrapper>
   )
 }
 
@@ -98,6 +117,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+    }
+    file(relativePath: { eq: "apple-touch-icon.png" }) {
+      childImageSharp {
+        resolutions(width: 40, height: 40) {
+          ...GatsbyImageSharpResolutions_tracedSVG
+        }
       }
     }
   }

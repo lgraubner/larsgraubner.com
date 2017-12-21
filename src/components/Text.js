@@ -14,7 +14,7 @@ export const textStyles = () => ({
     borderBottom: `2px solid ${PRIMARY_COLOR}`,
     textDecoration: 'none',
 
-    '&:hover': {
+    '&:hover, &:focus': {
       borderColor: 'transparent'
     }
   }

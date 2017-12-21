@@ -1,7 +1,7 @@
 ---
 categories:
   - JavaScript
-date: "2017-01-04T01:37:30+00:00"
+date: 2017-01-04T01:37:30+00:00
 description: "Telegraf does not offer any command arguments parsing. This post explains how to implement a simple middleware for this task."
 title: Creating a Telegraf middleware for command arguments parsing
 path: /telegraf-middleware-command-arguments/

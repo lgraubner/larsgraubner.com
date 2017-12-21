@@ -47,65 +47,60 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-next',
     'gatsby-plugin-styled-components',
-    /* {
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `
-         {
-          site {
-            siteMetadata {
-              title: rssFeedTitle
-              description: rssFeedDescription
-              siteUrl
-              site_url: siteUrl
+          {
+            site {
+              siteMetadata {
+                title
+                rssFeedDescription
+                siteUrl
+                site_url: siteUrl
+              }
             }
           }
-        }`,
+        `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge =>
-                Object.assign(
-                  {},
-                  {
-                    title: edge.node.frontmatter.title,
-                    description: edge.node.html,
-                    date: require('date-fns/format')(
-                      edge.node.fields.date,
-                      'MMMM DD, YYYY, h:mm A'
-                    ),
-                    url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                    guid: site.siteMetadata.siteUrl + edge.node.fields.slug
-                  }
-                )
-              ),
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  custom_elements: [{ 'content:encoded': edge.node.html }]
+                })
+              })
+            },
             query: `
               {
-                  allMarkdownRemark
-                  (limit: 10,
-                  filter: {id: {regex: "/^\d{4}/"}},
-                  sort: {fields: [fields___date],
-                  order: DESC}) {
-                    edges {
-                      node {
-                        fields {
-                          date
-                          slug
-                        }
-                        frontmatter {
-                          title
-                        }
-                        html
+                allMarkdownRemark(
+                  limit: 1000,
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: {frontmatter: { draft: { ne: true } }}
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      frontmatter {
+                        path
+                        title
+                        date
+                        draft
                       }
                     }
                   }
                 }
+              }
             `,
             output: '/feed.xml'
           }
         ]
       }
-    }, */
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

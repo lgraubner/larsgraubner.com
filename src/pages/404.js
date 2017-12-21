@@ -10,7 +10,7 @@ const Index = () => (
     <Title>Not found</Title>
     <Text>The requested page was not found.</Text>
     <Text>
-      <Link to="/">Beam me up, Scotty!</Link> 🖖
+      <Link to="/">Back home</Link>
     </Text>
   </div>
 )
