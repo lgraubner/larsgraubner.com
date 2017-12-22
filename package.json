@@ -65,10 +65,8 @@
     "dev": "gatsby develop",
     "lint": "eslint --ext .js --ignore-pattern public .",
     "flow": "flow",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write 'src/**/*.js'",
     "build": "gatsby build",
-    "deploy": "echo \"Error: not implemented\" && exit 1",
     "create-post": "node create-post.js"
   }
 }

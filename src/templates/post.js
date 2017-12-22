@@ -92,7 +92,10 @@ const BlogPostTemplate = ({ data }: Props) => {
 
   return (
     <Wrapper>
-      <Helmet title={post.frontmatter.title} />
+      <Helmet>
+        <title>{post.frontmatter.title}</title>
+        <meta name="description" content={post.frontmatter.description} />
+      </Helmet>
       <BlogHeader>
         <Link to="blog">Lars{"'"} Blog</Link>
       </BlogHeader>
@@ -116,6 +119,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        description
         date(formatString: "MMMM DD, YYYY")
       }
     }

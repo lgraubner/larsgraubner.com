@@ -97,7 +97,13 @@ const Blog = ({ data }: Props) => {
 
   return (
     <Wrapper>
-      <Helmet title={`Blog${siteTitle}`} />
+      <Helmet>
+        <title>{`Blog${siteTitle}`}</title>
+        <meta
+          name="description"
+          content="A blog about JavaScript, React, Node, web performance and all things development."
+        />
+      </Helmet>
       <BlogHeader>
         <Link to="blog">Lars{"'"} Blog</Link>
       </BlogHeader>

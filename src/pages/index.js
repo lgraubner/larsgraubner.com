@@ -54,7 +54,13 @@ const Index = ({ data }: Props) => {
   const author = get(data, 'site.siteMetadata.author')
   return (
     <Wrapper>
-      <Helmet title={`${author} - Front-end developer`} />
+      <Helmet>
+        <title>{`${author} - Front-end developer`}</title>
+        <meta
+          name="description"
+          content="Front-end developer from germany. Passionate about React and web performance."
+        />
+      </Helmet>
       <Logo resolutions={data.file.childImageSharp.resolutions} />
       <IndexTitle>Lars Graubner</IndexTitle>
       <Text>
