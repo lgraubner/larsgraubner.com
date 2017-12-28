@@ -119,7 +119,7 @@ const Blog = ({ data }: Props) => {
         </script>
       </Helmet>
       <BlogHeader>
-        <Link to="blog">Lars{"'"} Blog</Link>
+        <Link to="/blog/">Lars{"'"} Blog</Link>
       </BlogHeader>
       {values(yearPosts)
         .reverse()
