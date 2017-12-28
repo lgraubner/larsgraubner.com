@@ -1,16 +1,17 @@
 // @flow
 import React from 'react'
-import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
 import Title from '../components/Title'
 import Text from '../components/Text'
 
 const Index = () => (
   <div>
-    <Title>Not found</Title>
+    <Title>Page Not found</Title>
     <Text>The requested page was not found.</Text>
     <Text>
-      <Link to="/">Back home</Link>
+      Please contact the owner of the site that linked you to the original URL
+      and let them know their link is broken.
     </Text>
   </div>
 )

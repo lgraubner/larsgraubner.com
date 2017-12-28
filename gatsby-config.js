@@ -121,6 +121,37 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage(
+            filter: {
+              path: {
+                regex: "${/^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback)).*$/}"
+              }
+            }
+          ) {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+      }
+      `,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.edges.map(edge => ({
+            url: site.siteMetadata.siteUrl + edge.node.path
+          }))
+      }
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify'
   ]
