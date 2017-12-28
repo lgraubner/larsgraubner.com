@@ -54,10 +54,8 @@ module.exports = {
           {
             site {
               siteMetadata {
-                title
                 rssFeedDescription
                 siteUrl
-                site_url: siteUrl
               }
             }
           }
