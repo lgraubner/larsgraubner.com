@@ -4,7 +4,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === 'develop') {
     config.preLoader('eslint-loader', {
       test: /\.js$/,
-      exclude: /node_modules/,
+      exclude: /node_modules/
     })
   }
 
@@ -44,8 +44,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             path: edge.node.frontmatter.path,
             component: blogPost,
             context: {
-              path: edge.node.frontmatter.path,
-            },
+              path: edge.node.frontmatter.path
+            }
           })
         )
       })
