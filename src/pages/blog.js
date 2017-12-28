@@ -82,7 +82,6 @@ type Props = {
 }
 
 const Blog = ({ data }: Props) => {
-  const siteTitle = get(data, 'site.siteMetadata.title')
   const posts = get(data, 'allMarkdownRemark.edges')
 
   const yearPosts = posts.reduce((obj, p) => {
@@ -98,7 +97,7 @@ const Blog = ({ data }: Props) => {
   return (
     <Wrapper>
       <Helmet>
-        <title>{`Blog${siteTitle}`}</title>
+        <title>Lars{"'"} Blog</title>
         <meta
           name="description"
           content="A blog about JavaScript, React, Node, web performance and all things development."
@@ -132,11 +131,6 @@ export default Blog
 
 export const pageQuery = graphql`
   query BlogQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

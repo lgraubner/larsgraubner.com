@@ -67,8 +67,8 @@ const Index = ({ data }: Props) => {
         I{"'"}m a passionate front-end developer focusing on JavaScript and
         React. You can follow me on{' '}
         <a href="https://twitter.com/larsgraubner">Twitter</a> or{' '}
-        <Link to="/blog">read my posts</Link>. Check out my open source projects
-        on <a href="https://github.com/lgraubner">GitHub</a>.
+        <Link to="/blog/">read my posts</Link>. Check out my open source
+        projects on <a href="https://github.com/lgraubner">GitHub</a>.
       </Text>
       <HireMe>
         Need help building your next React project?{' '}

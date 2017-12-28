@@ -5,7 +5,7 @@ import { TEXT_COLOR, BOLD_COLOR, PRIMARY_COLOR } from '../colors'
 
 export const textStyles = () => ({
   lineHeight: '2rem',
-  fontSize: '1.125rem',
+  fontSize: '1.1rem',
   margin: '0 0 2rem',
   color: TEXT_COLOR,
 

@@ -6,8 +6,6 @@ import Helmet from 'react-helmet'
 
 import 'prism-themes/themes/prism-atom-dark.css'
 
-import { PRIMARY_COLOR_LIGHTER } from '../colors'
-
 // eslint-disable-next-line
 injectGlobal`
   ${normalize()}
@@ -31,10 +29,9 @@ injectGlobal`
 
 const Wrapper = styled.div`
   padding: 70px 5% 30px;
-  border-top: 4px solid ${PRIMARY_COLOR_LIGHTER};
 
   @media (min-width: 990px) {
-    padding: 100px 50px 50px;
+    padding: 120px 50px 50px;
   }
 `
 

@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: ' - Lars Graubner',
     siteUrl: 'https://larsgraubner.com',
     author: 'Lars Graubner',
     rssFeedTitle: "Lars' Blog",
-    rssFeedDescription: 'Stories from a developers daily business'
+    rssFeedDescription:
+      'Personal blog from Lars Graubner covering JavaScript, React development and more.'
   },
   plugins: [
     {
