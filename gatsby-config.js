@@ -87,7 +87,6 @@ module.exports = {
                         path
                         title
                         date
-                        draft
                       }
                     }
                   }
