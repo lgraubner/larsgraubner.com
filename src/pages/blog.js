@@ -83,6 +83,8 @@ type Props = {
 
 const Blog = ({ data }: Props) => {
   const posts = get(data, 'allMarkdownRemark.edges')
+  const description = get(data, 'site.siteMetadata.rssFeedDescription')
+  const author = get(data, 'site.siteMetadata.author')
 
   const yearPosts = posts.reduce((obj, p) => {
     if (obj[p.node.frontmatter.year]) {
@@ -98,10 +100,23 @@ const Blog = ({ data }: Props) => {
     <Wrapper>
       <Helmet>
         <title>Lars{"'"} Blog</title>
-        <meta
-          name="description"
-          content="A blog about JavaScript, React, Node, web performance and all things development."
-        />
+        <meta name="description" content={description} />
+        <script type="application/ld+json">
+          {`{
+  "@context": "http://schema.org",
+  "@type": "Blog",
+  "name": "Lars' Blog",
+  "url": "https://larsgraubner.com/blog/",
+  "description": "${description}",
+  "sameAs": [
+    "https://twitter.com/larsgraubner"
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "${author}"
+  }
+}`}
+        </script>
       </Helmet>
       <BlogHeader>
         <Link to="blog">Lars{"'"} Blog</Link>
@@ -131,6 +146,12 @@ export default Blog
 
 export const pageQuery = graphql`
   query BlogQuery {
+    site {
+      siteMetadata {
+        rssFeedDescription
+        author
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

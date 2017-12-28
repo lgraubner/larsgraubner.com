@@ -4,7 +4,7 @@ module.exports = {
     author: 'Lars Graubner',
     rssFeedTitle: "Lars' Blog",
     rssFeedDescription:
-      'Personal blog from Lars Graubner covering JavaScript, React development and more.'
+      'Personal blog from Lars Graubner covering JavaScript, React, Node, web performance and all things development.'
   },
   plugins: [
     {

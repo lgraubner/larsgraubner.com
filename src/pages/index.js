@@ -60,6 +60,17 @@ const Index = ({ data }: Props) => {
           name="description"
           content="Front-end developer from germany. Passionate about React and web performance."
         />
+        <script type="application/ld+json">
+          {`{
+  "@context" : "http://schema.org",
+  "@type" : "Person",
+  "name" : "${author}",
+  "image": "https://larsgraubner.com/images/lars-1200x1200.jpg",
+  "jobTitle": "Front-end developer",
+  "url" : "https://larsgraubner.com",
+  "sameAs" : ["https://twitter.com/larsgraubner"]
+}`}
+        </script>
       </Helmet>
       <Logo resolutions={data.file.childImageSharp.resolutions} />
       <IndexTitle>Lars Graubner</IndexTitle>
@@ -87,7 +98,7 @@ export const pageQuery = graphql`
         author
       }
     }
-    file(relativePath: { eq: "apple-touch-icon.png" }) {
+    file(relativePath: { eq: "lars-1200x1200.jpg" }) {
       childImageSharp {
         resolutions(width: 90, height: 90) {
           ...GatsbyImageSharpResolutions_tracedSVG

@@ -3,6 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import get from 'lodash/get'
 
 import Title from '../components/Title'
 
@@ -89,20 +90,49 @@ type Props = {
 
 const BlogPostTemplate = ({ data }: Props) => {
   const post = data.markdownRemark
+  const { description, title, date, dateRaw } = data.markdownRemark.frontmatter
+  const author = get(data, 'site.siteMetadata.author')
 
   return (
     <Wrapper>
       <Helmet>
         <title>{post.frontmatter.title}</title>
         <meta name="description" content={post.frontmatter.description} />
+        <script type="application/ld+json">
+          {`{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "headline": "${title}",
+  "author": {
+    "@type": "Person",
+    "name": "${author}"
+  },
+  "datePublished": "${dateRaw}",
+  "description": "${description}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://larsgraubner.com/images/lars-1200x1200.jpg",
+    "height": 1200,
+    "width": 1200
+  },
+  "publisher": {
+  	"@type": "Organization",
+    "name": "Lars Graubner",
+    "logo": {
+   		"@type": "ImageObject",
+  		"url": "https://larsgraubner.com/images/lars-1200x1200.jpg"
+  	}
+  }
+}`}
+        </script>
       </Helmet>
       <BlogHeader>
         <Link to="blog">Lars{"'"} Blog</Link>
       </BlogHeader>
       <Post>
         <PostHeader>
-          <Date>{post.frontmatter.date}</Date>
-          <Title>{post.frontmatter.title}</Title>
+          <Date>{date}</Date>
+          <Title>{title}</Title>
         </PostHeader>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </Post>
@@ -114,6 +144,11 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
+    site {
+      siteMetadata {
+        author
+      }
+    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       id
       html
@@ -121,6 +156,7 @@ export const pageQuery = graphql`
         title
         description
         date(formatString: "MMMM DD, YYYY")
+        dateRaw: date
       }
     }
     file(relativePath: { eq: "apple-touch-icon.png" }) {
