@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { TEXT_COLOR, BOLD_COLOR } from '../colors'
 
@@ -24,14 +24,11 @@ const IndexTitle = Title.extend`
 `
 
 const HireMe = styled.p`
-  background: rgba(0, 0, 0, 0.05);
   margin: 3rem auto 0;
-  padding: 0.7rem;
   color: ${TEXT_COLOR};
   font-size: 1rem;
   line-height: 1.7em;
   position: relative;
-  font-style: italic;
   border-radius: 2px;
 
   a {
@@ -43,6 +40,40 @@ const HireMe = styled.p`
     &:hover {
       border: 0;
     }
+  }
+`
+
+const pulsate = keyframes`
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+`
+
+const Dot = styled.div`
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 255, 0, 0.6);
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+
+  &:after {
+    content: '';
+    background-color: rgba(0, 255, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    animation: ${pulsate} 1.5s ease-out infinite;
+    left: 0;
+    top: 0;
   }
 `
 
@@ -76,14 +107,19 @@ const Index = ({ data }: Props) => {
       <IndexTitle>Lars Graubner</IndexTitle>
       <Text>
         I{"'"}m a passionate front-end developer focusing on JavaScript and
-        React. You can follow me on{' '}
+        React. I created{' '}
+        <a href="https://github.com/lgraubner/sitemap-generator">
+          sitemap-generator
+        </a>{' '}
+        and more <a href="https://github.com/lgraubner">open source projects</a>.
+        You can follow me on{' '}
         <a href="https://twitter.com/larsgraubner">Twitter</a> or{' '}
-        <Link to="/blog/">read my posts</Link>. Check out my open source
-        projects on <a href="https://github.com/lgraubner">GitHub</a>.
+        <Link to="/blog/">check out my writings</Link>.
       </Text>
       <HireMe>
-        Need help building your next React project?{' '}
-        <a href="mailto:mail@larsgraubner.de">Hire me</a>.
+        <Dot />
+        I{"'"}m available for hire.{' '}
+        <a href="mailto:mail@larsgraubner.de">Learn more</a>.
       </HireMe>
     </Wrapper>
   )
