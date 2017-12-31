@@ -139,9 +139,9 @@ export const pageQuery = graphql`
         author
       }
     }
-    file(relativePath: { eq: "lars-1200x1200.jpg" }) {
+    file(relativePath: { eq: "lars-180x180.jpg" }) {
       childImageSharp {
-        resolutions(width: 90, height: 90) {
+        resolutions(width: 90, height: 90, quality: 90) {
           ...GatsbyImageSharpResolutions_tracedSVG
         }
       }
