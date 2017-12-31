@@ -28,10 +28,10 @@ injectGlobal`
 `
 
 const Wrapper = styled.div`
-  padding: 70px 5% 30px;
+  padding: 30px 5%;
 
   @media (min-width: 990px) {
-    padding: 120px 50px 50px;
+    padding: 70px 50px;
   }
 `
 

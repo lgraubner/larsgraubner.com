@@ -6,23 +6,12 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import values from 'lodash/values'
 
-import { BOLD_COLOR, TEXT_COLOR, LIGHT_COLOR, PRIMARY_COLOR } from '../colors'
+import Title from '../components/Title'
 
-const Wrapper = styled.div`
-  max-width: 620px;
-  margin: 0 auto 8rem;
-`
+import { BOLD_COLOR, TEXT_COLOR, LIGHT_COLOR } from '../colors'
 
-const BlogHeader = styled.div`
-  margin-bottom: 4rem;
-
-  a {
-    color: ${BOLD_COLOR};
-    font-weight: 700;
-    font-size: 1.7rem;
-    text-decoration: none;
-    border-bottom: 3px solid ${PRIMARY_COLOR};
-  }
+const BlogTitle = Title.extend`
+  margin-bottom: 3rem;
 `
 
 const Year = styled.div`
@@ -97,7 +86,7 @@ const Blog = ({ data }: Props) => {
   }, {})
 
   return (
-    <Wrapper>
+    <div>
       <Helmet>
         <title>Lars{"'"} Blog</title>
         <meta name="description" content={description} />
@@ -118,9 +107,7 @@ const Blog = ({ data }: Props) => {
 }`}
         </script>
       </Helmet>
-      <BlogHeader>
-        <Link to="/blog/">Lars{"'"} Blog</Link>
-      </BlogHeader>
+      <BlogTitle>Lars{"'"} Blog</BlogTitle>
       {values(yearPosts)
         .reverse()
         .map(year => (
@@ -138,7 +125,7 @@ const Blog = ({ data }: Props) => {
             })}
           </PostList>
         ))}
-    </Wrapper>
+    </div>
   )
 }
 

@@ -1,20 +1,13 @@
 // @flow
 import React from 'react'
-import styled from 'styled-components'
 import Helmet from 'react-helmet'
 
 import Title from '../components/Title'
+import SubTitle from '../components/SubTitle'
 import Text from '../components/Text'
 
 const LimitedText = Text.extend`
   max-width: 540px;
-`
-
-const SubTitle = styled.h2`
-  margin: 0 0 2rem;
-  font-weight: normal;
-  font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.8);
 `
 
 const Index = () => (

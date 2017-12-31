@@ -2,30 +2,17 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import Title from '../components/Title'
 
 import { textStyles } from '../components/Text'
 
-import { LIGHT_COLOR, BOLD_COLOR, PRIMARY_COLOR } from '../colors'
+import { LIGHT_COLOR, BOLD_COLOR } from '../colors'
 
 const Wrapper = styled.div`
   max-width: 620px;
   margin: 0 auto 8rem;
-`
-
-const BlogHeader = styled.div`
-  margin-bottom: 4rem;
-
-  a {
-    color: ${BOLD_COLOR};
-    font-weight: 700;
-    font-size: 1.7rem;
-    text-decoration: none;
-    border-bottom: 3px solid ${PRIMARY_COLOR};
-  }
 `
 
 const PostHeader = styled.header`
@@ -126,9 +113,6 @@ const BlogPostTemplate = ({ data }: Props) => {
 }`}
         </script>
       </Helmet>
-      <BlogHeader>
-        <Link to="/blog/">Lars{"'"} Blog</Link>
-      </BlogHeader>
       <Post>
         <PostHeader>
           <Date>{date}</Date>

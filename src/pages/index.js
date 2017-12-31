@@ -13,7 +13,7 @@ import Logo from '../components/Logo'
 
 const Wrapper = styled.div`
   max-width: 620px;
-  padding: 0 0 40px;
+  padding: 80px 0 40px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
