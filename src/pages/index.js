@@ -86,14 +86,29 @@ type Props = {
 
 const Index = ({ data }: Props) => {
   const author = get(data, 'site.siteMetadata.author')
+  const siteUrl = get(data, 'site.siteMetadata.siteUrl')
+
+  const description =
+    'Front-end developer from germany. Passionate about React and web performance.'
   return (
     <Wrapper>
       <Helmet>
         <title>{`${author} - Front-end developer`}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={`${author} - Front-end developer`} />
+        <meta property="og:type" content="website" />
+
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:site_name" content={author} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@larsgraubner" />
+        <meta name="twitter:domain" content="larsgraubner.com" />
         <meta
-          name="description"
-          content="Front-end developer from germany. Passionate about React and web performance."
+          name="twitter:title"
+          content={`${author} – Front-end Developer`}
         />
+        <meta name="twitter:description" content={description} />
         <script type="application/ld+json">
           {`{
   "@context" : "http://schema.org",
@@ -137,6 +152,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
+        siteUrl
       }
     }
     file(relativePath: { eq: "lars-180x180.jpg" }) {

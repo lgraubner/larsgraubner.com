@@ -72,19 +72,32 @@ const Date = styled.div`
 `
 
 type Props = {
-  data: Object
+  data: Object,
+  location: Object
 }
 
-const BlogPostTemplate = ({ data }: Props) => {
+const BlogPostTemplate = ({ data, location }: Props) => {
   const post = data.markdownRemark
   const { description, title, date, dateRaw } = data.markdownRemark.frontmatter
   const author = get(data, 'site.siteMetadata.author')
+  const siteUrl = get(data, 'site.siteMetadata.siteUrl')
 
   return (
     <Wrapper>
       <Helmet>
         <title>{post.frontmatter.title}</title>
         <meta name="description" content={post.frontmatter.description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:type" content="article" />
+
+        <meta property="og:url" content={siteUrl + location.pathname} />
+        <meta property="og:site_name" content={author} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@larsgraubner" />
+        <meta name="twitter:domain" content="larsgraubner.com" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <script type="application/ld+json">
           {`{
   "@context": "http://schema.org",
@@ -131,6 +144,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
+        siteUrl
       }
     }
     markdownRemark(frontmatter: { path: { eq: $path } }) {

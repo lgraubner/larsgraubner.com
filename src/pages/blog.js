@@ -67,13 +67,15 @@ const PostDate = styled.span`
 `
 
 type Props = {
-  data: Object
+  data: Object,
+  location: Object
 }
 
-const Blog = ({ data }: Props) => {
+const Blog = ({ data, location }: Props) => {
   const posts = get(data, 'allMarkdownRemark.edges')
   const description = get(data, 'site.siteMetadata.rssFeedDescription')
   const author = get(data, 'site.siteMetadata.author')
+  const siteUrl = get(data, 'site.siteMetadata.siteUrl')
 
   const yearPosts = posts.reduce((obj, p) => {
     if (obj[p.node.frontmatter.year]) {
@@ -90,6 +92,17 @@ const Blog = ({ data }: Props) => {
       <Helmet>
         <title>Lars{"'"} Blog</title>
         <meta name="description" content={description} />
+        <meta property="og:title" content="Lars' Blog" />
+        <meta property="og:type" content="blog" />
+
+        <meta property="og:url" content={siteUrl + location.pathname} />
+        <meta property="og:site_name" content={author} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@larsgraubner" />
+        <meta name="twitter:domain" content="larsgraubner.com" />
+        <meta name="twitter:title" content="Lars' Blog" />
+        <meta name="twitter:description" content={description} />
         <script type="application/ld+json">
           {`{
   "@context": "http://schema.org",
@@ -137,6 +150,7 @@ export const pageQuery = graphql`
       siteMetadata {
         rssFeedDescription
         author
+        siteUrl
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
