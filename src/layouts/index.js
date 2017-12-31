@@ -42,6 +42,8 @@ type Props = {
 const Template = ({ children }: Props) => (
   <Wrapper>
     <Helmet>
+      <html lang="en" />
+      <meta name="robots" content="index,follow" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

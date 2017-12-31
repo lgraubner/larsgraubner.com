@@ -126,13 +126,17 @@ const Index = ({ data }: Props) => {
       <Text>
         I{"'"}m a passionate front-end developer focusing on JavaScript and
         React. I created{' '}
-        <a href="https://github.com/lgraubner/sitemap-generator">
+        <a href="https://github.com/lgraubner/sitemap-generator" rel="nofollow">
           sitemap-generator
         </a>{' '}
-        and more <a href="https://github.com/lgraubner">open source projects</a>.
-        You can follow me on{' '}
-        <a href="https://twitter.com/larsgraubner">Twitter</a> or check out my{' '}
-        <Link to="/blog/">blog</Link>.
+        and more{' '}
+        <a href="https://github.com/lgraubner" rel="nofollow">
+          open source projects
+        </a>. You can follow me on{' '}
+        <a href="https://twitter.com/larsgraubner" rel="nofollow">
+          Twitter
+        </a>{' '}
+        or check out my <Link to="/blog/">blog</Link>.
       </Text>
       <HireMe>
         <Dot />
