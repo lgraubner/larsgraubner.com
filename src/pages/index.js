@@ -23,13 +23,16 @@ const IndexTitle = Title.extend`
   margin: 1rem auto 1.5rem;
 `
 
-const HireMe = styled.p`
+const HireMe = styled.div`
   margin: 3rem auto 0;
+`
+
+const HireMeText = styled.div`
+  line-height: 1.7em;
   color: ${TEXT_COLOR};
   font-size: 1rem;
-  line-height: 1.7em;
   position: relative;
-  border-radius: 2px;
+  display: inline-block;
 
   a {
     color: ${BOLD_COLOR};
@@ -113,13 +116,15 @@ const Index = ({ data }: Props) => {
         </a>{' '}
         and more <a href="https://github.com/lgraubner">open source projects</a>.
         You can follow me on{' '}
-        <a href="https://twitter.com/larsgraubner">Twitter</a> or{' '}
-        <Link to="/blog/">check out my writings</Link>.
+        <a href="https://twitter.com/larsgraubner">Twitter</a> or check out my{' '}
+        <Link to="/blog/">blog</Link>.
       </Text>
       <HireMe>
         <Dot />
-        I{"'"}m available for hire.{' '}
-        <a href="mailto:mail@larsgraubner.de">Learn more</a>.
+        <HireMeText>
+          I{"'"}m available for hire.{' '}
+          <a href="mailto:mail@larsgraubner.de">Learn more</a>.
+        </HireMeText>
       </HireMe>
     </Wrapper>
   )
