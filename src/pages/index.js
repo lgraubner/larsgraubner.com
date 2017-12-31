@@ -124,15 +124,16 @@ const Index = ({ data }: Props) => {
       <Logo resolutions={data.file.childImageSharp.resolutions} />
       <IndexTitle>Lars Graubner</IndexTitle>
       <Text>
-        I{"'"}m a passionate front-end developer focusing on JavaScript and
-        React. I created{' '}
+        I{"'"}m a passionate front-end developer based in Lübeck, Germany
+        focusing on JavaScript and React Single Page Applications. I created a
+        tool called{' '}
         <a href="https://github.com/lgraubner/sitemap-generator" rel="nofollow">
           sitemap-generator
         </a>{' '}
         and more{' '}
         <a href="https://github.com/lgraubner" rel="nofollow">
-          open source projects
-        </a>. You can follow me on{' '}
+          open source stuff
+        </a>. You can follow and contact me on{' '}
         <a href="https://twitter.com/larsgraubner" rel="nofollow">
           Twitter
         </a>{' '}
