@@ -36,10 +36,11 @@ const Wrapper = styled.div`
 `
 
 type Props = {
-  children: Function
+  children: Function,
+  location: Object
 }
 
-const Template = ({ children }: Props) => (
+const Template = ({ children, location }: Props) => (
   <Wrapper>
     <Helmet>
       <html lang="en" />
@@ -60,6 +61,13 @@ const Template = ({ children }: Props) => (
         type="image/png"
         sizes="16x16"
         href="/favicon-16x16.png"
+      />
+      <link
+        rel="canonical"
+        href={`https://larsgraubner.com${location.pathname.replace(
+          /\/?$/,
+          '/'
+        )}`}
       />
     </Helmet>
     {children()}

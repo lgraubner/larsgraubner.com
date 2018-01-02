@@ -61,14 +61,14 @@ const Dot = styled.div`
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-color: rgba(0, 255, 0, 0.6);
+  background-color: rgba(0, 180, 0, 0.6);
   border-radius: 50%;
   margin-right: 10px;
   position: relative;
 
   &:after {
     content: '';
-    background-color: rgba(0, 255, 0, 0.4);
+    background-color: rgba(0, 180, 0, 0.4);
     width: 100%;
     height: 100%;
     display: block;
