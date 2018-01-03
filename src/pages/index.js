@@ -40,8 +40,9 @@ const HireMeText = styled.div`
     font-weight: 600;
     border-bottom: 1px solid currentColor;
 
-    &:hover {
-      border: 0;
+    &:hover,
+    &:focus {
+      border-color: transparent;
     }
   }
 `
