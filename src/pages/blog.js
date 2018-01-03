@@ -92,7 +92,6 @@ const Blog = ({ data, location }: Props) => {
       <Helmet>
         <title>Lars{"'"} Blog</title>
         <meta name="description" content={description} />
-        <meta name="robots" content="noindex,follow" />
         <meta property="og:title" content="Lars' Blog" />
         <meta property="og:type" content="blog" />
 
