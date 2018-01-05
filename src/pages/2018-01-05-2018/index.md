@@ -1,7 +1,7 @@
 ---
 title: "Start doing things different"
 date: 2018-01-05T22:00:00+00:00
-path: doing-things-different
+path: /doing-things-different/
 ---
 
 The year 2018 started a couple days ago and, you probably noticed, comes together with a new layout for this site. For this year I don't have any specific resolutions but I decided I want to try to tackle some things differently to make it easier to succeed and feel happier doing it.

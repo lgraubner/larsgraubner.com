@@ -3,7 +3,7 @@ categories:
   - nginx
 date: 2017-08-11T22:00:00+00:00
 description: "Recently I struggled setting up Let's Encrypt certificate renewal with nginx. It would not authorize due to HTTPS redirection. This is how I fixed it."
-title: Let's Encrypt certificate renewal with nginx
+title: "Let's Encrypt certificate renewal with nginx"
 path: /lets-encrypt-renewal-nginx/
 ---
 

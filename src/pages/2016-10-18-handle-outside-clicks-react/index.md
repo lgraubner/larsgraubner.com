@@ -4,8 +4,8 @@ categories:
   - React
 date: 2016-10-18T14:15:24+00:00
 description: "Sometimes it's useful to detect clicks outside of a React component. Learn how to achieve this by attaching an native event handler to the document."
-title: Handle clicks outside of React components
-path: "/handle-outside-clicks-react/"
+title: "Handle clicks outside of React components"
+path: /handle-outside-clicks-react/
 ---
 Sometimes it's useful to detect clicks outside of a React component to alter its state. A common use case could be a popover which should close if clicked outside of it. This post describes how to implement this into your React component.
 
