@@ -32,6 +32,7 @@ fs.mkdir(folderPath, error => {
     stream.write('---\n')
     stream.write(`title: "${options.title}"\n`)
     stream.write(`date: ${format(date, 'YYYY-MM-DDTHH:mm:00+00:00')}\n`)
+    stream.write('description: ""\n')
     stream.write(`path: /${titlePath}/\n`)
     stream.write('---\n\n')
     stream.end()

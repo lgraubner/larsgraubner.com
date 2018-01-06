@@ -1,6 +1,7 @@
 ---
 title: "Start doing things different"
 date: 2018-01-05T22:00:00+00:00
+description: "Instead of having specific resolutions for 2018 I decided I want to try to tackle some things differently to make it easier to succeed and feel happier doing it. This is about what I'm going to change."
 path: /doing-things-different/
 ---
 
