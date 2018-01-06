@@ -3,9 +3,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import styled, { keyframes } from 'styled-components'
-
-import { TEXT_COLOR, BOLD_COLOR } from '../colors'
+import styled from 'styled-components'
 
 import Title from '../components/Title'
 import Text from '../components/Text'
@@ -21,64 +19,6 @@ const Wrapper = styled.div`
 
 const IndexTitle = Title.extend`
   margin: 1rem auto 1.5rem;
-`
-
-const HireMe = styled.div`
-  margin: 3rem auto 0;
-`
-
-const HireMeText = styled.div`
-  line-height: 1.7em;
-  color: ${TEXT_COLOR};
-  font-size: 1rem;
-  position: relative;
-  display: inline-block;
-
-  a {
-    color: ${BOLD_COLOR};
-    text-decoration: none;
-    font-weight: 600;
-    border-bottom: 1px solid currentColor;
-
-    &:hover,
-    &:focus {
-      border-color: transparent;
-    }
-  }
-`
-
-const pulsate = keyframes`
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(2.5);
-    opacity: 0;
-  }
-`
-
-const Dot = styled.div`
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: rgba(0, 180, 0, 0.6);
-  border-radius: 50%;
-  margin-right: 10px;
-  position: relative;
-
-  &:after {
-    content: '';
-    background-color: rgba(0, 180, 0, 0.4);
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    border-radius: 50%;
-    animation: ${pulsate} 1.5s ease-out infinite;
-    left: 0;
-    top: 0;
-  }
 `
 
 type Props = {
@@ -140,13 +80,6 @@ const Index = ({ data }: Props) => {
         </a>{' '}
         or check out my <Link to="/blog/">blog</Link>.
       </Text>
-      <HireMe>
-        <Dot />
-        <HireMeText>
-          I{"'"}m available for hire.{' '}
-          <a href="mailto:mail@larsgraubner.de">Learn more</a>.
-        </HireMeText>
-      </HireMe>
     </Wrapper>
   )
 }
