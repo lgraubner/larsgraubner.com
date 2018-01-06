@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `
 
 const BackLink = styled.div`
-  margin-bottom: 3rem;
+  margin-top: 3rem;
 
   a {
     color: #fff;
@@ -146,14 +146,14 @@ const BlogPostTemplate = ({ data, location }: Props) => {
         </script>
       </Helmet>
       <Post>
-        <BackLink>
-          <Link to="/blog/">&larr; Lars{"'"} Blog</Link>
-        </BackLink>
         <PostHeader>
           <Date>{date}</Date>
           <Title>{title}</Title>
         </PostHeader>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <BackLink>
+          <Link to="/blog/">&larr; Lars{"'"} Blog</Link>
+        </BackLink>
       </Post>
     </Wrapper>
   )
