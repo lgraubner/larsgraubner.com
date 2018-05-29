@@ -1,25 +1,11 @@
 // @flow
 import React from 'react'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
 
-import Title from '../components/Title'
-import Text from '../components/Text'
-import Logo from '../components/Logo'
-
-const Wrapper = styled.div`
-  max-width: 620px;
-  padding: 80px 0 40px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-`
-
-const IndexTitle = Title.extend`
-  margin: 1rem auto 1.5rem;
-`
+import Link from '../components/Link'
+import P from '../components/Paragraph'
+import { Ul, Li } from '../components/List'
 
 type Props = {
   data: Object
@@ -32,7 +18,7 @@ const Index = ({ data }: Props) => {
   const description =
     'Front-end developer from germany. Passionate about React and web performance.'
   return (
-    <Wrapper>
+    <div>
       <Helmet>
         <title>{`${author} - Front-end developer`}</title>
         <meta name="description" content={description} />
@@ -50,37 +36,62 @@ const Index = ({ data }: Props) => {
           content={`${author} – Front-end Developer`}
         />
         <meta name="twitter:description" content={description} />
-        <script type="application/ld+json">
-          {`{
-  "@context" : "http://schema.org",
-  "@type" : "Person",
-  "name" : "${author}",
-  "image": "https://larsgraubner.com/images/lars-1200x1200.jpg",
-  "jobTitle": "Front-end developer",
-  "url" : "https://larsgraubner.com",
-  "sameAs" : ["https://twitter.com/larsgraubner"]
-}`}
-        </script>
       </Helmet>
-      <Logo resolutions={data.file.childImageSharp.resolutions} />
-      <IndexTitle>Lars Graubner</IndexTitle>
-      <Text>
-        I{"'"}m a passionate front-end developer based in Lübeck, Germany
-        focusing on JavaScript and React Single Page Applications. I created a
-        tool called{' '}
-        <a href="https://github.com/lgraubner/sitemap-generator" rel="nofollow">
-          sitemap-generator
-        </a>{' '}
-        and more{' '}
-        <a href="https://github.com/lgraubner" rel="nofollow">
-          open source stuff
-        </a>. You can follow and contact me on{' '}
-        <a href="https://twitter.com/larsgraubner" rel="nofollow">
-          Twitter
-        </a>{' '}
-        or check out my <Link to="/blog/">blog</Link>.
-      </Text>
-    </Wrapper>
+      <P>
+        I help realizing great ideas in form of websites and apps, mostly
+        working with JavaScript.
+      </P>
+
+      <P>
+        At the moment I{"'"}m building an app with React Native powered by a
+        fully fledged API.
+      </P>
+
+      <P>
+        When I{"'"}m not doing that I{"'"}m spending time with my family or
+        binge watch the latest season of{' '}
+        <Link href="https://www.imdb.com/title/tt2575988/" nofollow>
+          Silicon Valley
+        </Link>.
+      </P>
+
+      <P>Occasionally I write down my thoughts:</P>
+      <Ul />
+
+      <P>You can also find me on a couple other places on the internet.</P>
+
+      <Ul>
+        <Li>
+          Social: <Link href="https://twitter.com/larsgraubner">Twitter</Link>
+        </Li>
+        <Li>
+          Code:{' '}
+          <Link href="https://github.com/lgraubner?tab=repositories">
+            Github
+          </Link>
+        </Li>
+        <Li>
+          CV:{' '}
+          <Link href="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>,{' '}
+          <Link href="https://www.xing.com/profile/Lars_Graubner2/cv">
+            Xing
+          </Link>
+        </Li>
+      </Ul>
+
+      <P>
+        If there are any questions left{' '}
+        <Link href="mailto:hello@larsgraubner.com">
+          drop me a line via email
+        </Link>, but please don{"'"}t take an answer for granted.
+      </P>
+
+      <P>
+        PS: Want to work with me? At the moment I{"'"}m not interested in any
+        fulltime job offers. If you have a smaller project though shoot me a
+        message.
+      </P>
+    </div>
   )
 }
 

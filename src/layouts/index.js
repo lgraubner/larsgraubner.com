@@ -3,7 +3,9 @@ import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
 import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
 
+// $FlowFixMe
 import 'prism-themes/themes/prism-atom-dark.css'
 
 // eslint-disable-next-line
@@ -20,25 +22,63 @@ injectGlobal`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: times, serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0;
   }
 `
 
-const Wrapper = styled.div`
-  padding: 30px 5%;
+const Wrapper = styled.main`
+  margin: 8rem;
+  max-width: 480px;
+`
 
-  @media (min-width: 990px) {
-    padding: 70px 50px;
+const Footer = styled.footer`
+  margin-top: 80px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline;
+  }
+
+  li:not(:first-child) {
+    margin-left: 30px;
   }
 `
+
+const Headline = styled.div`
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.25em;
+  margin: 0 0 1em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  a {
+    color: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+  }
+`
+
+const HeadlineIndex = Headline.withComponent('h1')
 
 type Props = {
   children: Function,
   location: Object
 }
+
+const headline = (
+  <span>
+    Hi I{"'"}m <Link to="/">Lars</Link>.
+  </span>
+)
 
 const Template = ({ children, location }: Props) => (
   <Wrapper>
@@ -62,15 +102,25 @@ const Template = ({ children, location }: Props) => (
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <link
-        rel="canonical"
-        href={`https://larsgraubner.com${location.pathname.replace(
-          /\/?$/,
-          '/'
-        )}`}
-      />
     </Helmet>
+    {location.pathname === '/' ? (
+      <HeadlineIndex>{headline}</HeadlineIndex>
+    ) : (
+      <Headline>{headline}</Headline>
+    )}
+
     {children()}
+
+    <Footer>
+      <ul>
+        <li>
+          <Link to="/legal-notice">Legal Notice</Link>
+        </li>
+        <li>
+          <Link to="/privacy">Privacy Policy</Link>
+        </li>
+      </ul>
+    </Footer>
   </Wrapper>
 )
 

@@ -5,10 +5,6 @@ import styled from 'styled-components'
 import get from 'lodash/get'
 import Link from 'gatsby-link'
 
-import Title from '../components/Title'
-
-import { textStyles } from '../components/Text'
-
 import { LIGHT_COLOR, BOLD_COLOR, PRIMARY_COLOR } from '../colors'
 
 const Wrapper = styled.div`
@@ -56,8 +52,6 @@ const Post = styled.article`
   }
 
   p {
-    ${textStyles()};
-
     code {
       font-size: 90%;
       padding: 0.2em 0.4em;
@@ -148,7 +142,7 @@ const BlogPostTemplate = ({ data, location }: Props) => {
       <Post>
         <PostHeader>
           <Date>{date}</Date>
-          <Title>{title}</Title>
+          <h1>{title}</h1>
         </PostHeader>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <BackLink>
@@ -169,7 +163,7 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(frontmatter: { url: { eq: $path } }) {
       id
       html
       frontmatter {

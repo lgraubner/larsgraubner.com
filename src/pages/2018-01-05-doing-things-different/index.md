@@ -2,7 +2,7 @@
 title: "Start doing things different"
 date: 2018-01-05T22:00:00+00:00
 description: "Instead of having specific resolutions for 2018 I decided I want to try to tackle some things differently to make it easier to succeed and feel happier doing it. This is about what I'm going to change."
-path: /doing-things-different/
+url: /doing-things-different/
 ---
 
 The year 2018 started a couple days ago and, you probably noticed, comes together with a new layout for this site. For this year I don't have any specific resolutions but I decided I want to try to tackle some things differently to make it easier to succeed and feel happier doing it.

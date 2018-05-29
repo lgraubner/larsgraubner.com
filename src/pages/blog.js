@@ -6,13 +6,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import values from 'lodash/values'
 
-import Title from '../components/Title'
-
 import { BOLD_COLOR, TEXT_COLOR, LIGHT_COLOR } from '../colors'
-
-const BlogTitle = Title.extend`
-  margin-bottom: 3rem;
-`
 
 const Year = styled.div`
   color: ${LIGHT_COLOR};
@@ -120,18 +114,17 @@ const Blog = ({ data, location }: Props) => {
 }`}
         </script>
       </Helmet>
-      <BlogTitle>Lars{"'"} Blog</BlogTitle>
+      <h1>Lars{"'"} Blog</h1>
       {values(yearPosts)
         .reverse()
         .map(year => (
           <PostList key={year[0].node.frontmatter.year}>
             <Year>{year[0].node.frontmatter.year}</Year>
             {year.map(post => {
-              const title =
-                get(post, 'node.frontmatter.title') || post.node.path
+              const title = get(post, 'node.frontmatter.title') || post.node.url
               return (
-                <PostTitle key={post.node.frontmatter.path}>
-                  <Link to={post.node.frontmatter.path}>{title}</Link>
+                <PostTitle key={post.node.frontmatter.url}>
+                  <Link to={post.node.frontmatter.url}>{title}</Link>
                   <PostDate>{post.node.frontmatter.date}</PostDate>
                 </PostTitle>
               )
@@ -157,7 +150,7 @@ export const pageQuery = graphql`
       edges {
         node {
           frontmatter {
-            path
+            url
             date(formatString: "DD MMMM, YYYY")
             year: date(formatString: "YYYY")
             title
