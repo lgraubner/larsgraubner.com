@@ -2,32 +2,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import get from 'lodash/get'
-import Link from 'gatsby-link'
-
-import { LIGHT_COLOR, BOLD_COLOR, PRIMARY_COLOR } from '../colors'
+import idx from 'idx'
 
 const Wrapper = styled.div`
   max-width: 620px;
   margin: 0 auto 8rem;
-`
-
-const BackLink = styled.div`
-  margin-top: 3rem;
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    background-color: ${LIGHT_COLOR};
-    padding: 5px;
-    border-radius: 3px;
-    transition: background 150ms ease-in;
-
-    &:hover,
-    &:focus {
-      background-color: ${PRIMARY_COLOR};
-    }
-  }
 `
 
 const PostHeader = styled.header`
@@ -40,7 +19,6 @@ const Post = styled.article`
     font-size: 1.85rem;
     font-weight: 600;
     line-height: 2.5rem;
-    color: ${BOLD_COLOR};
   }
 
   h3 {
@@ -48,7 +26,6 @@ const Post = styled.article`
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 2.5rem;
-    color: ${BOLD_COLOR};
   }
 
   p {
@@ -81,7 +58,6 @@ const Date = styled.div`
   font-size: 1.1rem;
   line-height: 1rem;
   margin-bottom: 0.75rem;
-  color: ${LIGHT_COLOR};
 `
 
 type Props = {
@@ -91,9 +67,10 @@ type Props = {
 
 const BlogPostTemplate = ({ data, location }: Props) => {
   const post = data.markdownRemark
-  const { description, title, date, dateRaw } = data.markdownRemark.frontmatter
-  const author = get(data, 'site.siteMetadata.author')
-  const siteUrl = get(data, 'site.siteMetadata.siteUrl')
+  const { description, title, date, dateRaw } =
+    idx(data, _ => _.markdownRemark.frontmatter) || {}
+  const author = idx(data, _ => _.site.siteMetadata.author) || ''
+  const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
 
   return (
     <Wrapper>
@@ -145,9 +122,6 @@ const BlogPostTemplate = ({ data, location }: Props) => {
           <h1>{title}</h1>
         </PostHeader>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <BackLink>
-          <Link to="/blog/">&larr; Lars{"'"} Blog</Link>
-        </BackLink>
       </Post>
     </Wrapper>
   )

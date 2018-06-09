@@ -2,8 +2,7 @@
 import React from 'react'
 
 import P from '../components/Paragraph'
-import Link from '../components/Link'
-import { Ul, Li } from '../components/List'
+import { Ul } from '../components/List'
 
 export default () => (
   <div>

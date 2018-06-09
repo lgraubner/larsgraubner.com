@@ -1,6 +1,6 @@
 // @flow
 import React from 'react'
-import get from 'lodash/get'
+import idx from 'idx'
 import Helmet from 'react-helmet'
 
 import Link from '../components/Link'
@@ -12,8 +12,9 @@ type Props = {
 }
 
 const Index = ({ data }: Props) => {
-  const author = get(data, 'site.siteMetadata.author')
-  const siteUrl = get(data, 'site.siteMetadata.siteUrl')
+  const author = idx(data, _ => _.site.siteMetadata.author) || ''
+  const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
+  const posts = idx(data, _ => _.allMarkdownRemark.edges) || []
 
   const description =
     'Front-end developer from germany. Passionate about React and web performance.'
@@ -44,7 +45,7 @@ const Index = ({ data }: Props) => {
 
       <P>
         At the moment I{"'"}m building an app with React Native powered by a
-        fully fledged API.
+        solid REST API.
       </P>
 
       <P>
@@ -56,26 +57,39 @@ const Index = ({ data }: Props) => {
       </P>
 
       <P>Occasionally I write down my thoughts:</P>
-      <Ul />
+      <Ul>
+        {posts.map(post => {
+          const title =
+            idx(post, _ => _.node.frontmatter.title) || post.node.url
+          return (
+            <Li key={post.node.frontmatter.url}>
+              <Link href={post.node.frontmatter.url}>{title}</Link>
+            </Li>
+          )
+        })}
+      </Ul>
 
       <P>You can also find me on a couple other places on the internet.</P>
 
       <Ul>
         <Li>
-          Social: <Link href="https://twitter.com/larsgraubner">Twitter</Link>
+          follow me on{' '}
+          <Link href="https://twitter.com/larsgraubner">Twitter</Link>
         </Li>
         <Li>
-          Code:{' '}
+          check out my code on{' '}
           <Link href="https://github.com/lgraubner?tab=repositories">
             Github
           </Link>
         </Li>
         <Li>
-          CV:{' '}
-          <Link href="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>,{' '}
+          have a look at my{' '}
+          <Link href="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>{' '}
+          and{' '}
           <Link href="https://www.xing.com/profile/Lars_Graubner2/cv">
             Xing
-          </Link>
+          </Link>{' '}
+          Profile
         </Li>
       </Ul>
 
@@ -109,6 +123,16 @@ export const pageQuery = graphql`
       childImageSharp {
         resolutions(width: 90, height: 90, quality: 90) {
           ...GatsbyImageSharpResolutions_tracedSVG
+        }
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          frontmatter {
+            url
+            title
+          }
         }
       }
     }

@@ -3,10 +3,11 @@ import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 
 // $FlowFixMe
 import 'prism-themes/themes/prism-atom-dark.css'
+
+import Link from '../components/Link'
 
 // eslint-disable-next-line
 injectGlobal`
@@ -76,7 +77,7 @@ type Props = {
 
 const headline = (
   <span>
-    Hi I{"'"}m <Link to="/">Lars</Link>.
+    Hi I{"'"}m <Link href="/">Lars</Link>.
   </span>
 )
 
@@ -114,10 +115,10 @@ const Template = ({ children, location }: Props) => (
     <Footer>
       <ul>
         <li>
-          <Link to="/legal-notice">Legal Notice</Link>
+          <Link href="/legal-notice">Legal Notice</Link>
         </li>
         <li>
-          <Link to="/privacy">Privacy Policy</Link>
+          <Link href="/privacy">Privacy Policy</Link>
         </li>
       </ul>
     </Footer>
