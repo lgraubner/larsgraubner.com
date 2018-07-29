@@ -10,8 +10,8 @@ const LinkWrapper = styled.span`
     border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 
     &:hover {
-      color: #ef4836;
-      border-color: #ef4836;
+      color: #1d69ff;
+      border-color: currentColor;
     }
   }
 `

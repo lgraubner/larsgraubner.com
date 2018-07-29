@@ -23,7 +23,8 @@ injectGlobal`
   }
 
   body {
-    font-family: times, serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     -webkit-font-smoothing: antialiased;
     color: rgba(0, 0, 0, 0.8);
     margin: 0;
@@ -31,8 +32,12 @@ injectGlobal`
 `
 
 const Wrapper = styled.main`
-  margin: 8rem;
   max-width: 480px;
+  margin: 4rem 5%;
+
+  @media (min-width: 768px) {
+    margin: 8rem;
+  }
 `
 
 const Footer = styled.footer`

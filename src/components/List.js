@@ -11,8 +11,10 @@ export const Ul = styled.ul`
 `
 
 export const Li = styled.li`
-  font-size: 20px;
+  font-size: 19px;
+  line-height: 1.5em;
+
   &:not(:last-child) {
-    margin-bottom: 1em;
+    margin-bottom: 1.1rem;
   }
 `

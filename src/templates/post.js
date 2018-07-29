@@ -4,6 +4,8 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import idx from 'idx'
 
+import MarkdownContent from '../components/MarkdownContent'
+
 const Wrapper = styled.div`
   max-width: 620px;
   margin: 0 auto 8rem;
@@ -14,50 +16,28 @@ const PostHeader = styled.header`
 `
 
 const Post = styled.article`
-  h2 {
-    margin: 2rem 0 1.5rem;
-    font-size: 1.85rem;
-    font-weight: 600;
-    line-height: 2.5rem;
-  }
-
-  h3 {
-    margin: 2rem 0 1.25rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 2.5rem;
-  }
-
-  p {
-    code {
-      font-size: 90%;
-      padding: 0.2em 0.4em;
-      background-color: rgba(0, 0, 0, 0.05);
-      border-radius: 0.25rem;
-      color: rgba(0, 0, 0, 0.65);
-    }
-  }
-
-  .gatsby-highlight {
-    margin: 2rem 0 2rem -4%;
-    width: 108%;
-
-    pre {
-      margin: 0;
-      border-radius: 3px;
-      padding: 20px 4%;
-      font-size: 1rem;
-    }
-  }
-
-  .gatsby-highlight-code-line {
-  }
+  margin-top: 4rem;
 `
 
 const Date = styled.div`
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   line-height: 1rem;
   margin-bottom: 0.75rem;
+  color: #999;
+`
+
+const Title = styled.h1`
+  font-weight: 600;
+  color: #222;
+  font-size: 2.4rem;
+  margin: 0 0 2rem;
+  line-height: 1.15em;
+
+  @media (min-width: 768px) {
+    font-size: 2.8rem;
+  }
 `
 
 type Props = {
@@ -119,9 +99,9 @@ const BlogPostTemplate = ({ data, location }: Props) => {
       <Post>
         <PostHeader>
           <Date>{date}</Date>
-          <h1>{title}</h1>
+          <Title>{title}</Title>
         </PostHeader>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
       </Post>
     </Wrapper>
   )

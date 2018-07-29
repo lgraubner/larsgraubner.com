@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 
 import Link from '../components/Link'
 import P from '../components/Paragraph'
-import { Ul, Li } from '../components/List'
 
 type Props = {
   data: Object
@@ -14,7 +13,8 @@ type Props = {
 const Index = ({ data }: Props) => {
   const author = idx(data, _ => _.site.siteMetadata.author) || ''
   const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
-  const posts = idx(data, _ => _.allMarkdownRemark.edges) || []
+  const latestPost =
+    idx(data, _ => _.allMarkdownRemark.edges[0].node.frontmatter) || {}
 
   const description =
     'Front-end developer from germany. Passionate about React and web performance.'
@@ -39,71 +39,38 @@ const Index = ({ data }: Props) => {
         <meta name="twitter:description" content={description} />
       </Helmet>
       <P>
-        I help realizing great ideas in form of websites and apps, mostly
-        working with JavaScript.
+        At the moment I'm building Apps with React Native for{' '}
+        <Link href="https://www.checkdomain.de">checkdomain</Link> and{' '}
+        <Link href="http://www.idearockers.com/">Idearockers</Link>.
       </P>
 
       <P>
-        At the moment I{"'"}m building an app with React Native powered by a
-        solid REST API.
+        I created{' '}
+        <Link href="https://github.com/lgraubner/sitemap-generator">
+          sitemap-generator
+        </Link>{' '}
+        and a bunch of{' '}
+        <Link href="https://github.com/lgraubner">open source projects</Link>.
       </P>
 
       <P>
-        When I{"'"}m not doing that I{"'"}m spending time with my family or
-        binge watch the latest season of{' '}
-        <Link href="https://www.imdb.com/title/tt2575988/" nofollow>
-          Silicon Valley
-        </Link>.
+        You can find me on{' '}
+        <Link href="https://twitter.com/larsgraubner">Twitter</Link> and{' '}
+        <Link href="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>.
       </P>
 
-      <P>Occasionally I write down my thoughts:</P>
-      <Ul>
-        {posts.map(post => {
-          const title =
-            idx(post, _ => _.node.frontmatter.title) || post.node.url
-          return (
-            <Li key={post.node.frontmatter.url}>
-              <Link href={post.node.frontmatter.url}>{title}</Link>
-            </Li>
-          )
-        })}
-      </Ul>
-
-      <P>You can also find me on a couple other places on the internet.</P>
-
-      <Ul>
-        <Li>
-          follow me on{' '}
-          <Link href="https://twitter.com/larsgraubner">Twitter</Link>
-        </Li>
-        <Li>
-          check out my code on{' '}
-          <Link href="https://github.com/lgraubner?tab=repositories">
-            Github
-          </Link>
-        </Li>
-        <Li>
-          have a look at my{' '}
-          <Link href="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>{' '}
-          and{' '}
-          <Link href="https://www.xing.com/profile/Lars_Graubner2/cv">
-            Xing
-          </Link>{' '}
-          Profile
-        </Li>
-      </Ul>
+      <P>
+        Occasionally I write down <Link href="blog">my thoughts</Link>. My
+        latest writing is: <Link href={latestPost.url}>{latestPost.title}</Link>
+      </P>
 
       <P>
-        If there are any questions left{' '}
+        Any questions left?{' '}
         <Link href="mailto:hello@larsgraubner.com">
-          drop me a line via email
-        </Link>, but please don{"'"}t take an answer for granted.
-      </P>
-
-      <P>
-        PS: Want to work with me? At the moment I{"'"}m not interested in any
-        fulltime job offers. If you have a smaller project though shoot me a
-        message.
+          Drop me a line via email
+        </Link>
+        , but please don
+        {"'"}t take an answer for granted.
       </P>
     </div>
   )
@@ -126,7 +93,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1
+    ) {
       edges {
         node {
           frontmatter {

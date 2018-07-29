@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 const Paragraph = styled.p`
-  font-size: 20px;
-  line-height: 1.5em;
+  font-size: 19px;
+  line-height: 1.65em;
   margin: 0 0 1.5em;
+  color: #444;
 
   &:last-child {
     margin-bottom: 0;
