@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
 import Helmet from 'react-helmet'
@@ -58,8 +58,8 @@ const Headline = styled.div`
 const HeadlineIndex = Headline.withComponent('h1')
 
 type Props = {
-  children: Function,
-  location: Object
+  children: React.Node,
+  index?: boolean
 }
 
 const headline = (
@@ -68,7 +68,7 @@ const headline = (
   </span>
 )
 
-const Template = ({ children, location }: Props) => (
+const Layout = ({ children, index = false }: Props) => (
   <Wrapper>
     <Helmet>
       <html lang="en" />
@@ -91,14 +91,14 @@ const Template = ({ children, location }: Props) => (
         href="/favicon-16x16.png"
       />
     </Helmet>
-    {location.pathname === '/' ? (
+    {index ? (
       <HeadlineIndex>{headline}</HeadlineIndex>
     ) : (
       <Headline>{headline}</Headline>
     )}
 
-    {children()}
+    {children}
   </Wrapper>
 )
 
-export default Template
+export default Layout

@@ -1,12 +1,14 @@
 // @flow
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 
+import Layout from '../components/Layout'
 import { H1 } from '../components/Heading'
 import P from '../components/Paragraph'
 
 const Index = () => (
-  <div>
+  <Layout>
     <Helmet>
       <title>Page not found</title>
     </Helmet>
@@ -16,7 +18,7 @@ const Index = () => (
       site that linked you to the original URL and let them know their link is
       broken.
     </P>
-  </div>
+  </Layout>
 )
 
 export default Index

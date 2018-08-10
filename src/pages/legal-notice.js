@@ -2,11 +2,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import Layout from '../components/Layout'
 import P from '../components/Paragraph'
 import { H1, H2, H3 } from '../components/Heading'
 
 export default () => (
-  <div>
+  <Layout>
     <Helmet>
       <meta name="robots" content="noindex,nofollow" />
     </Helmet>
@@ -15,14 +16,16 @@ export default () => (
       Information provided according to Sec. 5 German Telemedia Act (TMG):
     </H2>
     <P>
-      Lars Graubner<br />
+      Lars Graubner
+      <br />
       <br />
       Süderstr. 8<br />
       23554 Lübeck
     </P>
     <H2>Contact:</H2>
     <P>
-      Telephone: +4917632647303<br />
+      Telephone: +4917632647303
+      <br />
       Email: hello@larsgraubner.com
     </P>
     <H2>
@@ -30,7 +33,8 @@ export default () => (
       Broadcasting Agreement (RstV):
     </H2>
     <P>
-      Lars Graubner<br />
+      Lars Graubner
+      <br />
       Süderstr. 8<br />
       23554 Lübeck
     </P>
@@ -74,8 +78,9 @@ export default () => (
       subject to German copyright laws. Reproduction, editing, distribution as
       well as the use of any kind outside the scope of the copyright law require
       a written permission of the author or originator. Downloads and copies of
-      these websites are permitted for private use only.<br /> The commercial
-      use of our contents without permission of the originator is prohibited.
+      these websites are permitted for private use only.
+      <br /> The commercial use of our contents without permission of the
+      originator is prohibited.
     </P>
     <P>
       Copyright laws of third parties are respected as long as the contents on
@@ -84,5 +89,5 @@ export default () => (
       violations of copyright law, please inform us. Such contents will be
       removed immediately.
     </P>
-  </div>
+  </Layout>
 )

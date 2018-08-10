@@ -38,16 +38,7 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-matomo',
-      options: {
-        siteId: '1',
-        matomoUrl: 'https://analytics.larsgraubner.de',
-        siteUrl: 'https://larsgraubner.com'
-      }
-    },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-feed',

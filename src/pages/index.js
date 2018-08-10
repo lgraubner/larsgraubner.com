@@ -2,7 +2,9 @@
 import React from 'react'
 import idx from 'idx'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 
+import Layout from '../components/Layout'
 import Link from '../components/Link'
 import P from '../components/Paragraph'
 
@@ -19,7 +21,7 @@ const Index = ({ data }: Props) => {
   const description =
     'Front-end developer from germany. Passionate about React and web performance.'
   return (
-    <div>
+    <Layout index>
       <Helmet>
         <title>{`${author} - Front-end developer`}</title>
         <meta name="description" content={description} />
@@ -72,14 +74,14 @@ const Index = ({ data }: Props) => {
         , but please don
         {"'"}t take an answer for granted.
       </P>
-    </div>
+    </Layout>
   )
 }
 
 export default Index
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query {
     site {
       siteMetadata {
         author
