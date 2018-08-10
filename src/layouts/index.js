@@ -40,24 +40,6 @@ const Wrapper = styled.main`
   }
 `
 
-const Footer = styled.footer`
-  margin-top: 80px;
-
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  li {
-    display: inline;
-  }
-
-  li:not(:first-child) {
-    margin-left: 30px;
-  }
-`
-
 const Headline = styled.div`
   font-size: 40px;
   font-weight: 300;
@@ -116,17 +98,6 @@ const Template = ({ children, location }: Props) => (
     )}
 
     {children()}
-
-    <Footer>
-      <ul>
-        <li>
-          <Link href="/legal-notice">Legal Notice</Link>
-        </li>
-        <li>
-          <Link href="/privacy">Privacy Policy</Link>
-        </li>
-      </ul>
-    </Footer>
   </Wrapper>
 )
 

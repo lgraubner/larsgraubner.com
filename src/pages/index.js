@@ -39,7 +39,7 @@ const Index = ({ data }: Props) => {
         <meta name="twitter:description" content={description} />
       </Helmet>
       <P>
-        At the moment I'm building Apps with React Native for{' '}
+        I'm building Apps with React Native at{' '}
         <Link href="https://www.checkdomain.de">checkdomain</Link> and{' '}
         <Link href="http://www.idearockers.com/">Idearockers</Link>.
       </P>
@@ -60,8 +60,8 @@ const Index = ({ data }: Props) => {
       </P>
 
       <P>
-        Occasionally I write down <Link href="blog">my thoughts</Link>. My
-        latest writing is: <Link href={latestPost.url}>{latestPost.title}</Link>
+        Occasionally I write down <Link href="/blog">my thoughts</Link>. My
+        latest writing is <Link href={latestPost.url}>{latestPost.title}</Link>.
       </P>
 
       <P>

@@ -1,13 +1,9 @@
 import styled from 'styled-components'
 
 export const Ul = styled.ul`
-  padding: 0 0 0 2rem;
+  padding: 0;
   margin: 2rem 0;
-  list-style-type: lower-latin;
-
-  &:last-of-type {
-    list-style-type: lower-roman;
-  }
+  list-style: none;
 `
 
 export const Li = styled.li`

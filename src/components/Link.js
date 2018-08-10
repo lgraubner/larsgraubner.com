@@ -10,7 +10,7 @@ const LinkWrapper = styled.span`
     border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 
     &:hover {
-      color: #1d69ff;
+      color: #0056ff;
       border-color: currentColor;
     }
   }
