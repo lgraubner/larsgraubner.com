@@ -3,6 +3,7 @@ import React from 'react'
 import idx from 'idx'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Link from '../components/Link'
@@ -11,6 +12,21 @@ import P from '../components/Paragraph'
 type Props = {
   data: Object
 }
+
+const Big = styled.p`
+  font-size: 74px;
+  font-weight: bold;
+  margin: 0 0 100px;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      border: 0;
+      color: rgba(0, 0, 0, 0.75);
+    }
+  }
+`
 
 const Index = ({ data }: Props) => {
   const author = idx(data, _ => _.site.siteMetadata.author) || ''
@@ -40,11 +56,17 @@ const Index = ({ data }: Props) => {
         />
         <meta name="twitter:description" content={description} />
       </Helmet>
-      <P>
+      <Big>
         I'm building Apps with React Native at{' '}
-        <Link href="https://www.checkdomain.de">checkdomain</Link> and{' '}
-        <Link href="http://www.idearockers.com/">Idearockers</Link>.
-      </P>
+        <Link href="https://www.checkdomain.de" rel="nofollow">
+          checkdomain
+        </Link>{' '}
+        and{' '}
+        <Link href="http://www.idearockers.com/" rel="nofollow">
+          Idearockers
+        </Link>
+        .
+      </Big>
 
       <P>
         I created{' '}

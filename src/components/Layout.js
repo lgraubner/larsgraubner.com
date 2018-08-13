@@ -26,50 +26,39 @@ injectGlobal`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     -webkit-font-smoothing: antialiased;
-    color: rgba(0, 0, 0, 0.8);
+    color: #000;
     margin: 0;
   }
 `
 
-const Wrapper = styled.main`
-  max-width: 480px;
-  margin: 4rem 5%;
-
-  @media (min-width: 768px) {
-    margin: 8rem;
-  }
+const Content = styled.main`
+  max-width: 960px;
+  margin: 200px auto;
 `
 
-const Headline = styled.div`
-  font-size: 40px;
-  font-weight: 300;
+const Header = styled.header`
+  position: fixed;
+  top: 75px;
+  width: 100%;
+  padding: 0 70px;
+`
+
+const Name = styled.div`
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.25em;
-  margin: 0 0 1em;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-
-  a {
-    color: rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
-    text-decoration: none;
-  }
+  margin: 0;
 `
 
-const HeadlineIndex = Headline.withComponent('h1')
+const NameIndex = Name.withComponent('h1')
 
 type Props = {
   children: React.Node,
   index?: boolean
 }
 
-const headline = (
-  <span>
-    Hi I{"'"}m <Link href="/">Lars</Link>.
-  </span>
-)
-
 const Layout = ({ children, index = false }: Props) => (
-  <Wrapper>
+  <>
     <Helmet>
       <html lang="en" />
       <meta name="robots" content="index,follow" />
@@ -91,14 +80,20 @@ const Layout = ({ children, index = false }: Props) => (
         href="/favicon-16x16.png"
       />
     </Helmet>
-    {index ? (
-      <HeadlineIndex>{headline}</HeadlineIndex>
-    ) : (
-      <Headline>{headline}</Headline>
-    )}
+    <Header>
+      {index ? (
+        <NameIndex>
+          <Link href="/">Lars Graubner</Link>
+        </NameIndex>
+      ) : (
+        <Name>
+          <Link href="/">Lars Graubner</Link>
+        </Name>
+      )}
+    </Header>
 
-    {children}
-  </Wrapper>
+    <Content>{children}</Content>
+  </>
 )
 
 export default Layout

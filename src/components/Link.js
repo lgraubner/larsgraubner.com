@@ -5,25 +5,29 @@ import styled from 'styled-components'
 
 const LinkWrapper = styled.span`
   a {
-    color: rgba(0, 0, 0, 0.8);
+    color: #000;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 
     &:hover {
-      color: #0056ff;
-      border-color: currentColor;
+      border-bottom: 2px solid currentColor;
     }
   }
 `
 
-export default ({ href, children, nofollow = false }) => (
+export default ({ href, children, nofollow = false, ...props }) => (
   <LinkWrapper>
     {isAbsolute(href) ? (
-      <a href={href} rel={`noopener noreferrer${nofollow ? ' nofollow' : ''}`}>
+      <a
+        href={href}
+        rel={`noopener noreferrer${nofollow ? ' nofollow' : ''}`}
+        {...props}
+      >
         {children}
       </a>
     ) : (
-      <Link to={href}>{children}</Link>
+      <Link to={href} {...props}>
+        {children}
+      </Link>
     )}
   </LinkWrapper>
 )
