@@ -17,13 +17,15 @@ const Big = styled.p`
   font-size: 74px;
   font-weight: bold;
   margin: 0 0 100px;
+  line-height: 1.2em;
 
   a {
     text-decoration: underline;
+    color: hsl(0, 0%, 0%);
 
     &:hover {
       border: 0;
-      color: rgba(0, 0, 0, 0.75);
+      color: hsla(0, 0%, 0%, 0.75);
     }
   }
 `
@@ -58,11 +60,11 @@ const Index = ({ data }: Props) => {
       </Helmet>
       <Big>
         I'm building Apps with React Native at{' '}
-        <Link href="https://www.checkdomain.de" rel="nofollow">
+        <Link to="https://www.checkdomain.de" rel="nofollow">
           checkdomain
         </Link>{' '}
         and{' '}
-        <Link href="http://www.idearockers.com/" rel="nofollow">
+        <Link to="http://www.idearockers.com/" rel="nofollow">
           Idearockers
         </Link>
         .
@@ -70,29 +72,27 @@ const Index = ({ data }: Props) => {
 
       <P>
         I created{' '}
-        <Link href="https://github.com/lgraubner/sitemap-generator">
+        <Link to="https://github.com/lgraubner/sitemap-generator">
           sitemap-generator
         </Link>{' '}
         and a bunch of{' '}
-        <Link href="https://github.com/lgraubner">open source projects</Link>.
+        <Link to="https://github.com/lgraubner">open source projects</Link>.
       </P>
 
       <P>
         You can find me on{' '}
-        <Link href="https://twitter.com/larsgraubner">Twitter</Link> and{' '}
-        <Link href="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>.
+        <Link to="https://twitter.com/larsgraubner">Twitter</Link> and{' '}
+        <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>.
       </P>
 
       <P>
-        Occasionally I write down <Link href="/blog">my thoughts</Link>. My
-        latest writing is <Link href={latestPost.url}>{latestPost.title}</Link>.
+        Occasionally I write down <Link to="/blog">my thoughts</Link>. My latest
+        writing is <Link to={latestPost.url}>{latestPost.title}</Link>.
       </P>
 
       <P>
         Any questions left?{' '}
-        <Link href="mailto:hello@larsgraubner.com">
-          Drop me a line via email
-        </Link>
+        <Link to="mailto:hello@larsgraubner.com">Drop me a line via email</Link>
         , but please don
         {"'"}t take an answer for granted.
       </P>

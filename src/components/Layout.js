@@ -26,8 +26,7 @@ injectGlobal`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     -webkit-font-smoothing: antialiased;
-    color: #000;
-    margin: 0;
+    color: hsl(0, 0%, 0%);
   }
 `
 
@@ -48,9 +47,63 @@ const Name = styled.div`
   font-weight: 700;
   line-height: 1.25em;
   margin: 0;
+
+  a {
+    color: hsl(0, 0%, 0%);
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 2px solid currentColor;
+    }
+  }
 `
 
 const NameIndex = Name.withComponent('h1')
+
+const Footer = styled.footer`
+  max-width: 960px;
+  margin: 60px auto 100px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline;
+    margin-right: 60px;
+  }
+
+  a {
+    font-weight: 600;
+    font-size: 16px;
+    color: hsl(0, 0%, 0%);
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 2px solid currentColor;
+    }
+  }
+`
+const Big = styled.p`
+  font-size: 74px;
+  font-weight: bold;
+  margin: 0 0 100px;
+  line-height: 1.2em;
+  border-top: 1px solid hsl(0, 0%, 90%);
+  padding-top: 80px;
+
+  a {
+    text-decoration: underline;
+    color: hsl(0, 0%, 0%);
+
+    &:hover {
+      border: 0;
+      color: hsla(0, 0%, 0%, 0.75);
+    }
+  }
+`
 
 type Props = {
   children: React.Node,
@@ -79,20 +132,39 @@ const Layout = ({ children, index = false }: Props) => (
         sizes="16x16"
         href="/favicon-16x16.png"
       />
+      <link
+        href="https://fonts.googleapis.com/css?family=Lora"
+        rel="stylesheet"
+      />
     </Helmet>
     <Header>
       {index ? (
         <NameIndex>
-          <Link href="/">Lars Graubner</Link>
+          <Link to="/">Lars Graubner</Link>
         </NameIndex>
       ) : (
         <Name>
-          <Link href="/">Lars Graubner</Link>
+          <Link to="/">Lars Graubner</Link>
         </Name>
       )}
     </Header>
 
     <Content>{children}</Content>
+
+    <Footer>
+      <Big>Work inquiry, question or something else? Email me.</Big>
+      <ul>
+        <li>
+          <Link to="https://twitter.com/larsgraubner">Twitter</Link>
+        </li>
+        <li>
+          <Link to="https://github.com/lgraubner">Github</Link>
+        </li>
+        <li>
+          <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>
+        </li>
+      </ul>
+    </Footer>
   </>
 )
 

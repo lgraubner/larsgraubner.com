@@ -3,17 +3,20 @@ import styled from 'styled-components'
 const Paragraph = styled.p`
   font-size: 19px;
   line-height: 1.65em;
-  margin: 0 0 1.5em;
-  color: #444;
+  margin: 0 auto 1.5em;
+  color: hsl(0, 0%, 33%);
+  max-width: 640px;
 
   &:last-child {
     margin-bottom: 0;
   }
 
   a {
-    color: rgba(0, 0, 0, 0.8);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    color: hsl(0, 0%, 33%);
+
+    &:hover {
+      color: hsl(0, 0%, 20%);
+    }
   }
 `
 

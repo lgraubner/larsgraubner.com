@@ -16,7 +16,7 @@ const MarkdownContent = styled.div`
   }
 
   p {
-    color: #444;
+    color: hsl(0, 0%, 27%) #;
     font-size: 19px;
     line-height: 1.65em;
     margin: 0 0 1.5em;
@@ -26,9 +26,9 @@ const MarkdownContent = styled.div`
     }
 
     a {
-      color: rgba(0, 0, 0, 0.8);
+      color: hsla(0, 0%, 0%, 0.8);
       text-decoration: none;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid currentColor;
 
       &:hover {
         color: #d006bf;
