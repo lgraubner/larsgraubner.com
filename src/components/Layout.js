@@ -33,14 +33,35 @@ injectGlobal`
 
 const Content = styled.main`
   max-width: 960px;
-  margin: 200px auto;
+  margin: 105px auto;
+  padding: 0 5%;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+
+  @media screen and (min-width: 1400px) {
+    margin-top: 200px;
+  }
 `
 
 const Header = styled.header`
-  position: fixed;
-  top: 75px;
-  width: 100%;
-  padding: 0 70px;
+  width: 960px;
+  margin: 75px auto 0;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 1400px) {
+    width: 100%;
+    position: fixed;
+    padding: 0 70px;
+    margin: 0;
+    top: 75px;
+    display: block;
+  }
 `
 
 const Name = styled.div`
@@ -60,6 +81,39 @@ const Name = styled.div`
 `
 
 const NameIndex = Name.withComponent('h1')
+
+const Nav = styled.nav`
+  @media screen and (min-width: 1400px) {
+    margin-top: 40px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    margin-left: 60px;
+
+    @media screen and (min-width: 1400px) {
+      display: block;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+
+  a {
+    color: hsl(0, 0%, 33%);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      color: hsl(0, 0%, 0%);
+    }
+  }
+`
 
 const Footer = styled.footer`
   max-width: 960px;
@@ -134,6 +188,19 @@ const Layout = ({ children, index = false }: Props) => (
           <Link to="/">Lars Graubner</Link>
         </Name>
       )}
+      <Nav>
+        <ul>
+          <li>
+            <Link to="/">About</Link>
+          </li>
+          <li>
+            <Link to="/">Work</Link>
+          </li>
+          <li>
+            <Link to="blog">Blog</Link>
+          </li>
+        </ul>
+      </Nav>
     </Header>
 
     <Content>{children}</Content>

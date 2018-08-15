@@ -3,7 +3,6 @@ import React from 'react'
 import idx from 'idx'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Link from '../components/Link'
@@ -54,13 +53,9 @@ const Index = ({ data }: Props) => {
         .
       </Hero>
 
-      <P>
-        I created{' '}
-        <Link to="https://github.com/lgraubner/sitemap-generator">
-          sitemap-generator
-        </Link>{' '}
-        and a bunch of{' '}
-        <Link to="https://github.com/lgraubner">open source projects</Link>.
+      <P bold>
+        Hi, I'm Lars. I'm a Front-end developer from Germany focusing on React,
+        React Native and Node.js.
       </P>
 
       <P>
