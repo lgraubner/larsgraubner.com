@@ -8,6 +8,7 @@ import Helmet from 'react-helmet'
 import 'prism-themes/themes/prism-atom-dark.css'
 
 import Link from '../components/Link'
+import Hero from '../components/Hero'
 
 // eslint-disable-next-line
 injectGlobal`
@@ -63,7 +64,11 @@ const NameIndex = Name.withComponent('h1')
 const Footer = styled.footer`
   max-width: 960px;
   margin: 60px auto 100px;
+  border-top: 1px solid hsl(0, 0%, 90%);
+  padding-top: 80px;
+`
 
+const FooterNav = styled.nav`
   ul {
     list-style: none;
     padding: 0;
@@ -83,24 +88,6 @@ const Footer = styled.footer`
 
     &:hover {
       border-bottom: 2px solid currentColor;
-    }
-  }
-`
-const Big = styled.p`
-  font-size: 74px;
-  font-weight: bold;
-  margin: 0 0 100px;
-  line-height: 1.2em;
-  border-top: 1px solid hsl(0, 0%, 90%);
-  padding-top: 80px;
-
-  a {
-    text-decoration: underline;
-    color: hsl(0, 0%, 0%);
-
-    &:hover {
-      border: 0;
-      color: hsla(0, 0%, 0%, 0.75);
     }
   }
 `
@@ -152,18 +139,24 @@ const Layout = ({ children, index = false }: Props) => (
     <Content>{children}</Content>
 
     <Footer>
-      <Big>Work inquiry, question or something else? Email me.</Big>
-      <ul>
-        <li>
-          <Link to="https://twitter.com/larsgraubner">Twitter</Link>
-        </li>
-        <li>
-          <Link to="https://github.com/lgraubner">Github</Link>
-        </li>
-        <li>
-          <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>
-        </li>
-      </ul>
+      <Hero>
+        Work inquiry, question or something else?{' '}
+        <Link to="mailto:mail@larsgraubner.de">Email me</Link>.
+      </Hero>
+
+      <FooterNav>
+        <ul>
+          <li>
+            <Link to="https://twitter.com/larsgraubner">Twitter</Link>
+          </li>
+          <li>
+            <Link to="https://github.com/lgraubner">Github</Link>
+          </li>
+          <li>
+            <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>
+          </li>
+        </ul>
+      </FooterNav>
     </Footer>
   </>
 )

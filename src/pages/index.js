@@ -8,27 +8,11 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import P from '../components/Paragraph'
+import Hero from '../components/Hero'
 
 type Props = {
   data: Object
 }
-
-const Big = styled.p`
-  font-size: 74px;
-  font-weight: bold;
-  margin: 0 0 100px;
-  line-height: 1.2em;
-
-  a {
-    text-decoration: underline;
-    color: hsl(0, 0%, 0%);
-
-    &:hover {
-      border: 0;
-      color: hsla(0, 0%, 0%, 0.75);
-    }
-  }
-`
 
 const Index = ({ data }: Props) => {
   const author = idx(data, _ => _.site.siteMetadata.author) || ''
@@ -58,7 +42,7 @@ const Index = ({ data }: Props) => {
         />
         <meta name="twitter:description" content={description} />
       </Helmet>
-      <Big>
+      <Hero>
         I'm building Apps with React Native at{' '}
         <Link to="https://www.checkdomain.de" rel="nofollow">
           checkdomain
@@ -68,7 +52,7 @@ const Index = ({ data }: Props) => {
           Idearockers
         </Link>
         .
-      </Big>
+      </Hero>
 
       <P>
         I created{' '}
