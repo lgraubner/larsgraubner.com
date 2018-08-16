@@ -5,12 +5,9 @@ import styled from 'styled-components'
 import idx from 'idx'
 import { graphql } from 'gatsby'
 
+import Layout from '../components/Layout'
+import Content from '../components/Content'
 import MarkdownContent from '../components/MarkdownContent'
-
-const Wrapper = styled.div`
-  max-width: 620px;
-  margin: 0 auto 8rem;
-`
 
 const PostHeader = styled.header`
   margin-bottom: 2rem;
@@ -54,7 +51,7 @@ const BlogPostTemplate = ({ data, location }: Props) => {
   const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
 
   return (
-    <Wrapper>
+    <Layout>
       <Helmet>
         <title>{post.frontmatter.title}</title>
         <meta name="description" content={post.frontmatter.description} />
@@ -102,9 +99,11 @@ const BlogPostTemplate = ({ data, location }: Props) => {
           <Date>{date}</Date>
           <Title>{title}</Title>
         </PostHeader>
-        <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Content>
+          <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Content>
       </Post>
-    </Wrapper>
+    </Layout>
   )
 }
 

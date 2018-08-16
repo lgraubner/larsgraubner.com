@@ -6,26 +6,27 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
-import { H1 } from '../components/Heading'
 import Link from '../components/Link'
-import { Ul, Li } from '../components/List'
+import Hero from '../components/Hero'
+import Content from '../components/Content'
 
 type Props = {
   data: Object
 }
 
 const PostSnippet = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 `
 
 const PostTitle = styled.h2`
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   margin: 0 0 8px;
+  line-height: 1.3em;
 
   a {
     text-decoration: none;
-    border: 0;
+    color: hsl(0, 0%, 0%);
 
     &:hover {
       text-decoration: underline;
@@ -35,9 +36,11 @@ const PostTitle = styled.h2`
 `
 
 const PostMeta = styled.div`
-  font-size: 16px;
-  line-height: 1.5em;
-  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 0.5em;
+  line-height: 1em;
+  font-weight: 500;
+  color: hsl(0, 0%, 30%);
 `
 
 export default ({ data }: Props) => {
@@ -49,17 +52,19 @@ export default ({ data }: Props) => {
         <meta name="robots" content="noindex,nofollow" />
         <title>Writing</title>
       </Helmet>
-      <H1>Writing</H1>
-      {posts.map(post => (
-        <PostSnippet key={post.node.frontmatter.url}>
-          <PostTitle>
-            <Link href={post.node.frontmatter.url}>
-              {post.node.frontmatter.title}
-            </Link>
-          </PostTitle>
-          <PostMeta>{post.node.frontmatter.date}</PostMeta>
-        </PostSnippet>
-      ))}
+      <Hero>Random thoughts, ramblings and technical stuff</Hero>
+      <Content>
+        {posts.map(post => (
+          <PostSnippet key={post.node.frontmatter.url}>
+            <PostMeta>{post.node.frontmatter.date}</PostMeta>
+            <PostTitle>
+              <Link to={post.node.frontmatter.url}>
+                {post.node.frontmatter.title}
+              </Link>
+            </PostTitle>
+          </PostSnippet>
+        ))}
+      </Content>
     </Layout>
   )
 }

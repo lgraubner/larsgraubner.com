@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 import Link from '../components/Link'
 import P from '../components/Paragraph'
 import Hero from '../components/Hero'
+import Content from '../components/Content'
 
 type Props = {
   data: Object
@@ -53,28 +54,32 @@ const Index = ({ data }: Props) => {
         .
       </Hero>
 
-      <P bold>
-        Hi, I'm Lars. I'm a Front-end developer from Germany focusing on React,
-        React Native and Node.js.
-      </P>
+      <Content>
+        <P bold>
+          Hi, I'm Lars. I'm a Front-end developer from Germany focusing on
+          React, React Native and Node.js.
+        </P>
 
-      <P>
-        You can find me on{' '}
-        <Link to="https://twitter.com/larsgraubner">Twitter</Link> and{' '}
-        <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>.
-      </P>
+        <P>
+          You can find me on{' '}
+          <Link to="https://twitter.com/larsgraubner">Twitter</Link> and{' '}
+          <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>.
+        </P>
 
-      <P>
-        Occasionally I write down <Link to="/blog">my thoughts</Link>. My latest
-        writing is <Link to={latestPost.url}>{latestPost.title}</Link>.
-      </P>
+        <P>
+          Occasionally I write down <Link to="/blog">my thoughts</Link>. My
+          latest writing is <Link to={latestPost.url}>{latestPost.title}</Link>.
+        </P>
 
-      <P>
-        Any questions left?{' '}
-        <Link to="mailto:hello@larsgraubner.com">Drop me a line via email</Link>
-        , but please don
-        {"'"}t take an answer for granted.
-      </P>
+        <P>
+          Any questions left?{' '}
+          <Link to="mailto:hello@larsgraubner.com">
+            Drop me a line via email
+          </Link>
+          , but please don
+          {"'"}t take an answer for granted.
+        </P>
+      </Content>
     </Layout>
   )
 }
