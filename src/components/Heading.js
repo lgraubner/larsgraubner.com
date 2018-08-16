@@ -18,3 +18,12 @@ export const H3 = H1.withComponent('h3').extend`
   font-weight: bold;
   margin: 2rem 0 1rem;
 `
+
+export default styled.h3`
+  color: hsl(0, 0%, 60%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 30px;
+`

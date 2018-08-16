@@ -9,6 +9,7 @@ import Link from '../components/Link'
 import P from '../components/Paragraph'
 import Hero from '../components/Hero'
 import Content from '../components/Content'
+import Heading from '../components/Heading'
 
 type Props = {
   data: Object
@@ -55,6 +56,7 @@ const Index = ({ data }: Props) => {
       </Hero>
 
       <Content>
+        <Heading>Introduction</Heading>
         <P bold>
           Hi, I'm Lars. I'm a Front-end developer from Germany focusing on
           React, React Native and Node.js.

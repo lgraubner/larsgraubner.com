@@ -49,13 +49,12 @@ const MarkdownContent = styled.div`
   }
 
   .gatsby-highlight {
-    margin: 2rem 0 2rem -4%;
-    width: 108%;
+    margin: 2rem 0 2rem;
 
     pre {
       margin: 0;
       border-radius: 3px;
-      padding: 20px 4%;
+      padding: 20px 20px;
       font-size: 0.85rem;
     }
   }

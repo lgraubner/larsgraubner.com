@@ -9,6 +9,7 @@ import Layout from '../components/Layout'
 import Link from '../components/Link'
 import Hero from '../components/Hero'
 import Content from '../components/Content'
+import Heading from '../components/Heading'
 
 type Props = {
   data: Object
@@ -40,7 +41,7 @@ const PostMeta = styled.div`
   margin-bottom: 0.5em;
   line-height: 1em;
   font-weight: 500;
-  color: hsl(0, 0%, 30%);
+  color: hsl(0, 0%, 40%);
 `
 
 export default ({ data }: Props) => {
@@ -54,6 +55,7 @@ export default ({ data }: Props) => {
       </Helmet>
       <Hero>Random thoughts, ramblings and technical stuff</Hero>
       <Content>
+        <Heading>Writing</Heading>
         {posts.map(post => (
           <PostSnippet key={post.node.frontmatter.url}>
             <PostMeta>{post.node.frontmatter.date}</PostMeta>
