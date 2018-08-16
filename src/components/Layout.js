@@ -31,36 +31,48 @@ injectGlobal`
   }
 `
 
-const Content = styled.main`
-  max-width: 960px;
-  margin: 105px auto;
+const Container = styled.div`
   padding: 0 5%;
 
-  @media screen and (min-width: 768px) {
-    padding: 0;
+  @media (min-width: 768px) {
+    padding: 0 40px;
+  }
+`
+
+const Content = styled.main`
+  max-width: 960px;
+  margin: 50px auto;
+
+  @media (min-width: 768px) {
+    margin: 105px auto;
   }
 
-  @media screen and (min-width: 1400px) {
+  @media (min-width: 1400px) {
     margin-top: 200px;
   }
 `
 
 const Header = styled.header`
-  width: 960px;
-  margin: 75px auto 0;
+  max-width: 960px;
+  margin: 40px auto 0;
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  @media screen and (min-width: 1400px) {
+  @media (min-width: 768px) {
+    margin-top: 75px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: none;
     width: 100%;
     position: fixed;
     padding: 0 70px;
     margin: 0;
     top: 75px;
-    display: block;
+    left: 0;
   }
 `
 
@@ -83,10 +95,6 @@ const Name = styled.div`
 const NameIndex = Name.withComponent('h1')
 
 const Nav = styled.nav`
-  @media screen and (min-width: 1400px) {
-    margin-top: 40px;
-  }
-
   ul {
     list-style: none;
     margin: 0;
@@ -96,12 +104,6 @@ const Nav = styled.nav`
   li {
     display: inline;
     margin-left: 60px;
-
-    @media screen and (min-width: 1400px) {
-      display: block;
-      margin-left: 0;
-      margin-top: 20px;
-    }
   }
 
   a {
@@ -117,9 +119,14 @@ const Nav = styled.nav`
 
 const Footer = styled.footer`
   max-width: 960px;
-  margin: 60px auto 100px;
+  margin: 30px auto 100px;
   border-top: 1px solid hsl(0, 0%, 90%);
-  padding-top: 80px;
+  padding-top: 50px;
+
+  @media (min-width: 768px) {
+    margin-top: 60px;
+    padding-top: 80px;
+  }
 `
 
 const FooterNav = styled.nav`
@@ -152,7 +159,7 @@ type Props = {
 }
 
 const Layout = ({ children, index = false }: Props) => (
-  <>
+  <Container>
     <Helmet>
       <html lang="en" />
       <meta name="robots" content="index,follow" />
@@ -194,9 +201,6 @@ const Layout = ({ children, index = false }: Props) => (
             <Link to="/">About</Link>
           </li>
           <li>
-            <Link to="/">Work</Link>
-          </li>
-          <li>
             <Link to="blog">Blog</Link>
           </li>
         </ul>
@@ -225,7 +229,7 @@ const Layout = ({ children, index = false }: Props) => (
         </ul>
       </FooterNav>
     </Footer>
-  </>
+  </Container>
 )
 
 export default Layout
