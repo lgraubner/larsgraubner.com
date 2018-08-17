@@ -2,10 +2,10 @@
 categories:
   - Tooling
 date: 2016-10-09T08:00:06+00:00
-description: "This article explains how to easily picture your projects folder structure using the command line programm tree for unix systems."
-title: "Using tree to picture folder structures"
-url: /tree-picture-folder-structures/
+description: This article explains how to easily picture your projects folder structure using the command line programm tree for unix systems.
+title: Using tree to picture folder structures
 ---
+
 A couple days ago I was documenting the architecture of a website and wanted to write down the folder structure on a wiki page. After struggling with writing it down by hand which was not quite readable I searched for other solutions and found the handy tool tree.
 
 `tree` is a simple cli tool for unix systems to print folder structures recursively to the console. It can be installed on macOS via [homebrew][1] and is also available for all common Linux distributions.
@@ -52,5 +52,5 @@ For a lot more options you can checkout the [ubuntuusers Wiki][2] or type `man t
 
 `tree` is a simple to use tool to quickly document folder structures. I clearly recommend this for readable directory listings in documentations. I'm regularly using it.
 
- [1]: http://brew.sh/
- [2]: https://wiki.ubuntuusers.de/tree/
+[1]: http://brew.sh/
+[2]: https://wiki.ubuntuusers.de/tree/

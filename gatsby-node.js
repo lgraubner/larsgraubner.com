@@ -25,11 +25,17 @@ exports.createPages = ({ graphql, actions }) =>
       graphql(
         `
           {
-            allMarkdownRemark(limit: 1000) {
+            allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: DESC }
+              limit: 1000
+            ) {
               edges {
                 node {
+                  fields {
+                    slug
+                  }
                   frontmatter {
-                    url
+                    title
                   }
                 }
               }
@@ -38,18 +44,15 @@ exports.createPages = ({ graphql, actions }) =>
         `
       ).then(result => {
         if (result.errors) {
-          // eslint-disable-next-line
-          console.log(result.errors)
           reject(result.errors)
         }
 
-        // Create blog posts pages.
-        result.data.allMarkdownRemark.edges.map(edge =>
+        result.data.allMarkdownRemark.edges.map(post =>
           actions.createPage({
-            path: edge.node.frontmatter.url,
+            path: post.node.frontmatter.url || post.node.fields.slug,
             component: blogPost,
             context: {
-              url: edge.node.frontmatter.path
+              slug: post.node.fields.slug
             }
           })
         )
@@ -57,13 +60,13 @@ exports.createPages = ({ graphql, actions }) =>
     )
   })
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode })
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value
     })

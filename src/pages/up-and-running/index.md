@@ -2,10 +2,10 @@
 categories:
   - Blog
 date: 2016-10-08T09:00:52+00:00
-description: "Announcing my new blog and website! After years of unsatisfying approaches and several restarts I can present a result I'm happy with."
-title: "Up and running"
-url: /up-and-running/
+description: Announcing my new blog and website! After years of unsatisfying approaches and several restarts I can present a result I'm happy with.
+title: Up and running
 ---
+
 I'm proud to announce my new blog and website! 🎉 After years of unsatisfying approaches and several restarts I can present a result I'm happy with.
 
 To represent myself in the world wide web I always wanted to built a website for myself. I found this quite difficult as I'm always striving for perfection. A lot of approaches have been made, but at some point I always were unsure about the design or the technology used and threw it away.
@@ -18,9 +18,9 @@ In the past I gave the static site generator [Jekyll](https://jekyllrb.com/) a t
 
 Therefore I'm using WordPress which I'm quite familiar with. It helps me to focus on content and features instead of basic tasks.
 
-I tried to create a clean layout focusing on the content and a good reading experience. I'm a big fan of minimalist approaches. Aside of this I try to optimize for speed a lot reducing unnecessary requests and use extensive caching. For hosting I'm using <a href="https://m.do.co/c/8f80e84ee2a2" target="_blank">Digital Ocean</a>* as it's very easy to use and manage.
+I tried to create a clean layout focusing on the content and a good reading experience. I'm a big fan of minimalist approaches. Aside of this I try to optimize for speed a lot reducing unnecessary requests and use extensive caching. For hosting I'm using <a href="https://m.do.co/c/8f80e84ee2a2" target="_blank">Digital Ocean</a>\* as it's very easy to use and manage.
 
-<em style="font-size: 14px">* Affiliate link, supports my costs hosting this blog.</em>
+<em style="font-size: 14px">\* Affiliate link, supports my costs hosting this blog.</em>
 
 ## What I'm blogging about
 
@@ -30,6 +30,6 @@ This blog will be about anything I encounter daily as developer. This may be pro
 
 I have several more Features in mind for this site which will come soon. This is the so called _minimum viable product_ serving you the most important part: The content. This will be my playground to test out cutting edge technology and writing about it. Stay tuned!
 
-## *Update:*
+## _Update:_
 
 As of now this blog is powered by [Hugo](https://gohugo.io), a static site generator written in Go. It's amazingly fast and has everything you need builtin. Wordpress had too much overhead in terms of deployment, database and development environment. Now it's much simpler to build and deploy, couldn't be happier.

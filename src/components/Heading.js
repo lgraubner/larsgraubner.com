@@ -25,5 +25,5 @@ export default styled.h3`
   letter-spacing: 2px;
   font-size: 14px;
   font-weight: 600;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
 `

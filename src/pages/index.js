@@ -18,8 +18,6 @@ type Props = {
 const Index = ({ data }: Props) => {
   const author = idx(data, _ => _.site.siteMetadata.author) || ''
   const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
-  const latestPost =
-    idx(data, _ => _.allMarkdownRemark.edges[0].node.frontmatter) || {}
 
   const description =
     'Front-end developer from germany. Passionate about React and web performance.'
@@ -69,11 +67,6 @@ const Index = ({ data }: Props) => {
         </P>
 
         <P>
-          Occasionally I write down <Link to="/blog">my thoughts</Link>. My
-          latest writing is <Link to={latestPost.url}>{latestPost.title}</Link>.
-        </P>
-
-        <P>
           Any questions left?{' '}
           <Link to="mailto:hello@larsgraubner.com">
             Drop me a line via email
@@ -94,26 +87,6 @@ export const pageQuery = graphql`
       siteMetadata {
         author
         siteUrl
-      }
-    }
-    file(relativePath: { eq: "lars-180x180.jpg" }) {
-      childImageSharp {
-        resolutions(width: 90, height: 90, quality: 90) {
-          ...GatsbyImageSharpResolutions_tracedSVG
-        }
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1
-    ) {
-      edges {
-        node {
-          frontmatter {
-            url
-            title
-          }
-        }
       }
     }
   }

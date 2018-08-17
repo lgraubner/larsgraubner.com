@@ -3,10 +3,10 @@ categories:
   - JavaScript
   - React
 date: 2016-10-18T14:15:24+00:00
-description: "Sometimes it's useful to detect clicks outside of a React component. Learn how to achieve this by attaching an native event handler to the document."
-title: "Handle clicks outside of React components"
-url: /handle-outside-clicks-react/
+description: Sometimes it's useful to detect clicks outside of a React component. Learn how to achieve this by attaching an native event handler to the document.
+title: Handle clicks outside of React components
 ---
+
 Sometimes it's useful to detect clicks outside of a React component to alter its state. A common use case could be a popover which should close if clicked outside of it. This post describes how to implement this into your React component.
 
 As a developer you want to guarantee an excellent user experience, so you have to satisfy the habits of them. Taking a popover as example, users expect to close it when they click outside of it. Using React we now have a problem. Everything outside of the component is not in the scope of it's event listeners. You could try to catch the clicks on the parent components and pass it through, but this adds a lot of bloat. Another attempt could be to add an invisible overlay which catches the click. But this requires the user to click twice to interact with something else on the page.
@@ -16,36 +16,30 @@ To solve this problem we avoid the React Event System. React builds a wrapper ar
 ```javascript
 class Popover extends React.Component {
   constructor() {
-    super();
+    super()
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
 
     this.state = {
       popupVisible: false
-    };
+    }
   }
 
   handleClick() {
     this.setState(prevState => ({
-       popupVisible: !prevState.popupVisible,
-    }));
+      popupVisible: !prevState.popupVisible
+    }))
   }
 
   render() {
     return (
       <div>
-        <button
-          onClick={this.handleClick}
-        >
-          Toggle Popover
-        </button>
+        <button onClick={this.handleClick}>Toggle Popover</button>
         {this.state.popupVisible && (
-          <div className="popover">
-            I'm a popover!
-         </div>
-         )}
+          <div className="popover">I'm a popover!</div>
+        )}
       </div>
-    );
+    )
   }
 }
 ```
@@ -121,6 +115,6 @@ And that's it. By being able to catch clicks outside of your component you can d
 
 As you can see it's not that hard to detect clicks outside of a React component, although it's a little ugly as you have to bypass the React event system. Make sure to clean up behind you and not leaving dozens of event listeners on your `document`.
 
- [1]: https://facebook.github.io/react/docs/more-about-refs.html
- [2]: https://facebook.github.io/react/docs/reusable-components.html#stateless-functions
- [3]: http://codepen.io/graubnla/pen/EgdgZm
+[1]: https://facebook.github.io/react/docs/more-about-refs.html
+[2]: https://facebook.github.io/react/docs/reusable-components.html#stateless-functions
+[3]: http://codepen.io/graubnla/pen/EgdgZm

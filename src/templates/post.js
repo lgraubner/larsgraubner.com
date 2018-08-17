@@ -43,7 +43,7 @@ type Props = {
   location: Object
 }
 
-const BlogPostTemplate = ({ data, location }: Props) => {
+const PostTemplate = ({ data, location }: Props) => {
   const post = data.markdownRemark
   const { description, title, date, dateRaw } =
     idx(data, _ => _.markdownRemark.frontmatter) || {}
@@ -107,7 +107,7 @@ const BlogPostTemplate = ({ data, location }: Props) => {
   )
 }
 
-export default BlogPostTemplate
+export default PostTemplate
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -117,21 +117,13 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    markdownRemark(frontmatter: { url: { eq: $path } }) {
+    markdownRemark(fields: { slug: { eq: $path } }) {
       id
       html
       frontmatter {
         title
         description
         date(formatString: "MMMM DD, YYYY")
-        dateRaw: date
-      }
-    }
-    file(relativePath: { eq: "apple-touch-icon.png" }) {
-      childImageSharp {
-        resolutions(width: 40, height: 40) {
-          ...GatsbyImageSharpResolutions_tracedSVG
-        }
       }
     }
   }

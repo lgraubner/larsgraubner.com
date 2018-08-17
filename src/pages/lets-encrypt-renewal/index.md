@@ -2,9 +2,8 @@
 categories:
   - nginx
 date: 2017-08-11T22:00:00+00:00
-description: "Recently I struggled setting up Let's Encrypt certificate renewal with nginx. It would not authorize due to HTTPS redirection. This is how I fixed it."
-title: "Let's Encrypt certificate renewal with nginx"
-url: /lets-encrypt-renewal-nginx/
+description: Recently I struggled setting up Let's Encrypt certificate renewal with nginx. It would not authorize due to HTTPS redirection. This is how I fixed it.
+title: Let's Encrypt certificate renewal with nginx
 ---
 
 Recently I struggled setting up Let's Encrypt certificate renewal with nginx on this site. If you didn't hear about Let's Encrypt you should [check out their website](https://letsencrypt.org/). They offer free SSL certificates, so there is no valid reason to not have an SSL certificate anymore. There are various tutorials on [how to setup Let's encrypt with nginx](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04).

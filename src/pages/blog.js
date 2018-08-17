@@ -9,7 +9,6 @@ import Layout from '../components/Layout'
 import Link from '../components/Link'
 import Hero from '../components/Hero'
 import Content from '../components/Content'
-import Heading from '../components/Heading'
 
 type Props = {
   data: Object
@@ -55,12 +54,11 @@ export default ({ data }: Props) => {
       </Helmet>
       <Hero>Random thoughts, ramblings and technical stuff</Hero>
       <Content>
-        <Heading>Writing</Heading>
         {posts.map(post => (
-          <PostSnippet key={post.node.frontmatter.url}>
+          <PostSnippet key={post.node.fields.slug}>
             <PostMeta>{post.node.frontmatter.date}</PostMeta>
             <PostTitle>
-              <Link to={post.node.frontmatter.url}>
+              <Link to={post.node.fields.slug}>
                 {post.node.frontmatter.title}
               </Link>
             </PostTitle>
@@ -76,8 +74,10 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
-            url
             title
             date(formatString: "MMMM DD, YYYY ")
           }

@@ -2,10 +2,10 @@
 categories:
   - Conferences
 date: 2016-10-13T08:00:09+00:00
-description: "This year in September it was all about popcorn, nachos and code again. This is a recap of the code.talks 2016 conference and the best talks I attended."
-title: "Recap code.talks 2016"
-url: /recap-code-talks-2016/
+description: This year in September it was all about popcorn, nachos and code again. This is a recap of the code.talks 2016 conference and the best talks I attended.
+title: Recap code.talks 2016
 ---
+
 This year in September it was all about popcorn, nachos and code again. The code.talks conference took place in Hamburg in a new location with lots of great talks. This is a recap of the best talks I attended and the conference at all.
 
 The [code.talks conference][1] takes place every September in Hamburg since 2014. It's one of the biggest conferences in Europe and covers a variety of web development talks. It has a very nice atmosphere and feels just like the right place to be as developer. Next to the talks there are lots of booths where you get informed about the companies and might get some gimmicks. Finally on the first day the infamous party takes place.
@@ -32,9 +32,9 @@ The talk includes a lot of tricks you can learn from AMP and start using today t
 
 The code.talks 2016 was a great experience with lots of interesting talks. If you have the chance to attend next year you totally should. I can't recommend it enough. The talks are in german and english in case you are not that familiar with german. See you next year!
 
- [1]: https://www.codetalks.de/
- [2]: https://flowtype.org/
- [3]: https://www.typescriptlang.org/
- [4]: http://djcordhose.github.io/flow-vs-typescript/flow-typescript-2.html#/
- [5]: https://www.ampproject.org/
- [6]: https://speakerdeck.com/stefanjudis/amp-tries-to-fix-the-web-what-can-we-learn-from-it
+[1]: https://www.codetalks.de/
+[2]: https://flowtype.org/
+[3]: https://www.typescriptlang.org/
+[4]: http://djcordhose.github.io/flow-vs-typescript/flow-typescript-2.html#/
+[5]: https://www.ampproject.org/
+[6]: https://speakerdeck.com/stefanjudis/amp-tries-to-fix-the-web-what-can-we-learn-from-it
