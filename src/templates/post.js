@@ -8,6 +8,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 import MarkdownContent from '../components/MarkdownContent'
+import Hero from '../components/Hero'
 
 const PostHeader = styled.header`
   margin-bottom: 2rem;
@@ -18,12 +19,13 @@ const Post = styled.article`
 `
 
 const Date = styled.div`
-  font-size: 0.9rem;
+  font-size: 14px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  line-height: 1rem;
-  margin-bottom: 0.75rem;
+  line-height: 1em;
+  margin-bottom: 2.5em;
   color: #999;
+  font-weight: 600;
 `
 
 const Title = styled.h1`
@@ -95,11 +97,10 @@ const PostTemplate = ({ data, location }: Props) => {
         </script>
       </Helmet>
       <Post>
-        <PostHeader>
-          <Date>{date}</Date>
-          <Title>{title}</Title>
-        </PostHeader>
         <Content>
+          <Date>{date}</Date>
+          <Hero>{title}</Hero>
+
           <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
         </Content>
       </Post>

@@ -48,7 +48,7 @@ const Content = styled.main`
   }
 
   @media (min-width: 1400px) {
-    margin-top: 200px;
+    margin-top: 250px;
   }
 `
 
@@ -155,10 +155,11 @@ const FooterNav = styled.nav`
 
 type Props = {
   children: React.Node,
-  index?: boolean
+  index?: boolean,
+  slim?: boolean
 }
 
-const Layout = ({ children, index = false }: Props) => (
+const Layout = ({ children, index = false, slim = false }: Props) => (
   <Container>
     <Helmet>
       <html lang="en" />
@@ -209,26 +210,30 @@ const Layout = ({ children, index = false }: Props) => (
 
     <Content>{children}</Content>
 
-    <Footer>
-      <Hero>
-        Work inquiry, question or something else?{' '}
-        <Link to="mailto:mail@larsgraubner.de">Email me</Link>.
-      </Hero>
+    {!slim && (
+      <Footer>
+        <Hero>
+          Work inquiry, question or something else?{' '}
+          <Link to="mailto:mail@larsgraubner.de">Email me</Link>.
+        </Hero>
 
-      <FooterNav>
-        <ul>
-          <li>
-            <Link to="https://twitter.com/larsgraubner">Twitter</Link>
-          </li>
-          <li>
-            <Link to="https://github.com/lgraubner">Github</Link>
-          </li>
-          <li>
-            <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>
-          </li>
-        </ul>
-      </FooterNav>
-    </Footer>
+        <FooterNav>
+          <ul>
+            <li>
+              <Link to="https://twitter.com/larsgraubner">Twitter</Link>
+            </li>
+            <li>
+              <Link to="https://github.com/lgraubner">Github</Link>
+            </li>
+            <li>
+              <Link to="https://www.linkedin.com/in/larsgraubner/">
+                LinkedIn
+              </Link>
+            </li>
+          </ul>
+        </FooterNav>
+      </Footer>
+    )}
   </Container>
 )
 

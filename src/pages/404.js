@@ -3,22 +3,26 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 
+import Link from '../components/Link'
 import Layout from '../components/Layout'
-import { H1 } from '../components/Heading'
 import P from '../components/Paragraph'
 import Content from '../components/Content'
+import Hero from '../components/Hero'
 
 const Index = () => (
-  <Layout>
+  <Layout slim>
     <Helmet>
       <title>Page not found</title>
     </Helmet>
     <Content>
-      <H1>Not found</H1>
+      <Hero>Page not found</Hero>
       <P>
         The requested page could not be found. Please contact the owner of the
         site that linked you to the original URL and let them know their link is
         broken.
+      </P>
+      <P>
+        <Link to="/">Back to home</Link>
       </P>
     </Content>
   </Layout>

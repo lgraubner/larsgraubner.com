@@ -52,8 +52,8 @@ export default ({ data }: Props) => {
         <meta name="robots" content="noindex,nofollow" />
         <title>Writing</title>
       </Helmet>
-      <Hero>Random thoughts, ramblings and technical stuff</Hero>
       <Content>
+        <Hero>Writing</Hero>
         {posts.map(post => (
           <PostSnippet key={post.node.fields.slug}>
             <PostMeta>{post.node.frontmatter.date}</PostMeta>

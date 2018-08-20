@@ -61,18 +61,22 @@ const Index = ({ data }: Props) => {
         </P>
 
         <P>
-          You can find me on{' '}
-          <Link to="https://twitter.com/larsgraubner">Twitter</Link> and{' '}
-          <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et
+          turpis libero. Suspendisse consequat leo a nulla malesuada mollis.
+          Curabitur molestie orci massa, sed cursus mi pulvinar sed. Aliquam
+          lobortis fringilla tincidunt. Proin eleifend quam sit amet purus
+          ultrices efficitur. Fusce felis enim, gravida ultricies ultricies
+          ultrices, aliquam vel eros. Donec malesuada lorem at laoreet rutrum.
+          Morbi egestas tellus ante, porttitor consequat metus pulvinar a. Proin
+          faucibus ante id erat dapibus ultricies. Integer iaculis dui sed
+          lacinia feugiat. Nulla facilisi.
         </P>
-
         <P>
-          Any questions left?{' '}
-          <Link to="mailto:hello@larsgraubner.com">
-            Drop me a line via email
-          </Link>
-          , but please don
-          {"'"}t take an answer for granted.
+          Nam enim tortor, consectetur sed nisi eu, tristique lobortis risus.
+          Suspendisse potenti. Suspendisse volutpat orci quis facilisis
+          consectetur. Nunc quis mi aliquam, interdum quam sit amet, ultrices
+          sapien. Proin finibus pulvinar elit ut volutpat. Proin sit amet
+          convallis ipsum. Sed euismod neque id nibh posuere molestie.
         </P>
       </Content>
     </Layout>
