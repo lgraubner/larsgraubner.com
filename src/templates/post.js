@@ -8,11 +8,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
 import MarkdownContent from '../components/MarkdownContent'
-import Hero from '../components/Hero'
-
-const PostHeader = styled.header`
-  margin-bottom: 2rem;
-`
+import { H1 } from '../components/Heading'
 
 const Post = styled.article`
   margin-top: 4rem;
@@ -23,21 +19,9 @@ const Date = styled.div`
   letter-spacing: 0.05em;
   text-transform: uppercase;
   line-height: 1em;
-  margin-bottom: 2.5em;
-  color: #999;
+  margin-bottom: 1em;
+  color: hsl(0, 0%, 60%);
   font-weight: 600;
-`
-
-const Title = styled.h1`
-  font-weight: 600;
-  color: #222;
-  font-size: 2.4rem;
-  margin: 0 0 2rem;
-  line-height: 1.15em;
-
-  @media (min-width: 768px) {
-    font-size: 2.8rem;
-  }
 `
 
 type Props = {
@@ -99,7 +83,7 @@ const PostTemplate = ({ data, location }: Props) => {
       <Post>
         <Content>
           <Date>{date}</Date>
-          <Hero>{title}</Hero>
+          <H1>{title}</H1>
 
           <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
         </Content>
@@ -124,7 +108,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM D, YYYY")
       }
     }
   }

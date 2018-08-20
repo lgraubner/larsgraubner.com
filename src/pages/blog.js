@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Link from '../components/Link'
-import Hero from '../components/Hero'
+import { H1 } from '../components/Heading'
 import Content from '../components/Content'
 
 type Props = {
@@ -40,7 +40,7 @@ const PostMeta = styled.div`
   margin-bottom: 0.5em;
   line-height: 1em;
   font-weight: 500;
-  color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 60%);
 `
 
 export default ({ data }: Props) => {
@@ -53,7 +53,7 @@ export default ({ data }: Props) => {
         <title>Writing</title>
       </Helmet>
       <Content>
-        <Hero>Writing</Hero>
+        <H1>Writing</H1>
         {posts.map(post => (
           <PostSnippet key={post.node.fields.slug}>
             <PostMeta>{post.node.frontmatter.date}</PostMeta>

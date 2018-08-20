@@ -7,7 +7,7 @@ import Link from '../components/Link'
 import Layout from '../components/Layout'
 import P from '../components/Paragraph'
 import Content from '../components/Content'
-import Hero from '../components/Hero'
+import { H1 } from '../components/Heading'
 
 const Index = () => (
   <Layout slim>
@@ -15,7 +15,7 @@ const Index = () => (
       <title>Page not found</title>
     </Helmet>
     <Content>
-      <Hero>Page not found</Hero>
+      <H1>Page not found</H1>
       <P>
         The requested page could not be found. Please contact the owner of the
         site that linked you to the original URL and let them know their link is

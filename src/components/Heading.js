@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
 export const H1 = styled.h1`
-  font-family: Consolas, Monaco, sans-serif;
-  font-weight: normal;
-  font-size: 28px;
-  margin: 0 0 2.5rem;
+  font-size: 36px;
+  margin: 0 0 1em;
+  line-height: 1.1em;
+  letter-spacing: 1px;
+
+  @media (min-width: 768px) {
+    font-size: 50px;
+  }
 `
 
 export const H2 = H1.withComponent('h2').extend`
@@ -23,7 +27,7 @@ export default styled.h3`
   color: hsl(0, 0%, 60%);
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   margin: 0 0 20px;
 `
