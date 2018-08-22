@@ -6,7 +6,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "1.5.1",
     "date-fns": "1.29.0",
-    "gatsby": "next",
+    "gatsby": "2.0.0-rc.0",
     "gatsby-image": "next",
     "gatsby-plugin-feed": "next",
     "gatsby-plugin-manifest": "next",
@@ -26,13 +26,13 @@
     "gatsby-transformer-sharp": "next",
     "idx": "2.4.0",
     "is-absolute-url": "2.1.0",
-    "polished": "1.9.3",
+    "polished": "2.0.0",
     "prism-themes": "1.0.1",
     "prismjs": "1.15.0",
     "react": "16.4.2",
     "react-dom": "16.4.2",
     "react-helmet": "5.2.0",
-    "styled-components": "3.4.2"
+    "styled-components": "3.4.4"
   },
   "devDependencies": {
     "babel-eslint": "8.2.6",
