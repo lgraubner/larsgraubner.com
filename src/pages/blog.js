@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import { H1 } from '../components/Heading'
-import Content from '../components/Content'
+import Container from '../components/Container'
 
 type Props = {
   data: Object
@@ -52,7 +52,7 @@ export default ({ data }: Props) => {
         <meta name="robots" content="noindex,nofollow" />
         <title>Writing</title>
       </Helmet>
-      <Content>
+      <Container>
         <H1>Writing</H1>
         {posts.map(post => (
           <PostSnippet key={post.node.fields.slug}>
@@ -64,7 +64,7 @@ export default ({ data }: Props) => {
             </PostTitle>
           </PostSnippet>
         ))}
-      </Content>
+      </Container>
     </Layout>
   )
 }

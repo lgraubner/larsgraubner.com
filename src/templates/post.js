@@ -4,14 +4,42 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import idx from 'idx'
 import { graphql } from 'gatsby'
+import rehypeReact from 'rehype-react'
 
 import Layout from '../components/Layout'
-import Content from '../components/Content'
-import MarkdownContent from '../components/MarkdownContent'
-import { H1 } from '../components/Heading'
+import Container from '../components/Container'
+import { H1, H2, H3 } from '../components/Heading'
+import P from '../components/Paragraph'
 
 const Post = styled.article`
   margin-top: 4rem;
+
+  p > code {
+    font-size: 85%;
+    word-break: break-word;
+    padding: 0;
+    background-color: transparent;
+    color: hsla(332, 79%, 58%);
+    border-radius: 0;
+    padding: 0;
+    line-height: inherit;
+  }
+
+  .gatsby-highlight {
+    margin: 50px 0;
+
+    pre {
+      margin: 0;
+      border-radius: 3px;
+      padding: 20px 20px;
+      font-size: 0.9rem;
+      line-height: 1.6em;
+    }
+
+    code {
+      line-height: 1.55em;
+    }
+  }
 `
 
 const Date = styled.div`
@@ -28,6 +56,15 @@ type Props = {
   data: Object,
   location: Object
 }
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    p: P,
+    h2: H2,
+    h3: H3
+  }
+}).Compiler
 
 const PostTemplate = ({ data, location }: Props) => {
   const post = data.markdownRemark
@@ -81,12 +118,11 @@ const PostTemplate = ({ data, location }: Props) => {
         </script>
       </Helmet>
       <Post>
-        <Content>
+        <Container>
           <Date>{date}</Date>
           <H1>{title}</H1>
-
-          <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
-        </Content>
+          {renderAst(post.htmlAst)}
+        </Container>
       </Post>
     </Layout>
   )
@@ -104,7 +140,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $path } }) {
       id
-      html
+      htmlAst
       frontmatter {
         title
         description

@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-export const ParagraphStyles = css`
+export default styled.p`
   font-size: ${props => (props.bold ? '26px' : '18px')};
   line-height: 1.65em;
   margin: 0 auto 1.5em;
@@ -25,8 +25,4 @@ export const ParagraphStyles = css`
       color: hsl(0, 0%, 20%);
     }
   }
-`
-
-export default styled.p`
-  ${ParagraphStyles};
 `

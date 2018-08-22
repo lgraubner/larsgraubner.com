@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Hero = styled.p`
+export default styled.div`
   font-size: 40px;
   font-weight: bold;
   margin: 0 0 60px;
@@ -21,5 +21,3 @@ const Hero = styled.p`
     }
   }
 `
-
-export default Hero

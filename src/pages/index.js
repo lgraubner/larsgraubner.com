@@ -8,8 +8,8 @@ import Layout from '../components/Layout'
 import Link from '../components/Link'
 import P from '../components/Paragraph'
 import Hero from '../components/Hero'
-import Content from '../components/Content'
-import Heading from '../components/Heading'
+import Container from '../components/Container'
+import SectionTitle from '../components/SectionTitle'
 
 type Props = {
   data: Object
@@ -53,8 +53,8 @@ const Index = ({ data }: Props) => {
         .
       </Hero>
 
-      <Content>
-        <Heading>Introduction</Heading>
+      <Container>
+        <SectionTitle>Introduction</SectionTitle>
         <P bold>
           Hi, I'm Lars. I'm a Front-end developer from Germany focusing on
           React, React Native and Node.js.
@@ -78,7 +78,7 @@ const Index = ({ data }: Props) => {
           sapien. Proin finibus pulvinar elit ut volutpat. Proin sit amet
           convallis ipsum. Sed euismod neque id nibh posuere molestie.
         </P>
-      </Content>
+      </Container>
     </Layout>
   )
 }

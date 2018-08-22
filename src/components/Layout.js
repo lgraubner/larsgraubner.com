@@ -4,9 +4,6 @@ import styled, { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
 import Helmet from 'react-helmet'
 
-// $FlowFixMe
-import 'prism-themes/themes/prism-atom-dark.css'
-
 import Link from '../components/Link'
 import Hero from '../components/Hero'
 
@@ -31,7 +28,7 @@ injectGlobal`
   }
 `
 
-const Container = styled.div`
+const Wrapper = styled.div`
   padding: 0 5%;
 
   @media (min-width: 768px) {
@@ -94,26 +91,48 @@ const Name = styled.div`
 
 const NameIndex = Name.withComponent('h1')
 
-const Nav = styled.nav`
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+const Ul = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`
+
+const Li = styled.li`
+  display: inline;
+  margin-${props => (props.align === 'left' ? 'right' : 'left')}: 60px;
+`
+
+const NavLink = styled(Link)`
+  color: hsl(0, 0%, 33%);
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    color: hsl(0, 0%, 0%);
   }
+`
 
-  li {
-    display: inline;
-    margin-left: 60px;
-  }
+type NavProps = {
+  children: React.Node,
+  align?: 'right' | 'left'
+}
 
-  a {
-    color: hsl(0, 0%, 33%);
-    text-decoration: none;
-    font-weight: 600;
+const Nav = ({ children, align = 'right' }: NavProps) => (
+  <Ul>
+    {React.Children.map(children, child => (
+      <Li align={align}>{child}</Li>
+    ))}
+  </Ul>
+)
 
-    &:hover {
-      color: hsl(0, 0%, 0%);
-    }
+const FooterLink = styled(Link)`
+  font-weight: 600;
+  font-size: 16px;
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 2px solid currentColor;
   }
 `
 
@@ -129,38 +148,30 @@ const Footer = styled.footer`
   }
 `
 
-const FooterNav = styled.nav`
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+const Legal = styled.div`
+  margin-top: 120px;
+  color: hsl(0, 0%, 33%);
+  line-height: 2em;
+`
 
-  li {
-    display: inline;
-    margin-right: 60px;
-  }
+const LegalLink = styled(FooterLink)`
+  color: hsl(0, 0%, 33%);
+  font-weight: normal;
 
-  a {
-    font-weight: 600;
-    font-size: 16px;
+  &:hover {
     color: hsl(0, 0%, 0%);
-    text-decoration: none;
-
-    &:hover {
-      border-bottom: 2px solid currentColor;
-    }
+    border: 0;
   }
 `
 
 type Props = {
   children: React.Node,
   index?: boolean,
-  slim?: boolean
+  minimal?: boolean
 }
 
-const Layout = ({ children, index = false, slim = false }: Props) => (
-  <Container>
+const Layout = ({ children, index = false, minimal = false }: Props) => (
+  <Wrapper>
     <Helmet>
       <html lang="en" />
       <meta name="robots" content="index,follow" />
@@ -197,44 +208,44 @@ const Layout = ({ children, index = false, slim = false }: Props) => (
         </Name>
       )}
       <Nav>
-        <ul>
-          <li>
-            <Link to="/">About</Link>
-          </li>
-          <li>
-            <Link to="blog">Blog</Link>
-          </li>
-        </ul>
+        <NavLink to="/">About</NavLink>
+        <NavLink to="blog">Blog</NavLink>
       </Nav>
     </Header>
 
     <Content>{children}</Content>
 
-    {!slim && (
+    {!minimal && (
       <Footer>
         <Hero>
           Work inquiry, question or something else?{' '}
           <Link to="mailto:mail@larsgraubner.de">Email me</Link>.
         </Hero>
 
-        <FooterNav>
-          <ul>
-            <li>
-              <Link to="https://twitter.com/larsgraubner">Twitter</Link>
-            </li>
-            <li>
-              <Link to="https://github.com/lgraubner">Github</Link>
-            </li>
-            <li>
-              <Link to="https://www.linkedin.com/in/larsgraubner/">
-                LinkedIn
-              </Link>
-            </li>
-          </ul>
-        </FooterNav>
+        <Nav align="left">
+          <FooterLink to="https://twitter.com/larsgraubner">Twitter</FooterLink>
+
+          <FooterLink to="https://github.com/lgraubner">Github</FooterLink>
+
+          <FooterLink to="https://www.linkedin.com/in/larsgraubner/">
+            LinkedIn
+          </FooterLink>
+        </Nav>
+        <Legal>
+          <Nav align="left">
+            <span>
+              Licensed under{' '}
+              <LegalLink to="https://creativecommons.org/licenses/by-sa/3.0/">
+                CC BY-SA 3.0
+              </LegalLink>
+            </span>
+            <LegalLink to="/privacy">Privacy</LegalLink>
+            <LegalLink to="/legal-notice">Legal Notice</LegalLink>
+          </Nav>
+        </Legal>
       </Footer>
     )}
-  </Container>
+  </Wrapper>
 )
 
 export default Layout

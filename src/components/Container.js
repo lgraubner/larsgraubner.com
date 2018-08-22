@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-const Content = styled.div`
+export default styled.div`
   max-width: 640px;
   margin: 0 auto;
 `
-
-export default Content
