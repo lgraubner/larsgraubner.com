@@ -7,6 +7,7 @@ module.exports = {
       'Personal blog from Lars Graubner covering JavaScript, React, Node, web performance and all things development.'
   },
   plugins: [
+    'gatsby-plugin-flow',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
