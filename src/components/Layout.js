@@ -99,7 +99,11 @@ const Ul = styled.ul`
 
 const Li = styled.li`
   display: inline;
-  margin-${props => (props.align === 'left' ? 'right' : 'left')}: 60px;
+  margin-${props => (props.align === 'left' ? 'right' : 'left')}: 40px;
+
+  @media (min-width: 768px) {
+    margin-${props => (props.align === 'left' ? 'right' : 'left')}: 60px;
+  }
 `
 
 const NavLink = styled(Link)`
@@ -149,9 +153,13 @@ const Footer = styled.footer`
 `
 
 const Legal = styled.div`
-  margin-top: 120px;
+  margin-top: 80px;
   color: hsl(0, 0%, 33%);
-  line-height: 2em;
+  line-height: 1.7em;
+
+  @media (min-width: 768px) {
+    margin-top: 120px;
+  }
 `
 
 const LegalLink = styled(FooterLink)`

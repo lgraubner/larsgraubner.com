@@ -3,6 +3,8 @@ import React from 'react'
 import idx from 'idx'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Link from '../components/Link'
@@ -11,6 +13,16 @@ import Hero from '../components/Hero'
 import Container from '../components/Container'
 import SectionTitle from '../components/SectionTitle'
 
+const StyledImage = styled(Image)`
+  margin-bottom: 60px;
+  max-width: 100%;
+  height: auto;
+
+  @media (min-width: 768px) {
+    margin-bottom: 100px;
+  }
+`
+
 type Props = {
   data: Object
 }
@@ -18,6 +30,7 @@ type Props = {
 const Index = ({ data }: Props) => {
   const author = idx(data, _ => _.site.siteMetadata.author) || ''
   const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
+  console.log(data.file.childImageSharp.resolutions)
 
   const description =
     'Front-end developer from germany. Passionate about React and web performance.'
@@ -52,6 +65,8 @@ const Index = ({ data }: Props) => {
         </Link>
         .
       </Hero>
+
+      <StyledImage resolutions={data.file.childImageSharp.resolutions} fadeIn />
 
       <Container>
         <SectionTitle>Introduction</SectionTitle>
@@ -91,6 +106,13 @@ export const pageQuery = graphql`
       siteMetadata {
         author
         siteUrl
+      }
+    }
+    file(relativePath: { eq: "lars.jpg" }) {
+      childImageSharp {
+        resolutions(width: 960, height: 600) {
+          ...GatsbyImageSharpResolutions
+        }
       }
     }
   }

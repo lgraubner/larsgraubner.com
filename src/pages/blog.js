@@ -10,15 +10,15 @@ import Link from '../components/Link'
 import { H1 } from '../components/Heading'
 import Container from '../components/Container'
 
-type Props = {
-  data: Object
-}
+const PostList = styled.div`
+  margin-top: 80px;
+`
 
-const PostSnippet = styled.div`
+const Post = styled.div`
   margin-bottom: 50px;
 `
 
-const PostTitle = styled.h2`
+const Title = styled.h2`
   font-size: 24px;
   font-weight: 700;
   margin: 0 0 8px;
@@ -35,13 +35,17 @@ const PostTitle = styled.h2`
   }
 `
 
-const PostMeta = styled.div`
+const Meta = styled.div`
   font-size: 15px;
   margin-bottom: 0.5em;
   line-height: 1em;
   font-weight: 500;
   color: hsl(0, 0%, 60%);
 `
+
+type Props = {
+  data: Object
+}
 
 export default ({ data }: Props) => {
   const posts = idx(data, _ => _.allMarkdownRemark.edges) || []
@@ -54,16 +58,18 @@ export default ({ data }: Props) => {
       </Helmet>
       <Container>
         <H1>Writing</H1>
-        {posts.map(post => (
-          <PostSnippet key={post.node.fields.slug}>
-            <PostMeta>{post.node.frontmatter.date}</PostMeta>
-            <PostTitle>
-              <Link to={post.node.fields.slug}>
-                {post.node.frontmatter.title}
-              </Link>
-            </PostTitle>
-          </PostSnippet>
-        ))}
+        <PostList>
+          {posts.map(post => (
+            <Post key={post.node.fields.slug}>
+              <Meta>{post.node.frontmatter.date}</Meta>
+              <Title>
+                <Link to={post.node.fields.slug}>
+                  {post.node.frontmatter.title}
+                </Link>
+              </Title>
+            </Post>
+          ))}
+        </PostList>
       </Container>
     </Layout>
   )
