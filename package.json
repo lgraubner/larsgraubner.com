@@ -27,7 +27,7 @@
     "gatsby-transformer-sharp": "next",
     "idx": "2.4.0",
     "is-absolute-url": "2.1.0",
-    "polished": "2.0.0",
+    "polished": "2.0.2",
     "prism-themes": "1.0.1",
     "prismjs": "1.15.0",
     "react": "16.4.2",
