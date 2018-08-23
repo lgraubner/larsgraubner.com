@@ -99,10 +99,14 @@ const Ul = styled.ul`
 
 const Li = styled.li`
   display: inline;
-  margin-${props => (props.align === 'left' ? 'right' : 'left')}: 40px;
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   @media (min-width: 768px) {
-    margin-${props => (props.align === 'left' ? 'right' : 'left')}: 60px;
+    margin-right}: 60px;
   }
 `
 
@@ -117,14 +121,13 @@ const NavLink = styled(Link)`
 `
 
 type NavProps = {
-  children: React.Node,
-  align?: 'right' | 'left'
+  children: React.Node
 }
 
-const Nav = ({ children, align = 'right' }: NavProps) => (
+const Nav = ({ children }: NavProps) => (
   <Ul>
     {React.Children.map(children, child => (
-      <Li align={align}>{child}</Li>
+      <Li>{child}</Li>
     ))}
   </Ul>
 )
@@ -230,7 +233,7 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
           <Link to="mailto:mail@larsgraubner.de">Email me</Link>.
         </Hero>
 
-        <Nav align="left">
+        <Nav>
           <FooterLink to="https://twitter.com/larsgraubner">Twitter</FooterLink>
 
           <FooterLink to="https://github.com/lgraubner">Github</FooterLink>
@@ -240,7 +243,7 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
           </FooterLink>
         </Nav>
         <Legal>
-          <Nav align="left">
+          <Nav>
             <span>
               Licensed under{' '}
               <LegalLink to="https://creativecommons.org/licenses/by-sa/3.0/">
