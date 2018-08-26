@@ -65,7 +65,11 @@ const Index = ({ data }: Props) => {
         .
       </Hero>
 
-      <StyledImage resolutions={data.file.childImageSharp.resolutions} fadeIn />
+      <StyledImage
+        resolutions={data.file.childImageSharp.resolutions}
+        fadeIn
+        alt={author}
+      />
 
       <Container>
         <SectionTitle>Introduction</SectionTitle>

@@ -10,6 +10,7 @@
     "gatsby-image": "next",
     "gatsby-plugin-feed": "next",
     "gatsby-plugin-flow": "1.0.1-beta.0",
+    "gatsby-plugin-google-analytics": "1.0.31",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-netlify": "next",
     "gatsby-plugin-offline": "next",

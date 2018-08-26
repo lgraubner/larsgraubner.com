@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   siteMetadata: {
     siteUrl: 'https://larsgraubner.com',
     author: 'Lars Graubner',
@@ -155,3 +155,22 @@ module.exports = {
     'gatsby-plugin-netlify'
   ]
 }
+
+if (process.env.NODE_ENV === 'production') {
+  const plugins = [
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-44046571-2',
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ['/404']
+      }
+    }
+  ]
+
+  config.plugins.push(...plugins)
+}
+
+module.exports = config
