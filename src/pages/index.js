@@ -79,22 +79,18 @@ const Index = ({ data }: Props) => {
         </P>
 
         <P>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et
-          turpis libero. Suspendisse consequat leo a nulla malesuada mollis.
-          Curabitur molestie orci massa, sed cursus mi pulvinar sed. Aliquam
-          lobortis fringilla tincidunt. Proin eleifend quam sit amet purus
-          ultrices efficitur. Fusce felis enim, gravida ultricies ultricies
-          ultrices, aliquam vel eros. Donec malesuada lorem at laoreet rutrum.
-          Morbi egestas tellus ante, porttitor consequat metus pulvinar a. Proin
-          faucibus ante id erat dapibus ultricies. Integer iaculis dui sed
-          lacinia feugiat. Nulla facilisi.
+          Early on I was interested in all kind of technical stuff. Soon I
+          discovered web development and loved it which lasts till today. I
+          started my career in an full service agency creating websites for
+          customers using PHP. That time I was introduced to JavaScript and
+          therefore jQuery which was the go to library to use back then. I
+          really liked to create stuff with JavaScript and decided to focus on
+          Front-end development solely.
         </P>
         <P>
-          Nam enim tortor, consectetur sed nisi eu, tristique lobortis risus.
-          Suspendisse potenti. Suspendisse volutpat orci quis facilisis
-          consectetur. Nunc quis mi aliquam, interdum quam sit amet, ultrices
-          sapien. Proin finibus pulvinar elit ut volutpat. Proin sit amet
-          convallis ipsum. Sed euismod neque id nibh posuere molestie.
+          The JavaScript world started to change quickly at that time and new
+          things like complex build processes and React were on the rise. I
+          picked up React chose it to
         </P>
       </Container>
     </Layout>
