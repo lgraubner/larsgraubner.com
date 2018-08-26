@@ -2,6 +2,8 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://larsgraubner.com',
     author: 'Lars Graubner',
+    description:
+      'Front-end developer from germany. Passionate about React and web performance.',
     rssFeedTitle: "Lars' Blog",
     rssFeedDescription:
       'Personal blog from Lars Graubner covering JavaScript, React, Node, web performance and all things development.'

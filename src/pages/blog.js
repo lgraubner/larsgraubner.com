@@ -49,12 +49,13 @@ type Props = {
 
 export default ({ data }: Props) => {
   const posts = idx(data, _ => _.allMarkdownRemark.edges) || []
+  const author = idx(data, _ => _.site.siteMetadata.author) || ''
 
   return (
     <Layout>
       <Helmet>
-        <meta name="robots" content="noindex,nofollow" />
-        <title>Writing</title>
+        <title>Blog - {author}</title>
+        <meta name="robots" content="index,follow" />
       </Helmet>
       <Container>
         <H1>Writing</H1>
@@ -77,6 +78,11 @@ export default ({ data }: Props) => {
 
 export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        author
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

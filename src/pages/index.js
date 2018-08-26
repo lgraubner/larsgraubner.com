@@ -29,15 +29,14 @@ type Props = {
 
 const Index = ({ data }: Props) => {
   const author = idx(data, _ => _.site.siteMetadata.author) || ''
-  const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
-  console.log(data.file.childImageSharp.resolutions)
+  const description = idx(data, _ => _.site.siteMetadata.description)
+  const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl)
 
-  const description =
-    'Front-end developer from germany. Passionate about React and web performance.'
   return (
     <Layout index>
       <Helmet>
-        <title>{`${author} - Front-end developer`}</title>
+        <title>{author} - Front-end developer</title>
+        <meta name="robots" content="index,follow" />
         <meta name="description" content={description} />
         <meta property="og:title" content={`${author} - Front-end developer`} />
         <meta property="og:type" content="website" />
@@ -105,6 +104,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
+        description
         siteUrl
       }
     }

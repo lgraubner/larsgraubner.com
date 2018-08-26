@@ -203,10 +203,6 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <link
-        href="https://fonts.googleapis.com/css?family=Lora"
-        rel="stylesheet"
-      />
     </Helmet>
     <Header>
       {index ? (

@@ -12,6 +12,7 @@ const Index = () => (
   <Layout minimal>
     <Helmet>
       <title>Page not found</title>
+      <meta name="robots" content="noindex,nofollow" />
     </Helmet>
     <Container>
       <H1>Page not found</H1>
