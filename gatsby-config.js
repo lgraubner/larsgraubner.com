@@ -55,6 +55,7 @@ const config = {
           {
             site {
               siteMetadata {
+                rssFeedTitle
                 rssFeedDescription
                 siteUrl
               }
@@ -67,8 +68,8 @@ const config = {
               allMarkdownRemark.edges.map(edge =>
                 Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }]
                 })
               ),
@@ -82,8 +83,10 @@ const config = {
                     node {
                       excerpt
                       html
+                      fields {
+                        slug
+                      }
                       frontmatter {
-                        path
                         title
                         date
                       }
@@ -104,7 +107,7 @@ const config = {
         short_name: 'L. Graubner',
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#222222',
+        theme_color: '#000',
         display: 'minimal-ui',
         icons: [
           {
@@ -133,7 +136,7 @@ const config = {
           allSitePage(
             filter: {
               path: {
-                regex: "${/^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback)).*$/}"
+                regex: "${/^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|privacy|legal-notice)).*$/}"
               }
             }
           ) {
