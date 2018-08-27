@@ -216,7 +216,7 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
       )}
       <Nav>
         <NavLink to="/">About</NavLink>
-        <NavLink to="blog">Blog</NavLink>
+        <NavLink to="/blog/">Blog</NavLink>
       </Nav>
     </Header>
 
@@ -246,8 +246,8 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
                 CC BY-SA 3.0
               </LegalLink>
             </span>
-            <LegalLink to="/privacy">Privacy</LegalLink>
-            <LegalLink to="/legal-notice">Legal Notice</LegalLink>
+            <LegalLink to="/privacy/">Privacy</LegalLink>
+            <LegalLink to="/legal-notice/">Legal Notice</LegalLink>
           </Nav>
         </Legal>
       </Footer>
