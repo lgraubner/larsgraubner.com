@@ -79,18 +79,12 @@ const Index = ({ data }: Props) => {
         </P>
 
         <P>
-          Early on I was interested in all kind of technical stuff. Soon I
-          discovered web development and loved it which lasts till today. I
-          started my career in an full service agency creating websites for
-          customers using PHP. That time I was introduced to JavaScript and
-          therefore jQuery which was the go to library to use back then. I
-          really liked to create stuff with JavaScript and decided to focus on
-          Front-end development solely.
-        </P>
-        <P>
-          The JavaScript world started to change quickly at that time and new
-          things like complex build processes and React were on the rise. I
-          picked up React chose it to
+          I find the web fascinating as it offers so much possebilities.
+          Especially JavaScript became more popular and capable of doing all
+          kind of stuff in the last years. It's now possible to control IOT
+          devices, build VR scenes and more with JavaScript. Therefore I became
+          a passionate JavaScript Developer building apps and more. React serves
+          me as tool to create this in a structured and easy to use way.
         </P>
       </Container>
     </Layout>
