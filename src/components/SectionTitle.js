@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default styled.h2`
-  color: hsl(0, 0%, 60%);
+  color: hsl(0, 0%, 45%);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 13px;
