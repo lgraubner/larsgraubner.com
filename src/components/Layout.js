@@ -226,7 +226,7 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
       <Footer>
         <Hero>
           Work inquiry, question or something else?{' '}
-          <Link to="mailto:mail@larsgraubner.de">Email me</Link>.
+          <Link to="mailto:hello@larsgraubner.com">Email me</Link>.
         </Hero>
 
         <Nav>

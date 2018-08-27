@@ -2,6 +2,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import idx from 'idx'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import P from '../components/Paragraph'

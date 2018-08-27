@@ -9,15 +9,12 @@ const args = process.argv.slice(2)
 
 const options = mri(args, {
   default: {
-    draft: true,
-    title: 'New Post',
-    description: ''
+    title: 'New Post'
   }
 })
 
 const date = new Date()
-const titlePath = slugify(options.title).toLowerCase()
-const folderName = `${format(date, 'YYYY-MM-DD')}-${titlePath}`
+const folderName = slugify(options.title).toLowerCase()
 const folderPath = path.resolve('./src/pages/', folderName)
 const filePath = path.resolve(folderPath, 'index.md')
 
@@ -30,15 +27,14 @@ fs.mkdir(folderPath, error => {
 
   stream.on('open', () => {
     stream.write('---\n')
-    stream.write(`title: "${options.title}"\n`)
+    stream.write(`title: ${options.title}\n`)
     stream.write(`date: ${format(date, 'YYYY-MM-DDTHH:mm:00+00:00')}\n`)
-    stream.write('description: ""\n')
-    stream.write(`path: /${titlePath}/\n`)
+    stream.write("description: ''\n")
     stream.write('---\n\n')
     stream.end()
   })
 
-  console.log(`Created post "${titlePath}"!`)
+  console.log(`Created post "${options.title}" at ${filePath}`)
 
   return true
 })
