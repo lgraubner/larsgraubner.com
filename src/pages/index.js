@@ -14,13 +14,8 @@ import Container from '../components/Container'
 import SectionTitle from '../components/SectionTitle'
 
 const StyledImage = styled(Image)`
-  margin-bottom: 60px;
   max-width: 100%;
   height: auto;
-
-  @media (min-width: 768px) {
-    margin-bottom: 100px;
-  }
 `
 
 type Props = {
@@ -79,12 +74,45 @@ const Index = ({ data }: Props) => {
         </P>
 
         <P>
-          I find the web fascinating as it offers so much possebilities.
-          Especially JavaScript became more popular and capable of doing all
-          kind of stuff in the last years. It's now possible to control IOT
-          devices, build VR scenes and more with JavaScript. Therefore I became
-          a passionate JavaScript Developer building apps and more. React serves
-          me as tool to create this in a structured and easy to use way.
+          The web is my playground. I love to learn new things every day. My
+          goal is to write clean and maintainable code to create great apps and
+          websites. Originally, I started my career in an advertising agency,
+          but over time, I was more drawn to larger and more complex projects.
+          That's my job and my passion today.
+        </P>
+
+        <P>
+          You can find some of my code on{' '}
+          <Link to="https://github.com/lgraubner">Github</Link>, check my CV on{' '}
+          <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>{' '}
+          (ugh), follow my thoughts on{' '}
+          <Link to="https://twitter.com/larsgraubner">Twitter</Link> or read
+          articles on my <Link to="/blog">Blog</Link>. When I'm not coding, I
+          usually spend time with my family at the sea or somewhere else
+          outside.
+        </P>
+
+        <SectionTitle>What drives me</SectionTitle>
+        <P bold>
+          I admire good user experience and love to share what I've created.
+        </P>
+
+        <P>
+          Thats why I love to work with great designers. Combined with
+          well-thought-out code, this results in the best possible user
+          experience. Even though I'm not a designer I think I can say that I
+          have a good eye for design.
+        </P>
+
+        <P>
+          Much of the internet uses open source code, which was contributed by
+          all sorts of people in their spare time. That's why whenever possible
+          I try to give something back. One of my more popular open source
+          projects is a package called{' '}
+          <Link to="https://github.com/lgraubner/sitemap-generator">
+            sitemap-generator
+          </Link>
+          .
         </P>
       </Container>
     </Layout>
