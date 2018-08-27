@@ -54,7 +54,7 @@ const Index = ({ data }: Props) => {
           checkdomain
         </Link>{' '}
         and{' '}
-        <Link to="http://www.idearockers.com/" rel="nofollow">
+        <Link to="http://www.idearockers.com" rel="nofollow">
           Idearockers
         </Link>
         .
@@ -87,7 +87,7 @@ const Index = ({ data }: Props) => {
           <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>{' '}
           (ugh), follow my thoughts on{' '}
           <Link to="https://twitter.com/larsgraubner">Twitter</Link> or read
-          articles on my <Link to="/blog">Blog</Link>. When I'm not coding, I
+          articles on my <Link to="/blog/">Blog</Link>. When I'm not coding, I
           usually spend time with my family at the sea or somewhere else
           outside.
         </P>
