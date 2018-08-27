@@ -4,9 +4,9 @@ const config = {
     author: 'Lars Graubner',
     description:
       'Front-end developer from germany. Passionate about React and web performance.',
-    rssFeedTitle: "Lars' Blog",
+    rssFeedTitle: 'Lars Graubner Blog',
     rssFeedDescription:
-      'Personal blog from Lars Graubner covering JavaScript, React, Node, web performance and all things development.'
+      'A blog covering JavaScript, React, Node, web performance and all things web development.'
   },
   plugins: [
     'gatsby-plugin-flow',
@@ -55,8 +55,8 @@ const config = {
           {
             site {
               siteMetadata {
-                rssFeedTitle
-                rssFeedDescription
+                title: rssFeedTitle
+                description: rssFeedDescription
                 siteUrl
               }
             }
