@@ -10,6 +10,7 @@ import Layout from '../components/Layout'
 import Container from '../components/Container'
 import { H1, H2, H3 } from '../components/Heading'
 import P from '../components/Paragraph'
+import Newsletter from '../components/Newsletter'
 
 const Post = styled.article`
   margin-top: 4rem;
@@ -122,6 +123,8 @@ const PostTemplate = ({ data, location }: Props) => {
           <Date>{date}</Date>
           <H1>{title}</H1>
           {renderAst(post.htmlAst)}
+
+          <Newsletter />
         </Container>
       </Post>
     </Layout>

@@ -12,6 +12,7 @@ import P from '../components/Paragraph'
 import Hero from '../components/Hero'
 import Container from '../components/Container'
 import SectionTitle from '../components/SectionTitle'
+import Newsletter from '../components/Newsletter'
 
 const StyledImage = styled(Image)`
   max-width: 100%;
@@ -114,6 +115,7 @@ const Index = ({ data }: Props) => {
           </Link>
           .
         </P>
+        <Newsletter />
       </Container>
     </Layout>
   )
