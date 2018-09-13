@@ -53,8 +53,6 @@ const Newsletter = () => (
     <form
       action="https://buttondown.email/api/emails/embed-subscribe/larsgraubner"
       method="post"
-      target="popupwindow"
-      onsubmit="window.open('https://buttondown.email/larsgraubner', 'popupwindow')"
       class="embeddable-buttondown-form"
     >
       <Heading>I build up a newsletter to share what I learn</Heading>
