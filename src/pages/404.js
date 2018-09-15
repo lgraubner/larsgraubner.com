@@ -28,7 +28,7 @@ const Index = () => (
 export default Index
 
 export const pageQuery = graphql`
-  query NotFoundQuery {
+  query {
     site {
       siteMetadata {
         author
