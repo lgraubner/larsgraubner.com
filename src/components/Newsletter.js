@@ -1,10 +1,12 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
 
 import P from './Paragraph'
 
 const Container = styled.section`
   margin-top: 80px;
+  position: relative;
 
   @media (min-width: 768px) {
     margin-top: 140px;
@@ -48,27 +50,80 @@ const Button = styled.input`
   }
 `
 
-const Newsletter = () => (
-  <Container>
-    <form
-      action="https://buttondown.email/api/emails/embed-subscribe/larsgraubner"
-      method="post"
-      className="embeddable-buttondown-form"
-    >
-      <Heading>I build up a newsletter to share what I learn</Heading>
-      <P>Focusing on JavaScript, React and web development. No spam.</P>
-      <InputWrapper>
-        <Input
-          type="email"
-          name="email"
-          id="bd-email"
-          placeholder="your email"
-        />
-        <input type="hidden" value="1" name="embed" />
-        <Button type="submit" value="Subscribe" />
-      </InputWrapper>
-    </form>
-  </Container>
-)
+const Error = styled.div`
+  position: absolute;
+  bottom: -22px;
+  font-size: 14px;
+  color: hsl(0, 100%, 50%);
+`
+
+type Props = {}
+
+type State = {
+  valid: boolean,
+  submitted: boolean
+}
+
+class Newsletter extends React.Component<Props, State> {
+  state = {
+    valid: false,
+    submitted: false
+  }
+
+  handleChange = (e: SyntheticEvent<HTMLInputElement>) => {
+    const email = e.currentTarget.value
+
+    if (email.length > 0 && email.indexOf('@') !== -1) {
+      this.setState({
+        valid: true
+      })
+    } else {
+      this.setState({
+        valid: false
+      })
+    }
+  }
+
+  handleSubmit = (e: SyntheticEvent<HTMLInputElement>) => {
+    this.setState({
+      submitted: true
+    })
+
+    const { valid } = this.state
+    if (!valid) {
+      e.preventDefault()
+    }
+  }
+
+  render() {
+    const { valid, submitted } = this.state
+    return (
+      <Container>
+        <form
+          action="https://buttondown.email/api/emails/embed-subscribe/larsgraubner"
+          method="post"
+          onSubmit={this.handleSubmit}
+          noValidate
+        >
+          <Heading>I build up a newsletter to share what I learn</Heading>
+          <P>Focusing on JavaScript, React and web development. No spam.</P>
+          <InputWrapper>
+            <Input
+              type="email"
+              name="email"
+              id="bd-email"
+              placeholder="your email"
+              onChange={this.handleChange}
+            />
+            <input type="hidden" value="1" name="embed" />
+            <Button type="submit" value="Subscribe" />
+          </InputWrapper>
+        </form>
+        {submitted &&
+          !valid && <Error>Please enter a valid e-mail address.</Error>}
+      </Container>
+    )
+  }
+}
 
 export default Newsletter
