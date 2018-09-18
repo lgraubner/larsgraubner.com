@@ -56,7 +56,7 @@ const Index = ({ data }: Props) => {
         </Link>{' '}
         and{' '}
         <Link to="http://www.idearockers.com" rel="nofollow">
-          Idearockers
+          idearockers
         </Link>
         .
       </Hero>
