@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import P from '../components/Paragraph'
 import Container from '../components/Container'
 import { H1 } from '../components/Heading'
+import Link from '../components/Link'
 
 const Newsletter = () => (
   <Layout minimal>
@@ -17,14 +18,20 @@ const Newsletter = () => (
     <Container>
       <H1>Thanks for subscribing!</H1>
       <P>
-        I'm currently building up the newsletter and planning to push out on a
-        bi-monthly or even weekly basis. For now I'm happy you are interested in
-        what I'm doing and I let you know about when and how I will start fully.
+        In this newsletter I share what I learn. This does not follow a fixed
+        schedule, so there will always be one if it comes to my mind, or I learn
+        something interesting.
       </P>
+      <P>
+        The topics will mainly be JavaScript in general, React, React Native and
+        Node.js. Maybe other topics that cross my path will be added.
+      </P>
+
+      <P>Additionally, I'll let you know when I've posted a new blog post.</P>
 
       <P>
         Stay tuned and please don't hesitate to give me feedback or suggestions
-        via email (news@larsgraubner.com).
+        via <Link to="mailto:news@larsgraubner.com">email</Link>.
       </P>
     </Container>
   </Layout>
