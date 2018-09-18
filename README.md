@@ -1,8 +1,3 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# larsgraubner.com
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
-
-## Running in development
-`gatsby develop`
+Personal website from Lars Graubner. If you find a typo or bugs feel free to create a pull request. :)

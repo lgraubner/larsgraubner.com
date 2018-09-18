@@ -53,7 +53,7 @@ const Newsletter = () => (
     <form
       action="https://buttondown.email/api/emails/embed-subscribe/larsgraubner"
       method="post"
-      class="embeddable-buttondown-form"
+      className="embeddable-buttondown-form"
     >
       <Heading>I build up a newsletter to share what I learn</Heading>
       <P>Focusing on JavaScript, React and web development. No spam.</P>
