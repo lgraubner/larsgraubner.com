@@ -105,8 +105,8 @@ class Newsletter extends React.Component<Props, State> {
           onSubmit={this.handleSubmit}
           noValidate
         >
-          <Heading>I build up a newsletter to share what I learn</Heading>
-          <P>Focusing on JavaScript, React and web development. No spam.</P>
+          <Heading>I maintain a newsletter to share what I learn</Heading>
+          <P>Topics include JavaScript, React and web development. No spam.</P>
           <InputWrapper>
             <Input
               type="email"
