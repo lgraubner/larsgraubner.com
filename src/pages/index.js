@@ -75,11 +75,11 @@ const Index = ({ data }: Props) => {
         </P>
 
         <P>
-          The web is my playground. I love to learn new things every day. My
-          goal is to write clean and maintainable code to create great apps and
-          websites. Originally, I started my career in an advertising agency,
-          but over time, I was more drawn to larger and more complex projects.
-          That's my job and my passion today.
+          The web is my playground. I love to learn new things. My goal is to
+          write clean and maintainable code to create great apps and websites.
+          Originally, I started my career in an advertising agency, but over
+          time, I was more drawn to larger and more complex projects. That's my
+          job and passion today.
         </P>
 
         <P>
