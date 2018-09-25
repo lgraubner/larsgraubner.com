@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import styled, { injectGlobal } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { normalize } from 'polished'
 import Helmet from 'react-helmet'
 
@@ -8,7 +8,7 @@ import Link from '../components/Link'
 import Hero from '../components/Hero'
 
 // eslint-disable-next-line
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   ${normalize()}
 
   html {
@@ -88,8 +88,6 @@ const Name = styled.div`
     }
   }
 `
-
-const NameIndex = Name.withComponent('h1')
 
 const Ul = styled.ul`
   list-style: none;
@@ -204,16 +202,11 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
         href="/favicon-16x16.png"
       />
     </Helmet>
+    <GlobalStyle />
     <Header>
-      {index ? (
-        <NameIndex>
-          <Link to="/">Lars Graubner</Link>
-        </NameIndex>
-      ) : (
-        <Name>
-          <Link to="/">Lars Graubner</Link>
-        </Name>
-      )}
+      <Name as={index ? 'h1' : 'div'}>
+        <Link to="/">Lars Graubner</Link>
+      </Name>
       <Nav>
         <NavLink to="/">About</NavLink>
         <NavLink to="/blog/">Blog</NavLink>
