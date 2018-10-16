@@ -230,30 +230,7 @@ export default ({ data }: Props) => {
           the processing of data to fulfill a contract or for measures
           preliminary to a contract.
         </P>
-        <H2>4. Analytics and advertising</H2>
-        <H3>Google Analytics</H3>
-        <P>
-          Google Analytics is a web analytics service offered by Google that
-          tracks and reports website traffic. Google uses the data collected to
-          track and monitor the use of our Service. This data is shared with
-          other Google services. Google may use the collected data to
-          contextualize and personalize the ads of its own advertising network.
-        </P>
-        <P>
-          You can opt-out of having made your activity on the Service available
-          to Google Analytics by installing the Google Analytics opt-out browser
-          add-on. The add-on prevents the Google Analytics JavaScript (ga.js,
-          analytics.js, and dc.js) from sharing information with Google
-          Analytics about visits activity.
-        </P>
-        <P>
-          For more information on the privacy practices of Google, please visit
-          the Google Privacy & Terms web page:
-          <Link to="https://policies.google.com/privacy?hl=en">
-            https://policies.google.com/privacy?hl=en
-          </Link>
-        </P>
-        <H2>5. Newsletter</H2>
+        <H2>4. Newsletter</H2>
         <H3>Newsletter data</H3>
         <P>
           If you would like to receive our newsletter, we require a valid email
