@@ -155,25 +155,15 @@ const config = {
       }
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify'
-  ]
-}
-
-if (process.env.NODE_ENV === 'production') {
-  const plugins = [
+    'gatsby-plugin-netlify',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-fathom',
       options: {
-        trackingId: 'UA-44046571-2',
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-        exclude: ['/404']
+        trackingUrl: 'fat.larsgraubner.de',
+        siteId: 'VUIPY'
       }
     }
   ]
-
-  config.plugins.push(...plugins)
 }
 
 module.exports = config
