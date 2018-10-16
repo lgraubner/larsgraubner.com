@@ -9,7 +9,6 @@ import Container from '../components/Container'
 import { H1, H2, H3 } from '../components/Heading'
 import P from '../components/Paragraph'
 import { Ul, Li } from '../components/List'
-import Link from '../components/Link'
 
 type Props = {
   data: Object
