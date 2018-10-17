@@ -8,7 +8,7 @@
     "date-fns": "1.29.0",
     "gatsby": "2.0.25",
     "gatsby-image": "2.0.15",
-    "gatsby-plugin-fathom": "1.0.2",
+    "gatsby-plugin-fathom": "1.0.4",
     "gatsby-plugin-feed": "2.0.8",
     "gatsby-plugin-flow": "1.0.2",
     "gatsby-plugin-manifest": "2.0.5",
