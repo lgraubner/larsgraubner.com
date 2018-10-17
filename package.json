@@ -65,8 +65,7 @@
     "flow": "flow",
     "format": "prettier --write 'src/**/*.js'",
     "build": "gatsby build",
-    "create-post": "node create-post.js",
-    "precommit": "lint-staged"
+    "create-post": "node create-post.js"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -91,5 +90,10 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
