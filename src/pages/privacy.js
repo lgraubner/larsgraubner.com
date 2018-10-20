@@ -229,7 +229,18 @@ export default ({ data }: Props) => {
           the processing of data to fulfill a contract or for measures
           preliminary to a contract.
         </P>
-        <H2>4. Newsletter</H2>
+        <H2>4. Fathom Analytics</H2>
+        <P>
+          Fathom Analytics is website analytics software that tracks and reports
+          aggregate website traffic without compromising on your privacy. Fathom
+          only reports on aggregates, so no information specific to the website
+          visitor is ever tracked or recorded.
+        </P>
+        <P>
+          You can opt-out of tracking by the Fathom software by enabling "Do Not
+          Track" in your browser settings.
+        </P>
+        <H2>5. Newsletter</H2>
         <H3>Newsletter data</H3>
         <P>
           If you would like to receive our newsletter, we require a valid email
