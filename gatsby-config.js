@@ -159,7 +159,7 @@ const config = {
     {
       resolve: 'gatsby-plugin-fathom',
       options: {
-        trackingUrl: 'fat.larsgraubner.de',
+        trackingUrl: 'analytics.larsgraubner.de',
         siteId: 'VUIPY'
       }
     }
