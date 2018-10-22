@@ -31,10 +31,10 @@ const Index = ({ data }: Props) => {
   return (
     <Layout index>
       <Helmet>
-        <title>{author} - Front-end developer</title>
+        <title>{author} - Web Developer</title>
         <meta name="robots" content="index,follow" />
         <meta name="description" content={description} />
-        <meta property="og:title" content={`${author} - Front-end developer`} />
+        <meta property="og:title" content={`${author} - Web Developer`} />
         <meta property="og:type" content="website" />
 
         <meta property="og:url" content={siteUrl} />
@@ -43,10 +43,7 @@ const Index = ({ data }: Props) => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@larsgraubner" />
         <meta name="twitter:domain" content="larsgraubner.com" />
-        <meta
-          name="twitter:title"
-          content={`${author} – Front-end Developer`}
-        />
+        <meta name="twitter:title" content={`${author} – Web Developer`} />
         <meta name="twitter:description" content={description} />
       </Helmet>
       <Hero>
