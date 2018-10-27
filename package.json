@@ -1,7 +1,7 @@
 {
   "name": "larsgraubner-site",
   "description": "Personal website and blog.",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "author": "Lars Graubner <mail@larsgraubner.de>",
   "dependencies": {
     "babel-plugin-styled-components": "1.8.0",
