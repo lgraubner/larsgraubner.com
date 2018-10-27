@@ -96,7 +96,7 @@ class Popover extends React.component {
     }));
   }
 
-  handleOutsideClick() {
+  handleOutsideClick(e) {
     // ignore clicks on the component itself
     if (this.node.contains(e.target)) {
       return;
