@@ -7,9 +7,10 @@ import P from './Paragraph'
 const Container = styled.section`
   margin-top: 80px;
   position: relative;
-  border: 7px solid hsl(0, 0%, 0%);
-  padding: 40px;
-  box-shadow: 5px 6px 0px hsl(224, 53%, 49%);
+  border: 2px solid hsl(0, 0%, 0%);
+  padding: 30px;
+  box-shadow: 5px 6px 0px hsl(200, 55%, 77%);
+  border-radius: 2px;
 
   @media (min-width: 768px) {
     margin-top: 140px;
@@ -17,9 +18,9 @@ const Container = styled.section`
 `
 
 const Heading = styled.h4`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
-  margin: 0 0 0.75em;
+  margin: 0 0 0.5em;
 `
 
 const InputWrapper = styled.div`
@@ -36,6 +37,8 @@ const Input = styled.input`
   display: inline-block;
   flex-grow: 1;
   max-width: 400px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 `
 
 const Button = styled.input`
@@ -47,6 +50,8 @@ const Button = styled.input`
   cursor: pointer;
   height: 45px;
   padding: 0 15px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 
   @media (min-width: 768px) {
     padding: 0 25px;
@@ -55,7 +60,7 @@ const Button = styled.input`
 
 const Error = styled.div`
   position: absolute;
-  bottom: -22px;
+  bottom: 80px;
   font-size: 14px;
   color: hsl(0, 100%, 50%);
 `
