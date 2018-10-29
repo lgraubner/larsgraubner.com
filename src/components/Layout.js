@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   padding: 0 5%;
 
   @media (min-width: 768px) {
-    padding: 0 40px;
+    padding: 0 18px;
   }
 `
 
@@ -45,7 +45,7 @@ const Content = styled.main`
   }
 
   @media (min-width: 1400px) {
-    margin-top: 250px;
+    margin-top: 180px;
   }
 `
 
@@ -142,24 +142,24 @@ const FooterLink = styled(Link)`
 `
 
 const Footer = styled.footer`
-  max-width: 960px;
-  margin: 30px auto 100px;
-  border-top: 1px solid hsl(0, 0%, 90%);
-  padding-top: 50px;
+  max-width: 1400px;
+  margin: 30px auto 0;
+  padding: 50px 80px;
+  background-color: rgb(250, 250, 250);
 
   @media (min-width: 768px) {
     margin-top: 60px;
-    padding-top: 80px;
+    padding: 80px 100px;
   }
 `
 
 const Legal = styled.div`
-  margin-top: 80px;
+  margin-top: 40px;
   color: hsl(0, 0%, 33%);
   line-height: 1.7em;
 
   @media (min-width: 768px) {
-    margin-top: 120px;
+    margin-top: 60px;
   }
 `
 
@@ -233,12 +233,6 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
         </Nav>
         <Legal>
           <Nav>
-            <span>
-              Licensed under{' '}
-              <LegalLink to="https://creativecommons.org/licenses/by-sa/3.0/">
-                CC BY-SA 3.0
-              </LegalLink>
-            </span>
             <LegalLink to="/privacy/">Privacy</LegalLink>
             <LegalLink to="/legal-notice/">Legal Notice</LegalLink>
           </Nav>

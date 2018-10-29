@@ -7,6 +7,9 @@ import P from './Paragraph'
 const Container = styled.section`
   margin-top: 80px;
   position: relative;
+  border: 7px solid hsl(0, 0%, 0%);
+  padding: 40px;
+  box-shadow: 5px 6px 0px hsl(224, 53%, 49%);
 
   @media (min-width: 768px) {
     margin-top: 140px;
