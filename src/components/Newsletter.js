@@ -8,12 +8,13 @@ const Container = styled.section`
   margin-top: 80px;
   position: relative;
   border: 2px solid hsl(0, 0%, 0%);
-  padding: 30px;
+  padding: 30px 5%;
   box-shadow: 5px 6px 0px hsl(200, 55%, 73%);
   border-radius: 2px;
 
   @media (min-width: 768px) {
     margin-top: 140px;
+    padding: 30px;
   }
 `
 
@@ -26,6 +27,11 @@ const Heading = styled.h4`
 const InputWrapper = styled.div`
   display: flex;
   width: 100%;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 const Input = styled.input`
@@ -34,11 +40,19 @@ const Input = styled.input`
   line-height: 20px;
   padding: 0 15px;
   min-height: 45px;
-  display: inline-block;
   flex-grow: 1;
   max-width: 400px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-radius: 2px;
+  display: block;
+  margin-bottom: 5px;
+
+  @media (min-width: 768px) {
+    margin: 0;
+    display: inline-block;
+    border-radius: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
 `
 
 const Button = styled.input`
@@ -50,11 +64,13 @@ const Button = styled.input`
   cursor: pointer;
   height: 45px;
   padding: 0 15px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-radius: 2px;
 
   @media (min-width: 768px) {
     padding: 0 25px;
+    border-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
   }
 `
 
