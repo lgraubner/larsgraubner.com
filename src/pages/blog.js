@@ -9,13 +9,14 @@ import Layout from '../components/Layout'
 import Link from '../components/Link'
 import { H1 } from '../components/Heading'
 import Container from '../components/Container'
+import P from '../components/Paragraph'
 
 const PostList = styled.div`
   margin-top: 80px;
 `
 
 const Post = styled.div`
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 `
 
 const Title = styled.h2`
@@ -36,11 +37,15 @@ const Title = styled.h2`
 `
 
 const Meta = styled.div`
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 0.5em;
   line-height: 1em;
   font-weight: 500;
   color: hsl(0, 0%, 60%);
+`
+
+const Excerpt = styled.div`
+  margin-top: 15px;
 `
 
 type Props = {
@@ -62,12 +67,15 @@ export default ({ data }: Props) => {
         <PostList>
           {posts.map(post => (
             <Post key={post.node.fields.slug}>
-              <Meta>{post.node.frontmatter.date}</Meta>
               <Title>
                 <Link to={post.node.fields.slug}>
                   {post.node.frontmatter.title}
                 </Link>
               </Title>
+              <Meta>{post.node.frontmatter.date}</Meta>
+              <Excerpt>
+                <P>{post.node.excerpt}</P>
+              </Excerpt>
             </Post>
           ))}
         </PostList>
@@ -86,6 +94,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          excerpt(pruneLength: 150)
           fields {
             slug
           }
