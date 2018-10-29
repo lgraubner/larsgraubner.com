@@ -65,7 +65,6 @@ const Header = styled.header`
   @media (min-width: 1400px) {
     max-width: none;
     width: 100%;
-    position: fixed;
     padding: 0 70px;
     margin: 0;
     top: 75px;

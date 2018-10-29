@@ -19,10 +19,18 @@ export default styled.p`
   a {
     color: currentColor;
     text-decoration: none;
-    border-bottom: 1px solid currentColor;
+    background: linear-gradient(hsl(200, 55%, 73%), hsl(200, 55%, 73%));
+    background-repeat: no-repeat;
+    background-size: 100% 0.175em;
+    background-position: left 0 bottom 0;
 
     &:hover {
-      color: hsl(0, 0%, 20%);
+      text-decoration: none;
+    }
+
+    &:focus {
+      background: hsl(200, 55%, 77%);
+      outline: 0;
     }
   }
 `

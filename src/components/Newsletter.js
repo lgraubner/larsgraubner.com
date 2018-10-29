@@ -9,7 +9,7 @@ const Container = styled.section`
   position: relative;
   border: 2px solid hsl(0, 0%, 0%);
   padding: 30px;
-  box-shadow: 5px 6px 0px hsl(200, 55%, 77%);
+  box-shadow: 5px 6px 0px hsl(200, 55%, 73%);
   border-radius: 2px;
 
   @media (min-width: 768px) {

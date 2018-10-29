@@ -82,8 +82,8 @@ const Index = ({ data }: Props) => {
         <P>
           You can find some of my code on{' '}
           <Link to="https://github.com/lgraubner">Github</Link>, check my CV on{' '}
-          <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>{' '}
-          (ugh), follow my thoughts on{' '}
+          <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>,
+          follow my thoughts on{' '}
           <Link to="https://twitter.com/larsgraubner">Twitter</Link> or read
           articles on my <Link to="/blog/">Blog</Link>. When I'm not coding, I
           usually spend time with my family at the sea or somewhere else
