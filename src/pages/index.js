@@ -13,9 +13,12 @@ import Hero from '../components/Hero'
 import Container from '../components/Container'
 import SectionTitle from '../components/SectionTitle'
 import Newsletter from '../components/Newsletter'
+import { Container as GridContainer, Row, Col } from '../components/Grid'
+import { H1 } from '../components/Heading'
 
 const StyledImage = styled(Image)`
   max-width: 100%;
+  width: 400px !important;
   height: auto;
 `
 
@@ -46,6 +49,24 @@ const Index = ({ data }: Props) => {
         <meta name="twitter:title" content={`${author} – Web Developer`} />
         <meta name="twitter:description" content={description} />
       </Helmet>
+      <GridContainer>
+        <Row>
+          <Col>
+            <StyledImage
+              resolutions={data.file.childImageSharp.resolutions}
+              fadeIn
+              alt={author}
+            />
+          </Col>
+          <Col>
+            <H1>Hi, I'm Lars.</H1>
+            <P>
+              I'm a Front-end developer from Germany focusing on React, React
+              Native and Node.js.
+            </P>
+          </Col>
+        </Row>
+      </GridContainer>
       <Hero>
         I'm building Apps with React Native at{' '}
         <Link to="https://www.checkdomain.de" rel="nofollow">
@@ -129,9 +150,9 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    file(relativePath: { eq: "lars.jpg" }) {
+    file(relativePath: { eq: "lars_slim.jpg" }) {
       childImageSharp {
-        resolutions(width: 960, height: 600) {
+        resolutions(width: 511, height: 600) {
           ...GatsbyImageSharpResolutions
         }
       }
