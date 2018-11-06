@@ -129,6 +129,10 @@ const Nav = ({ children }: NavProps) => (
   </Ul>
 )
 
+const FooterNav = styled.div`
+  margin-bottom: 30px;
+`
+
 const FooterLink = styled(Link)`
   font-weight: 600;
   font-size: 16px;
@@ -144,7 +148,8 @@ const Footer = styled.footer`
   max-width: 1400px;
   margin: 30px auto 0;
   padding: 50px 80px;
-  background-color: rgb(250, 250, 250);
+  background-color: hsl(200, 0%, 98%);
+  text-align: center;
 
   @media (min-width: 768px) {
     margin-top: 60px;
@@ -152,24 +157,34 @@ const Footer = styled.footer`
   }
 `
 
-const Legal = styled.div`
-  margin-top: 40px;
-  color: hsl(0, 0%, 33%);
-  line-height: 1.7em;
+const Info = styled.div`
+  font-size: 13px;
+  color: hsl(0, 0%, 30%);
+  margin-top: 20px;
 
-  @media (min-width: 768px) {
-    margin-top: 60px;
+  a {
+    color: currentColor;
+    text-decoration: none;
+    background: linear-gradient(hsl(200, 55%, 73%), hsl(200, 55%, 73%));
+    background-repeat: no-repeat;
+    background-size: 100% 0.175em;
+    background-position: left 0 bottom 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      background: hsl(200, 55%, 77%);
+      outline: 0;
+    }
   }
 `
 
-const LegalLink = styled(FooterLink)`
-  color: hsl(0, 0%, 33%);
-  font-weight: normal;
-
-  &:hover {
-    color: hsl(0, 0%, 0%);
-    border: 0;
-  }
+const Copyright = styled.div`
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 60px;
 `
 
 type Props = {
@@ -216,26 +231,38 @@ const Layout = ({ children, index = false, minimal = false }: Props) => (
 
     {!minimal && (
       <Footer>
-        <Hero>
-          Work inquiry, question or something else?{' '}
-          <Link to="mailto:hello@larsgraubner.com">Email me</Link>.
-        </Hero>
-
-        <Nav>
-          <FooterLink to="https://twitter.com/larsgraubner">Twitter</FooterLink>
-
-          <FooterLink to="https://github.com/lgraubner">Github</FooterLink>
-
-          <FooterLink to="https://www.linkedin.com/in/larsgraubner/">
-            LinkedIn
-          </FooterLink>
-        </Nav>
-        <Legal>
+        <FooterNav>
           <Nav>
-            <LegalLink to="/privacy/">Privacy</LegalLink>
-            <LegalLink to="/legal-notice/">Legal Notice</LegalLink>
+            <NavLink to="/">About</NavLink>
+            <NavLink to="/blog">Blog</NavLink>
+            <NavLink to="/privacy/">Privacy</NavLink>
+            <NavLink to="/legal-notice/">Legal Notice</NavLink>
           </Nav>
-        </Legal>
+        </FooterNav>
+        <FooterNav>
+          <Nav>
+            <FooterLink to="https://twitter.com/larsgraubner">
+              Twitter
+            </FooterLink>
+
+            <FooterLink to="https://github.com/lgraubner">Github</FooterLink>
+
+            <FooterLink to="https://www.linkedin.com/in/larsgraubner/">
+              LinkedIn
+            </FooterLink>
+          </Nav>
+        </FooterNav>
+        <Copyright>
+          © 2018 Copyright Lars Graubner. All rights reserved.
+        </Copyright>
+        <Info>
+          This site is built with{' '}
+          <Link to="https://www.gatsbyjs.org/">GatsbyJS</Link> and hosted on{' '}
+          <Link to="https://www.netlify.com/">Netlify</Link>. The source code
+          can be found on{' '}
+          <Link to="https://github.com/lgraubner/larsgraubner.com">Github</Link>
+          .
+        </Info>
       </Footer>
     )}
   </Wrapper>
