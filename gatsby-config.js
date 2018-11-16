@@ -154,7 +154,6 @@ const config = {
           }))
       }
     },
-    'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-fathom',

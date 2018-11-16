@@ -1,0 +1,4 @@
+# Redirect default Netlify subdomain to primary domain
+https://friendly-dubinsky-06aa6c.netlify.com/* https://larsgraubner.com/:splat 301!
+
+/blog   /	  301

@@ -9,15 +9,15 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   font-size: 19px;
   line-height: 1.7em;
-  color: hsl(0, 0%, 33%);
+  color: hsla(0, 0%, 0%, 0.84);
   margin-bottom: 5px;
 
   a {
-    color: currentColor;
+    color: #d22d64;
     text-decoration: none;
-    border-bottom: 1px solid currentColor;
 
     &:hover {
-      color: hsl(0, 0%, 20%);
+      border-bottom: 1px solid currentColor;
     }
+  }
 `

@@ -5,21 +5,11 @@ import styled from 'styled-components'
 import P from './Paragraph'
 
 const Container = styled.section`
-  margin-top: 80px;
   position: relative;
-  border: 2px solid hsl(0, 0%, 0%);
-  padding: 30px 5%;
-  box-shadow: 5px 6px 0px hsl(200, 55%, 73%);
-  border-radius: 2px;
-
-  @media (min-width: 768px) {
-    margin-top: 140px;
-    padding: 30px;
-  }
 `
 
 const Heading = styled.h4`
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 600;
   margin: 0 0 0.5em;
 `
@@ -36,47 +26,59 @@ const InputWrapper = styled.div`
 
 const Input = styled.input`
   font-size: 17px;
-  border: 1px solid hsla(0, 0%, 0%);
+  border: 1px solid hsl(0, 0%, 0%);
+  border: 0;
+  background-color: hsla(0, 0%, 0%, 0.065);
   line-height: 20px;
   padding: 0 15px;
   min-height: 45px;
   flex-grow: 1;
-  max-width: 400px;
-  border-radius: 2px;
+  width: 100%;
   display: block;
   margin-bottom: 5px;
+  outline: 0;
+  transition: background 150ms ease-in;
+
+  &:focus {
+    background-color: hsla(0, 0%, 0%, 0.1);
+  }
 
   @media (min-width: 768px) {
     margin: 0;
     display: inline-block;
     border-radius: 0;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+    max-width: 340px;
   }
 `
 
 const Button = styled.input`
   border: 0;
-  background-color: hsl(0, 0%, 0%);
+  background-color: #d22d64;
   color: hsl(0, 0%, 100%);
   font-weight: bold;
   padding: 0;
+  font-size: 16px;
   cursor: pointer;
   height: 45px;
   padding: 0 15px;
-  border-radius: 2px;
+  transition: background 150ms ease-in;
+
+  &:active {
+    outline: 0;
+  }
 
   @media (min-width: 768px) {
-    padding: 0 25px;
-    border-radius: 0;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+    padding: 0 30px;
+  }
+
+  &:hover {
+    background-color: hsl(0, 0%, 0%);
   }
 `
 
 const Error = styled.div`
   position: absolute;
-  bottom: 80px;
+  bottom: -1.6em;
   font-size: 14px;
   color: hsl(0, 100%, 50%);
 `
@@ -130,7 +132,7 @@ class Newsletter extends React.Component<Props, State> {
           noValidate
         >
           <Heading>I maintain a newsletter to share what I learn</Heading>
-          <P>Topics include JavaScript, React and web development. No spam.</P>
+          <P>Never miss an article about React and Javascript.</P>
           <InputWrapper>
             <Input
               type="email"
@@ -143,8 +145,9 @@ class Newsletter extends React.Component<Props, State> {
             <Button type="submit" value="Subscribe" />
           </InputWrapper>
         </form>
-        {submitted &&
-          !valid && <Error>Please enter a valid e-mail address.</Error>}
+        {submitted && !valid && (
+          <Error>Please enter a valid e-mail address.</Error>
+        )}
       </Container>
     )
   }

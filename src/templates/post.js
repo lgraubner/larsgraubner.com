@@ -7,38 +7,39 @@ import { graphql } from 'gatsby'
 import rehypeReact from 'rehype-react'
 
 import Layout from '../components/Layout'
-import Container from '../components/Container'
 import { H1, H2, H3 } from '../components/Heading'
 import P from '../components/Paragraph'
 import Newsletter from '../components/Newsletter'
+import Link from '../components/Link'
 
 const Post = styled.article`
   margin-top: 4rem;
 
   p > code {
-    font-size: 85%;
-    word-break: break-word;
-    padding: 0;
-    background-color: transparent;
-    color: hsla(332, 79%, 58%);
+    font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
+    background: hsla(0, 0%, 0%, 0.05);
+    padding: 3px 4px;
+    margin: 0 2px;
+    font-size: 16px;
+    color: hsla(0, 0%, 0%, 0.84);
     border-radius: 0;
-    padding: 0;
-    line-height: inherit;
   }
 
   .gatsby-highlight {
-    margin: 50px 0;
+    margin: 30px 0;
 
     pre {
+      background: hsla(0, 0%, 0%, 0.05);
       margin: 0;
-      border-radius: 3px;
       padding: 20px 20px;
       font-size: 0.9rem;
       line-height: 1.6em;
     }
 
     code {
+      background: transparent;
       line-height: 1.55em;
+      color: hsla(0, 0%, 0%, 0.84);
     }
   }
 `
@@ -51,6 +52,41 @@ const Date = styled.div`
   margin-bottom: 1em;
   color: hsl(0, 0%, 60%);
   font-weight: 600;
+`
+
+const Twitter = styled.div`
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  color: hsla(0, 0%, 0%, 0.84);
+  line-height: 1.4em;
+  border-top: 1px solid hsla(0, 0%, 0%, 0.65);
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.65);
+  padding: 15px 10px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    margin-top: 70px;
+    font-size: 20px;
+    padding: 20px 30px;
+  }
+`
+
+const TwitterLink = styled(Link)`
+  color: #00aced;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
+const NewsletterWrapper = styled.div`
+  margin-top: 50px;
+
+  @media (min-width: 768px) {
+    margin-top: 90px;
+  }
 `
 
 type Props = {
@@ -119,14 +155,20 @@ const PostTemplate = ({ data, location }: Props) => {
         </script>
       </Helmet>
       <Post>
-        <Container>
-          <Date>{date}</Date>
-          <H1>{title}</H1>
-          {renderAst(post.htmlAst)}
-
-          <Newsletter />
-        </Container>
+        <Date>{date}</Date>
+        <H1>{title}</H1>
+        {renderAst(post.htmlAst)}
       </Post>
+      <Twitter>
+        Like this post? I'm{' '}
+        <TwitterLink to="https://twitter.com/larsgraubner">
+          @larsgraubner
+        </TwitterLink>{' '}
+        on Twitter. Follow me!
+      </Twitter>
+      <NewsletterWrapper>
+        <Newsletter />
+      </NewsletterWrapper>
     </Layout>
   )
 }

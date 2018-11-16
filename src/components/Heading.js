@@ -18,8 +18,7 @@ export const H2 = styled.h2`
   line-height: 1.3em;
 
   @media (min-width: 768px) {
-    font-size: 34px;
-    margin: 2em 0 1.5em;
+    font-size: 32px;
   }
 `
 export const H3 = styled.h3`
@@ -29,6 +28,6 @@ export const H3 = styled.h3`
   line-height: 1.3em;
 
   @media (min-width: 768px) {
-    font-size: 28px;
+    font-size: 26px;
   }
 `
