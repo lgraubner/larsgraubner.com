@@ -161,7 +161,8 @@ const config = {
         trackingUrl: 'analytics.larsgraubner.de',
         siteId: 'VUIPY'
       }
-    }
+    },
+    'gatsby-plugin-twitter'
   ]
 }
 

@@ -42,6 +42,10 @@ const Post = styled.article`
       color: hsla(0, 0%, 0%, 0.84);
     }
   }
+
+  .twitter-tweet {
+    margin: 50px auto !important;
+  }
 `
 
 const Date = styled.div`
