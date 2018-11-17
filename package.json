@@ -65,7 +65,7 @@
     "flow": "flow",
     "format": "prettier --write 'src/**/*.js'",
     "build": "gatsby build",
-    "create-post": "node create-post.js"
+    "create-post": "node scripts/create-post.js"
   },
   "eslintConfig": {
     "extends": "react-app",
