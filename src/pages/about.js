@@ -29,10 +29,10 @@ const About = () => (
       </Link>
       . I'm a husband and father. I like to create nice things with JavaScript
       in the Front-end as well as in the Back-end. You can check out some of my
-      code on [Github](https://github.com/lgraubner). I also tweet as{' '}
-      <Link to="https://twitter.com/larsgraubner">@larsgraubner</Link>. When I'm
-      doing none of those things I enjoy reading and spending time with the
-      family.
+      code on <Link to="https://github.com/lgraubner">Github</Link>. I also
+      tweet as <Link to="https://twitter.com/larsgraubner">@larsgraubner</Link>.
+      When I'm doing none of those things I enjoy reading and spending time with
+      the family.
     </P>
   </Layout>
 )
