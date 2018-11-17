@@ -30,7 +30,7 @@ export default ({ data }: Props) => (
     <P>
       Telephone: +49 176 326 47 303
       <br />
-      Email: hello@larsgraubner.com
+      Email: hi@larsgraubner.com
     </P>
     <H2>
       Responsible for contents acc. to Sec. 55, para. 2 German Federal

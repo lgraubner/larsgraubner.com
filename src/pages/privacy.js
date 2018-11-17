@@ -113,7 +113,7 @@ export default ({ data }: Props) => (
     <P>
       Telephone: +4917632647303
       <br />
-      Email: hello@larsgraubner.com
+      Email: hi@larsgraubner.com
     </P>
     <P>
       The responsible party is the natural or legal person who alone or jointly

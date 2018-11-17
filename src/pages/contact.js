@@ -14,7 +14,7 @@ const About = () => (
       <meta name="robots" content="index,nofollow" />
       <meta
         name="description"
-        content="If you'd like to say hi, I'm @larsgraubner on Twitter. You can also shoot me an email at hello@larsgraubner.com. I look forward to hearing from you!"
+        content="If you'd like to say hi, I'm @larsgraubner on Twitter. You can also shoot me an email at hi@larsgraubner.com. I look forward to hearing from you!"
       />
     </Helmet>
     <H1>Contact</H1>
@@ -22,8 +22,8 @@ const About = () => (
       If you'd like to say hi, I'm{' '}
       <Link to="https://twitter.com/larsgraubner">@larsgraubner</Link> on
       Twitter. Of course, you can also shoot me an email at{' '}
-      <Link to="mailto:hello@larsgraubner.com">hello@larsgraubner.com</Link>. I
-      look forward to hearing from you!
+      <Link to="mailto:hi@larsgraubner.com">hi@larsgraubner.com</Link>. I look
+      forward to hearing from you!
     </P>
   </Layout>
 )
