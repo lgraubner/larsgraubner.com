@@ -15,33 +15,40 @@ import Link from '../components/Link'
 const Post = styled.article`
   margin-top: 4rem;
 
-  p > code {
+  p:not(pre) > code[class*="language-"] {
     font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
-    background: hsla(0, 0%, 0%, 0.05);
+    background: #f9f9f9;
     padding: 3px 4px;
     margin: 0 2px;
     font-size: 16px;
     color: hsla(0, 0%, 0%, 0.84);
     border-radius: 0;
+    border: 0;
+    text-shadow: none;
   }
 
   .gatsby-highlight {
-    margin: 30px 0;
+    margin: 40px 0;
 
     pre {
-      background: hsla(0, 0%, 0%, 0.05);
+      display: block;
       margin: 0;
-      padding: 20px 20px;
-      font-size: 0.9rem;
-      line-height: 1.6em;
+      padding: 20px;
+      font-size: 1rem;
+      line-height: 1.5em;
+      white-space: pre-wrap;
+      word-break: break-all;
+      word-wrap: break-word;
+      background-color: #f9f9f9;
     }
 
-    code {
-      background: transparent;
-      line-height: 1.55em;
-      color: hsla(0, 0%, 0%, 0.84);
+    pre code {
+      font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
+      padding: 0;
+      font-size: 100%;
+      color: inherit;
+      background-color: transparent;
     }
-  }
 
   .twitter-tweet {
     margin: 50px auto !important;

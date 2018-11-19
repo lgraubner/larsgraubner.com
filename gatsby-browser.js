@@ -1,4 +1,4 @@
-require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css')
+require('prismjs/themes/prism.css')
 
 const pkg = require('./package.json')
 
