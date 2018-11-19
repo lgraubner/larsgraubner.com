@@ -111,7 +111,6 @@ const PostTemplate = ({ data, location }: Props) => {
   const post = data.markdownRemark
   const { description, title, date, dateRaw } =
     idx(data, _ => _.markdownRemark.frontmatter) || {}
-  const author = idx(data, _ => _.site.siteMetadata.author) || ''
   const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
 
   return (
@@ -123,7 +122,7 @@ const PostTemplate = ({ data, location }: Props) => {
         <meta property="og:type" content="article" />
 
         <meta property="og:url" content={siteUrl + location.pathname} />
-        <meta property="og:site_name" content={author} />
+        <meta property="og:site_name" content="Lars Graubner's Blog" />
         <meta property="og:description" content={description} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@larsgraubner" />
@@ -137,7 +136,7 @@ const PostTemplate = ({ data, location }: Props) => {
   "headline": "${title}",
   "author": {
     "@type": "Person",
-    "name": "${author}"
+    "name": "Lars Graubner"
   },
   "datePublished": "${dateRaw}",
   "description": "${description}",
@@ -183,7 +182,6 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     site {
       siteMetadata {
-        author
         siteUrl
       }
     }

@@ -21,8 +21,9 @@ const Index = () => (
     </Helmet>
     <H1>Uses</H1>
     <P>
-      If you are interested in what tools and apps I use, here is a list. Some
-      things might change frequently, but I try to keep this list up to date.
+      In case you are interested in what tools and apps I use, here is a list.
+      Some things might change frequently, but I try to keep this list up to
+      date.
     </P>
     <P>
       If you think something is missing don't hesitate to write me a{' '}

@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
 import { normalize } from 'polished'
 import Helmet from 'react-helmet'
 
@@ -170,71 +169,56 @@ type Props = {
 }
 
 const Layout = ({ children, index = false, minimal = false, data }: Props) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            author
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Wrapper>
-        <Helmet>
-          <html lang="en" />
-          <meta name="robots" Wrapper="index,follow" />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-          />
-        </Helmet>
-        <GlobalStyle />
-        <Header>
-          <Name as={index ? 'h1' : 'div'}>
-            <NameLink to="/">{data.site.siteMetadata.author}</NameLink>
-          </Name>
-          <Nav>
-            <NavLink to="/">Blog</NavLink>
-            <NavLink to="https://twitter.com/larsgraubner">Twitter</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
-          </Nav>
-        </Header>
-        <Content>{children}</Content>
-        <Footer>
-          <Copyright>
-            © {new Date().getFullYear()} Lars Graubner. All rights reserved.
-          </Copyright>
-          <FooterNav separator={false}>
-            <FooterLink to="/">Blog</FooterLink>
-            <FooterLink to="/about">About</FooterLink>
-            <FooterLink to="/contact">Contact</FooterLink>
-            <FooterLink to="https://twitter.com/larsgraubner">
-              Twitter
-            </FooterLink>
-            <FooterLink to="https://github.com/lgraubner">Github</FooterLink>
-            <FooterLink to="/legal-notice">Legal</FooterLink>
-            <FooterLink to="/privacy">Privacy</FooterLink>
-          </FooterNav>
-        </Footer>
-      </Wrapper>
-    )}
-  />
+  <Wrapper>
+    <Helmet>
+      <html lang="en" />
+      <meta name="robots" Wrapper="index,follow" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+    </Helmet>
+    <GlobalStyle />
+    <Header>
+      <Name as={index ? 'h1' : 'div'}>
+        <NameLink to="/">Lars Graubner</NameLink>
+      </Name>
+      <Nav>
+        <NavLink to="/">Blog</NavLink>
+        <NavLink to="https://twitter.com/larsgraubner">Twitter</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
+      </Nav>
+    </Header>
+    <Content>{children}</Content>
+    <Footer>
+      <Copyright>
+        © {new Date().getFullYear()} Lars Graubner. All rights reserved.
+      </Copyright>
+      <FooterNav separator={false}>
+        <FooterLink to="/">Blog</FooterLink>
+        <FooterLink to="/about">About</FooterLink>
+        <FooterLink to="/contact">Contact</FooterLink>
+        <FooterLink to="https://twitter.com/larsgraubner">Twitter</FooterLink>
+        <FooterLink to="https://github.com/lgraubner">Github</FooterLink>
+        <FooterLink to="/legal-notice">Legal</FooterLink>
+        <FooterLink to="/privacy">Privacy</FooterLink>
+      </FooterNav>
+    </Footer>
+  </Wrapper>
 )
 
 export default Layout

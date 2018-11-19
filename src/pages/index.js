@@ -65,26 +65,27 @@ const NewsletterWrapper = styled.div`
 
 const Index = ({ data }: Props) => {
   const posts = idx(data, _ => _.allMarkdownRemark.edges) || []
-  const description = idx(data, _ => _.site.siteMetadata.description) || ''
-  const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
+
+  const { siteTitle, siteDescription, siteUrl } =
+    idx(data, _ => _.site.siteMetadata) || {}
 
   return (
     <Layout>
       <Helmet>
-        <title>Lars Graubner - Web Developer</title>
+        <title>{siteTitle}</title>
         <meta name="robots" content="index,follow" />
-        <meta name="description" content={description} />
+        <meta name="description" content={siteDescription} />
         <meta property="og:title" content="Lars Graubner - Web Developer" />
         <meta property="og:type" content="website" />
 
         <meta property="og:url" content={siteUrl} />
         <meta property="og:site_name" content="Lars Graubner" />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={siteDescription} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@larsgraubner" />
         <meta name="twitter:domain" content="larsgraubner.com" />
         <meta name="twitter:title" content="Lars Graubner – Web Developer" />
-        <meta name="twitter:description" content={description} />
+        <meta name="twitter:description" content={siteDescription} />
       </Helmet>
       <PostList>
         {posts.map((post, index) => (
@@ -112,7 +113,8 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        description
+        siteTitle
+        siteDescription
         siteUrl
       }
     }
