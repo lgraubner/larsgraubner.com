@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import Helmet from 'react-helmet'
 
@@ -6,11 +5,7 @@ import Layout from '../components/Layout'
 import P from '../components/Paragraph'
 import { H1, H2, H3 } from '../components/Heading'
 
-type Props = {
-  data: Object
-}
-
-export default ({ data }: Props) => (
+export default () => (
   <Layout>
     <Helmet>
       <title>Legal Notice - Lars Graubner</title>

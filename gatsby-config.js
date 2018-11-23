@@ -5,7 +5,7 @@ const config = {
     siteTitle: "Lars Graubner's Blog"
   },
   plugins: [
-    'gatsby-plugin-flow',
+    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

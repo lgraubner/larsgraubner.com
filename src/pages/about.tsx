@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
@@ -10,10 +9,6 @@ import P from '../components/Paragraph'
 import { H1 } from '../components/Heading'
 import Link from '../components/Link'
 
-type Props = {
-  data: Object
-}
-
 const Image = styled(Img)`
   max-width: 100% !important;
   margin-bottom: 30px;
@@ -24,7 +19,10 @@ const Image = styled(Img)`
   }
 `
 
-// @TODO: Bild
+interface Props {
+  data: any
+}
+
 const About = ({ data }: Props) => (
   <Layout>
     <Helmet>

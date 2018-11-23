@@ -1,5 +1,4 @@
-// @flow
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Ul = styled.ul`
@@ -36,12 +35,12 @@ const HeaderLi = styled.li`
   }
 `
 
-type NavProps = {
-  children: React.Node,
-  className?: Object
+interface Props {
+  children: JSX.Element[] | JSX.Element
+  className?: string
 }
 
-const Nav = ({ children, className }: NavProps) => (
+const Nav = ({ children, className }: Props) => (
   <nav className={className}>
     <Ul>
       {React.Children.map(children, child => (
@@ -51,7 +50,7 @@ const Nav = ({ children, className }: NavProps) => (
   </nav>
 )
 
-export const HeaderNav = ({ children, className }: NavProps) => (
+export const HeaderNav = ({ children, className }: Props) => (
   <nav className={className}>
     <Ul>
       {React.Children.map(children, child => (

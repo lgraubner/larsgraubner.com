@@ -1,26 +1,9 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage === 'develop') {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /\.js$/,
-            loader: 'eslint-loader',
-            exclude: /node_modules/,
-            enforce: 'pre'
-          }
-        ]
-      }
-    })
-  }
-}
-
 exports.createPages = ({ graphql, actions }) =>
   new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/post.js')
+    const blogPost = path.resolve('./src/templates/post.tsx')
     resolve(
       graphql(
         `

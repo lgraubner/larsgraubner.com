@@ -1,4 +1,3 @@
-/* eslint no-console:0 import/no-extraneous-dependencies:0 */
 const fs = require('fs')
 const path = require('path')
 const mri = require('mri')

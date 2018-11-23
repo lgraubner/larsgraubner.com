@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
@@ -15,7 +14,7 @@ import Link from '../components/Link'
 const Post = styled.article`
   margin-top: 4rem;
 
-  p:not(pre) > code[class*="language-"] {
+  p:not(pre) > code[class*='language-'] {
     font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
     background: #f9f9f9;
     padding: 3px 4px;
@@ -49,6 +48,7 @@ const Post = styled.article`
       color: inherit;
       background-color: transparent;
     }
+  }
 
   .twitter-tweet {
     margin: 50px auto !important;
@@ -100,9 +100,26 @@ const NewsletterWrapper = styled.div`
   }
 `
 
-type Props = {
-  data: Object,
-  location: Object
+interface Props {
+  data: {
+    site: {
+      siteMetadata: {
+        siteUrl: string
+      }
+    }
+    markdownRemark: {
+      id: string
+      htmlAst: any
+      frontmatter: {
+        title: string
+        description: string
+        date: string
+      }
+    }
+  }
+  location: {
+    pathname: string
+  }
 }
 
 const renderAst = new rehypeReact({
@@ -116,7 +133,7 @@ const renderAst = new rehypeReact({
 
 const PostTemplate = ({ data, location }: Props) => {
   const post = data.markdownRemark
-  const { description, title, date, dateRaw } =
+  const { description, title, date, dateRaw }: any =
     idx(data, _ => _.markdownRemark.frontmatter) || {}
   const siteUrl = idx(data, _ => _.site.siteMetadata.siteUrl) || ''
 

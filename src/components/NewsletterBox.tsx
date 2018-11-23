@@ -1,5 +1,4 @@
-// @flow
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import P from './Paragraph'
@@ -83,20 +82,18 @@ const Error = styled.div`
   color: hsl(0, 100%, 50%);
 `
 
-type Props = {}
-
-type State = {
-  valid: boolean,
+interface State {
+  valid: boolean
   submitted: boolean
 }
 
-class Newsletter extends React.Component<Props, State> {
+class Newsletter extends React.Component<{}, State> {
   state = {
-    valid: false,
-    submitted: false
+    submitted: false,
+    valid: false
   }
 
-  handleChange = (e: SyntheticEvent<HTMLInputElement>) => {
+  handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const email = e.currentTarget.value
 
     if (email.length > 0 && email.indexOf('@') !== -1) {
@@ -110,7 +107,7 @@ class Newsletter extends React.Component<Props, State> {
     }
   }
 
-  handleSubmit = (e: SyntheticEvent<HTMLInputElement>) => {
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     this.setState({
       submitted: true
     })

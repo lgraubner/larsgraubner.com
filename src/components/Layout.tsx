@@ -1,14 +1,12 @@
-// @flow
-import * as React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
 import { normalize } from 'polished'
+import React from 'react'
 import Helmet from 'react-helmet'
+import styled, { createGlobalStyle } from 'styled-components'
 
-import Link from './Link'
 import Icon, { icons } from './Icon'
+import Link from './Link'
 import Nav, { HeaderNav } from './Nav'
 
-// eslint-disable-next-line
 const GlobalStyle = createGlobalStyle`
   ${normalize()}
 
@@ -129,17 +127,17 @@ const IconLink = styled(Link)`
   }
 `
 
-type Props = {
-  children: React.Node,
-  index?: boolean,
+interface Props {
+  children: JSX.Element[] | JSX.Element
+  index?: boolean
   minimal?: boolean
 }
 
-const Layout = ({ children, index = false, minimal = false, data }: Props) => (
+const Layout = ({ children, index = false }: Props) => (
   <Wrapper>
     <Helmet>
       <html lang="en" />
-      <meta name="robots" Wrapper="index,follow" />
+      <meta name="robots" content="index,follow" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

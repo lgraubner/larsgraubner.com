@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import idx from 'idx'
 import Helmet from 'react-helmet'
@@ -8,10 +7,6 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import NewsletterBox from '../components/NewsletterBox'
-
-type Props = {
-  data: Object
-}
 
 const PostList = styled.div``
 
@@ -63,10 +58,36 @@ const NewsletterWrapper = styled.div`
   }
 `
 
+interface Props {
+  data: {
+    allMarkdownRemark: {
+      edges: Array<{
+        node: {
+          fields: {
+            slug: string
+          }
+          frontmatter: {
+            title: string
+            date: string
+            description: string
+          }
+        }
+      }>
+    }
+    site: {
+      siteMetadata: {
+        siteTitle: string
+        siteDescription: string
+        siteUrl: string
+      }
+    }
+  }
+}
+
 const Index = ({ data }: Props) => {
   const posts = idx(data, _ => _.allMarkdownRemark.edges) || []
 
-  const { siteTitle, siteDescription, siteUrl } =
+  const { siteTitle, siteDescription, siteUrl }: any =
     idx(data, _ => _.site.siteMetadata) || {}
 
   return (
@@ -88,7 +109,7 @@ const Index = ({ data }: Props) => {
         <meta name="twitter:description" content={siteDescription} />
       </Helmet>
       <PostList>
-        {posts.map((post, index) => (
+        {posts.map<JSX.Element>(post => (
           <Post key={post.node.fields.slug}>
             <Title>
               <Link to={post.node.fields.slug}>
