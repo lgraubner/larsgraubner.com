@@ -38,28 +38,43 @@ const About = ({ data }: Props) => (
     <H1>About</H1>
     <Image fixed={data.file.childImageSharp.fixed} alt="Lars Graubner" />
     <P>
-      Hi, I'm Lars.{' '}
-      <span role="img" aria-label="hello">
-        👋
-      </span>
-      I'm a Web Developer from Germany. I'm building apps with React Native at{' '}
-      <Link rel="nofollow" to="https://www.checkdomain.de">
+      I'm Lars Graubner, an aspiring web developer. I'm living in the north of
+      Germany, not far away from the east sea which I enjoy a lot.
+    </P>
+    <P>
+      Currently I work at{' '}
+      <Link to="https://www.checkdomain.de" rel="nofollow">
         checkdomain
       </Link>{' '}
       and{' '}
-      <Link rel="nofollow" to="http://idearockers.com">
+      <Link to="http://idearockers.com" rel="nofollow">
         idearockers
-      </Link>
-      . I'm a husband and father. I like to create nice things with JavaScript
-      in the Front-end as well as in the Back-end. You can check out some of my
-      code on <Link to="https://github.com/lgraubner">Github</Link>. I also
-      tweet as <Link to="https://twitter.com/larsgraubner">@larsgraubner</Link>.
-      When I'm doing none of those things I enjoy reading and spending time with
-      the family.
+      </Link>{' '}
+      creating apps with React and React Native. From 2016 to 2017 I worked at a
+      startup dealing with soccer bets and handling a lot of data. Prior to
+      that, I worked at an advertising agency. This is where I learned the
+      basics of web programming and got to know a lot of different types of
+      clients and technologies.
     </P>
     <P>
-      If you want to what kind of gear and software I'm using check out my{' '}
-      <Link to="/uses">uses page</Link>.
+      Beside that I'm working as self-employed developer. I'm realizing small
+      projects, ranging from simple websites to JavaScript apps and
+      customizations. If you are looking for someone to implement your idea,{' '}
+      <Link to="/hireme">reach out to me</Link>!
+    </P>
+    <P>
+      I'm involved in some open source Projects. You can check out some of my
+      code on <Link to="https://github.com/lgraubner">Github</Link>.
+    </P>
+    <P>
+      When I'm doing none of those things I enjoy reading a good book and
+      spending time with my family.
+    </P>
+    <P>
+      In case you are interested in what kind of gear and software I'm using
+      make sure to check out my <Link to="/uses">uses page</Link>. If there are
+      any questions left don't hesitate to{' '}
+      <Link to="/contact">get in touch with me</Link>.
     </P>
   </Layout>
 )

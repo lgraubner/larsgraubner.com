@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Link from '../components/Link'
-import Newsletter from '../components/Newsletter'
+import NewsletterBox from '../components/NewsletterBox'
 
 type Props = {
   data: Object
@@ -101,7 +101,7 @@ const Index = ({ data }: Props) => {
         ))}
       </PostList>
       <NewsletterWrapper>
-        <Newsletter />
+        <NewsletterBox />
       </NewsletterWrapper>
     </Layout>
   )

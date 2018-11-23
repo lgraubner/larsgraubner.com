@@ -5,6 +5,8 @@ import { normalize } from 'polished'
 import Helmet from 'react-helmet'
 
 import Link from './Link'
+import Icon, { icons } from './Icon'
+import Nav, { HeaderNav } from './Nav'
 
 // eslint-disable-next-line
 const GlobalStyle = createGlobalStyle`
@@ -63,35 +65,6 @@ const NameLink = styled(Link)`
   color: hsl(0, 0%, 0%);
 `
 
-const Ul = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`
-
-const Li = styled.li`
-  display: inline-block;
-  line-height: 2em;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  ${({ separator }) =>
-    separator &&
-    `
-  &:not(:last-child) a:after {
-    content: '//';
-    position: absolute;
-    right: -30px;
-    width: 30px;
-    text-align: center;
-    line-height: 1em;
-    top: 1px;
-  }
-`}
-`
-
 const NavLink = styled(Link)`
   color: hsl(0, 0%, 0%);
   text-decoration: none;
@@ -109,22 +82,6 @@ const NavLink = styled(Link)`
     border-bottom: 2px solid currentColor;
   }
 `
-
-type NavProps = {
-  children: React.Node,
-  className?: Object,
-  separator?: boolean
-}
-
-const Nav = ({ children, className, separator = true }: NavProps) => (
-  <nav className={className}>
-    <Ul>
-      {React.Children.map(children, child => (
-        <Li separator={separator}>{child}</Li>
-      ))}
-    </Ul>
-  </nav>
-)
 
 const Content = styled.main``
 
@@ -162,6 +119,16 @@ const FooterLink = styled(Link)`
   }
 `
 
+const IconLink = styled(Link)`
+  margin: 0 10px;
+  display: inline-block;
+  height: 26px;
+
+  path {
+    fill: hsl(0, 0%, 31%);
+  }
+`
+
 type Props = {
   children: React.Node,
   index?: boolean,
@@ -196,26 +163,37 @@ const Layout = ({ children, index = false, minimal = false, data }: Props) => (
       <Name as={index ? 'h1' : 'div'}>
         <NameLink to="/">Lars Graubner</NameLink>
       </Name>
-      <Nav>
+      <HeaderNav>
         <NavLink to="/">Blog</NavLink>
-        <NavLink to="https://twitter.com/larsgraubner">Twitter</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-      </Nav>
+        <NavLink to="/hireme">Hire me</NavLink>
+      </HeaderNav>
     </Header>
     <Content>{children}</Content>
     <Footer>
       <Copyright>
         © {new Date().getFullYear()} Lars Graubner. All rights reserved.
       </Copyright>
-      <FooterNav separator={false}>
-        <FooterLink to="/">Blog</FooterLink>
-        <FooterLink to="/about">About</FooterLink>
+      <FooterNav>
+        <FooterLink to="/uses">Uses</FooterLink>
+        <FooterLink to="/newsletter">Newsletter</FooterLink>
         <FooterLink to="/contact">Contact</FooterLink>
-        <FooterLink to="https://twitter.com/larsgraubner">Twitter</FooterLink>
-        <FooterLink to="https://github.com/lgraubner">Github</FooterLink>
         <FooterLink to="/legal-notice">Legal</FooterLink>
         <FooterLink to="/privacy">Privacy</FooterLink>
+      </FooterNav>
+      <FooterNav>
+        <IconLink to="https://twitter.com/larsgraubner" title="Twitter">
+          <Icon icon={icons.TWITTER} />
+        </IconLink>
+        <IconLink to="https://github.com/lgraubner" title="Github">
+          <Icon icon={icons.GITHUB} />
+        </IconLink>
+        <IconLink
+          to="https://www.linkedin.com/in/larsgraubner/"
+          title="LinkedIn"
+        >
+          <Icon icon={icons.LINKEDIN} />
+        </IconLink>
       </FooterNav>
     </Footer>
   </Wrapper>

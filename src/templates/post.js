@@ -9,7 +9,7 @@ import rehypeReact from 'rehype-react'
 import Layout from '../components/Layout'
 import { H1, H2, H3 } from '../components/Heading'
 import P from '../components/Paragraph'
-import Newsletter from '../components/Newsletter'
+import NewsletterBox from '../components/NewsletterBox'
 import Link from '../components/Link'
 
 const Post = styled.article`
@@ -177,7 +177,7 @@ const PostTemplate = ({ data, location }: Props) => {
         on Twitter. Follow me!
       </Twitter>
       <NewsletterWrapper>
-        <Newsletter />
+        <NewsletterBox />
       </NewsletterWrapper>
     </Layout>
   )
