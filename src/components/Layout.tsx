@@ -89,7 +89,7 @@ const Footer = styled.footer`
 
   @media (min-width: 768px) {
     text-align: center;
-    margin: 150px auto 100px;
+    margin: 120px auto 100px;
   }
 `
 

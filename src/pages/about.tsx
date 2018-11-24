@@ -30,7 +30,7 @@ const About = ({ data }: Props) => (
       <meta name="robots" content="index,follow" />
       <meta
         name="description"
-        content="I'm a web developer from Germany and I'm building apps with React and React Native. I'm a husband and father."
+        content="I'm Lars Graubner, a web developer creating Apps with React and React Native. I like JavaScript and clean code. I'm a Husband and father."
       />
     </Helmet>
     <H1>About</H1>
@@ -59,10 +59,6 @@ const About = ({ data }: Props) => (
       projects, ranging from simple websites to JavaScript apps and
       customizations. If you are looking for someone to implement your idea,{' '}
       <Link to="/hireme">reach out to me</Link>!
-    </P>
-    <P>
-      I'm involved in some open source Projects. You can check out some of my
-      code on <Link to="https://github.com/lgraubner">Github</Link>.
     </P>
     <P>
       When I'm doing none of those things I enjoy reading a good book and

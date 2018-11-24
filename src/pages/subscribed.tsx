@@ -12,19 +12,11 @@ const Newsletter = () => (
       <title>Thanks for subscribing</title>
       <meta name="robots" content="noindex,follow" />
     </Helmet>
-    <H1>Thanks for subscribing!</H1>
+    <H1>Subscribed</H1>
     <P>
-      I will email you when I post new blog posts or whenever I have interesting
-      thoughts that are worth sharing.
-    </P>
-    <P>
-      The topics are mainly (but not exclusively) JavaScript, React, React
-      Native and Node.js.
-    </P>
-
-    <P>
-      Stay tuned and please don't hesitate to give me feedback or suggestions
-      via <Link to="mailto:news@larsgraubner.com">email</Link>.
+      Thanks for subscribing! Stay tuned and please don't hesitate to give me
+      feedback or suggestions via{' '}
+      <Link to="mailto:news@larsgraubner.com">email</Link>.
     </P>
   </Layout>
 )
