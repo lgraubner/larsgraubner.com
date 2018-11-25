@@ -1,7 +1,7 @@
 {
   "name": "larsgraubner-site",
   "description": "Personal website and blog.",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "author": "Lars Graubner <mail@larsgraubner.de>",
   "dependencies": {
     "babel-plugin-styled-components": "1.8.0",
@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "2.0.8",
     "gatsby-transformer-remark": "2.1.12",
     "gatsby-transformer-sharp": "2.1.8",
-    "idx": "2.5.0",
+    "idx": "2.5.1",
     "is-absolute-url": "2.1.0",
     "polished": "2.3.0",
     "prismjs": "1.15.0",
