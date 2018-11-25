@@ -54,6 +54,7 @@ const About = ({ data }: Props) => (
       basics of web programming and got to know a lot of different types of
       clients and technologies.
     </P>
+    <P />
     <P>
       Beside that I'm working as self-employed developer. I'm realizing small
       projects, ranging from simple websites to JavaScript apps and
@@ -63,12 +64,6 @@ const About = ({ data }: Props) => (
     <P>
       When I'm doing none of those things I enjoy reading a good book and
       spending time with my family.
-    </P>
-    <P>
-      In case you are interested in what kind of gear and software I'm using
-      make sure to check out my <Link to="/uses">uses page</Link>. If there are
-      any questions left don't hesitate to{' '}
-      <Link to="/contact">get in touch with me</Link>.
     </P>
   </Layout>
 )
