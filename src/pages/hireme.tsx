@@ -28,24 +28,26 @@ const HireMe = () => (
     </P>
     <Ul>
       <Li>
-        <Strong>Teaching</Strong> Your company wants to adopt React and needs a
+        <Strong>Teaching.</Strong> Your company wants to adopt React and needs a
         head start? I'm offering onsite workshops (limited to Germany for now)
-        to bring you the React concepts closer.
+        to bring you the concepts of React closer.
       </Li>
       <Li>
-        <Strong>Consulting</Strong> You have an existing React project and need
-        advice? I can help choosing the right software solutions and build an
+        <Strong>Consulting.</Strong> You have an existing React project and need
+        advice? I can help choosing the right software solutions and build a
         scalable architecture.
       </Li>
       <Li>
-        <Strong>Contract work</Strong> Your project needs a developer with
-        experience in React, React Native and Node.js? I'm available to commit a
-        few weeks or months solving your problems.
+        <Strong>Contract work.</Strong> Your project needs a developer with
+        experience in creating React and React Native apps? I'm available to
+        commit a few weeks or months solving your problems.
       </Li>
     </Ul>
     <P>
-      Interested? Send me an <Link to="mailto:hi@larsgraubner.com">email</Link>{' '}
-      and we work something out.
+      My experiences include React, React Native, Typescript, Flow, Node.js,
+      GraphQL, Webpack and many more. Interested? Send me an{' '}
+      <Link to="mailto:hi@larsgraubner.com">email</Link> and we work something
+      out.
     </P>
   </Layout>
 )
