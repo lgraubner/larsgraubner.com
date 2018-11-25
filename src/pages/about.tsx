@@ -41,11 +41,11 @@ const About = ({ data }: Props) => (
     </P>
     <P>
       Currently I work at{' '}
-      <Link to="https://www.checkdomain.de" rel="nofollow">
+      <Link to="https://www.checkdomain.de" nofollow>
         checkdomain
       </Link>{' '}
       and{' '}
-      <Link to="http://idearockers.com" rel="nofollow">
+      <Link to="http://idearockers.com" nofollow>
         idearockers
       </Link>{' '}
       creating apps with React and React Native. From 2016 to 2017 I worked at a
@@ -54,7 +54,10 @@ const About = ({ data }: Props) => (
       basics of web programming and got to know a lot of different types of
       clients and technologies.
     </P>
-    <P />
+    <P>
+      I'm involved in several open source projects. Check out my profile on{' '}
+      <Link to="https://github.com/lgraubner">Github</Link> to learn more.
+    </P>
     <P>
       Beside that I'm working as self-employed developer. I'm realizing small
       projects, ranging from simple websites to JavaScript apps and
