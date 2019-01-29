@@ -37,6 +37,7 @@ const Input = styled.input`
   margin-bottom: 5px;
   outline: 0;
   transition: background 150ms ease-in;
+  border-radius: 0;
 
   &:focus {
     background-color: hsla(0, 0%, 0%, 0.1);
@@ -61,6 +62,7 @@ const Button = styled.input`
   height: 45px;
   padding: 0 15px;
   transition: background 150ms ease-in;
+  border-radius: 0;
 
   &:active {
     outline: 0;
