@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "esnext",
-    "jsx": "preserve",
-    "lib": ["dom", "es2015", "es2017"],
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "allowJs": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
     "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
+    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "allowSyntheticDefaultImports": true
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noEmit": true
   },
-  "include": ["./src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build", "scripts"]
 }
