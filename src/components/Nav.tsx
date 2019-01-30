@@ -35,8 +35,8 @@ const HeaderLi = styled.li`
   }
 `
 
-interface Props {
-  children: JSX.Element[] | JSX.Element
+type Props = {
+  children: React.ReactNode
   className?: string
 }
 

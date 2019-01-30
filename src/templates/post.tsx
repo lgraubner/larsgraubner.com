@@ -100,7 +100,7 @@ const NewsletterWrapper = styled.div`
   }
 `
 
-interface Props {
+type Props = {
   data: {
     site: {
       siteMetadata: {

@@ -19,7 +19,7 @@ const Image = styled(Img)`
   }
 `
 
-interface Props {
+type Props = {
   data: any
 }
 

@@ -84,7 +84,7 @@ const Error = styled.div`
   color: hsl(0, 100%, 50%);
 `
 
-interface State {
+type State = {
   valid: boolean
   submitted: boolean
 }

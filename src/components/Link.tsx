@@ -2,9 +2,9 @@ import { Link } from 'gatsby'
 import isAbsolute from 'is-absolute-url'
 import React from 'react'
 
-interface Props {
+type Props = {
   to: string
-  children: JSX.Element | string | SVGSVGElement
+  children: React.ReactNode
   nofollow?: boolean
   title?: string
   rel?: string

@@ -58,7 +58,7 @@ const NewsletterWrapper = styled.div`
   }
 `
 
-interface Props {
+type Props = {
   data: {
     allMarkdownRemark: {
       edges: Array<{

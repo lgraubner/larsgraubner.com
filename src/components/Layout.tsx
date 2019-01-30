@@ -127,10 +127,9 @@ const IconLink = styled(Link)`
   }
 `
 
-interface Props {
-  children: JSX.Element[] | JSX.Element
+type Props = {
+  children: React.ReactNode
   index?: boolean
-  minimal?: boolean
 }
 
 const Layout = ({ children, index = false }: Props) => (

@@ -1,11 +1,11 @@
 declare module 'rehype-react' {
-  interface RehypeOptions {
+  interface IRehypeOptions {
     createElement: any
     components: any
   }
   class RehypeReact {
     Compiler: any
-    constructor(options: RehypeOptions)
+    constructor(options: IRehypeOptions)
   }
   export default RehypeReact
 }
