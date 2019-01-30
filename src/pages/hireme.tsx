@@ -44,8 +44,8 @@ const HireMe = () => (
       </Li>
     </Ul>
     <P>
-      My experiences include React, React Native, Typescript, Flow, Node.js,
-      GraphQL, Webpack and many more. Interested? Send me an{' '}
+      My experiences include React, React Native, Typescript, Node.js, GraphQL,
+      Webpack and many more. Interested? Send me an{' '}
       <Link to="mailto:hi@larsgraubner.com">email</Link> and we work something
       out.
     </P>
