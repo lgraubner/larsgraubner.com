@@ -19,7 +19,7 @@ const HireMe = () => (
       <meta name="robots" content="index,follow" />
       <meta
         name="description"
-        content="I'm offering teaching, consulting and contract work. Contact me and we work something out."
+        content="I'm offering contract work, consulting and teaching. Contact me and we work something out."
       />
     </Helmet>
     <H1>Hire me</H1>
@@ -28,9 +28,9 @@ const HireMe = () => (
     </P>
     <Ul>
       <Li>
-        <Strong>Teaching.</Strong> Your company wants to adopt React and needs a
-        head start? I'm offering onsite workshops (limited to Germany for now)
-        to bring you the concepts of React closer.
+        <Strong>Contract work.</Strong> Your project needs a developer with
+        experience in creating React and React Native apps? I'm available to
+        commit a few weeks or months solving your problems.
       </Li>
       <Li>
         <Strong>Consulting.</Strong> You have an existing React project and need
@@ -38,16 +38,17 @@ const HireMe = () => (
         scalable architecture.
       </Li>
       <Li>
-        <Strong>Contract work.</Strong> Your project needs a developer with
-        experience in creating React and React Native apps? I'm available to
-        commit a few weeks or months solving your problems.
+        <Strong>Teaching.</Strong> Your company wants to adopt React and needs a
+        head start? I'm offering onsite workshops (limited to Germany for now)
+        to bring you the concepts of React closer.
       </Li>
     </Ul>
     <P>
-      My experiences include React, React Native, Typescript, Node.js, GraphQL,
+      My experiences include React, React Native, TypeScript, Node.js, GraphQL,
       Webpack and many more. Interested? Send me an{' '}
-      <Link to="mailto:hi@larsgraubner.com">email</Link> and we work something
-      out.
+      <Link to="mailto:hi@larsgraubner.com">email</Link> or check out my profile
+      on <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>{' '}
+      and we work something out.
     </P>
   </Layout>
 )
