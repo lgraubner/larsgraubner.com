@@ -41,10 +41,6 @@ const About = ({ data }: Props) => (
     </P>
     <P>
       Currently I work at{' '}
-      <Link to="https://www.checkdomain.de" nofollow>
-        checkdomain
-      </Link>{' '}
-      and{' '}
       <Link to="http://idearockers.com" nofollow>
         idearockers
       </Link>{' '}
