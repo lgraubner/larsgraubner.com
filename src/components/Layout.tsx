@@ -175,7 +175,7 @@ const Layout = ({ children, index = false }: Props) => (
         <FooterLink to="/uses">Uses</FooterLink>
         <FooterLink to="/newsletter">Newsletter</FooterLink>
         <FooterLink to="/contact">Contact</FooterLink>
-        <FooterLink to="/legal-notice">Legal</FooterLink>
+        <FooterLink to="/impressum">Impressum</FooterLink>
         <FooterLink to="/privacy">Privacy</FooterLink>
       </FooterNav>
       <FooterNav>

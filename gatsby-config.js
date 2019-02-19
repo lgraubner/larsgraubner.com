@@ -132,7 +132,7 @@ const config = {
           allSitePage(
             filter: {
               path: {
-                regex: "${/^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|privacy|legal-notice|subscribed)).*$/}"
+                regex: "${/^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|privacy|impressum|subscribed)).*$/}"
               }
             }
           ) {

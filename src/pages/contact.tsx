@@ -21,8 +21,8 @@ const About = () => (
       If you'd like to say hi, I'm{' '}
       <Link to="https://twitter.com/larsgraubner">@larsgraubner</Link> on
       Twitter. Of course, you can also shoot me an email at{' '}
-      <Link to="mailto:hi@larsgraubner.com">hi@larsgraubner.com</Link>. I look
-      forward to hearing from you!
+      <Link to="mailto:hello@larsgraubner.com">hello@larsgraubner.com</Link>. I
+      look forward to hearing from you!
     </P>
   </Layout>
 )
