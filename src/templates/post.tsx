@@ -13,6 +13,7 @@ import Link from '../components/Link'
 
 const Post = styled.article`
   margin-top: 4rem;
+  margin-bottom: 80px;
 
   p:not(pre) > code[class*='language-'] {
     font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
@@ -186,16 +187,7 @@ const PostTemplate = ({ data, location }: Props) => {
         <H1>{title}</H1>
         {renderAst(post.htmlAst)}
       </Post>
-      <Twitter>
-        Like this post? I'm{' '}
-        <TwitterLink to="https://twitter.com/larsgraubner">
-          @larsgraubner
-        </TwitterLink>{' '}
-        on Twitter. Follow me!
-      </Twitter>
-      <NewsletterWrapper>
-        <NewsletterBox />
-      </NewsletterWrapper>
+      <NewsletterBox />
     </Layout>
   )
 }

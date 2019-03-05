@@ -50,14 +50,6 @@ const Excerpt = styled.div`
   color: #333;
 `
 
-const NewsletterWrapper = styled.div`
-  margin-top: 50px;
-
-  @media (min-width: 768px) {
-    margin-top: 120px;
-  }
-`
-
 type Props = {
   data: {
     allMarkdownRemark: {
@@ -84,7 +76,7 @@ type Props = {
   }
 }
 
-const Index = ({ data }: Props) => {
+const Blog = ({ data }: Props) => {
   const posts = idx(data, _ => _.allMarkdownRemark.edges) || []
 
   const { siteTitle, siteDescription, siteUrl }: any =
@@ -121,14 +113,12 @@ const Index = ({ data }: Props) => {
           </Post>
         ))}
       </PostList>
-      <NewsletterWrapper>
-        <NewsletterBox />
-      </NewsletterWrapper>
+      <NewsletterBox />
     </Layout>
   )
 }
 
-export default Index
+export default Blog
 
 export const pageQuery = graphql`
   query {

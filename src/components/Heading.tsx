@@ -20,7 +20,7 @@ export const H2 = styled.h2({
   }
 })
 
-export const H3 = styled.h1({
+export const H3 = styled.h3({
   margin: '1.5em 0 1em',
   fontSize: 24,
   fontWeight: 600,

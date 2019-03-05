@@ -5,6 +5,9 @@ import P from './Paragraph'
 
 const Container = styled.section`
   position: relative;
+  background: hsla(0, 0%, 0%, 0.03);
+  padding: 40px;
+  border-radius: 5px;
 `
 
 const Heading = styled.h4`
@@ -17,9 +20,12 @@ const InputWrapper = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     flex-direction: row;
+    width: 90%;
+    border-radius: 5px;
   }
 `
 
@@ -37,7 +43,7 @@ const Input = styled.input`
   margin-bottom: 5px;
   outline: 0;
   transition: background 150ms ease-in;
-  border-radius: 0;
+  border-radius: 5px;
 
   &:focus {
     background-color: hsla(0, 0%, 0%, 0.1);
@@ -47,7 +53,6 @@ const Input = styled.input`
     margin: 0;
     display: inline-block;
     border-radius: 0;
-    max-width: 340px;
   }
 `
 
@@ -62,7 +67,7 @@ const Button = styled.input`
   height: 45px;
   padding: 0 15px;
   transition: background 150ms ease-in;
-  border-radius: 0;
+  border-radius: 5px;
 
   &:active {
     outline: 0;
@@ -70,6 +75,7 @@ const Button = styled.input`
 
   @media (min-width: 768px) {
     padding: 0 30px;
+    border-radius: 0;
   }
 
   &:hover {
@@ -131,7 +137,7 @@ class Newsletter extends React.Component<{}, State> {
           noValidate
         >
           <Heading>I maintain a newsletter to share what I learn</Heading>
-          <P>Never miss an article about React and Javascript.</P>
+          <P>Never miss an article about React and JavaScript.</P>
           <InputWrapper>
             <Input
               type="email"

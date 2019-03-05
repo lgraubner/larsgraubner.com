@@ -11,13 +11,4 @@ export const Li = styled.li`
   line-height: 1.7em;
   color: hsla(0, 0%, 0%, 0.84);
   margin-bottom: 5px;
-
-  a {
-    color: #d22d64;
-    text-decoration: none;
-
-    &:hover {
-      border-bottom: 1px solid currentColor;
-    }
-  }
 `

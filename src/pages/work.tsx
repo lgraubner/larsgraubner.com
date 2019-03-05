@@ -4,28 +4,37 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import P from '../components/Paragraph'
-import { H1 } from '../components/Heading'
 import { Ul, Li } from '../components/List'
 import Link from '../components/Link'
+import Button from '../components/Button'
 
 const Strong = styled.strong`
   font-weight: bold;
 `
 
+const Slogan = styled.h1({
+  fontSize: 36,
+  fontWeight: 400,
+  lineHeight: 1.2,
+  marginTop: 40,
+  marginBottom: '1.5em'
+})
+
 const HireMe = () => (
   <Layout>
     <Helmet>
-      <title>Hire me - Lars Graubner</title>
+      <title>Work with me - Lars Graubner</title>
       <meta name="robots" content="index,follow" />
       <meta
         name="description"
         content="I'm offering contract work, consulting and teaching. Contact me and we work something out."
       />
     </Helmet>
-    <H1>Hire me</H1>
-    <P>
-      Next to my regular job I'm self-employed and offer the following services:
-    </P>
+    <Slogan>
+      I'm a JavaScript devel­oper with a passion for well-crafted
+      appli­ca­tions.
+    </Slogan>
+    <P>I'm offering the following services:</P>
     <Ul>
       <Li>
         <Strong>Contract work.</Strong> Your project needs a developer with
@@ -50,6 +59,7 @@ const HireMe = () => (
       on <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>{' '}
       and we work something out.
     </P>
+    <Button to="/contact">Contact</Button>
   </Layout>
 )
 
