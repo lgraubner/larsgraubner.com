@@ -102,7 +102,7 @@ const FooterNav = styled(Nav)`
   margin-top: 20px;
 `
 
-const FooterLink = styled(Link)`
+const PostFooterLink = styled(Link)`
   font-size: 16px;
   color: hsl(0, 0%, 33%);
   text-decoration: none;
@@ -172,10 +172,10 @@ const Layout = ({ children, index = false }: Props) => (
         © {new Date().getFullYear()} Lars Graubner. All rights reserved.
       </Copyright>
       <FooterNav>
-        <FooterLink to="/about">About</FooterLink>
-        <FooterLink to="/contact">Contact</FooterLink>
-        <FooterLink to="/impressum">Impressum</FooterLink>
-        <FooterLink to="/privacy">Privacy</FooterLink>
+        <PostFooterLink to="/about">About</PostFooterLink>
+        <PostFooterLink to="/contact">Contact</PostFooterLink>
+        <PostFooterLink to="/impressum">Impressum</PostFooterLink>
+        <PostFooterLink to="/privacy">Privacy</PostFooterLink>
       </FooterNav>
       <FooterNav>
         <IconLink to="https://twitter.com/larsgraubner" title="Twitter">

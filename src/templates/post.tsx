@@ -13,7 +13,7 @@ import Link from '../components/Link'
 
 const Post = styled.article`
   margin-top: 4rem;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 
   p:not(pre) > code[class*='language-'] {
     font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
@@ -66,40 +66,18 @@ const Date = styled.div`
   font-weight: 600;
 `
 
-const Twitter = styled.div`
-  margin-top: 50px;
-  font-size: 18px;
-  font-weight: 500;
-  color: hsla(0, 0%, 0%, 0.84);
-  line-height: 1.4em;
-  border-top: 1px solid hsla(0, 0%, 0%, 0.65);
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.65);
-  padding: 15px 10px;
-  text-align: center;
+const PostFooter = styled.div({
+  marginBottom: 80
+})
 
-  @media (min-width: 768px) {
-    margin-top: 70px;
-    font-size: 20px;
-    padding: 20px 30px;
+const PostFooterLink = styled(Link)({
+  color: '#d22d64',
+  textDecoration: 'none',
+  fontSize: 20,
+  '&:hover': {
+    borderBottom: '1px solid currentColor'
   }
-`
-
-const TwitterLink = styled(Link)`
-  color: #00aced;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
-const NewsletterWrapper = styled.div`
-  margin-top: 50px;
-
-  @media (min-width: 768px) {
-    margin-top: 90px;
-  }
-`
+})
 
 type Props = {
   data: {
@@ -111,6 +89,9 @@ type Props = {
     markdownRemark: {
       id: string
       htmlAst: any
+      fields: {
+        slug: string
+      }
       frontmatter: {
         title: string
         description: string
@@ -187,6 +168,15 @@ const PostTemplate = ({ data, location }: Props) => {
         <H1>{title}</H1>
         {renderAst(post.htmlAst)}
       </Post>
+      <PostFooter>
+        <PostFooterLink
+          to={`https://github.com/lgraubner/larsgraubner.com/edit/master/src/pages/${
+            post.fields.slug
+          }/index.md`}
+        >
+          Edit post on GitHub
+        </PostFooterLink>
+      </PostFooter>
       <NewsletterBox />
     </Layout>
   )
@@ -204,6 +194,9 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $path } }) {
       id
       htmlAst
+      fields {
+        slug
+      }
       frontmatter {
         title
         description
