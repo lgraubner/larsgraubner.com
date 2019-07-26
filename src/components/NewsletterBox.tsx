@@ -8,6 +8,8 @@ const Container = styled.section`
   background: hsla(0, 0%, 0%, 0.03);
   padding: 40px;
   border-radius: 5px;
+  margin-top: -20px;
+  margin-bottom: 60px;
 `
 
 const Heading = styled.h4`
@@ -85,7 +87,7 @@ const Button = styled.input`
 
 const Error = styled.div`
   position: absolute;
-  bottom: -1.6em;
+  bottom: 16px;
   font-size: 14px;
   color: hsl(0, 100%, 50%);
 `
@@ -94,17 +96,28 @@ const Honeypot = styled.input({
   display: 'none'
 })
 
+// time to submit
+const TTS_THRESHHOLD = 1000
+
 type State = {
   isValid: boolean
   submitted: boolean
   isSpam: boolean
+  timeRendered: number
 }
 
 class Newsletter extends React.Component<{}, State> {
   state = {
     submitted: false,
     isValid: false,
-    isSpam: false
+    isSpam: false,
+    timeRendered: 0
+  }
+
+  componentDidMount() {
+    this.setState({
+      timeRendered: +new Date()
+    })
   }
 
   handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -128,12 +141,17 @@ class Newsletter extends React.Component<{}, State> {
   }
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const now = +new Date()
+
     this.setState({
       submitted: true
     })
 
-    const { isValid, isSpam } = this.state
-    if (!isValid || isSpam) {
+    const { isValid, isSpam, timeRendered } = this.state
+
+    const tts = now - timeRendered
+
+    if (!isValid || isSpam || tts < TTS_THRESHHOLD) {
       e.preventDefault()
     }
   }
@@ -170,7 +188,7 @@ class Newsletter extends React.Component<{}, State> {
           </InputWrapper>
         </form>
         {submitted && !isValid && (
-          <Error>Please enter a isValid e-mail address.</Error>
+          <Error>Please enter a valid e-mail address.</Error>
         )}
       </Container>
     )
