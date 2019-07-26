@@ -90,15 +90,21 @@ const Error = styled.div`
   color: hsl(0, 100%, 50%);
 `
 
+const Honeypot = styled.input({
+  display: 'none'
+})
+
 type State = {
-  valid: boolean
+  isValid: boolean
   submitted: boolean
+  isSpam: boolean
 }
 
 class Newsletter extends React.Component<{}, State> {
   state = {
     submitted: false,
-    valid: false
+    isValid: false,
+    isSpam: false
   }
 
   handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -106,13 +112,19 @@ class Newsletter extends React.Component<{}, State> {
 
     if (email.length > 0 && email.indexOf('@') !== -1) {
       this.setState({
-        valid: true
+        isValid: true
       })
     } else {
       this.setState({
-        valid: false
+        isValid: false
       })
     }
+  }
+
+  handleChangeHoneypot = () => {
+    this.setState({
+      isSpam: true
+    })
   }
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -120,14 +132,14 @@ class Newsletter extends React.Component<{}, State> {
       submitted: true
     })
 
-    const { valid } = this.state
-    if (!valid) {
+    const { isValid, isSpam } = this.state
+    if (!isValid || isSpam) {
       e.preventDefault()
     }
   }
 
   render() {
-    const { valid, submitted } = this.state
+    const { isValid, submitted } = this.state
     return (
       <Container>
         <form
@@ -146,12 +158,19 @@ class Newsletter extends React.Component<{}, State> {
               placeholder="your email"
               onChange={this.handleChange}
             />
+            <Honeypot
+              type="text"
+              name="name8tY4bPY"
+              autoComplete="off"
+              onChange={this.handleChangeHoneypot}
+              tabIndex={-1}
+            />
             <input type="hidden" value="1" name="embed" />
             <Button type="submit" value="Subscribe" />
           </InputWrapper>
         </form>
-        {submitted && !valid && (
-          <Error>Please enter a valid e-mail address.</Error>
+        {submitted && !isValid && (
+          <Error>Please enter a isValid e-mail address.</Error>
         )}
       </Container>
     )
