@@ -60,7 +60,7 @@ const config = {
               siteMetadata {
                 title: siteTitle
                 description: siteDescription
-                siteUrl
+                link: siteUrl
               }
             }
           }
