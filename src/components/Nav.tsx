@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const StyledNav = styled.nav({
+  clear: 'both'
+})
+
 const Ul = styled.ul`
   list-style: none;
   margin: 0;
@@ -51,13 +55,13 @@ const Nav = ({ children, className }: Props) => (
 )
 
 export const HeaderNav = ({ children, className }: Props) => (
-  <nav className={className}>
+  <StyledNav className={className}>
     <Ul>
       {React.Children.map(children, child => (
         <HeaderLi>{child}</HeaderLi>
       ))}
     </Ul>
-  </nav>
+  </StyledNav>
 )
 
 export default Nav

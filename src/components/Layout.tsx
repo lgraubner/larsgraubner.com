@@ -52,6 +52,7 @@ const Name = styled.h1`
   width: 100px;
   line-height: 0.9em;
   margin: 0 0 40px;
+  float: left;
 
   @media (min-width: 768px) {
     font-size: 60px;
