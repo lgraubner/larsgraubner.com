@@ -23,7 +23,7 @@ const Button = styled(Link)({
     backgroundColor: 'hsl(0, 0%, 25%)'
   },
   '&:active': {
-    transform: 'translateX(-50%) translateY(2px)'
+    transform: 'translateX(-50%) translateY(4px)'
   }
 })
 
