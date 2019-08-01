@@ -172,7 +172,7 @@ class Newsletter extends React.Component<Props, State> {
           onSubmit={this.handleSubmit}
           noValidate
         >
-          <Heading>I maintain a newsletter to share what I learn</Heading>
+          <Heading>Join my newsletter</Heading>
           <P>Never miss an article about React and JavaScript.</P>
           <InputWrapper>
             <Input
