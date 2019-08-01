@@ -21,10 +21,9 @@ const Newsletter = () => (
     <H1>Newsletter</H1>
     <P>
       I'm Lars Graubner, a JavaScript developer creating apps with React and
-      React Native. I'm doing open source which you can find on{' '}
-      <Link to="https://github.com/lgraubner">Github</Link>. I have a passion
-      for well-crafted applications and clean code. I live in Germany with my
-      wife and son.
+      React Native. I love to learn new things and share the experience with
+      other people. I have a passion for well-crafted applications and clean
+      code. I live in Germany with my wife and son.
     </P>
     <H3>What you get</H3>
     <P>
