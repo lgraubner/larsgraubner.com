@@ -13,7 +13,7 @@ const Button = styled(Link)({
   display: 'inline-block',
   fontSize: 16,
   color: 'hsl(0, 0%, 100%)',
-  border: '2px solid currentColor',
+  border: 0,
   backgroundColor: 'hsl(0, 0%, 10%)',
   lineHeight: 1.4,
   padding: '0.75em 1.65em',

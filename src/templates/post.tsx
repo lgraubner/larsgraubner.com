@@ -80,7 +80,9 @@ const PostFooterLink = styled(Link)({
 })
 
 const Separator = styled.span({
-  margin: '0 10px'
+  margin: '0 10px',
+  fontSize: 20,
+  color: 'hsla(0, 0%, 0%, 0.84)'
 })
 
 type Props = {
@@ -178,13 +180,13 @@ const PostTemplate = ({ data, location }: Props) => {
             title
           )}&url=${encodeURI(siteUrl + location.pathname)}&via=lgraubner`}
         >
-          Tweet
+          Share on Twitter
         </PostFooterLink>
-        <Separator />
+        <Separator>•</Separator>
         <PostFooterLink
           to={`https://github.com/lgraubner/larsgraubner.com/edit/master/content/blog${post.fields.slug}index.md`}
         >
-          Edit post
+          Edit post on Github
         </PostFooterLink>
       </PostFooter>
       <NewsletterBox />

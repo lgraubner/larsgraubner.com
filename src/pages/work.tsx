@@ -54,10 +54,10 @@ const HireMe = () => (
     </Ul>
     <P>
       My experiences include React, React Native, TypeScript, Node.js, GraphQL,
-      Webpack and many more. Interested? Send me an{' '}
-      <Link to="mailto:hi@larsgraubner.com">email</Link> or check out my profile
-      on <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>{' '}
-      and we work something out.
+      Webpack and many more. You can check out some of my work on{' '}
+      <Link to="https://github.com/lgraubner">Github</Link>. Interested?{' '}
+      <Link to="/contact">Contact me</Link> or check out my profile on{' '}
+      <Link to="https://www.linkedin.com/in/larsgraubner/">LinkedIn</Link>.
     </P>
     <Button to="/contact">Contact</Button>
   </Layout>
