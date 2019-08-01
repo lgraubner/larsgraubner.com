@@ -26,7 +26,6 @@ const About = styled.div({
 
 const Head = styled.img({
   borderRadius: '50%',
-  width: 70,
   height: 70,
   width: '100%',
   maxWidth: 70,
@@ -56,10 +55,10 @@ const Slogan = styled.p({
 const PostList = styled.div``
 
 const Post = styled.div`
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 
   @media (min-width: 768px) {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 `
 
