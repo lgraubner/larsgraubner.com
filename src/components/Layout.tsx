@@ -163,7 +163,7 @@ const Layout = ({ children, index = false }: Props) => (
       <HeaderNav>
         <NavLink to="/">Blog</NavLink>
         <NavLink to="/work">Work</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/about">About</NavLink>
       </HeaderNav>
     </Header>
     <Content>{children}</Content>
@@ -172,7 +172,6 @@ const Layout = ({ children, index = false }: Props) => (
         © {new Date().getFullYear()} Lars Graubner. All rights reserved.
       </Copyright>
       <FooterNav>
-        <PostFooterLink to="/about">About</PostFooterLink>
         <PostFooterLink to="/contact">Contact</PostFooterLink>
         <PostFooterLink to="/impressum">Impressum</PostFooterLink>
         <PostFooterLink to="/privacy">Privacy</PostFooterLink>

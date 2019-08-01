@@ -36,8 +36,8 @@ const About = ({ data }: Props) => (
     <H1>About</H1>
     <Image fixed={data.file.childImageSharp.fixed} alt="Lars Graubner" />
     <P>
-      I'm Lars Graubner, an aspiring web developer. I'm living in the north of
-      Germany, not far away from the east sea which I enjoy a lot.
+      I'm Lars Graubner. I'm living in the north of Germany, not far away from
+      the east sea which I enjoy a lot.
     </P>
     <P>
       Currently I work at{' '}

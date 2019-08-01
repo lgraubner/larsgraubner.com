@@ -99,6 +99,10 @@ const Honeypot = styled.input({
 // time to submit
 const TTS_THRESHHOLD = 1000
 
+type Props = {
+  className?: string
+}
+
 type State = {
   isValid: boolean
   submitted: boolean
@@ -106,7 +110,7 @@ type State = {
   timeRendered: number
 }
 
-class Newsletter extends React.Component<{}, State> {
+class Newsletter extends React.Component<Props, State> {
   state = {
     submitted: false,
     isValid: false,
@@ -158,8 +162,10 @@ class Newsletter extends React.Component<{}, State> {
 
   render() {
     const { isValid, submitted } = this.state
+    const { className } = this.props
+
     return (
-      <Container>
+      <Container className={className}>
         <form
           action="https://buttondown.email/api/emails/embed-subscribe/larsgraubner"
           method="post"
