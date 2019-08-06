@@ -6,16 +6,16 @@ import P from './Paragraph'
 const Container = styled.section`
   position: relative;
   background: hsla(0, 0%, 0%, 0.03);
-  padding: 40px;
-  border-radius: 5px;
-  margin-top: -20px;
+  padding: 40px 50px;
+  width: calc(100% + 100px);
   margin-bottom: 60px;
+  margin-left: -50px;
 `
 
 const Heading = styled.h4`
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 600;
-  margin: 0 0 0.5em;
+  margin: 0 0 0.75em;
 `
 
 const InputWrapper = styled.div`
@@ -27,25 +27,23 @@ const InputWrapper = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     width: 90%;
-    border-radius: 5px;
   }
 `
 
 const Input = styled.input`
-  font-size: 17px;
+  font-size: 18px;
   border: 1px solid hsl(0, 0%, 0%);
   border: 0;
   background-color: hsla(0, 0%, 0%, 0.065);
-  line-height: 20px;
+  line-height: 18px;
   padding: 0 15px;
-  min-height: 45px;
+  min-height: 55px;
   flex-grow: 1;
   width: 100%;
   display: block;
   margin-bottom: 5px;
   outline: 0;
   transition: background 150ms ease-in;
-  border-radius: 5px;
 
   &:focus {
     background-color: hsla(0, 0%, 0%, 0.1);
@@ -54,7 +52,6 @@ const Input = styled.input`
   @media (min-width: 768px) {
     margin: 0;
     display: inline-block;
-    border-radius: 0;
   }
 `
 
@@ -62,14 +59,14 @@ const Button = styled.input`
   border: 0;
   background-color: #d22d64;
   color: hsl(0, 0%, 100%);
-  font-weight: bold;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   padding: 0;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
-  height: 45px;
+  height: 55px;
   padding: 0 15px;
   transition: background 150ms ease-in;
-  border-radius: 5px;
 
   &:active {
     outline: 0;
@@ -77,7 +74,6 @@ const Button = styled.input`
 
   @media (min-width: 768px) {
     padding: 0 30px;
-    border-radius: 0;
   }
 
   &:hover {
@@ -172,14 +168,17 @@ class Newsletter extends React.Component<Props, State> {
           onSubmit={this.handleSubmit}
           noValidate
         >
-          <Heading>Join my newsletter</Heading>
-          <P>Never miss an article about React and JavaScript.</P>
+          <Heading>Improve your career</Heading>
+          <P>
+            I write a weekly newsletter about the latest from the JavaScript
+            ecosystem, daily learnings and new posts on my blog.
+          </P>
           <InputWrapper>
             <Input
               type="email"
               name="email"
               id="bd-email"
-              placeholder="your email"
+              placeholder="Your email address"
               onChange={this.handleChange}
             />
             <Honeypot
@@ -190,7 +189,7 @@ class Newsletter extends React.Component<Props, State> {
               tabIndex={-1}
             />
             <input type="hidden" value="1" name="embed" />
-            <Button type="submit" value="Subscribe" />
+            <Button type="submit" value="Join now" />
           </InputWrapper>
         </form>
         {submitted && !isValid && (

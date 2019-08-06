@@ -23,14 +23,14 @@ const Newsletter = () => (
       I'm Lars Graubner, a JavaScript developer creating apps with React and
       React Native. I love to learn new things and share the experience with
       other people. I have a passion for well-crafted applications and clean
-      code. I live in Germany with my wife and son.
+      code. I live in Lübeck, Germany with my wife and son.
     </P>
     <H3>What you get</H3>
     <P>
       I focus on JavaScript for the browser and Node. I will keep you up to date
-      with interesting links, daily learnings and new posts on{' '}
-      <Link to="/">my blog</Link>. My favorite topics are JavaScript,
-      productivity and personal growth.
+      with the latest from the JavaScript ecosystem, interesting links and
+      articles, daily learnings and new posts on <Link to="/">my blog</Link>. My
+      favorite topics are React, React Native, GraphQL and Node.
     </P>
     <StyledNewsletterBox />
   </Layout>
