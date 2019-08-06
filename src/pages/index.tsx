@@ -73,7 +73,7 @@ const Post = styled.div`
   }
 `
 
-const Title = styled.h2`
+const Title = styled.h3`
   font-size: 28px;
   font-weight: 600;
   margin: 0 0 8px;
