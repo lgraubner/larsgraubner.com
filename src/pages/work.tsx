@@ -31,8 +31,7 @@ const HireMe = () => (
       />
     </Helmet>
     <Slogan>
-      I'm a JavaScript devel­oper with a passion for well-crafted
-      appli­ca­tions.
+      I'm a software engineer with a passion for well-crafted appli­ca­tions.
     </Slogan>
     <P>I'm offering the following services:</P>
     <Ul>
