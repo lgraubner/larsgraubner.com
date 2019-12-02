@@ -160,10 +160,11 @@ const config = {
     },
     'gatsby-plugin-netlify',
     {
-      resolve: 'gatsby-plugin-fathom',
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingUrl: 'analytics.larsgraubner.de',
-        siteId: 'VUIPY'
+        trackingId: 'UA-44046571-2',
+        anonymize: true,
+        respectDNT: true
       }
     },
     'gatsby-plugin-twitter'
