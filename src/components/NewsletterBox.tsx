@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useGoal } from 'gatsby-plugin-fathom'
 
 import P from './Paragraph'
 
@@ -143,7 +142,6 @@ class Newsletter extends React.Component<Props, State> {
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const now = +new Date()
-    const trackGoal = useGoal('DO8KUOZC')
 
     this.setState({
       submitted: true
@@ -156,8 +154,6 @@ class Newsletter extends React.Component<Props, State> {
     if (!isValid || isSpam || tts < TTS_THRESHHOLD) {
       e.preventDefault()
     }
-
-    trackGoal(100)
   }
 
   render() {
