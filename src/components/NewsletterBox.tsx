@@ -157,7 +157,7 @@ class Newsletter extends React.Component<Props, State> {
       e.preventDefault()
     }
 
-    trackGoal()
+    trackGoal(100)
   }
 
   render() {
