@@ -9,3 +9,5 @@ declare module 'rehype-react' {
   }
   export default RehypeReact
 }
+
+declare module 'gatsby-plugin-fathom'

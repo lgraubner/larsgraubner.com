@@ -163,7 +163,8 @@ const config = {
     {
       resolve: 'gatsby-plugin-fathom',
       options: {
-        siteId: 'YJAIOOQI'
+        siteId: 'YJAIOOQI',
+        honorDnt: true
       }
     }
   ]
