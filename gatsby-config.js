@@ -159,15 +159,13 @@ const config = {
       }
     },
     'gatsby-plugin-netlify',
+    'gatsby-plugin-twitter',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-fathom',
       options: {
-        trackingId: 'UA-44046571-2',
-        anonymize: true,
-        respectDNT: true
+        siteId: 'YJAIOOQI'
       }
-    },
-    'gatsby-plugin-twitter'
+    }
   ]
 }
 
