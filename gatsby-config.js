@@ -164,7 +164,7 @@ const config = {
       resolve: 'gatsby-plugin-fathom',
       options: {
         siteId: 'YJAIOOQI',
-        includedDomains: ['larsgraubnerrrrr.com']
+        includedDomains: ['larsgraubner.com']
       }
     }
   ]
