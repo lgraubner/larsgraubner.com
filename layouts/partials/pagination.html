@@ -1,0 +1,19 @@
+<nav class="pagination">
+    <ul>
+        {{ if .Paginator.HasPrev }}
+        <li>
+            <a href="{{ .Paginator.Prev.URL }}" aria-label="previous">Prev</a>
+        </li>
+        {{ end }}
+        {{ range $page := .Paginator.Pagers }}
+            <li>
+                <a href="{{ $page.URL }}" aria-label="go to page {{ $page.PageNumber }}">{{ $page.PageNumber }}</a>
+            </li>
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+            <li>
+                <a href="{{ .Paginator.Next.URL }}" aria-label="next">Next</a>
+            </li>
+        {{ end }}
+    </ul>
+</nav>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en-us" }}">
+    {{ partial "head.html" . }}
+
+    <body>
+        {{ partial "header.html" . }}
+
+        <main class="content">
+            <div class="container">
+                {{ block "main" . }}{{ end }}
+            </div>
+        </main>
+
+        {{ partial "footer.html" . }}
+
+        {{ $js := resources.Get "js/scripts.js" }}
+        {{ $transpiled := $js | babel }}
+        {{ if hugo.IsProduction }}
+            {{ $transpiled = $transpiled | minify | fingerprint }}
+            <script src="{{ $transpiled.RelPermalink }}" integrity="{{ $transpiled.Data.Integrity }}"></script>
+        {{ else }}
+            <script src="{{ $transpiled.RelPermalink }}"></script>
+        {{ end }}
+    </body>
+</html>

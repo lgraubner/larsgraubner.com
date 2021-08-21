@@ -1,0 +1,18 @@
+<header class="header">
+    <div class="container">
+        {{ partial "nav.html" . }}
+
+        <div class="persona">
+            <img src="/lars.jpg" width="50" height="50" class="avatar" alt="{{ .Site.Author.name }}" />
+            <div>
+                {{ if .IsHome }}
+                <h1 class="title">{{ .Site.Author.name }}</h1>
+                {{ else }}
+                <a href="/" class="title">{{ .Site.Author.name }}</a>
+                {{ end }}
+            </div>
+        </div>
+
+
+    </div>
+</header>

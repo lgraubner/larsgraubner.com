@@ -1,0 +1,27 @@
+baseURL = "https://larsgraubner.com/"
+languageCode = "en-US"
+title = "Lars Graubner – full-stack developer from Germany"
+
+sectionPagesMenu = "main"
+paginate = 15
+disableHugoGeneratorInject = true
+enableGitInfo = true
+
+pluralizeListTitles = false
+
+copyright = "© 2021 Lars Graubner. All rights reserved."
+
+enableRobotsTXT = true
+
+[taxonomies]
+# category = "categories"
+
+[markup]
+[markup.highlight]
+style = "github"
+
+[author]
+name = "Lars Graubner"
+
+[params]
+description = "This is the personal website of Lars Graubner. I'm a full-stack developer from Germany working with JavaScript, PHP and more."

@@ -1,0 +1,15 @@
+<nav class="nav">
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        {{ range .Site.Menus.main }}
+        <li>
+            <a href="{{ .URL }}">{{ .Name }} </a>
+        </li>
+        {{ end }}
+        <li>
+            <a href="mailto:hi@larsgraubner.com">Contact</a>
+        </li>
+    </ul>
+</nav>

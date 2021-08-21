@@ -1,5 +1,23 @@
 # Redirect default Netlify subdomain to primary domain
 https://friendly-dubinsky-06aa6c.netlify.com/* https://larsgraubner.com/:splat 301!
 
-/hireme       /work   301
-/newsletter   /subscribe       301
+/hireme       /work 301
+/newsletter   /subscribe    301
+
+# old blog
+/up-and-running                         /   301
+/tree-picture-folder-structures/        /blog/tools/tree-picture-folder-structures/ 301
+/recap-code-talks-2016/                 /blog/conferences/recap-code-talks-2016/    301
+/handle-outside-clicks-react/           /blog/react/handle-outside-clicks/   301
+/telegraf-middleware-command-arguments/ /blog/javascript/telegraf-middleware-command-arguments/  301
+/webpack-images/                        /blog/tools/webpack-images/  301
+/lets-encrypt-renewal/                  /blog/nginx/lets-encrypt-renewal/    301
+/doing-things-different/                /   301
+/unfinished-projects/                   /   301
+/service-workers-considered-harmful/    /blog/javascript/service-workers-considered-harmful/ 301
+/javascript-proxy/                      /blog/javascript/proxy/  301
+/work/                                  /   301
+/about/                                 /   301
+/contact/                               /   301
+/impressum/                             /   301
+/privacy/                               /   301
