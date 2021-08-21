@@ -8,6 +8,9 @@
   },
   "author": "Lars Graubner <mail@larsgraubner.de> (https://larsgraubner.com)",
   "license": "MIT",
+  "engines": {
+    "node": ">=14.17.3"
+  },
   "devDependencies": {
     "@babel/cli": "7.14.8",
     "@babel/core": "7.15.0",
