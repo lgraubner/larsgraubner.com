@@ -19,3 +19,5 @@ hugo server -D
 - a11y
 - anchored headings
 - OG Tags
+- tailwind
+- prettier?
