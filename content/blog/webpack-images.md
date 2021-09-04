@@ -1,9 +1,9 @@
 ---
-categories: ["Tools"]
+categories: ['Tools']
 date: 2017-06-09T12:00:00+02:00
-description: "Images should be optimized as good as possible. This post describes image processing with webpack and how it differs from gulp, Grunt and similar tools."
-title: "Process images with webpack"
-url: "/blog/tools/webpack-images"
+description: 'Images should be optimized as good as possible. This post describes image processing with webpack and how it differs from gulp, Grunt and similar tools.'
+title: 'Process images with webpack'
+url: '/blog/tools/webpack-images'
 ---
 
 Images are a crucial part of any website. Often they make the most of the transferred bytes. Therefore it's important to optimize them as good as possible. Modern build tools such as [Webpack](https://webpack.js.org/) or [gulp](http://gulpjs.com/) offer all kind of plugins to optimize your images. In this post I'm going to have a closer look at image processing with webpack and how it differs from gulp, [Grunt](https://gruntjs.com/) and similar tools.
@@ -15,12 +15,12 @@ _This post is assuming webpack v2. Loader syntaxes might vary in other versions.
 When I started to migrate from gulp to webpack I struggled getting image processing to work as I used to do it before. Gulp handles images like this: Provide a folder with images, process them and output at the given location.
 
 ```javascript
-const gulp = require('gulp')
-const imagemin = require('gulp-imagemin')
+const gulp = require('gulp');
+const imagemin = require('gulp-imagemin');
 
 gulp.task('default', () =>
   gulp.src('src/images/*').pipe(imagemin()).pipe(gulp.dest('dist/images'))
-)
+);
 ```
 
 Webpack works different which can be confusing. Rather than handling direct image input webpack is looking for references of images in your source code. So if you include a background image defined in a stylesheet webpack is able to pick it up.
@@ -84,7 +84,7 @@ const webpackConfig = {
       }
     ]
   }
-}
+};
 ```
 
 ## Loaders
