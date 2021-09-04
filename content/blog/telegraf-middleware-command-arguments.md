@@ -52,7 +52,7 @@ const commandArgs = () => (ctx, next) => {
       ctx.state.command = {
         raw: text,
         command,
-        args
+        args,
       };
     }
   }

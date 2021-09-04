@@ -20,13 +20,13 @@ class Popover extends React.Component {
     this.handleClick = this.handleClick.bind(this);
 
     this.state = {
-      popupVisible: false
+      popupVisible: false,
     };
   }
 
   handleClick() {
     this.setState((prevState) => ({
-      popupVisible: !prevState.popupVisible
+      popupVisible: !prevState.popupVisible,
     }));
   }
 

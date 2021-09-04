@@ -66,24 +66,24 @@ const webpackConfig = {
   entry: './app/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        loader: 'style-loader'
+        loader: 'style-loader',
       },
       {
         test: /.*\.(gif|png|jpe?g)$/i,
         use: [
           {
-            loader: 'file-loader'
-          }
-        ]
-      }
-    ]
-  }
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
+  },
 };
 ```
 

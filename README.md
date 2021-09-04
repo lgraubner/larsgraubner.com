@@ -20,4 +20,4 @@ hugo server -D
 - anchored headings
 - OG Tags
 - tailwind
-- prettier?
+- link page
