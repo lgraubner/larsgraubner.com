@@ -1,18 +1,30 @@
 {{ define "main" }}
-    <section class="about">
-        <h2 class="main-heading">Welcome</h2>
-        <p>I'm Lars Graubner, a full-stack developer from Germany and this is my personal website.</p>
-        <p>Over the last 8 year I have worked in various areas of web development. I have seen and used a wide range of tools and programming languages. Today I work in a larger hosting company and try to use the optimal tools and programming languages to get the job done.</p>
-        <p>I like to work with JavaScript, be it React in the frontend, or Node.js in the backend. I also enjoy working with PHP and the Symfony framework, creating complex applications, API's, websites and more.</p>
-    </section>
-    <section>
-        <h2 class="heading">Latest Articles</h2>
-        <ul class="list">
-            {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
-                <li>
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </li>
-            {{ end }}
-        </ul>
-    </section>
+<section class="about">
+    <h2 class="main-heading">Welcome</h2>
+    <p>
+        I'm Lars Graubner, a full-stack developer from Germany and this is my
+        personal website.
+    </p>
+    <p>
+        Over the last 8 year I have worked in various areas of web development.
+        I have seen and used a wide range of tools and programming languages.
+        Today I work in a larger hosting company and try to use the optimal
+        tools and programming languages to get the job done.
+    </p>
+    <p>
+        I like to work with JavaScript, be it React in the frontend, or Node.js
+        in the backend. I also enjoy working with PHP and the Symfony framework,
+        creating complex applications, API's, websites and more.
+    </p>
+</section>
+<section>
+    <h2 class="heading">Latest Articles</h2>
+    <ul class="list">
+        {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</section>
 {{ end }}

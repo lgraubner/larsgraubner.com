@@ -1,7 +1,13 @@
 <head>
     <meta charset="utf-8" />
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} – {{ .Site.Author.name }}{{ end }}</title>
-    <meta name="description" content="{{ if .Page.Params.description }}{{ .Page.Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}" />
+    <title>
+        {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} – {{
+        .Site.Author.name }}{{ end }}
+    </title>
+    <meta
+        name="description"
+        content="{{ if .Page.Params.description }}{{ .Page.Params.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="canonical" href="{{ .Permalink }}" />
@@ -14,20 +20,19 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
-    {{ range .AlternativeOutputFormats -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
-    {{ end -}}
-
-    {{ $css := resources.Get "css/styles.css" }}
-    {{ $style := $css | resources.PostCSS }}
-    {{ if hugo.IsProduction }}
-        {{ $style = $style | minify | fingerprint }}
-    {{ end }}
+    {{ range .AlternativeOutputFormats -}} {{ printf `
+    <link rel="%s" type="%s" href="%s" title="%s" />
+    ` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }} {{ end -}}
+    {{ $css := resources.Get "css/styles.css" }} {{ $style := $css |
+    resources.PostCSS }} {{ if hugo.IsProduction }} {{ $style = $style | minify
+    | fingerprint }} {{ end }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
     {{ if hugo.IsProduction -}}
-        <script src="https://asp.larsgraubner.com/script.js" data-site="YJAIOOQI" defer></script>
-    {{- end }}
-
-    {{ partial "schema.html" .}}
+    <script
+        src="https://asp.larsgraubner.com/script.js"
+        data-site="YJAIOOQI"
+        defer
+    ></script>
+    {{- end }} {{ partial "schema.html" .}}
 </head>

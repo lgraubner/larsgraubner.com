@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write './**/*.{css,js,md}'"
+    "format": "prettier --write '**/*.{css,js,md}'"
   },
   "author": "Lars Graubner <mail@larsgraubner.de> (https://larsgraubner.com)",
   "license": "MIT",

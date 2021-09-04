@@ -3,7 +3,14 @@
         {{ partial "nav.html" . }}
 
         <div class="persona">
-            <img src="/lars_avatar.jpg" srcset="/lars_avatar@2x.jpg 2x, /lars_avatar.jpg 1x" width="50" height="50" class="avatar" alt="{{ .Site.Author.name }}" />
+            <img
+                src="/lars_avatar.jpg"
+                srcset="/lars_avatar@2x.jpg 2x, /lars_avatar.jpg 1x"
+                width="50"
+                height="50"
+                class="avatar"
+                alt="{{ .Site.Author.name }}"
+            />
             <div>
                 {{ if .IsHome }}
                 <h1 class="title">{{ .Site.Author.name }}</h1>
@@ -12,7 +19,5 @@
                 {{ end }}
             </div>
         </div>
-
-
     </div>
 </header>
