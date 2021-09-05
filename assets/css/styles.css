@@ -1,4 +1,6 @@
-@import 'ress';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
     --text: #222;
