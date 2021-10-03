@@ -2,281 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --text: #222;
-    --muted: #666;
-    --primary: #0969da;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol';
-    color: var(--text);
-    font-size: 16px;
-}
-
-li a,
-p a {
-    color: var(--primary);
-}
-
-li a:hover,
-p a:hover {
-    text-decoration: none;
-}
-
-.container {
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.header {
-    margin-top: 30px;
-    margin-bottom: 60px;
-}
-
-.persona {
-    display: flex;
-    flex-direction: column;
-}
-
-@media screen and (min-width: 480px) {
-    .persona {
-        align-items: center;
-        flex-direction: row;
-    }
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
-    display: block;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 13px;
-    flex-shrink: 0;
-    margin-bottom: 10px;
-}
-
-@media screen and (min-width: 480px) {
-    .avatar {
-        margin-bottom: 0;
-    }
-}
-
-.title {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 600;
-    font-size: 24px;
-    margin: 0;
-}
-
-.subtitle {
-    margin-top: 3px;
-    font-size: 17px;
-    color: var(--muted);
-}
-
-.nav {
-    margin-top: 20px;
-    margin-bottom: 35px;
-}
-
-.nav a {
-    font-size: 17px;
-}
-
-.nav ul {
-    list-style: none;
-}
-
-.nav li {
-    display: inline-block;
-    align-items: center;
-}
-
-.nav li:not(:last-child) {
-    margin-right: 20px;
-}
-
-.about {
-    line-height: 1.75em;
-    font-size: 17px;
-}
-
-.about p:not(:last-child) {
-    margin-bottom: 1.5em;
-}
-
-.content {
-    font-size: 18px;
-}
-
-.list {
-    margin-left: 30px;
-    font-size: 17px;
-}
-
-.list li {
-    list-style-type: disc;
-    line-height: 1.5em;
-}
-
-.list li:not(:last-child) {
-    margin-bottom: 5px;
-}
-
-.heading {
-    font-weight: 600;
-    margin-bottom: 0.675em;
-    font-size: 24px;
-}
-
-.main-heading {
-    font-weight: 600;
-    font-size: 36px;
-    margin-bottom: 0.8em;
-}
-
-.post-list {
-    margin-top: 15px;
-    margin-bottom: 40px;
-    font-size: 18px;
-}
-
-.post-list a {
-    font-weight: 400;
-}
-
-.post-list a:hover {
-    text-decoration: none;
-}
-
-.post-list-year {
-    font-weight: 600;
-    font-size: 22px;
-}
-
-.about {
-    margin-bottom: 50px;
-}
-
-.pagination {
-    margin-top: 60px;
-}
-
-.pagination ul {
-    display: flex;
-    margin: 0;
-}
-
-.pagination li {
-    list-style: none;
-    margin: 0 5px;
-}
-
-.post-header {
-    margin-bottom: 40px;
-}
-
-.post-date {
-    font-size: 16px;
-    margin-bottom: 10px;
-    display: inline-block;
-    color: var(--muted);
-    font-weight: 500;
-}
-
-.post-content {
-    margin-bottom: 50px;
-}
-
 .post-content p {
-    margin-bottom: 1.7em;
-    line-height: 1.7em;
+    @apply leading-relaxed mb-7;
 }
 
 .post-content p code {
     font-size: 85%;
-    margin: 0;
     padding: 0.2em 0.4em;
-    border-radius: 6px;
     background-color: rgba(175, 184, 193, 0.2);
+
+    @apply rounded-md m-0;
 }
 
 .post-content pre {
     margin: 2em 0;
     font-size: 85%;
-    border-radius: 6px;
-    line-height: 1.45em;
-    overflow: auto;
-    padding: 16px;
     background-color: #f6f8fa !important;
+
+    @apply rounded-md leading-normal overflow-auto p-4;
 }
 
 .post-content h2 {
-    margin: 1.5em 0 1em;
+    @apply text-2xl font-semibold mt-10 mb-6;
 }
 
 .post-content h3 {
-    margin: 1.5em 0 1em;
-}
-
-.post-footer {
-    font-size: 17px;
-    color: var(--muted);
-}
-
-.post-footer a {
-    color: var(--muted);
-    text-decoration: none;
-}
-
-.post-footer a:hover {
-    text-decoration: underline;
-}
-
-.footer {
-    margin-top: 70px;
-    margin-bottom: 60px;
-}
-
-.footer-heading {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 1em;
-}
-
-.copyright {
-    margin-top: 40px;
-    font-size: 16px;
-    line-height: 1.375em;
-    color: var(--muted);
-}
-
-.copyright a {
-    color: var(--muted);
-    text-decoration: none;
-}
-
-.copyright a:hover {
-    text-decoration: underline;
-}
-
-.content-404 {
-    margin-bottom: 60px;
-}
-
-.content-404 p {
-    font-size: 17px;
-    line-height: 1.5em;
-}
-
-.content-404 img {
-    margin-top: 40px;
-    max-width: 100%;
-    height: auto;
+    @apply text-xl font-semibold mt-10 mb-6;
 }

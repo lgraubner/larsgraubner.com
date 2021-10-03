@@ -1,21 +1,21 @@
-<header class="header">
-    <div class="container">
+<header class="pt-6 pb-14">
+    <div class="px-9 max-w-2xl mx-auto">
         {{ partial "nav.html" . }}
 
-        <div class="persona">
+        <div class="flex flex-col md:flex-row md:items-center">
             <img
                 src="/lars_avatar.jpg"
                 srcset="/lars_avatar@2x.jpg 2x, /lars_avatar.jpg 1x"
                 width="50"
                 height="50"
-                class="avatar"
+                class="w-12 h-12 block overflow-hidden rounded-full mr-4 mb-2 md:mb-0"
                 alt="{{ .Site.Author.name }}"
             />
             <div>
                 {{ if .IsHome }}
-                <h1 class="title">{{ .Site.Author.name }}</h1>
+                <h1 class="font-medium text-2xl">{{ .Site.Author.name }}</h1>
                 {{ else }}
-                <a href="/" class="title">{{ .Site.Author.name }}</a>
+                <a href="/" class="font-medium text-2xl">{{ .Site.Author.name }}</a>
                 {{ end }}
             </div>
         </div>

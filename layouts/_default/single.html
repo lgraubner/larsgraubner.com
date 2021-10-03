@@ -1,17 +1,18 @@
 {{ define "main" }}
 <article class="post">
-    <header class="post-header">
-        <time datetime="{{ .Date }}" class="post-date"
+    <header class="mb-10">
+        <time datetime="{{ .Date }}" class="post-date text-base block text-gray-500 font-medium mb-2"
             >{{ .Date.Format "January 2, 2006" }}</time
         >
-        <h1 class="main-heading">{{ .Title }}</h1>
+        <h1 class="font-semibold text-4xl mb-7">{{ .Title }}</h1>
     </header>
 
-    <div class="post-content">{{ .Content }}</div>
+    <div class="post-content mb-12">{{ .Content }}</div>
 
-    <footer class="post-footer">
+    <footer class="text-gray-500 text-base">
         <a
             href="https://github.com/lgraubner/larsgraubner.com/edit/master/content/{{ .File.Path }}"
+            class="text-gray-500 hover:underline"
             >Edit</a
         >
         &middot; Last updated: {{ .Lastmod.Format "January 2, 2006" }}

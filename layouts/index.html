@@ -1,6 +1,6 @@
 {{ define "main" }}
-<section class="about">
-    <h2 class="main-heading">Welcome</h2>
+<section class="about leading-relaxed pb-12 text-lg space-y-6">
+    <h2 class="font-semibold text-4xl mb-7">Welcome</h2>
     <p>
         I'm Lars Graubner, a full-stack developer from Germany and this is my
         personal website.
@@ -18,11 +18,11 @@
     </p>
 </section>
 <section>
-    <h2 class="heading">Latest Articles</h2>
-    <ul class="list">
+    <h2 class="text-2xl font-semibold mb-3">Latest Articles</h2>
+    <ul class="list-disc ml-7 space-y-2 text-base">
         {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
         <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="text-blue-500 underline">{{ .Title }}</a>
         </li>
         {{ end }}
     </ul>
