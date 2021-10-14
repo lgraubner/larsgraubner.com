@@ -19,7 +19,7 @@ Now what's interesting is how to generate an ID like this with e.g. PHP? Actuall
 Now let's get to some code. A function to generate a random ID looks like this:
 
 ```PHP
-function generateHash()
+function generateHash(): string
 {
     $bytes = random_bytes(8);
     $base64 = base64_encode($bytes);
