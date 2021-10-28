@@ -36,4 +36,4 @@ animals['SpEcIeS'] = 'giraffe'
 animals['species']// giraffe
 ```
 
-Simple, but effective this suits my needs. Finally I can say I have used JavaScript proxies to solve a problem. If you know any other use cases [let me know](/contact)!
+Simple, but effective this suits my needs. Finally I can say I have used JavaScript proxies to solve a problem. If you know any other use cases let me know!
