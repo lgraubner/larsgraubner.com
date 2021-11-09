@@ -197,7 +197,8 @@ p a:hover {
     line-height: 1.7em;
 }
 
-.post-content p code {
+.post-content p code,
+.post-content li code {
     font-size: 85%;
     margin: 0;
     padding: 0.2em 0.4em;
@@ -221,6 +222,20 @@ p a:hover {
 
 .post-content h3 {
     margin: 1.5em 0 1em;
+}
+
+.post-content ul,
+.post-content ol {
+    padding-left: 30px;
+    margin-bottom: 1.7em;
+}
+
+.post-content li {
+    line-height: 1.5em;
+}
+
+.post-content li:not(:last-child) {
+    margin-bottom: 5px;
 }
 
 .post-footer {
