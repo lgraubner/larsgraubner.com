@@ -1,6 +1,6 @@
 ---
 categories: ['Git']
-title: 'How to checkout a remote Git branch and track it locally'
+title: 'How to checkout a remote Git branch'
 date: 2021-11-09T19:55:00+02:00
 description: 'Small cheatsheet about how to checkout a remote branch with Git and track it locally.'
 url: '/blog/git/checkout-remote-branch'
