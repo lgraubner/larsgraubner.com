@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+  {% include 'head.njk' %}
+  <body class="font-sans antialiased">
+    {{ content | safe }}
+
+    <script type="module">
+      console.log('Hi! You can find the full source code here: https://github.com/lgraubner/larsgraubner.com');
+      console.log('Have a nice day. 👋');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "title": "Lars Graubner – Software Developer",
+  "url": "https://larsgraubner.com/",
+  "language": "en",
+  "description": "I'm Lars Graubner, a software developer based in Germany, focused on React, TypeScript and Node.js.",
+  "author": {
+    "name": "Lars Graubner",
+    "email": "hello@larsgraubner.com",
+    "url": "https://larsgraubner.com/"
+  },
+  "feed": {
+    "subtitle": "I'm Lars Graubner, a software developer based in Germany, focused on React, TypeScript and Node.js.",
+    "filename": "rss.xml",
+    "path": "/rss.xml",
+    "id": "https://larsgraubner.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed.json",
+    "url": "https://larsgraubner.com/feed.json"
+  }
+}

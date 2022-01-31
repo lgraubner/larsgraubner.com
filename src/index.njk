@@ -1,0 +1,29 @@
+---
+layout: layouts/page.njk
+---
+
+<section class="leading-relaxed">
+    <h2 class="font-semibold text-xl mb-8">Me</h2>
+
+    <p class="mb-4">
+        I'm Lars, a Software Developer from Germany and like to fiddle around with TypeScript, React and Node.js.
+    </p>
+    <p>
+        If you like my content you can follow me on <a class="underline underline-offset-2 decoration-dotted decoration-gray-500 transition duration-150 hover:text-white hover:bg-gray-900 hover:no-underline" href="https://twitter.com/larsgraubner">Twitter</a> and <a class="underline underline-offset-2 decoration-dotted decoration-gray-500 transition duration-150 hover:text-white hover:bg-gray-900 hover:no-underline" href="https://github.com/lgraubner">Github</a>.
+    </p>
+</section>
+
+<section class="mt-16 md:mt-24">
+    <h2 class="font-semibold text-xl mb-8">Posts</h2>
+
+    <ul class="space-y-2">
+        {%- for post in collections.publicPosts | reverse -%}
+        <li>
+            <a href="{{ post.url | url }}" class="underline underline-offset-2 decoration-dotted decoration-gray-500 transition duration-50 hover:text-white hover:bg-gray-900 hover:no-underline block md:inline">
+                {{- post.data.title -}}
+            </a>
+            <time datetime="{{ post.date | htmlDateString }}" class="text-sm text-gray-600 md:ml-1">{{ post.date | readableDate }}</time>
+        </li>
+        {%- endfor -%}
+    <ul>
+</section>

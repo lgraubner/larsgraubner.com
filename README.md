@@ -2,22 +2,18 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/74c4d0c0-8cc9-4107-b6cb-046b2d027918/deploy-status)](https://app.netlify.com/sites/friendly-dubinsky-06aa6c/deploys)
 
-Personal website of Lars Graubner. This site is created with [Hugo](https://gohugo.io/).
+Personal website of Lars Graubner. This site is created with [Eleventy](https://www.11ty.dev/).
 
-## CLI commands
+## Getting started
 
-```bash
-# build files for production
-hugo
-
-# start development server
-hugo server -D
 ```
+# start local development
+npm install
+npm run dev:all
 
-## Todo
+# build website
+npm run build
 
-- a11y
-- anchored headings
-- OG Tags
-- tailwind
-- link page
+# serve website
+npm run start
+```

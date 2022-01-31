@@ -2,25 +2,32 @@
 https://friendly-dubinsky-06aa6c.netlify.com/* https://larsgraubner.com/:splat 301!
 
 /hireme       /work 301
-/newsletter   /subscribe    301
+/newsletter   /     301
 
 # old blog
-/up-and-running                         /   301
-/tree-picture-folder-structures/        /blog/tools/tree-picture-folder-structures/ 301
-/recap-code-talks-2016/                 /blog/conferences/recap-code-talks-2016/    301
-/handle-outside-clicks-react/           /blog/react/handle-outside-clicks/   301
-/telegraf-middleware-command-arguments/ /blog/javascript/telegraf-middleware-command-arguments/  301
-/webpack-images/                        /blog/tools/webpack-images/  301
-/lets-encrypt-renewal/                  /blog/nginx/lets-encrypt-renewal/    301
-/doing-things-different/                /   301
-/unfinished-projects/                   /   301
-/service-workers-considered-harmful/    /blog/javascript/service-workers-considered-harmful/ 301
-/javascript-proxy/                      /blog/javascript/proxy/  301
-/work/                                  /   301
-/about/                                 /   301
-/contact/                               /   301
-/impressum/                             /   301
-/privacy/                               /   301
+/up-and-running                                             /                                       301
+/blog/tools/tree-picture-folder-structures/                 /tree-picture-folder-structures/        301
+/blog/conferences/recap-code-talks-2016/                    /recap-code-talks-2016/                 301
+/blog/react/handle-outside-clicks/                          /handle-outside-clicks-react/           301
+/blog/javascript/telegraf-middleware-command-arguments/     /telegraf-middleware-command-arguments/ 301
+/blog/tools/webpack-images/                                 /webpack-images/                        301
+/blog/nginx/lets-encrypt-renewal/                           /lets-encrypt-renewal/                  301
+/doing-things-different/                                    /   301
+/unfinished-projects/                                       /   301
+/blog/javascript/service-workers-considered-harmful/        /service-workers-considered-harmful/    301
+/blog/javascript/proxy/                                     /javascript-proxy/                      301
+/work/                                                      /                                       301
+/about/                                                     /                                       301
+/contact/                                                   /                                       301
+/impressum/                                                 /                                       302
+/privacy/                                                   /                                       302
+/whois/                                                     /node-js-whois/                         301
+/custom-header/                                             /symfony-custom-header/                 301
+/checkout-remote-branch/                                    /git-checkout-remote-branch/            301
+/pseudo-element-syntax/                                     /css-pseudo-element-syntax/             301
+/push-different-name/                                       /git-push-different-name/               301
+/translation-links/                                         /symfony-translation-links/             301
 
 # short links
 /http       https://developer.mozilla.org/en-US/docs/Web/HTTP/Status    301
+

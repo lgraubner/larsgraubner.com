@@ -1,0 +1,10 @@
+<header class="mb-8 md:mb-16">
+  <div class="container py-8 font-medium">
+    {% if page.url === '/' %}
+        <h1>{{ metadata.author.name }}</h1>
+    {% else %}
+        <a href="/">{{ metadata.author.name }}</a>
+    {% endif %}
+
+  </div>
+</header>
