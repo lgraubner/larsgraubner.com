@@ -21,12 +21,14 @@ https://friendly-dubinsky-06aa6c.netlify.com/* https://larsgraubner.com/:splat 3
 /contact/                                                   /                                       301
 /impressum/                                                 /                                       302
 /privacy/                                                   /                                       302
-/whois/                                                     /node-js-whois/                         301
-/custom-header/                                             /symfony-custom-header/                 301
-/checkout-remote-branch/                                    /git-checkout-remote-branch/            301
-/pseudo-element-syntax/                                     /css-pseudo-element-syntax/             301
-/push-different-name/                                       /git-push-different-name/               301
-/translation-links/                                         /symfony-translation-links/             301
+/blog/node-js/whois/                                        /whois/                                 301
+/blog/symfony/custom-header/                                /symfony-custom-header/                 301
+/blog/git/checkout-remote-branch/                           /git-checkout-remote-branch/            301
+/blog/css/pseudo-element-syntax/                            /css-pseudo-element-syntax/             301
+/blog/git/push-different-branch-name/                       /git-push-different-name/               301
+/blog/symfony/translation-links/                            /symfony-translation-links/             301
+/blog/tools/manage-php-versions-homebrew/                   /manage-php-versions-homebrew/          301
+/blog/php/youtube-id/                                       /php-youtube-id/                        301
 
 # short links
 /http       https://developer.mozilla.org/en-US/docs/Web/HTTP/Status    301
