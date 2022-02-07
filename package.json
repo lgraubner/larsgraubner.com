@@ -11,7 +11,8 @@
     "dev:all": "concurrently \"npm run dev:css\" \"npm run dev\"",
     "start": "npm run build && http-server _site -o -a localhost --silent",
     "format": "prettier --write \"./**/*.{js,md}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-post": "node scripts/create-post.js"
   },
   "keywords": [],
   "author": "Lars Graubner <mail@larsgraubner.de> (https://larsgraubner.com/)",
@@ -28,10 +29,12 @@
     "http-server": "14.1.0",
     "husky": "7.0.4",
     "lint-staged": "12.3.2",
+    "mri": "1.2.0",
     "postcss": "8.4.5",
     "postcss-cli": "9.1.0",
     "postcss-import": "14.0.2",
     "prettier": "2.5.1",
+    "slugify": "1.6.5",
     "tailwindcss": "3.0.18"
   }
 }
