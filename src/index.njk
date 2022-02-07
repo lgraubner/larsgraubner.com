@@ -17,7 +17,7 @@ layout: layouts/page.njk
     <h2 class="font-semibold text-xl mb-8">Posts</h2>
 
     <ul class="space-y-2">
-        {%- for post in collections.publicPosts | reverse -%}
+        {%- for post in collections.post | reverse -%}
         <li>
             <a href="{{ post.url | url }}" class="underline underline-offset-2 decoration-dotted decoration-gray-500 transition duration-50 hover:text-white hover:bg-gray-900 hover:no-underline block md:inline">
                 {{- post.data.title -}}

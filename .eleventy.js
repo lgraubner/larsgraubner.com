@@ -19,18 +19,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ static: '/' });
 
-  eleventyConfig.addCollection('publicPosts', function (collectionApi) {
-    return collectionApi.getFilteredByTag('post').filter(function (item) {
-      // do no filter in development
-      if (item.data.env === 'development') {
-        return item;
-      }
-
-      // filter out draft
-      return item.data?.draft !== true;
-    });
-  });
-
   eleventyConfig.addTransform('htmlmin', function (content) {
     if (this.outputPath && this.outputPath.endsWith('.html')) {
       return htmlmin.minify(content, {
