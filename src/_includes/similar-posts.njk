@@ -1,0 +1,18 @@
+{% set similarPosts = collections.post | similarPosts(page.inputPath, tags) %}
+
+{% if similarPosts | length > 0 %}
+    <section class="mt-16">
+        <h2 class="font-semibold text-xl mb-8">Similar posts</h2>
+
+        <ul class="space-y-2">
+            {%- for post in similarPosts.slice(0, 5) -%}
+            <li>
+                <a href="{{ post.url | url }}" class="underline underline-offset-2 decoration-dotted decoration-gray-500 transition duration-50 hover:text-white hover:bg-gray-900 hover:no-underline block md:inline">
+                    {{- post.data.title -}}
+                </a>
+                <time datetime="{{ post.date | htmlDateString }}" class="text-sm text-gray-600 md:ml-1">{{ post.date | readableDate }}</time>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </section>
+{% endif %}

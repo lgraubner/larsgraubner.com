@@ -19,8 +19,28 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ static: '/' });
 
-  eleventyConfig.addCollection('post', function (collectionApi) {
+  eleventyConfig.addCollection('post', (collectionApi) => {
     return collectionApi.getFilteredByGlob('src/posts/**/*.md');
+  });
+
+  let getSimilarCategories = function (categoriesA, categoriesB) {
+    return categoriesA.filter(Set.prototype.has, new Set(categoriesB)).length;
+  };
+
+  eleventyConfig.addFilter('similarPosts', (collection, path, tags) => {
+    return collection
+      .filter((post) => {
+        return (
+          getSimilarCategories(post.data.tags, tags) >= 1 &&
+          post.data.page.inputPath !== path
+        );
+      })
+      .sort((a, b) => {
+        return (
+          getSimilarCategories(b.data.tags, tags) -
+          getSimilarCategories(a.data.tags, tags)
+        );
+      });
   });
 
   eleventyConfig.addTransform('htmlmin', function (content) {
