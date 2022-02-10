@@ -19,6 +19,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ static: '/' });
 
+  eleventyConfig.addCollection('post', function (collectionApi) {
+    return collectionApi.getFilteredByGlob('src/posts/**/*.md');
+  });
+
   eleventyConfig.addTransform('htmlmin', function (content) {
     if (this.outputPath && this.outputPath.endsWith('.html')) {
       return htmlmin.minify(content, {
@@ -35,7 +39,6 @@ module.exports = function (eleventyConfig) {
     templateFormats: ['md', 'njk'],
     pathPrefix: '/',
     markdownTemplateEngine: 'njk',
-    // markdownTemplateEngine: false,
     dataTemplateEngine: false,
     dir: {
       input: 'src',
