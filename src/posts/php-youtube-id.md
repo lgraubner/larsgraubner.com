@@ -1,8 +1,9 @@
 ---
-categories: ['PHP']
 title: Generate a random YouTube like ID with PHP
 date: 2021-10-14
 description: YouTube uses 64 bit numbers to generate random IDs. This article explains how to generate YouTube like IDs with PHP.
+tags:
+    - php
 ---
 
 YouTube uses a specific type of ID for each uploaded video. This ID typically consists of eleven characters and looks something like this: `dQw4w9WgXcQ`. This is used in the URL like the following, for sure you have seen this in the past.

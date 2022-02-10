@@ -1,8 +1,10 @@
 ---
-categories: ['Tools']
 date: 2021-10-02
 description: How to install different PHP Versions with Homebrew on macOS and switch between them.
 title: Manage PHP Versions with Homebrew on macOS
+tags:
+    - php
+    - macos
 ---
 
 I mostly work with Docker, but sometimes it's useful to have PHP installed locally for some CLI action. To install a specific PHP Version I'm using [Homebrew](https://brew.sh/index_de) for macOS. Mac provides a preinstalled PHP Version, but this is mostly outdated.

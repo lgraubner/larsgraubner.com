@@ -1,8 +1,9 @@
 ---
-categories: ['CSS']
 date: 2021-09-29
 description:
 title: Correct CSS pseudo-element Syntax
+tags:
+    - css
 ---
 
 Today a colleague of mine pointed out, that the correct syntax for CSS pseudo-elements consists of two colons.

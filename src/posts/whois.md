@@ -1,8 +1,10 @@
 ---
-categories: ['Node.js']
 title: Query a domain registrar via WHOIS with Node.js
 date: 2021-09-04
 description: Every domain registrar is obliged to provide an API with the WHOIS protocol to query for domain information. This can be done with Node.js.
+tags:
+    - javascript
+    - nodejs
 ---
 
 Every domain registrar is obliged to provide an API with the WHOIS protocol to query for domain information. Per specification ([RFC 3912](https://datatracker.ietf.org/doc/html/rfc3912)) the service has to be operated under port 43.

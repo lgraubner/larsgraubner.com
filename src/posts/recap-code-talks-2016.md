@@ -1,8 +1,9 @@
 ---
-categories: ['Conferences']
 date: 2016-10-13
 description: This year in September it was all about popcorn, nachos and code again. This is a recap of the code.talks 2016 conference and the best talks I attended.
 title: Recap code.talks 2016
+tags:
+    - conferences
 ---
 
 This year in September it was all about popcorn, nachos and code again. The code.talks conference took place in Hamburg in a new location with lots of great talks. This is a recap of the best talks I attended and the conference at all.

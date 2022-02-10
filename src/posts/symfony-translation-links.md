@@ -1,8 +1,10 @@
 ---
-categories: ['Symfony']
 date: 2021-09-08
 description: There is no standard way to use links in Symfony translations. But there is an easy and clean way to implement it.
 title: How to use links in Symfony translations
+tags:
+    - php
+    - symfony
 ---
 
 When dealing with translations it's sometimes necessary to put a link inside a paragraph or sentence. As far as I know there is no standard way to do this. [Certain StackOverflow Answers](https://stackoverflow.com/questions/11545459/adding-a-link-inside-translated-content-in-twig-template) suggest putting HTML Markup inside the translation filter options and other weird stuff.

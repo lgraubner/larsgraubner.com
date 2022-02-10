@@ -1,8 +1,9 @@
 ---
-categories: ['JavaScript']
 title: A practical use case for a JavaScript Proxy
 date: 2019-06-28
 description: Until now I never came across a use case for a JavaScript Proxy. In this case I'm using it to make all keys to access an object case insensitive.
+tags:
+    - javascript
 ---
 
 When JavaScript Proxies were introduced I was excited. It sounded like a nice feature, but after all I was lacking any practical use cases. Until now! Some days ago I was refactoring some code and came across an object which had upper cased keys for it's content. I really wanted to make them lower case for consistency, but those keys also exist on users devices local state. So just changing them in the codebase would break it for them. To switch to lower case keys anyways I remembered JavaScript Proxy.

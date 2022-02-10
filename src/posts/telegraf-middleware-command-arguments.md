@@ -1,8 +1,9 @@
 ---
-categories: ['JavaScript']
 date: 2017-01-04
 description: Telegraf does not offer any command arguments parsing. This post explains how to implement a simple middleware for this task.
 title: Telegraf middleware for command arguments parsing
+tags:
+    - javascript
 ---
 
 Over the holidays I set up a simple Telegram chatbot using [Telegraf][1]. It allows to easily register commands the bot can react to. Unfortunately Telegraf does not parse any command arguments which might be useful for some commands. Luckily it is very easy to extend Telegraf using middlewares.

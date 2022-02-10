@@ -1,8 +1,9 @@
 ---
-categories: ['Git']
 title: How to checkout a remote Git branch
 date: 2021-11-09
 description: Small cheatsheet about how to checkout a remote branch with Git and track it locally.
+tags:
+    - git
 ---
 
 This is just small reminder about how to checkout remote branches with Git. I tend to forget the syntax every time. The important bits are:
