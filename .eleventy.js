@@ -23,22 +23,25 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob('src/posts/**/*.md');
   });
 
-  let getSimilarCategories = function (categoriesA, categoriesB) {
-    return categoriesA.filter(Set.prototype.has, new Set(categoriesB)).length;
+  let getSimilarTags = function (tagsA = [], tagsB = []) {
+    return tagsA.filter(Set.prototype.has, new Set(tagsB)).length;
   };
 
   eleventyConfig.addFilter('similarPosts', (collection, path, tags) => {
+    if (!tags) {
+      return [];
+    }
+
     return collection
       .filter((post) => {
         return (
-          getSimilarCategories(post.data.tags, tags) >= 1 &&
+          getSimilarTags(post.data.tags, tags) >= 1 &&
           post.data.page.inputPath !== path
         );
       })
       .sort((a, b) => {
         return (
-          getSimilarCategories(b.data.tags, tags) -
-          getSimilarCategories(a.data.tags, tags)
+          getSimilarTags(b.data.tags, tags) - getSimilarTags(a.data.tags, tags)
         );
       });
   });
