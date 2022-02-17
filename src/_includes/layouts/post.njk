@@ -10,5 +10,7 @@ layout: layouts/page.njk
         {{ content | safe }}
     </div>
 
+    {% include 'tag-list.njk' %}
+
     {% include 'similar-posts.njk' %}
 </article>
