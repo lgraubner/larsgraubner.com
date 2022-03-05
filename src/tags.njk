@@ -1,24 +1,16 @@
 ---
-pagination:
-  data: collections
-  size: 1
-  alias: tag
-  filter:
-    - post
-permalink: /tags/{{ tag }}/
+permalink: /tags/
 layout: layouts/page.njk
 ---
-{% set taglist = collections[tag] %}
 
-<h1 class="font-semibold text-xl mb-8">Found {{ taglist|length }} posts tagged with <span class="text-white bg-black px-1 py-0.5 rounded-sm">{{ tag }}</span></h1>
+<h1 class="font-semibold text-xl mb-8">Tags</h1>
 
-<ol class="space-y-2">
-{% for post in taglist | reverse %}
+<ol class="space-y-2 list-[square] pl-6">
+{% for tag in collections.tagsList %}
     <li>
-        <a href="{{ post.url | url }}" class="underline underline-offset-2 decoration-dotted decoration-gray-500 transition duration-50 hover:text-white hover:bg-gray-900 hover:no-underline rounded-sm block md:inline">
-            {{ post.data.title }}
+        <a href="/tags/{{ tag }}" class="underline underline-offset-2 decoration-dotted decoration-gray-500 transition duration-50 hover:text-white hover:bg-gray-900 hover:no-underline rounded-sm block md:inline">
+            {{ tag }}
         </a>
-        <time datetime="{{ post.date | htmlDateString }}" class="text-sm text-gray-600 md:ml-1">{{ post.date | readableDate }}</time>
     </li>
 {% endfor %}
 </ol>

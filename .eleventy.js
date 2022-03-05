@@ -46,6 +46,19 @@ module.exports = function (eleventyConfig) {
       });
   });
 
+  eleventyConfig.addCollection('tagsList', function (collectionApi) {
+    const tagsList = new Set();
+    collectionApi.getAll().map((item) => {
+      if (item.data.tags) {
+        item.data.tags
+          .filter((tag) => !['post'].includes(tag))
+          .map((tag) => tagsList.add(tag));
+      }
+    });
+
+    return Array.from(tagsList).sort();
+  });
+
   eleventyConfig.addTransform('htmlmin', function (content) {
     if (this.outputPath && this.outputPath.endsWith('.html')) {
       return htmlmin.minify(content, {
