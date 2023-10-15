@@ -1,35 +1,8 @@
 # Redirect default Netlify subdomain to primary domain
 https://friendly-dubinsky-06aa6c.netlify.com/* https://larsgraubner.com/:splat 301!
 
-/hireme       /work 301
-/newsletter   /     301
-
-# old blog
-/up-and-running                                             /                                       301
-/blog/tools/tree-picture-folder-structures/                 /tree-picture-folder-structures/        301
-/blog/conferences/recap-code-talks-2016/                    /recap-code-talks-2016/                 301
-/blog/react/handle-outside-clicks/                          /handle-outside-clicks-react/           301
-/blog/javascript/telegraf-middleware-command-arguments/     /telegraf-middleware-command-arguments/ 301
-/blog/tools/webpack-images/                                 /webpack-images/                        301
-/blog/nginx/lets-encrypt-renewal/                           /lets-encrypt-renewal/                  301
-/doing-things-different/                                    /   301
-/unfinished-projects/                                       /   301
-/blog/javascript/service-workers-considered-harmful/        /service-workers-considered-harmful/    301
-/blog/javascript/proxy/                                     /javascript-proxy/                      301
-/work/                                                      /                                       301
-/about/                                                     /                                       301
-/contact/                                                   /                                       301
-/impressum/                                                 /                                       302
-/privacy/                                                   /                                       302
-/blog/node-js/whois/                                        /whois/                                 301
-/blog/symfony/custom-header/                                /symfony-custom-header/                 301
-/blog/git/checkout-remote-branch/                           /git-checkout-remote-branch/            301
-/blog/css/pseudo-element-syntax/                            /css-pseudo-element-syntax/             301
-/blog/git/push-different-branch-name/                       /git-push-different-name/               301
-/blog/symfony/translation-links/                            /symfony-translation-links/             301
-/blog/tools/manage-php-versions-homebrew/                   /manage-php-versions-homebrew/          301
-/blog/php/youtube-id/                                       /php-youtube-id/                        301
-
 # short links
 /http       https://developer.mozilla.org/en-US/docs/Web/HTTP/Status    301
 
+# redirect old links
+/*  /   301
