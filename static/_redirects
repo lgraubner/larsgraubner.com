@@ -4,5 +4,5 @@ https://friendly-dubinsky-06aa6c.netlify.com/* https://larsgraubner.com/:splat 3
 # short links
 /http       https://developer.mozilla.org/en-US/docs/Web/HTTP/Status    301
 
-# redirect old links
-/*  /   301
+# 404 handling
+/*  /404    404

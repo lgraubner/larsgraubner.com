@@ -10,4 +10,10 @@
 	/>
 </svelte:head>
 
-<slot />
+<main>
+	<div class="w-full pt-[20vh] pb-16">
+		<div class="w-full px-4 max-w-md mx-auto text-center">
+			<slot />
+		</div>
+	</div>
+</main>
