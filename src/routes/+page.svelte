@@ -19,11 +19,11 @@
 		>
 	</li>
 	<li>
+		<a href="https://github.com/lgraubner" class="underline-offset-4 hover:underline">Github</a>
+	</li>
+	<li>
 		<a href="https://www.linkedin.com/in/larsgraubner/" class="underline-offset-4 hover:underline"
 			>LinkedIn</a
 		>
-	</li>
-	<li>
-		<a href="https://github.com/lgraubner" class="underline-offset-4 hover:underline">Github</a>
 	</li>
 </ul>
