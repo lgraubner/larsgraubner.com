@@ -24,12 +24,6 @@
 		>
 	</li>
 	<li>
-		<a
-			href="https://www.xing.com/profile/Lars_Graubner2/cv"
-			class="underline-offset-4 hover:underline">Xing</a
-		>
-	</li>
-	<li>
 		<a href="https://github.com/lgraubner" class="underline-offset-4 hover:underline">Github</a>
 	</li>
 </ul>
