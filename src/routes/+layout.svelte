@@ -11,8 +11,8 @@
 </svelte:head>
 
 <main>
-	<div class="w-full pt-[20vh] pb-16">
-		<div class="w-full px-4 max-w-md mx-auto text-center">
+	<div class="w-full pb-16 pt-[20vh]">
+		<div class="mx-auto w-full max-w-md px-4 text-center">
 			<slot />
 		</div>
 	</div>
