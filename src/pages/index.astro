@@ -1,0 +1,116 @@
+---
+import { Image } from "astro:assets";
+import portrait from "../assets/semi_professional_square.jpg";
+import "../styles/global.css";
+
+const title = "Lars Graubner - Senior Software Engineer";
+const description =
+  "Lars Graubner is a Senior Software Engineer who turns complex product problems into reliable web systems.";
+const canonicalUrl = new URL("/", Astro.site);
+const socialImageUrl = new URL("/social-card.png", Astro.site);
+const linkStyles =
+  "font-medium underline decoration-[#191b1d]/45 decoration-[0.08em] underline-offset-[0.18em] hover:decoration-[#191b1d] focus-visible:rounded-[0.1rem] focus-visible:outline-[0.18rem] focus-visible:outline-offset-[0.22rem]";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f4f1ea" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/source-serif-4-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Lars Graubner, Senior Software Engineer"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+
+    <title>{title}</title>
+  </head>
+  <body class="min-w-80 bg-[#f4f1ea] font-sans text-[#191b1d] antialiased">
+    <main class="mx-auto w-full max-w-252 px-4 py-28 text-pretty sm:px-6">
+      <div class="max-w-150">
+        <header class="flex items-center gap-3 sm:gap-4">
+          <Image
+            class="mt-px block size-9 object-cover sm:size-11"
+            src={portrait}
+            alt="Portrait of Lars Graubner"
+            width={44}
+            height={44}
+            widths={[36, 44, 72, 96]}
+            sizes="(min-width: 640px) 44px, 36px"
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <h1
+            class="font-serif text-4xl leading-none font-semibold tracking-[-0.01em] [font-optical-sizing:auto] sm:text-6xl"
+          >
+            Lars Graubner
+          </h1>
+        </header>
+
+        <p class="mt-14 text-xl leading-relaxed font-[350] sm:text-2xl">
+          I’m a Senior Software Engineer based in Lübeck, Germany. I turn
+          complex product problems into reliable web systems.
+        </p>
+
+        <p class="mt-10 text-lg leading-[1.65] font-[350] sm:text-xl">
+          At <a class={linkStyles} href="https://www.shinefour.de/">Shinefour</a
+          >, I help clients make technical decisions and deliver web products
+          across frontend and backend. I also build and operate <a
+            class={linkStyles}
+            href="https://orbitpush.run/">OrbitPush</a
+          >, a hosting platform for static websites.
+        </p>
+
+        <p class="mt-[1.65em] text-lg leading-[1.65] font-[350] sm:text-xl">
+          You can also find me on <a
+            class={linkStyles}
+            rel="me"
+            href="https://github.com/lgraubner/">GitHub</a
+          >, <a
+            class={linkStyles}
+            rel="me"
+            href="https://www.linkedin.com/in/larsgraubner/">LinkedIn</a
+          >, and <a
+            class={linkStyles}
+            rel="me"
+            href="https://x.com/larsgraubner">X</a
+          >, or contact me by <a
+            class={linkStyles}
+            href="mailto:hello@larsgraubner.com">email</a
+          >.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,38 +1,27 @@
 {
-	"name": "larsgraubner.com",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"prepare": "pnpm svelte-kit sync"
-	},
-	"devDependencies": {
-		"@ianvs/prettier-plugin-sort-imports": "^4.2.1",
-		"@sveltejs/adapter-static": "3.0.1",
-		"@sveltejs/kit": "^2.5.8",
-		"@sveltejs/vite-plugin-svelte": "^3.1.0",
-		"@typescript-eslint/eslint-plugin": "^7.9.0",
-		"@typescript-eslint/parser": "^7.9.0",
-		"autoprefixer": "10.4.19",
-		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.39.0",
-		"postcss": "8.4.38",
-		"prettier": "^3.2.5",
-		"prettier-plugin-svelte": "^3.2.3",
-		"prettier-plugin-tailwindcss": "^0.5.14",
-		"svelte": "^4.2.17",
-		"svelte-check": "^3.7.1",
-		"tailwindcss": "3.4.3",
-		"tslib": "^2.4.1",
-		"typescript": "^5.4.5",
-		"vite": "^5.2.11"
-	},
-	"type": "module"
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.0",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.8.1"
+  }
 }
