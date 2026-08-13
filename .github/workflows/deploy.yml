@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm and Node.js
+        uses: pnpm/setup@v1
+        with:
+          version: 11
+          runtime: node@22
+          cache: true
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Deploy to OrbitPush
+        run: npx -y @orbitpush/cli@latest deploy ./dist
+        env:
+          ORBITPUSH_DEPLOY_TOKEN: ${{ secrets.ORBITPUSH_DEPLOY_TOKEN }}
