@@ -1,13 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import portrait from "../assets/semi_professional_square.jpg";
+import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 
 const title = "Lars Graubner - Senior Software Engineer";
 const description =
   "Lars Graubner is a Senior Software Engineer who turns complex product problems into reliable web systems.";
-const linkStyles =
-  "font-medium underline decoration-[#191b1d]/45 decoration-[0.08em] underline-offset-[0.18em] hover:decoration-[#191b1d] focus-visible:rounded-[0.1rem] focus-visible:outline-[0.18rem] focus-visible:outline-offset-[0.22rem]";
 ---
 
 <Layout {title} {description}>
@@ -38,29 +37,21 @@ const linkStyles =
     </p>
 
     <p class="mt-10 text-lg leading-[1.65] font-[350] sm:text-xl">
-      At <a class={linkStyles} href="https://www.shinefour.de/">Shinefour</a>, I
-      help clients make technical decisions and deliver web products across
-      frontend and backend. I also build and operate <a
-        class={linkStyles}
-        href="https://orbitpush.run/">OrbitPush</a
+      At <Link href="https://www.shinefour.de/">Shinefour</Link>, I help clients
+      make technical decisions and deliver web products across frontend and
+      backend. I also build and operate <Link href="https://orbitpush.run/"
+        >OrbitPush</Link
       >, a hosting platform for static websites.
     </p>
 
     <p class="mt-[1.65em] text-lg leading-[1.65] font-[350] sm:text-xl">
-      You can also find me on <a
-        class={linkStyles}
+      You can also find me on <Link
         rel="me"
-        href="https://github.com/lgraubner/">GitHub</a
-      >, <a
-        class={linkStyles}
-        rel="me"
-        href="https://www.linkedin.com/in/larsgraubner/">LinkedIn</a
-      >, and <a class={linkStyles} rel="me" href="https://x.com/larsgraubner"
-        >X</a
-      >, or contact me by <a
-        class={linkStyles}
-        href="mailto:hello@larsgraubner.com">email</a
-      >.
+        href="https://github.com/lgraubner/">GitHub</Link
+      >, <Link rel="me" href="https://www.linkedin.com/in/larsgraubner/"
+        >LinkedIn</Link
+      >, and <Link rel="me" href="https://x.com/larsgraubner">X</Link>, or
+      contact me by <Link href="mailto:hello@larsgraubner.com">email</Link>.
     </p>
   </div>
 </Layout>
