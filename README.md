@@ -44,7 +44,6 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## Todo
 
-- [ ] check font usage
 - [ ] check seo/meta stuff
 - [ ] check favicon
 - [ ] imprint
