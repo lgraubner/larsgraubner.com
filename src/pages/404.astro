@@ -1,0 +1,22 @@
+---
+import Link from "../components/Link.astro";
+import Layout from "../layouts/Layout.astro";
+
+const title = "Page not found - Lars Graubner";
+const description = "The requested page could not be found.";
+---
+
+<Layout {title} {description}>
+  <div class="max-w-150">
+    <h1
+      class="font-serif text-4xl leading-none font-semibold tracking-[-0.01em] sm:text-6xl"
+    >
+      Page not found
+    </h1>
+
+    <p class="mt-10 text-lg leading-[1.65] font-[350] sm:text-xl">
+      The page you requested does not exist. <Link href="/">Go to homepage</Link
+      >.
+    </p>
+  </div>
+</Layout>
