@@ -44,7 +44,5 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## Todo
 
-- [ ] check seo/meta stuff
-- [ ] check favicon
 - [ ] imprint
 - [ ] privacy notice + fathom tracking

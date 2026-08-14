@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
 	<rect width="1200" height="630" fill="#f4f1ea" />
-	<text x="136" y="295" fill="#191b1d" font-family="Georgia, serif" font-size="92" font-weight="700">Lars Graubner</text>
-	<text x="141" y="375" fill="#191b1d" font-family="Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="3">SENIOR SOFTWARE ENGINEER</text>
+	<image href="social-portrait.jpg" x="136" y="220" width="88" height="88" />
+	<text x="256" y="295" fill="#191b1d" font-family="Georgia, serif" font-size="92" font-weight="400">Lars Graubner</text>
+	<text x="260" y="369" fill="#191b1d" font-family="Arial, sans-serif" font-size="30" font-weight="400">Senior Software Engineer</text>
 </svg>

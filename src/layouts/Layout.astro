@@ -21,7 +21,9 @@ const socialImageUrl = new URL("/social-card.png", Astro.site);
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f4f1ea" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-source-serif" preload />
 
@@ -34,12 +36,16 @@ const socialImageUrl = new URL("/social-card.png", Astro.site);
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Lars Graubner, Senior Software Engineer"
+      content="Portrait of Lars Graubner beside his name and title, Senior Software Engineer"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
+    <meta
+      name="twitter:image:alt"
+      content="Portrait of Lars Graubner beside his name and title, Senior Software Engineer"
+    />
 
     <title>{title}</title>
   </head>
