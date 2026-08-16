@@ -7,9 +7,30 @@ import Layout from "../layouts/Layout.astro";
 const title = "Lars Graubner - Senior Software Engineer";
 const description =
   "Lars Graubner is a Senior Software Engineer who turns complex product problems into reliable web systems.";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: Astro.site,
+  mainEntity: {
+    "@type": "Person",
+    "@id": new URL("#person", Astro.site),
+    name: "Lars Graubner",
+    jobTitle: "Senior Software Engineer",
+    description,
+    url: Astro.site,
+    image: new URL("/social-portrait.jpg", Astro.site),
+    sameAs: [
+      "https://github.com/lgraubner/",
+      "https://www.linkedin.com/in/larsgraubner/",
+      "https://x.com/larsgraubner",
+    ],
+  },
+};
 ---
 
 <Layout {title} {description}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
   <div class="max-w-150">
     <header class="flex items-center gap-3 sm:gap-4">
       <Image
