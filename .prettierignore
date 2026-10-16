@@ -1,0 +1,8 @@
+pnpm-lock.yaml
+skills-lock.json
+.claude/skills/emil-design-eng/**
+.claude/skills/grilling/**
+.claude/skills/handoff/**
+.claude/skills/unslop/**
+.claude/skills/wait-what/**
+.claude/skills/writing-for-agents/**
