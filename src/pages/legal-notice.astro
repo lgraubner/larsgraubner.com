@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Legal notice - Lars Graubner";
+const description = "Legal notice (Impressum) for larsgraubner.com.";
+---
+
+<Layout {title} {description}>
+  <div class="max-w-160">
+    <h1
+      class="font-serif text-4xl leading-none font-semibold tracking-[-0.01em] sm:text-6xl"
+    >
+      Legal notice
+    </h1>
+
+    <div class="post-body mt-16">
+      <h2>Information according to § 5 DDG</h2>
+      <p>
+        Lars Graubner<br />
+        Percevalstr. 38<br />
+        23564 Lübeck<br />
+        Germany
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:hello@larsgraubner.com">hello@larsgraubner.com</a
+        >
+      </p>
+
+      <h2>Responsible for the content according to § 18 (2) MStV</h2>
+      <p>
+        Lars Graubner<br />
+        Percevalstr. 38<br />
+        23564 Lübeck<br />
+        Germany
+      </p>
+    </div>
+  </div>
+</Layout>

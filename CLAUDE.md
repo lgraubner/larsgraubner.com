@@ -33,7 +33,7 @@ Astro docs: https://docs.astro.build. Consult the matching guide before working 
 
 Post frontmatter is parsed by the zod schema of the `blog` collection in `src/content.config.ts`; the build fails on an invalid post.
 
-Public contracts stay stable: post URLs `/blog/<id>` (the file name), `/rss.xml`, and the sitemap. Renaming a post file breaks its links and feed entries.
+Public contracts stay stable: post URLs `/blog/<id>/` (the file name, always with a trailing slash), `/rss.xml`, and the sitemap. Renaming a post file breaks its links and feed entries.
 
 ## Principles
 

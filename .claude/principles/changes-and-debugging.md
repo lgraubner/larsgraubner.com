@@ -27,6 +27,6 @@ Adapted from pstack (MIT), see `.claude/LICENSE-pstack`.
 
 ## In this repo
 
-- The public contracts are post URLs `/blog/<id>`, `/rss.xml`, and the sitemap. `<id>` is the post's file name in `src/content/blog/`, so renaming a file changes its URL.
+- The public contracts are post URLs `/blog/<id>/`, `/rss.xml`, and the sitemap. `<id>` is the post's file name in `src/content/blog/`, so renaming a file changes its URL.
 - The blog index, the post pages, and the feed all read posts through `getPosts()` in `src/lib/posts.ts`. Fix ordering or draft filtering there, not per page.
 - Absolute URLs derive from `site` in `astro.config.mjs` through `Astro.site` or `context.site` (`Layout.astro`, `index.astro`, `rss.xml.ts`). Do not hardcode the domain.

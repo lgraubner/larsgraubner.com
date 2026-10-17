@@ -5,9 +5,29 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
+  type?: "website" | "article";
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  canonical?: boolean;
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  canonical = true,
+} = Astro.props;
+const { pathname } = Astro.url;
+const navItems = [
+  { href: "/", label: "Home", active: pathname === "/" },
+  { href: "/blog/", label: "Blog", active: pathname.startsWith("/blog/") },
+];
+const footerItems = [
+  { href: "/legal-notice/", label: "Legal notice" },
+  { href: "/privacy/", label: "Privacy policy" },
+];
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const socialImageUrl = new URL("/social-card.png", Astro.site);
 ---
@@ -20,17 +40,24 @@ const socialImageUrl = new URL("/social-card.png", Astro.site);
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f4f1ea" />
-    <link rel="canonical" href={canonicalUrl} />
+    {canonical && <link rel="canonical" href={canonicalUrl} />}
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Lars Graubner"
+      href="/rss.xml"
+    />
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-source-serif" preload />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lars Graubner" />
+    <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
+    {canonical && <meta property="og:url" content={canonicalUrl} />}
     <meta property="og:image" content={socialImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -38,6 +65,22 @@ const socialImageUrl = new URL("/social-card.png", Astro.site);
       property="og:image:alt"
       content="Portrait of Lars Graubner beside his name and title, Senior Software Engineer"
     />
+    {
+      publishedTime && (
+        <meta
+          property="article:published_time"
+          content={publishedTime.toISOString()}
+        />
+      )
+    }
+    {
+      modifiedTime && (
+        <meta
+          property="article:modified_time"
+          content={modifiedTime.toISOString()}
+        />
+      )
+    }
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -53,8 +96,52 @@ const socialImageUrl = new URL("/social-card.png", Astro.site);
     ></script>
   </head>
   <body class="min-w-80 bg-[#f4f1ea] font-sans text-[#191b1d] antialiased">
-    <main class="mx-auto w-full max-w-252 px-4 py-28 text-pretty sm:px-6">
-      <slot />
-    </main>
+    <div class="py-28 xl:grid xl:grid-cols-[1fr_minmax(0,63rem)_1fr]">
+      <nav
+        aria-label="Main"
+        class="mx-auto mb-14 w-full max-w-252 px-4 font-serif text-xl font-semibold tracking-[-0.01em] sm:px-6 sm:text-2xl xl:sticky xl:top-28 xl:mr-0 xl:mb-0 xl:ml-[max(1.5rem,calc(100%-12rem))] xl:w-auto xl:self-start xl:px-0 xl:pt-7"
+      >
+        <ul class="flex gap-6 xl:flex-col xl:gap-3">
+          {
+            navItems.map(({ href, label, active }) => (
+              <li>
+                <a
+                  {href}
+                  aria-current={href === pathname ? "page" : undefined}
+                  class:list={[
+                    "transition-colors hover:text-[#191b1d] focus-visible:rounded-[0.1rem] focus-visible:outline-[0.18rem] focus-visible:outline-offset-[0.22rem]",
+                    active ? "text-[#191b1d]" : "text-[#191b1d]/50",
+                  ]}
+                >
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <main class="mx-auto w-full max-w-252 px-4 text-pretty sm:px-6 xl:mx-0">
+        <slot />
+      </main>
+      <footer
+        class="mx-auto mt-40 w-full max-w-252 px-4 text-sm text-[#191b1d]/60 sm:px-6 xl:col-start-2 xl:mx-0"
+      >
+        <ul class="flex gap-6">
+          {
+            footerItems.map(({ href, label }) => (
+              <li>
+                <a
+                  {href}
+                  aria-current={href === pathname ? "page" : undefined}
+                  class="decoration-[0.08em] underline-offset-[0.18em] hover:underline focus-visible:rounded-[0.1rem] focus-visible:outline-[0.18rem] focus-visible:outline-offset-[0.22rem]"
+                >
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </footer>
+    </div>
   </body>
 </html>

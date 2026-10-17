@@ -1,0 +1,62 @@
+---
+import { render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { formatDate, getPosts } from "../../lib/posts";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate } = post.data;
+const { Content } = await render(post);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  url: new URL(Astro.url.pathname, Astro.site),
+  image: new URL("/social-card.png", Astro.site),
+  author: {
+    "@type": "Person",
+    "@id": new URL("#person", Astro.site),
+    name: "Lars Graubner",
+    url: Astro.site,
+  },
+};
+---
+
+<Layout
+  title={`${title} - Lars Graubner`}
+  {description}
+  type="article"
+  publishedTime={pubDate}
+  modifiedTime={updatedDate ?? pubDate}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article>
+    <header class="xl:-mt-3">
+      <h1
+        class="max-w-4xl font-serif text-5xl leading-[1.02] font-semibold tracking-[-0.02em] text-balance sm:text-7xl"
+      >
+        {title}
+      </h1>
+
+      <time
+        class="mt-4 block text-lg font-[350] text-[#191b1d]/60 sm:mt-5 sm:text-xl"
+        datetime={pubDate.toISOString()}
+      >
+        {formatDate(pubDate)}
+      </time>
+    </header>
+
+    <div class="post-body mt-16 max-w-160 sm:mt-20">
+      <Content />
+    </div>
+  </article>
+</Layout>

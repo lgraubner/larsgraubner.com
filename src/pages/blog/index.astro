@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { formatDate, getPosts } from "../../lib/posts";
+
+const title = "Blog - Lars Graubner";
+const description =
+  "Notes on software architecture, coding agents, and building web products.";
+const posts = await getPosts();
+---
+
+<Layout {title} {description}>
+  <div class="max-w-150">
+    <h1
+      class="font-serif text-4xl leading-none font-semibold tracking-[-0.01em] sm:text-6xl"
+    >
+      Blog
+    </h1>
+
+    <p class="mt-10 text-lg leading-[1.65] font-[350] sm:text-xl">
+      {description}
+    </p>
+
+    {
+      posts.length > 0 ? (
+        <ul class="mt-16 space-y-12">
+          {posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.id}/`} class="group block">
+                <h2 class="font-serif text-2xl leading-tight font-semibold tracking-[-0.01em] decoration-[0.06em] underline-offset-[0.15em] group-hover:underline sm:text-3xl">
+                  {post.data.title}
+                </h2>
+                <time
+                  class="mt-2 block text-base text-[#191b1d]/60"
+                  datetime={post.data.pubDate.toISOString()}
+                >
+                  {formatDate(post.data.pubDate)}
+                </time>
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="mt-16 text-lg text-[#191b1d]/60">No posts yet.</p>
+      )
+    }
+  </div>
+</Layout>
