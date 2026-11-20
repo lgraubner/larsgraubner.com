@@ -11,7 +11,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "check": "prettier --check . && astro build"
+    "format:check": "prettier --check .",
+    "lint": "oxlint --type-aware --deny-warnings",
+    "check": "pnpm run format:check && pnpm run lint && pnpm run build"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -22,6 +24,11 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "lefthook": "2.2.2",
+    "oxlint": "1.94.0",
+    "oxlint-tsgolint": "7.0.2007",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.1"

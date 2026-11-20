@@ -11,17 +11,17 @@ Spawn Comment Sicko and act on its findings. Accept every finding the table in s
 
 ## Scope
 
-Use the caller's files or diff. Otherwise use the current diff against the base branch, default `main`, including the working tree.
+Use the caller's files or diff. Otherwise use the current diff against the base branch, default `main`, including the working tree. A diff that adds or changes no comment, suppressions included, has nothing to strip: report that and stop.
 
 A scope of paths or the whole repository, rather than a diff, limits steps 3 and 4 to trivial fixes. Every other accepted flag gets a sketch in the report.
 
 ## Steps
 
-1. Snapshot the working tree, untracked files included. A separate index leaves the real index and the stash untouched:
+1. Snapshot the working tree, untracked files included. A separate index in your scratchpad directory leaves the real index and the stash untouched. Run each line as its own command; a worktree sandbox refuses chained git commands and writes into the git directory:
 
    ```sh
-   idx="$(git rev-parse --absolute-git-dir)/no-comments-index"
-   GIT_INDEX_FILE="$idx" git add -A && GIT_INDEX_FILE="$idx" git write-tree
+   GIT_INDEX_FILE=<scratchpad>/no-comments-index git add -A
+   GIT_INDEX_FILE=<scratchpad>/no-comments-index git write-tree
    ```
 
    The printed tree is the snapshot. Spawn `Agent` with `subagent_type: "comment-sicko"`. Pass the scope. Do not restate its rules.
@@ -29,8 +29,8 @@ A scope of paths or the whole repository, rather than a diff, limits steps 3 and
 2. Check its report and diff. The report's diff is everything since the snapshot:
 
    ```sh
-   idx="$(git rev-parse --absolute-git-dir)/no-comments-index"
-   GIT_INDEX_FILE="$idx" git add -A && GIT_INDEX_FILE="$idx" git diff --cached <snapshot>
+   GIT_INDEX_FILE=<scratchpad>/no-comments-index git add -A
+   GIT_INDEX_FILE=<scratchpad>/no-comments-index git diff --cached <snapshot>
    ```
 
    Before deciding on an `IMPORTANT` or `do not remove` comment, trace its symbol yourself: read its callers and its history with `git log -S` and `git blame`.
@@ -48,6 +48,6 @@ A scope of paths or the whole repository, rather than a diff, limits steps 3 and
    On a rejected report, revert only its changes by piping the report's diff into `git apply -R`. Once the report's diff prints nothing, spawn Comment Sicko once more with the failure named. If the second report is rejected too, report it open and fail `/no-comments`.
 
 3. Fix trivial accepted flags directly by deleting a dead path, dropping a parameter, or using the real API. If any fix needs a shape, sketch one design for the accepted set and surrounding code. Stop at the sketch. Step 4 implements.
-4. Implement the smallest root-cause fix in scope. Remove every named workaround. If the root cause is out of scope, land the smallest in-scope fix and report the rest open. A fix that changes a public contract listed under Boundaries in `CLAUDE.md` stays a sketch until the user approves it. `.claude/principles/changes-and-debugging.md` guides intent only. It does not authorize widening the fence or fixing instances outside it. Never bolt on symptom guards.
+4. Implement the smallest root-cause fix in scope. Remove every named workaround. If the root cause is out of scope, land the smallest in-scope fix and report the rest open. A fix that changes a public contract listed under Boundaries in `CLAUDE.md` stays a sketch until the user approves it. The Changes and debugging section of `CLAUDE.md` guides intent only. It does not authorize widening the fence or fixing instances outside it. Never bolt on symptom guards.
 5. Constraint comments say `do not remove`, `do not change wording`, or `talk to X before changing`. Leave keeps about things we cannot change. Offer the cheapest in-scope type, runtime, test, or CI lint. Wait for interactive approval. Unattended and eval require caller pre-approval. If approved, encode then delete. Otherwise delete, report the constraint open, and sketch out-of-scope work.
 6. Report the deletion count, rejected reports and reruns, design sketch, fixes, encoding offers, encodings, unenforced constraints, and other open work.
