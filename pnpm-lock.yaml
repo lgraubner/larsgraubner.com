@@ -207,8 +207,8 @@ importers:
         specifier: 2.2.2
         version: 2.2.2
       orbitpush:
-        specifier: 0.3.0
-        version: 0.3.0
+        specifier: 0.4.0
+        version: 0.4.0
       oxlint:
         specifier: 1.94.0
         version: 1.94.0(oxlint-tsgolint@7.0.2007)
@@ -2049,8 +2049,8 @@ packages:
   oniguruma-to-es@4.3.6:
     resolution: {integrity: sha512-csuQ9x3Yr0cEIs/Zgx/OEt9iBw9vqIunAPQkx19R/fiMq2oGVTgcMqO/V3Ybqefr1TBvosI6jU539ksaBULJyA==}
 
-  orbitpush@0.3.0:
-    resolution: {integrity: sha512-0HAmoZyaA3mkw/sYZOjgBeiGQRTAqEVfkDlKZj3rA0jmEZaoOsZNO80/V6l86ZrzfStLRzWEhElRfvNlnfOTwg==}
+  orbitpush@0.4.0:
+    resolution: {integrity: sha512-LKnBrw/ZvdtwnrMgWK8GlihNB5BVDCC26kEQk0OkloyJqAnioW0wi4L8cSMR2atDaOpvuyXqJ4ncAn50+x5nRA==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -4327,7 +4327,7 @@ snapshots:
       regex: 6.1.0
       regex-recursion: 6.0.2
 
-  orbitpush@0.3.0: {}
+  orbitpush@0.4.0: {}
 
   oxlint-tsgolint@7.0.2007:
     optionalDependencies:
