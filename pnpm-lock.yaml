@@ -206,6 +206,9 @@ importers:
       lefthook:
         specifier: 2.2.2
         version: 2.2.2
+      orbitpush:
+        specifier: 0.3.0
+        version: 0.3.0
       oxlint:
         specifier: 1.94.0
         version: 1.94.0(oxlint-tsgolint@7.0.2007)
@@ -2045,6 +2048,11 @@ packages:
 
   oniguruma-to-es@4.3.6:
     resolution: {integrity: sha512-csuQ9x3Yr0cEIs/Zgx/OEt9iBw9vqIunAPQkx19R/fiMq2oGVTgcMqO/V3Ybqefr1TBvosI6jU539ksaBULJyA==}
+
+  orbitpush@0.3.0:
+    resolution: {integrity: sha512-0HAmoZyaA3mkw/sYZOjgBeiGQRTAqEVfkDlKZj3rA0jmEZaoOsZNO80/V6l86ZrzfStLRzWEhElRfvNlnfOTwg==}
+    engines: {node: '>=22'}
+    hasBin: true
 
   oxlint-tsgolint@7.0.2007:
     resolution: {integrity: sha512-i8X2qf6VVqFzoNVP34joMKuZpO6T2uXMOgKJaSPFc6p+E3FTnbIGPRbI8K4ZApmtDTMu2CIeGfpzeK1zzGwfnA==}
@@ -4318,6 +4326,8 @@ snapshots:
       oniguruma-parser: 0.12.2
       regex: 6.1.0
       regex-recursion: 6.0.2
+
+  orbitpush@0.3.0: {}
 
   oxlint-tsgolint@7.0.2007:
     optionalDependencies:
