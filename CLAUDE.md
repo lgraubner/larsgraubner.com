@@ -75,7 +75,7 @@ Make the compiler reject impossible states.
 - Model variants as a discriminated union, not as a bag of optional fields. If a comment explains when a combination of fields is valid, split it into a union.
 - Give each lifecycle one status field with a literal union instead of a second boolean that must stay in sync with the first.
 - Prefer a lookup table or a `satisfies Record<Union, …>` map over an if/else chain that grows by one branch per feature.
-- In `.astro` frontmatter, end every `switch` over a union with an exhaustive `never` check. Type-aware lint checks `.ts` files only.
+- In `.astro` frontmatter, end every `switch` over a union with an exhaustive `never` check, which `astro check` enforces. Type-aware lint checks `.ts` files only.
 - Keep the plain type while every operation on it stays total. Strengthen it only where the loose type forces a `!`, an `as`, or a "should never happen" branch.
 - Brand an ID when two IDs of the same primitive type travel through the same call and can be swapped.
 - Keep code boring when the shape is clear, local, and unlikely to grow. An abstraction earns its place by deleting branches, duplicated rules, or invalid states.
@@ -135,7 +135,7 @@ Write every commit message as a Conventional Commit: `type(scope)!: subject`, wi
 
 ## Done
 
-A change is done when `pnpm run check` is **green** and you observed the real result, not when it compiles, a proxy looks right, or a subagent says so. The gate chains the Prettier check, oxlint, and the build; `pnpm run format` fixes formatting. Judge the gate by its own exit code (`pnpm run check; echo $?`): a pipe through `tail` or `grep` reports the last command's status instead. CI runs the scripts that the gate chains as separate steps in `.github/workflows/ci.yml`; a script added to the gate gets a step there too.
+A change is done when `pnpm run check` is **green** and you observed the real result, not when it compiles, a proxy looks right, or a subagent says so. The gate chains the Prettier check, oxlint, `astro check`, and the build; `pnpm run format` fixes formatting. Judge the gate by its own exit code (`pnpm run check; echo $?`): a pipe through `tail` or `grep` reports the last command's status instead. CI runs the scripts that the gate chains as separate steps in `.github/workflows/ci.yml`; a script added to the gate gets a step there too.
 
 - Read the actual value: the built files `dist/index.html`, `dist/blog/index.html`, `dist/blog/<id>/index.html`, `dist/rss.xml`, and `dist/sitemap-0.xml`.
 - `astro dev` shows drafts; the build leaves them out. Check whether a post is published against `dist/`, not the dev server.

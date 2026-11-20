@@ -36,6 +36,9 @@ jobs:
       - name: Lint
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: pnpm run lint
+      - name: Type-check
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: pnpm run typecheck
       - name: Build
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: pnpm run build
