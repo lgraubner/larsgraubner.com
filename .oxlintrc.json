@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "eslint", "oxc", "unicorn"],
+  "categories": { "correctness": "error" },
+  "ignorePatterns": [".claude/**", "dist/**", ".astro/**"],
+  "rules": {
+    "typescript/no-explicit-any": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/switch-exhaustiveness-check": "error",
+    "eslint/no-console": "error",
+    "eslint/complexity": ["error", { "max": 20, "variant": "modified" }]
+  },
+  "overrides": [
+    {
+      "files": ["src/**"],
+      "rules": {
+        "eslint/no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["./**", "../**"],
+                "message": "Import from src/ with the @/ alias."
+              },
+              {
+                "group": ["@/pages/**"],
+                "message": "Pages are routes; move shared code to src/components/ or src/lib/."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

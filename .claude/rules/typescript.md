@@ -15,3 +15,7 @@ Prettier never adds blank lines, so write function bodies in **paragraphs**, one
 ## Comments
 
 A one-line comment uses `//` and starts with a capital letter. Holding a single sentence, it ends without a full stop; with several sentences, each ends with one. `/**` opens only a multi-line docblock, with `/**` and `*/` on lines of their own and `*` leading each line between.
+
+## Parsing
+
+Every parser is a [zod](https://zod.dev) schema imported from `astro/zod`, the zod that Astro ships for content collection schemas, and the type comes from it with `z.infer`, so the schema and the type cannot drift. Only a grammar for free-form text, such as pasted notes, keeps a hand-written parser.

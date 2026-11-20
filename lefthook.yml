@@ -1,0 +1,11 @@
+pre-commit:
+  jobs:
+    - name: format
+      glob: "*.{ts,mjs,js,json,astro,css,md,yml,yaml}"
+      run: node_modules/.bin/prettier --write --ignore-unknown {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  jobs:
+    - name: commitlint
+      run: node_modules/.bin/commitlint --edit {1}

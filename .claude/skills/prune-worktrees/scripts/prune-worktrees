@@ -1,0 +1,132 @@
+#!/usr/bin/env python3
+"""prune-worktrees: remove agent worktrees whose pull request merged.
+
+  prune-worktrees [--dry-run]
+
+Run it from inside the repository. It looks at every worktree under
+<repo>/.claude/worktrees/ and removes one, then deletes its local branch, only
+when all of these hold:
+
+  - the worktree has a branch checked out and is not locked
+  - it is not the worktree this command runs in
+  - `git status --porcelain` prints nothing (no changes, no untracked files)
+  - a merged PR exists for the branch whose head commit is the worktree's HEAD
+
+Every other worktree is kept, with the reason on its line. A squash merge
+leaves the branch's commits off the default branch, so the merged PR's head
+commit, not git ancestry, proves the work landed. Ends with `git fetch --prune`.
+
+Output: one line per worktree, `removed <path> (<branch>, <pr url>)` or
+`kept <path>: <reason>`. Exits 0 when it ran, 1 when it could not read the
+worktrees, the PRs, or remove one.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+
+def run(args: list[str], cwd: Path | None = None) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(args, cwd=cwd, capture_output=True, text=True)
+
+
+def git(args: list[str], cwd: Path | None = None) -> str:
+    proc = run(["git", *args], cwd)
+    if proc.returncode != 0:
+        raise RuntimeError(proc.stderr.strip() or f"git {args[0]} exited {proc.returncode}")
+    return proc.stdout
+
+
+def worktrees() -> list[dict[str, str]]:
+    """Parse `git worktree list --porcelain` into one dict per worktree."""
+    entries: list[dict[str, str]] = []
+    for block in git(["worktree", "list", "--porcelain"]).strip().split("\n\n"):
+        entry: dict[str, str] = {}
+        for line in block.splitlines():
+            key, _, value = line.partition(" ")
+            entry[key] = value
+        entries.append(entry)
+    return entries
+
+
+def merged_pr(branch: str, head: str) -> tuple[str | None, str]:
+    """The URL of the merged PR whose head is `head`, or None and why not."""
+    proc = run(["gh", "pr", "list", "--head", branch, "--state", "all", "--json", "url,state,headRefOid"])
+    if proc.returncode != 0:
+        raise RuntimeError(f"gh pr list: {proc.stderr.strip()}")
+    prs = json.loads(proc.stdout or "[]")
+    for pr in prs:
+        if pr["state"] == "MERGED" and pr["headRefOid"] == head:
+            return pr["url"], ""
+    if not prs:
+        return None, "no PR for this branch"
+    merged = [pr for pr in prs if pr["state"] == "MERGED"]
+    if merged:
+        return None, f"HEAD {head[:7]} has commits the merged PR does not ({merged[0]['url']})"
+    return None, f"PR {prs[0]['state'].lower()}: {prs[0]['url']}"
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(prog="prune-worktrees", description="Remove agent worktrees whose PR merged.")
+    parser.add_argument("--dry-run", action="store_true", help="print what would be removed, change nothing")
+    args = parser.parse_args()
+
+    try:
+        common = Path(git(["rev-parse", "--path-format=absolute", "--git-common-dir"]).strip())
+        here = Path(git(["rev-parse", "--show-toplevel"]).strip()).resolve()
+        entries = worktrees()
+    except RuntimeError as error:
+        print(f"prune-worktrees: not in a git repository: {error}")
+        return 1
+    root = (common.parent / ".claude" / "worktrees").resolve()
+    status = 0
+    found = 0
+    for entry in entries:
+        path = Path(entry["worktree"]).resolve()
+        if root not in path.parents:
+            continue
+        found += 1
+        branch = entry.get("branch", "").removeprefix("refs/heads/")
+        head = entry.get("HEAD", "")
+        try:
+            if path == here:
+                reason = "this command runs in it"
+            elif not branch:
+                reason = "no branch checked out"
+            elif "locked" in entry:
+                reason = "locked"
+            elif "prunable" in entry:
+                reason = f"its directory is gone; `git worktree prune` clears it ({entry['prunable'] or 'prunable'})"
+            elif git(["status", "--porcelain"], path).strip():
+                reason = "uncommitted or untracked changes"
+            else:
+                url, reason = merged_pr(branch, head)
+                if url:
+                    if args.dry_run:
+                        print(f"would remove {path} ({branch}, {url})")
+                        continue
+                    git(["worktree", "remove", str(path)])
+                    git(["branch", "-D", branch])
+                    print(f"removed {path} ({branch}, {url})")
+                    continue
+        except RuntimeError as error:
+            reason = f"check failed: {error}"
+            status = 1
+        print(f"kept {path}: {reason}")
+
+    if not found:
+        print(f"no worktrees under {root}")
+    if not args.dry_run:
+        fetch = run(["git", "fetch", "--prune", "-q"], common.parent)
+        if fetch.returncode != 0:
+            print(f"prune-worktrees: git fetch --prune failed: {fetch.stderr.strip()}")
+            status = 1
+    return status
+
+
+if __name__ == "__main__":
+    sys.exit(main())

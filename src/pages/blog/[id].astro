@@ -1,7 +1,7 @@
 ---
 import { render } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import { formatDate, getPosts } from "../../lib/posts";
+import Layout from "@/layouts/Layout.astro";
+import { formatDate, getPosts } from "@/lib/posts";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
