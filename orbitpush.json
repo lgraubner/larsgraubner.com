@@ -1,0 +1,28 @@
+{
+  "$schema": "https://unpkg.com/orbitpush/schema.json",
+  "name": "larsgraubner-com",
+  "outputDir": "dist",
+  "domain": "larsgraubner.com",
+  "aliases": ["www.larsgraubner.com", "larsgraubner.de", "www.larsgraubner.de"],
+  "region": "DE",
+  "replicationRegions": [],
+  "geoZones": ["EU", "US"],
+  "redirects": [],
+  "headers": [
+    {
+      "for": "/*",
+      "values": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Frame-Options": "DENY"
+      }
+    },
+    {
+      "for": "/_astro/*",
+      "values": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    }
+  ],
+  "pullZoneId": 7054234
+}

@@ -49,6 +49,11 @@ jobs:
     if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # A deploy uploads, deletes stale files, then purges the cache, so cancelling one
+    # halfway leaves the site half-updated. A newer push waits for the running deploy instead.
+    concurrency:
+      group: production
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v7
         with:
@@ -60,7 +65,7 @@ jobs:
           require-lockfile: true
       - name: Build
         run: pnpm run build
-      - name: Deploy to OrbitPush
-        run: npx -y @orbitpush/cli@latest deploy ./dist
+      - name: Deploy to bunny.net
+        run: pnpm exec orbitpush deploy
         env:
-          ORBITPUSH_DEPLOY_TOKEN: ${{ secrets.ORBITPUSH_DEPLOY_TOKEN }}
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
