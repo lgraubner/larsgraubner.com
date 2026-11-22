@@ -1,6 +1,6 @@
 # larsgraubner.com
 
-The personal website of Lars Graubner: a profile page and a blog for readers interested in software architecture, coding agents, and web products.
+The personal website of Lars Graubner: a profile page and a blog for readers interested in software architecture, coding agents, and shipping software.
 
 ## Language
 
