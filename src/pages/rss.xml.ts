@@ -7,7 +7,7 @@ export async function GET() {
   return rss({
     title: "Lars Graubner",
     description:
-      "Notes on software architecture, coding agents, and building web products.",
+      "Notes on software architecture, coding agents, and shipping software.",
     site: import.meta.env.SITE,
     items: posts.map((post) => ({
       title: post.data.title,
